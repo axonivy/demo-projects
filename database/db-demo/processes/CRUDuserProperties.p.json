@@ -103,7 +103,7 @@
     }, {
       "id" : "f12",
       "type" : "Database",
-      "name" : "write",
+      "name" : "create",
       "config" : {
         "query" : {
           "kind" : "write",
