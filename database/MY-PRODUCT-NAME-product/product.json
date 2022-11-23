@@ -1,0 +1,48 @@
+{
+  "installers": [
+    {
+      "id": "maven-import",
+      "data": {
+        "projects": [
+          {
+            "groupId": "MY-GROUP-ID",
+            "artifactId": "MY-PRODUCT-NAME-demo",
+            "version": "${version}",
+            "type": "iar"
+          }
+        ],
+        "repositories": [
+          {
+            "id": "maven.axonivy.com",
+            "url": "https://maven.axonivy.com",
+            "snapshots": {
+              "enabled": "true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "maven-dependency",
+      "data": {
+        "dependencies": [
+          {
+            "groupId": "MY-GROUP-ID",
+            "artifactId": "MY-PRODUCT-NAME",
+            "version": "${version}",
+            "type": "iar"
+          }
+        ],
+        "repositories": [
+          {
+            "id": "maven.axonivy.com",
+            "url": "https://maven.axonivy.com",
+            "snapshots": {
+              "enabled": "true"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

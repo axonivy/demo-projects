@@ -1,0 +1,11 @@
+name: CI-Build
+
+on:
+  push:
+  schedule:
+    - cron:  '21 21 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v2
