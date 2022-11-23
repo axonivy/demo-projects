@@ -1,0 +1,144 @@
+{
+  "format" : "10.0.0",
+  "id" : "184A3F87F479F367",
+  "config" : {
+    "data" : "db.demos.Data"
+  },
+  "elements" : [ {
+      "id" : "f5",
+      "type" : "Database",
+      "name" : "Update",
+      "config" : {
+        "query" : {
+          "kind" : "update",
+          "table" : "IWA_USERPROPERTY",
+          "fields" : {
+            "PROPERTYNAME" : "\"FavoritColor\"",
+            "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
+            "PROPERTYVALUE" : "\"Red\"",
+            "USERPROPERTYID" : "1"
+          }
+        },
+        "dbUrl" : "IvySystemDatabase"
+      },
+      "visual" : {
+        "at" : { "x" : 664, "y" : 256 }
+      },
+      "connect" : { "id" : "f8", "to" : "f7" }
+    }, {
+      "id" : "f4",
+      "type" : "Database",
+      "name" : "read",
+      "config" : {
+        "query" : {
+          "kind" : "read",
+          "table" : "IWA_USERPROPERTY"
+        },
+        "output" : {
+          "code" : [
+            "out;",
+            "record.getField(\"PROPERTYNAME\") as String;"
+          ]
+        },
+        "dbUrl" : "IvySystemDatabase"
+      },
+      "visual" : {
+        "at" : { "x" : 496, "y" : 256 }
+      },
+      "connect" : { "id" : "f14", "to" : "f5" }
+    }, {
+      "id" : "f6",
+      "type" : "RequestStart",
+      "name" : "Update.ivp",
+      "config" : {
+        "callSignature" : "Update",
+        "outLink" : "Update.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 664, "y" : 192 },
+        "labelOffset" : { "x" : 17, "y" : -15 }
+      },
+      "connect" : { "id" : "f10", "to" : "f5" }
+    }, {
+      "id" : "f9",
+      "type" : "RequestStart",
+      "name" : "Delete.ivp",
+      "config" : {
+        "callSignature" : "Detelet",
+        "outLink" : "Detelet.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 824, "y" : 192 },
+        "labelOffset" : { "x" : 17, "y" : -15 }
+      },
+      "connect" : { "id" : "f11", "to" : "f7" }
+    }, {
+      "id" : "f7",
+      "type" : "Database",
+      "name" : "Delete",
+      "config" : {
+        "query" : {
+          "kind" : "delete",
+          "table" : "IWA_USERPROPERTY"
+        },
+        "dbUrl" : "IvySystemDatabase"
+      },
+      "visual" : {
+        "at" : { "x" : 824, "y" : 256 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f3",
+      "type" : "RequestStart",
+      "name" : "Read.ivp",
+      "config" : {
+        "callSignature" : "Read",
+        "outLink" : "Read.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 496, "y" : 192 },
+        "labelOffset" : { "x" : 17, "y" : -15 }
+      },
+      "connect" : { "id" : "f16", "to" : "f4" }
+    }, {
+      "id" : "f12",
+      "type" : "Database",
+      "name" : "write",
+      "config" : {
+        "query" : {
+          "kind" : "write",
+          "table" : "IWA_USERPROPERTY",
+          "fields" : {
+            "PROPERTYNAME" : "\"FavoritColor\"",
+            "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
+            "PROPERTYVALUE" : "\"blue\"",
+            "USERPROPERTYID" : "1"
+          }
+        },
+        "dbUrl" : "IvySystemDatabase"
+      },
+      "visual" : {
+        "at" : { "x" : 336, "y" : 256 }
+      },
+      "connect" : { "id" : "f15", "to" : "f4" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 928, "y" : 256 }
+      }
+    }, {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "Create.ivp",
+      "config" : {
+        "callSignature" : "Create",
+        "outLink" : "Create.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 240, "y" : 256 },
+        "labelOffset" : { "x" : 17, "y" : 33 }
+      },
+      "connect" : { "id" : "f13", "to" : "f12" }
+    } ]
+}

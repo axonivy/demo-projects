@@ -1,1 +1,5 @@
 Databases:
+  FootballDB:
+    Url: jdbc:hsqldb:mem:Football
+    Driver: org.hsqldb.jdbc.JDBCDriver
+    Password: ${decrypt:}
