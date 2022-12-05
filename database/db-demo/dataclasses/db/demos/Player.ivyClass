@@ -1,0 +1,8 @@
+Player #class
+db.demos #namespace
+birthday Date #field
+birthday PERSISTENT #fieldModifier
+favoritecolor String #field
+favoritecolor PERSISTENT #fieldModifier
+name String #field
+name PERSISTENT #fieldModifier

@@ -2,7 +2,7 @@
   "format" : "10.0.0",
   "id" : "184A3F87F479F367",
   "config" : {
-    "data" : "db.demos.Data"
+    "data" : "db.demos.Player"
   },
   "elements" : [ {
       "id" : "f5",
@@ -36,8 +36,8 @@
         },
         "output" : {
           "code" : [
-            "out;",
-            "record.getField(\"PROPERTYNAME\") as String;"
+            "String color = record.getField(\"PROPERTYVALUE\") as String;",
+            "ivy.log.info(\"your favorite color is \" + color);"
           ]
         },
         "dbUrl" : "IvySystemDatabase"
@@ -136,7 +136,7 @@
         "outLink" : "Create.ivp"
       },
       "visual" : {
-        "at" : { "x" : 240, "y" : 256 },
+        "at" : { "x" : 232, "y" : 256 },
         "labelOffset" : { "x" : 17, "y" : 33 }
       },
       "connect" : { "id" : "f13", "to" : "f12" }

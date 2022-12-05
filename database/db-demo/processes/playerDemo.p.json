@@ -1,0 +1,92 @@
+{
+  "format" : "10.0.0",
+  "id" : "184BD5B00AD6A83D",
+  "config" : {
+    "data" : "db.demos.Player"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "callSignature" : "start",
+        "outLink" : "start.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 280, "y" : 240 }
+      },
+      "connect" : { "id" : "f2", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 744, "y" : 288 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Database",
+      "name" : "create",
+      "config" : {
+        "query" : {
+          "kind" : "any",
+          "stmt" : [
+            "create table players(",
+            "name varchar(200),",
+            "birthday date,",
+            "favoritecolor varchar(50)",
+            ")"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 512, "y" : 240 }
+      },
+      "connect" : { "id" : "f4", "to" : "f1", "via" : [ { "x" : 744, "y" : 240 } ] }
+    }, {
+      "id" : "f6",
+      "type" : "RequestStart",
+      "name" : "crudPlayerDialog.ivp",
+      "config" : {
+        "callSignature" : "crudPlayerDialog",
+        "outLink" : "start2.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 280, "y" : 328 },
+        "labelOffset" : { "x" : 17, "y" : 41 }
+      },
+      "connect" : { "id" : "f14", "to" : "f12" }
+    }, {
+      "id" : "f13",
+      "type" : "DialogCall",
+      "name" : "PlayerInterface",
+      "config" : {
+        "dialogId" : "db.demos.PlayerInterface",
+        "startMethod" : "start()"
+      },
+      "visual" : {
+        "at" : { "x" : 616, "y" : 328 }
+      },
+      "connect" : { "id" : "f7", "to" : "f1", "via" : [ { "x" : 744, "y" : 328 } ] }
+    }, {
+      "id" : "f12",
+      "type" : "Database",
+      "name" : "write",
+      "config" : {
+        "query" : {
+          "kind" : "write",
+          "table" : "PLAYERS",
+          "fields" : {
+            "NAME" : "\"Timo\"",
+            "FAVORITECOLOR" : "\"blau\"",
+            "BIRTHDAY" : "'1984-10-18'"
+          }
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 408, "y" : 328 }
+      },
+      "connect" : { "id" : "f20", "to" : "f13" }
+    } ]
+}

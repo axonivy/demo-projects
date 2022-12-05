@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+	<ui:composition template="/layouts/frame-10.xhtml">
+		<ui:define name="title">PlayerInterface</ui:define>
+		<ui:define name="content">
+
+
+			<h:form id="playerListForm">
+				<p:messages />
+				<p:dataTable id="player" var="player" value="#{data.players}"
+					showGridlines="true">
+					<p:column headerText="Name">
+						<h:outputText value="#{player.name}" />
+					</p:column>
+
+					<p:column headerText="Birthday">
+						<h:outputText value="#{player.birthday}" />
+					</p:column>
+
+					<p:column headerText="Favorite Color">
+						<h:outputText value="#{player.favoritecolor}" />
+					</p:column>
+
+					<p:column headerText="Delete">
+						<p:commandButton id="delete"
+							actionListener="#{logic.delete(player)}" value="Delete"
+							update="playerListForm" icon="pi pi-check" />
+					</p:column>
+
+				</p:dataTable>
+				<br />
+				<div class="command-btns">
+				</div>
+			</h:form>
+			<h:form id="playerInputForm">
+				<p:panelGrid columns="2" layout="grid"
+					styleClass="ui-panelgrid-blank ui-fluid"
+					columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
+
+					<p:outputLabel for="name" value="Name" />
+					<p:inputText id="name" value="#{data.player.name}" required="true"></p:inputText>
+
+					<p:outputLabel for="Birthday" value="Birthday" />
+					<p:inputText id="Birthday" value="#{data.player.birthday}"
+						required="true"></p:inputText>
+
+					<p:outputLabel for="FavoriteColor" value="FavoriteColor" />
+					<p:inputText id="FavoriteColor"
+						value="#{data.player.favoritecolor}" required="true"></p:inputText>
+
+				</p:panelGrid>
+
+				<div class="command-btns">
+					<p:commandButton id="save" actionListener="#{logic.save}"
+						value="Save" update="@all" icon="pi pi-check" />
+				</div>
+			</h:form>
+			<p:commandButton id="proceed" actionListener="#{logic.close}" value="Proceed" update="playerListForm" icon="pi pi-check" />
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>
