@@ -32,6 +32,7 @@ public class SampleProcessTest{
   private static final BpmProcess testee = BpmProcess.path("MyProcess");
   
   @Test
+  @Disabled("illustrative code: needs adaption to your environment")
   public void callProcess(BpmClient bpmClient){
     BpmElement startable = testee.elementName("start.ivp");
     ExecutionResult result = bpmClient.start().process(startable).execute();
