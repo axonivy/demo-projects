@@ -1,0 +1,177 @@
+{
+  "format" : "10.0.0",
+  "id" : "184BE51DDAD4D046",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "db.demos.PlayerInterface.PlayerInterfaceData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "callSignature" : "start",
+        "result" : {
+          "params" : [
+            { "name" : "Player", "type" : "db.demos.Player" }
+          ],
+          "map" : {
+            "result.Player" : "in.player"
+          }
+        },
+        "input" : {
+          "map" : {
+            "out.player.birthday" : "'2022-07-23'",
+            "out.player.favoritecolor" : "\"red\"",
+            "out.player.name" : "\"Tom\""
+          }
+        },
+        "guid" : "184BE51DDAE6EF7C"
+      },
+      "visual" : {
+        "at" : { "x" : 328, "y" : 248 }
+      },
+      "connect" : { "id" : "f7", "to" : "f6" }
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 600, "y" : 248 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "184BE51DDAED2BBA"
+      },
+      "visual" : {
+        "at" : { "x" : 328, "y" : 512 }
+      },
+      "connect" : { "id" : "f5", "to" : "f4" }
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 600, "y" : 512 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "Database",
+      "name" : "Read",
+      "config" : {
+        "query" : {
+          "kind" : "read",
+          "table" : "PLAYERS"
+        },
+        "output" : {
+          "code" : [
+            "import db.demos.Player;",
+            "",
+            "for (int i = 0; i < recordset.size(); i++) {",
+            "  String name = recordset.getAt(i).getField(\"name\") as String;",
+            "  String favoritecolor = recordset.getAt(i).getField(\"favoritecolor\") as String;",
+            "  Date birthday = recordset.getAt(i).getField(\"birthday\") as Date;",
+            "  Player player = new Player();",
+            "  player.setFavoritecolor(favoritecolor);",
+            "  player.setName(name);",
+            "  player.setBirthday(birthday);",
+            "  out.players.add(player);",
+            "}"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 464, "y" : 248 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f9",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 600, "y" : 336 }
+      }
+    }, {
+      "id" : "f10",
+      "type" : "HtmlDialogEventStart",
+      "name" : "save",
+      "config" : {
+        "guid" : "184C35FE1256D913"
+      },
+      "visual" : {
+        "at" : { "x" : 328, "y" : 336 }
+      },
+      "connect" : { "id" : "f15", "to" : "f13" }
+    }, {
+      "id" : "f12",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 600, "y" : 424 }
+      }
+    }, {
+      "id" : "f14",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "delete(player)",
+      "config" : {
+        "callSignature" : "delete",
+        "input" : {
+          "params" : [
+            { "name" : "player", "type" : "db.demos.Player" }
+          ],
+          "map" : {
+            "out.player" : "param.player"
+          },
+          "code" : "out.players.remove(param.player);"
+        },
+        "guid" : "184E1D579D5BEF4D"
+      },
+      "visual" : {
+        "at" : { "x" : 328, "y" : 424 }
+      },
+      "connect" : { "id" : "f19", "to" : "f16" }
+    }, {
+      "id" : "f13",
+      "type" : "Database",
+      "name" : "Write",
+      "config" : {
+        "query" : {
+          "kind" : "write",
+          "table" : "PLAYERS",
+          "fields" : {
+            "FAVORITECOLOR" : "in.player.favoritecolor",
+            "BIRTHDAY" : "in.player.birthday",
+            "NAME" : "in.player.name"
+          }
+        },
+        "output" : {
+          "code" : [
+            "import db.demos.Player;",
+            "out.players.add(in.player);",
+            "out.player=new Player();"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 464, "y" : 336 }
+      },
+      "connect" : { "id" : "f8", "to" : "f9" }
+    }, {
+      "id" : "f16",
+      "type" : "Database",
+      "name" : "Delete",
+      "config" : {
+        "query" : {
+          "kind" : "delete",
+          "table" : "PLAYERS",
+          "condition" : "NAME = <%=in.player.name%>"
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 464, "y" : 424 }
+      },
+      "connect" : { "id" : "f11", "to" : "f12" }
+    } ]
+}

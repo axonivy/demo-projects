@@ -1,0 +1,6 @@
+PlayerInterfaceData #class
+db.demos.PlayerInterface #namespace
+players java.util.List<db.demos.Player> #field
+players PERSISTENT #fieldModifier
+player db.demos.Player #field
+player PERSISTENT #fieldModifier
