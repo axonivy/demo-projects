@@ -46,7 +46,7 @@
     }, {
       "id" : "f6",
       "type" : "RequestStart",
-      "name" : "start2.ivp",
+      "name" : "start2start2.ivp",
       "config" : {
         "callSignature" : "start2",
         "outLink" : "start2.ivp"
