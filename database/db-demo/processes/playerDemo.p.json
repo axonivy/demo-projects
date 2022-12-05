@@ -46,9 +46,9 @@
     }, {
       "id" : "f6",
       "type" : "RequestStart",
-      "name" : "start2start2.ivp",
+      "name" : "crudPlayerDialog.ivp",
       "config" : {
-        "callSignature" : "start2",
+        "callSignature" : "crudPlayerDialog",
         "outLink" : "start2.ivp"
       },
       "visual" : {

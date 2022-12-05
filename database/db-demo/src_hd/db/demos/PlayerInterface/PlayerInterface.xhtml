@@ -30,7 +30,7 @@
 					<p:column headerText="Delete">
 						<p:commandButton id="delete"
 							actionListener="#{logic.delete(player)}" value="Delete"
-							update="form1" icon="pi pi-check" />
+							update="playerListForm" icon="pi pi-check" />
 					</p:column>
 
 				</p:dataTable>
@@ -61,7 +61,7 @@
 						value="Save" update="@all" icon="pi pi-check" />
 				</div>
 			</h:form>
-			<p:commandButton id="proceed" actionListener="#{logic.close}" value="Proceed" update="form1" icon="pi pi-check" />
+			<p:commandButton id="proceed" actionListener="#{logic.close}" value="Proceed" update="playerListForm" icon="pi pi-check" />
 		</ui:define>
 	</ui:composition>
 </h:body>
