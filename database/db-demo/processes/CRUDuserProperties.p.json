@@ -28,13 +28,19 @@
     }, {
       "id" : "f4",
       "type" : "Database",
-      "name" : "read",
+      "name" : "Read",
       "config" : {
         "query" : {
           "kind" : "read",
           "table" : "IWA_USERPROPERTY"
         },
         "output" : {
+          "map" : {
+            "out" : "in",
+            "out.birthday" : "in.birthday",
+            "out.favoritecolor" : "in.favoritecolor",
+            "out.name" : "in.name"
+          },
           "code" : [
             "String color = record.getField(\"PROPERTYVALUE\") as String;",
             "ivy.log.info(\"your favorite color is \" + color);"
@@ -103,7 +109,7 @@
     }, {
       "id" : "f12",
       "type" : "Database",
-      "name" : "create",
+      "name" : "Create",
       "config" : {
         "query" : {
           "kind" : "write",
