@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import ch.ivyteam.ivy.bpm.engine.client.*;
 import ch.ivyteam.ivy.bpm.engine.client.element.*;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
+import db.demos.Player;
 
 @IvyProcessTest
 public class CRUDuserPropertiesTest {
@@ -21,6 +22,8 @@ public class CRUDuserPropertiesTest {
 		History history = result.history();
 		assertThat(history.elementNames()).containsExactly("Create.ivp", "Create", "Read", "Update", "Delete", "");
 
+		Player orderData = result.data().last();
+		assertThat(orderData.getFavoritecolor()).isEqualTo("");
 	}
 
 }
