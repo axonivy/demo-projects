@@ -10,7 +10,7 @@ import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 
 @IvyWebTest(headless = true) 
-public class SampleWebIT {
+public class PlayerDemoWebTestIT {
 
 	@Test
 	public void fillDialogForm() {
