@@ -8,7 +8,7 @@
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 824, "y" : 328 }
+        "at" : { "x" : 808, "y" : 328 }
       }
     }, {
       "id" : "f3",
@@ -30,6 +30,14 @@
       "visual" : {
         "at" : { "x" : 328, "y" : 328 }
       },
+      "boundaries" : [ {
+          "id" : "f7",
+          "type" : "ErrorBoundaryEvent",
+          "visual" : {
+            "at" : { "x" : 360, "y" : 368 }
+          },
+          "connect" : { "id" : "f8", "to" : "f12" }
+        } ],
       "connect" : { "id" : "f0", "to" : "f12" }
     }, {
       "id" : "f6",
@@ -53,9 +61,9 @@
         "startMethod" : "start()"
       },
       "visual" : {
-        "at" : { "x" : 688, "y" : 328 }
+        "at" : { "x" : 664, "y" : 328 }
       },
-      "connect" : { "id" : "f7", "to" : "f1" }
+      "connect" : { "id" : "f4", "to" : "f1" }
     }, {
       "id" : "f12",
       "type" : "Database",
@@ -73,7 +81,7 @@
         "dbUrl" : "FootballDB"
       },
       "visual" : {
-        "at" : { "x" : 488, "y" : 328 }
+        "at" : { "x" : 504, "y" : 328 }
       },
       "connect" : { "id" : "f20", "to" : "f13" }
     } ]
