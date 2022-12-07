@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>db.demo</groupId>
+  <artifactId>db-demo-webtest</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>iar-integration-test</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>db.demo</groupId>
+      <artifactId>db-demo</artifactId>
+      <version>10.0.0-SNAPSHOT</version>
+      <type>iar</type>
+    </dependency>
+    <dependency>
+    	<groupId>com.axonivy.ivy.webtest</groupId>
+    	<artifactId>web-tester</artifactId>
+    	<version>10.0.0</version>
+    	<scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <testSourceDirectory>src_test</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>com.axonivy.ivy.ci</groupId>
+        <artifactId>project-build-plugin</artifactId>
+        <version>10.0.1</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

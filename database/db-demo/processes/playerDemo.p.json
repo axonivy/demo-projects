@@ -5,27 +5,15 @@
     "data" : "db.demos.Player"
   },
   "elements" : [ {
-      "id" : "f0",
-      "type" : "RequestStart",
-      "name" : "start.ivp",
-      "config" : {
-        "callSignature" : "start",
-        "outLink" : "start.ivp"
-      },
-      "visual" : {
-        "at" : { "x" : 280, "y" : 240 }
-      },
-      "connect" : { "id" : "f2", "to" : "f3" }
-    }, {
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 744, "y" : 288 }
+        "at" : { "x" : 808, "y" : 328 }
       }
     }, {
       "id" : "f3",
       "type" : "Database",
-      "name" : "create",
+      "name" : "Create",
       "config" : {
         "query" : {
           "kind" : "any",
@@ -40,22 +28,30 @@
         "dbUrl" : "FootballDB"
       },
       "visual" : {
-        "at" : { "x" : 512, "y" : 240 }
+        "at" : { "x" : 328, "y" : 328 }
       },
-      "connect" : { "id" : "f4", "to" : "f1", "via" : [ { "x" : 744, "y" : 240 } ] }
+      "boundaries" : [ {
+          "id" : "f7",
+          "type" : "ErrorBoundaryEvent",
+          "visual" : {
+            "at" : { "x" : 360, "y" : 368 }
+          },
+          "connect" : { "id" : "f8", "to" : "f12" }
+        } ],
+      "connect" : { "id" : "f0", "to" : "f12" }
     }, {
       "id" : "f6",
       "type" : "RequestStart",
-      "name" : "crudPlayerDialog.ivp",
+      "name" : "CRUDPlayerDialog.ivp",
       "config" : {
         "callSignature" : "crudPlayerDialog",
         "outLink" : "start2.ivp"
       },
       "visual" : {
-        "at" : { "x" : 280, "y" : 328 },
+        "at" : { "x" : 200, "y" : 328 },
         "labelOffset" : { "x" : 17, "y" : 41 }
       },
-      "connect" : { "id" : "f14", "to" : "f12" }
+      "connect" : { "id" : "f2", "to" : "f3" }
     }, {
       "id" : "f13",
       "type" : "DialogCall",
@@ -65,13 +61,13 @@
         "startMethod" : "start()"
       },
       "visual" : {
-        "at" : { "x" : 616, "y" : 328 }
+        "at" : { "x" : 664, "y" : 328 }
       },
-      "connect" : { "id" : "f7", "to" : "f1", "via" : [ { "x" : 744, "y" : 328 } ] }
+      "connect" : { "id" : "f4", "to" : "f1" }
     }, {
       "id" : "f12",
       "type" : "Database",
-      "name" : "write",
+      "name" : "Write",
       "config" : {
         "query" : {
           "kind" : "write",
@@ -85,7 +81,7 @@
         "dbUrl" : "FootballDB"
       },
       "visual" : {
-        "at" : { "x" : 408, "y" : 328 }
+        "at" : { "x" : 504, "y" : 328 }
       },
       "connect" : { "id" : "f20", "to" : "f13" }
     } ]
