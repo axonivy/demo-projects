@@ -19,9 +19,10 @@
           "kind" : "any",
           "stmt" : [
             "create table players(",
+            "Id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY not null,",
             "name varchar(200),",
             "birthday date,",
-            "favoritecolor varchar(50)",
+            "favoritecolor varchar(50),",
             ")"
           ]
         },
@@ -34,7 +35,7 @@
           "id" : "f7",
           "type" : "ErrorBoundaryEvent",
           "visual" : {
-            "at" : { "x" : 360, "y" : 368 }
+            "at" : { "x" : 360, "y" : 362 }
           },
           "connect" : { "id" : "f8", "to" : "f12" }
         } ],
@@ -48,7 +49,7 @@
         "outLink" : "start2.ivp"
       },
       "visual" : {
-        "at" : { "x" : 200, "y" : 328 },
+        "at" : { "x" : 208, "y" : 328 },
         "labelOffset" : { "x" : 17, "y" : 41 }
       },
       "connect" : { "id" : "f2", "to" : "f3" }
@@ -58,10 +59,15 @@
       "name" : "PlayerInterface",
       "config" : {
         "dialogId" : "db.demos.PlayerInterface",
-        "startMethod" : "start()"
+        "startMethod" : "start(Number)",
+        "call" : {
+          "params" : [
+            { "name" : "Id", "type" : "Number" }
+          ]
+        }
       },
       "visual" : {
-        "at" : { "x" : 664, "y" : 328 }
+        "at" : { "x" : 672, "y" : 328 }
       },
       "connect" : { "id" : "f4", "to" : "f1" }
     }, {
@@ -81,7 +87,7 @@
         "dbUrl" : "FootballDB"
       },
       "visual" : {
-        "at" : { "x" : 504, "y" : 328 }
+        "at" : { "x" : 496, "y" : 328 }
       },
       "connect" : { "id" : "f20", "to" : "f13" }
     } ]

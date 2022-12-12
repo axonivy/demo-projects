@@ -8,18 +8,21 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "HtmlDialogStart",
-      "name" : "start()",
+      "name" : "start(Number)",
       "config" : {
         "callSignature" : "start",
         "result" : {
           "params" : [
-            { "name" : "Player", "type" : "db.demos.Player" }
+            { "name" : "id", "type" : "Number" }
           ],
           "map" : {
-            "result.Player" : "in.player"
+            "result.id" : "in.player.Id"
           }
         },
         "input" : {
+          "params" : [
+            { "name" : "Id", "type" : "Number" }
+          ],
           "map" : {
             "out.player.birthday" : "'1918-12-12'",
             "out.player.favoritecolor" : "\"blau\"",
@@ -48,12 +51,12 @@
       "visual" : {
         "at" : { "x" : 328, "y" : 512 }
       },
-      "connect" : { "id" : "f5", "to" : "f4" }
+      "connect" : { "id" : "f17", "to" : "f4" }
     }, {
       "id" : "f4",
       "type" : "HtmlDialogExit",
       "visual" : {
-        "at" : { "x" : 600, "y" : 512 }
+        "at" : { "x" : 624, "y" : 512 }
       }
     }, {
       "id" : "f6",
@@ -72,10 +75,12 @@
             "  String name = recordset.getAt(i).getField(\"name\") as String;",
             "  String favoritecolor = recordset.getAt(i).getField(\"favoritecolor\") as String;",
             "  Date birthday = recordset.getAt(i).getField(\"birthday\") as Date;",
+            "  Integer Id = recordset.getAt(i).getField(\"Id\") as Integer;",
             "  Player player = new Player();",
             "  player.setFavoritecolor(favoritecolor);",
             "  player.setName(name);",
             "  player.setBirthday(birthday);",
+            "  player.setId(Id);",
             "  out.players.add(player);",
             "}"
           ]
@@ -100,7 +105,8 @@
         "guid" : "184C35FE1256D913"
       },
       "visual" : {
-        "at" : { "x" : 328, "y" : 336 }
+        "at" : { "x" : 328, "y" : 336 },
+        "labelOffset" : { "x" : 11, "y" : 27 }
       },
       "connect" : { "id" : "f15", "to" : "f13" }
     }, {
@@ -156,7 +162,7 @@
       "visual" : {
         "at" : { "x" : 464, "y" : 336 }
       },
-      "connect" : { "id" : "f8", "to" : "f9" }
+      "connect" : { "id" : "f5", "to" : "f9" }
     }, {
       "id" : "f16",
       "type" : "Database",
@@ -165,7 +171,7 @@
         "query" : {
           "kind" : "delete",
           "table" : "PLAYERS",
-          "condition" : "NAME = <%=in.player.name%>"
+          "condition" : "ID = <%=in.player.Id%>"
         },
         "dbUrl" : "FootballDB"
       },

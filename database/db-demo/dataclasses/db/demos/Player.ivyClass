@@ -6,3 +6,5 @@ favoritecolor String #field
 favoritecolor PERSISTENT #fieldModifier
 name String #field
 name PERSISTENT #fieldModifier
+Id Integer #field
+Id PERSISTENT #fieldModifier
