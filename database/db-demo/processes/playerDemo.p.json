@@ -59,12 +59,7 @@
       "name" : "PlayerInterface",
       "config" : {
         "dialogId" : "db.demos.PlayerInterface",
-        "startMethod" : "start(Number)",
-        "call" : {
-          "params" : [
-            { "name" : "Id", "type" : "Number" }
-          ]
-        }
+        "startMethod" : "start()"
       },
       "visual" : {
         "at" : { "x" : 672, "y" : 328 }

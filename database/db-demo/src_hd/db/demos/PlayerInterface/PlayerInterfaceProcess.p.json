@@ -8,23 +8,12 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "HtmlDialogStart",
-      "name" : "start(Number)",
+      "name" : "start()",
       "config" : {
         "callSignature" : "start",
-        "result" : {
-          "params" : [
-            { "name" : "id", "type" : "Number" }
-          ],
-          "map" : {
-            "result.id" : "in.player.Id"
-          }
-        },
         "input" : {
-          "params" : [
-            { "name" : "Id", "type" : "Number" }
-          ],
           "map" : {
-            "out.player.birthday" : "'1918-12-12'",
+            "out.player.birthday" : "'1984-10-18'",
             "out.player.favoritecolor" : "\"blau\"",
             "out.player.name" : "\"Tom\""
           }

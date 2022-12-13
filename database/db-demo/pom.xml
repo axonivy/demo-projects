@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>db.demo</groupId>
-  <artifactId>db-demo</artifactId>
+  <artifactId>db-demos</artifactId>
   <version>10.0.0-SNAPSHOT</version>
   <packaging>iar</packaging>
   <build>

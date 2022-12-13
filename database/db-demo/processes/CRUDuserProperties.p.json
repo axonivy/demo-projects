@@ -15,9 +15,9 @@
           "fields" : {
             "PROPERTYNAME" : "\"FavoritColor\"",
             "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
-            "PROPERTYVALUE" : "\"Red\"",
-            "USERPROPERTYID" : "1"
-          }
+            "PROPERTYVALUE" : "\"Red\""
+          },
+          "condition" : "USERPROPERTYID  = 777"
         },
         "dbUrl" : "IvySystemDatabase"
       },
@@ -32,7 +32,8 @@
       "config" : {
         "query" : {
           "kind" : "read",
-          "table" : "IWA_USERPROPERTY"
+          "table" : "IWA_USERPROPERTY",
+          "condition" : "USERPROPERTYID  = 777"
         },
         "output" : {
           "map" : {
@@ -85,7 +86,8 @@
       "config" : {
         "query" : {
           "kind" : "delete",
-          "table" : "IWA_USERPROPERTY"
+          "table" : "IWA_USERPROPERTY",
+          "condition" : "USERPROPERTYID  = 777"
         },
         "dbUrl" : "IvySystemDatabase"
       },
@@ -118,7 +120,7 @@
             "PROPERTYNAME" : "\"FavoritColor\"",
             "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
             "PROPERTYVALUE" : "\"blue\"",
-            "USERPROPERTYID" : "1"
+            "USERPROPERTYID" : "777"
           }
         },
         "dbUrl" : "IvySystemDatabase"
