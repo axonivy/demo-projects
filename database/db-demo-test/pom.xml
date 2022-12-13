@@ -9,7 +9,7 @@
   <dependencies>
     <dependency>
       <groupId>db.demo</groupId>
-      <artifactId>db-demo</artifactId>
+      <artifactId>db-demos</artifactId>
       <version>${project.version}</version>
       <type>iar</type>
     </dependency>
@@ -21,6 +21,7 @@
     </dependency>
   </dependencies>
   <build>
+    <sourceDirectory>src</sourceDirectory>
     <testSourceDirectory>src_test</testSourceDirectory>
     <pluginManagement>
       <plugins>
