@@ -17,7 +17,7 @@
             "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
             "PROPERTYVALUE" : "\"Red\""
           },
-          "condition" : "USERPROPERTYID  = 777"
+          "condition" : "USERPROPERTYID  = <%=in.Id%>"
         },
         "dbUrl" : "IvySystemDatabase"
       },
@@ -33,7 +33,7 @@
         "query" : {
           "kind" : "read",
           "table" : "IWA_USERPROPERTY",
-          "condition" : "USERPROPERTYID  = 777"
+          "condition" : "USERPROPERTYID  = <%=in.Id%>"
         },
         "output" : {
           "map" : {
@@ -87,7 +87,7 @@
         "query" : {
           "kind" : "delete",
           "table" : "IWA_USERPROPERTY",
-          "condition" : "USERPROPERTYID  = 777"
+          "condition" : "USERPROPERTYID  = <%=in.Id%>"
         },
         "dbUrl" : "IvySystemDatabase"
       },
@@ -120,7 +120,7 @@
             "PROPERTYNAME" : "\"FavoritColor\"",
             "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
             "PROPERTYVALUE" : "\"blue\"",
-            "USERPROPERTYID" : "777"
+            "USERPROPERTYID" : "in.Id"
           }
         },
         "dbUrl" : "IvySystemDatabase"
@@ -141,6 +141,11 @@
       "name" : "Create.ivp",
       "config" : {
         "callSignature" : "Create",
+        "input" : {
+          "map" : {
+            "out.Id" : "23"
+          }
+        },
         "outLink" : "Create.ivp"
       },
       "visual" : {
