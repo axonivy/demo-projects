@@ -1,0 +1,8 @@
+Team #class
+db.demos #namespace
+teamname String #field
+teamname PERSISTENT #fieldModifier
+TID Integer #field
+TID PERSISTENT #fieldModifier
+foundationDay Date #field
+foundationDay PERSISTENT #fieldModifier

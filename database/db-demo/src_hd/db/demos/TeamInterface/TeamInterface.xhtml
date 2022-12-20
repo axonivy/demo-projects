@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<cc:interface componentType="IvyComponent">
+</cc:interface>
+<cc:implementation>
+	<h:body>
+		<ui:composition template="/layouts/frame-10.xhtml">
+			<ui:define name="title">TeamInterface</ui:define>
+			<ui:define name="content">
+
+				<h:form id="teamListForm">
+					<p:messages />
+					<p:dataTable id="team" var="team" value="#{data.teams}"
+						showGridlines="true">
+
+						<p:column headerText="TID">
+							<h:outputText value="#{team.TID}" />
+						</p:column>
+
+						<p:column headerText="Teamname">
+							<h:outputText value="#{team.teamname}" />
+						</p:column>
+
+						<p:column headerText="foundationDay">
+							<h:outputText value="#{team.foundationDay}" />
+						</p:column>
+
+						<p:column headerText="Delete">
+							<p:commandButton id="delete"
+								actionListener="#{logic.deleteTeam(team)}" value="Delete"
+								update="j_id_3i:teamListForm" icon="pi pi-check" />
+
+						</p:column>
+
+					</p:dataTable>
+
+					<br />
+					<div class="command-btns"></div>
+				</h:form>
+
+				<h:form id="teamInputForm">
+					<p:panelGrid columns="2" layout="grid"
+						styleClass="ui-panelgrid-blank ui-fluid"
+						columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
+
+						<p:outputLabel for="foundationDay" value="FoundationDay" />
+					<p:calendar id="foundationDay" value="#{data.team.foundationDay}"
+						pattern="dd.MM.yyyy" required="true">
+						<f:convertDateTime pattern="dd.MM.yyyy" />
+					</p:calendar>
+
+						<p:outputLabel for="Teamname" value="Teamname" />
+						<p:inputText id="Teamname" value="#{data.team.teamname}"
+							required="true"></p:inputText>
+
+					</p:panelGrid>
+
+					<div class="command-btns">
+						<p:commandButton id="saveTeam"
+							actionListener="#{logic.saveTeam}" value="SaveTeam"
+							update="@all" icon="pi pi-check" />
+					</div>
+				</h:form>
+
+			</ui:define>
+		</ui:composition>
+	</h:body>
+</cc:implementation>
+</html>

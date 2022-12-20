@@ -1,0 +1,315 @@
+{
+  "format" : "10.0.0",
+  "id" : "185100DEA8585324",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "db.demos.GameInterface.GameInterfaceData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(shared)",
+      "config" : {
+        "callSignature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "shared", "type" : "db.demos.shared" }
+          ],
+          "map" : {
+            "out.shared" : "param.shared"
+          },
+          "code" : [
+            "import db.demos.Player;",
+            "",
+            "Player test = new Player();",
+            "test.name = \"Hans\";",
+            "test.birthday = '2022-11-11';"
+          ]
+        },
+        "result" : {
+          "params" : [
+            { "name" : "player", "type" : "db.demos.Player" },
+            { "name" : "team", "type" : "db.demos.Team" }
+          ],
+          "map" : {
+            "result.player" : "in.player",
+            "result.team" : "in.team"
+          }
+        },
+        "guid" : "0185100DEA857D0B"
+      },
+      "visual" : {
+        "at" : { "x" : 336, "y" : 336 }
+      },
+      "connect" : { "id" : "f7", "to" : "f5" }
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 768, "y" : 336 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "185100DEA866CF72"
+      },
+      "visual" : {
+        "at" : { "x" : 336, "y" : 784 }
+      },
+      "connect" : { "id" : "f2", "to" : "f4" }
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 784 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 704 }
+      }
+    }, {
+      "id" : "f14",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "deleteTeam(team)",
+      "config" : {
+        "callSignature" : "deleteTeam",
+        "input" : {
+          "params" : [
+            { "name" : "team", "type" : "db.demos.Team" }
+          ],
+          "map" : {
+            "out.team" : "param.team"
+          },
+          "code" : "out.teams.remove(param.team);"
+        },
+        "guid" : "185112FA4727A678"
+      },
+      "visual" : {
+        "at" : { "x" : 336, "y" : 704 }
+      },
+      "connect" : { "id" : "f19", "to" : "f16" }
+    }, {
+      "id" : "f16",
+      "type" : "Database",
+      "name" : "DeleteTeam",
+      "config" : {
+        "query" : {
+          "kind" : "delete",
+          "table" : "TEAMS",
+          "condition" : "TID = <%=in.team.TID%>"
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 472, "y" : 704 }
+      },
+      "connect" : { "id" : "f11", "to" : "f12" }
+    }, {
+      "id" : "f18",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 448 }
+      }
+    }, {
+      "id" : "f20",
+      "type" : "HtmlDialogEventStart",
+      "name" : "savePlayer",
+      "config" : {
+        "guid" : "18511339870DE844"
+      },
+      "visual" : {
+        "at" : { "x" : 336, "y" : 448 },
+        "labelOffset" : { "x" : 11, "y" : 27 }
+      },
+      "connect" : { "id" : "f10", "to" : "f23" }
+    }, {
+      "id" : "f21",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 536 }
+      }
+    }, {
+      "id" : "f22",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "deletePlayer(player)",
+      "config" : {
+        "callSignature" : "deletePlayer",
+        "input" : {
+          "params" : [
+            { "name" : "player", "type" : "db.demos.Player" }
+          ],
+          "map" : {
+            "out.player" : "param.player"
+          },
+          "code" : "out.players.remove(param.player);"
+        },
+        "guid" : "1851133987147F21"
+      },
+      "visual" : {
+        "at" : { "x" : 336, "y" : 536 }
+      },
+      "connect" : { "id" : "f30", "to" : "f24" }
+    }, {
+      "id" : "f23",
+      "type" : "Database",
+      "name" : "WritePlayer",
+      "config" : {
+        "query" : {
+          "kind" : "write",
+          "table" : "PLAYERS",
+          "fields" : {
+            "FAVORITECOLOR" : "in.player.favoritecolor",
+            "BIRTHDAY" : "in.player.birthday",
+            "NAME" : "in.player.name"
+          }
+        },
+        "output" : {
+          "code" : [
+            "import db.demos.Player;",
+            "",
+            "out.players.add(in.player);",
+            "out.player = new Player();"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 472, "y" : 448 }
+      },
+      "connect" : { "id" : "f8", "to" : "f18" }
+    }, {
+      "id" : "f24",
+      "type" : "Database",
+      "name" : "DeletePlayer",
+      "config" : {
+        "query" : {
+          "kind" : "delete",
+          "table" : "PLAYERS",
+          "condition" : "PID = <%=in.player.PID%>"
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 472, "y" : 536 }
+      },
+      "connect" : { "id" : "f28", "to" : "f21" }
+    }, {
+      "id" : "f5",
+      "type" : "Database",
+      "name" : "ReadPlayerTable",
+      "config" : {
+        "query" : {
+          "kind" : "read",
+          "table" : "PLAYERS"
+        },
+        "output" : {
+          "code" : [
+            "import db.demos.Player;",
+            "",
+            "for (int i = 0; i < recordset.size(); i++) {",
+            "  String name = recordset.getAt(i).getField(\"name\") as String;",
+            "  String favoritecolor = recordset.getAt(i).getField(\"favoritecolor\") as String;",
+            "  Date birthday = recordset.getAt(i).getField(\"birthday\") as Date;",
+            "  Integer PID = recordset.getAt(i).getField(\"PID\") as Integer;",
+            "  ",
+            "  Player player = new Player();",
+            "  player.setFavoritecolor(favoritecolor);",
+            "  player.setName(name);",
+            "  player.setBirthday(birthday);",
+            "  player.setPID(PID);",
+            "  out.players.add(player);",
+            "  ",
+            "  ",
+            "  }"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 472, "y" : 336 }
+      },
+      "connect" : { "id" : "f26", "to" : "f17" }
+    }, {
+      "id" : "f17",
+      "type" : "Database",
+      "name" : "ReadTeamTable",
+      "config" : {
+        "query" : {
+          "kind" : "read",
+          "table" : "TEAMS"
+        },
+        "output" : {
+          "code" : [
+            "import db.demos.Team;",
+            "",
+            "for (int i = 0; i < recordset.size(); i++) {",
+            "  Date foundationDay = recordset.getAt(i).getField(\"foundationDay\") as Date;",
+            "  Integer TID = recordset.getAt(i).getField(\"TID\") as Integer;",
+            "  String teamname = recordset.getAt(i).getField(\"teamname\") as String;",
+            "  ",
+            "  Team team = new Team();",
+            "  team.setTeamname(teamname);",
+            "  team.setFoundationDay(foundationDay);",
+            "  team.setTID(TID);",
+            "  out.teams.add(team);",
+            "  ",
+            "  }"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 632, "y" : 336 }
+      },
+      "connect" : { "id" : "f6", "to" : "f1" }
+    }, {
+      "id" : "f9",
+      "type" : "HtmlDialogEventStart",
+      "name" : "saveTeam",
+      "config" : {
+        "guid" : "1852EED4A96288BD"
+      },
+      "visual" : {
+        "at" : { "x" : 336, "y" : 624 },
+        "labelOffset" : { "x" : 11, "y" : 27 }
+      },
+      "connect" : { "id" : "f27", "to" : "f25" }
+    }, {
+      "id" : "f25",
+      "type" : "Database",
+      "name" : "WriteTeam",
+      "config" : {
+        "query" : {
+          "kind" : "write",
+          "table" : "TEAMS",
+          "fields" : {
+            "TEAMNAME" : "in.team.teamname",
+            "FOUNDINGDAY" : "in.team.foundationDay"
+          }
+        },
+        "output" : {
+          "code" : [
+            "import db.demos.Team;",
+            "",
+            "out.shared.teams.add(in.team);",
+            "out.team = new Team();"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 472, "y" : 624 }
+      },
+      "connect" : { "id" : "f15", "to" : "f13" }
+    }, {
+      "id" : "f13",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 616, "y" : 624 }
+      }
+    } ]
+}

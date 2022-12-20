@@ -8,18 +8,18 @@
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 808, "y" : 328 }
+        "at" : { "x" : 776, "y" : 376 }
       }
     }, {
       "id" : "f3",
       "type" : "Database",
-      "name" : "Create",
+      "name" : "CreatePlayer",
       "config" : {
         "query" : {
           "kind" : "any",
           "stmt" : [
             "create table players(",
-            "Id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY not null,",
+            "PID integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY not null,",
             "name varchar(200),",
             "birthday date,",
             "favoritecolor varchar(50),",
@@ -49,20 +49,25 @@
         "outLink" : "start2.ivp"
       },
       "visual" : {
-        "at" : { "x" : 208, "y" : 328 },
+        "at" : { "x" : 168, "y" : 376 },
         "labelOffset" : { "x" : 17, "y" : 41 }
       },
-      "connect" : { "id" : "f2", "to" : "f3" }
+      "connect" : { "id" : "f17", "to" : "f16" }
     }, {
       "id" : "f13",
       "type" : "DialogCall",
-      "name" : "PlayerInterface",
+      "name" : "Interface",
       "config" : {
-        "dialogId" : "db.demos.PlayerInterface",
-        "startMethod" : "start()"
+        "dialogId" : "db.demos.GameInterface",
+        "startMethod" : "start(db.demos.shared)",
+        "call" : {
+          "params" : [
+            { "name" : "shared", "type" : "db.demos.shared" }
+          ]
+        }
       },
       "visual" : {
-        "at" : { "x" : 672, "y" : 328 }
+        "at" : { "x" : 664, "y" : 376 }
       },
       "connect" : { "id" : "f4", "to" : "f1" }
     }, {
@@ -85,5 +90,63 @@
         "at" : { "x" : 496, "y" : 328 }
       },
       "connect" : { "id" : "f20", "to" : "f13" }
+    }, {
+      "id" : "f5",
+      "type" : "Database",
+      "name" : "CreateTeam",
+      "config" : {
+        "query" : {
+          "kind" : "any",
+          "stmt" : [
+            "create table teams(",
+            "TID integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY not null,",
+            "foundingday date,",
+            "teamname varchar(200)",
+            ")"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 328, "y" : 424 }
+      },
+      "boundaries" : [ {
+          "id" : "f14",
+          "type" : "ErrorBoundaryEvent",
+          "visual" : {
+            "at" : { "x" : 360, "y" : 464 }
+          },
+          "connect" : { "id" : "f15", "to" : "f9" }
+        } ],
+      "connect" : { "id" : "f10", "to" : "f9" }
+    }, {
+      "id" : "f9",
+      "type" : "Database",
+      "name" : "Write",
+      "config" : {
+        "query" : {
+          "kind" : "write",
+          "table" : "TEAMS",
+          "fields" : {
+            "TEAMNAME" : "\"FCB\"",
+            "FOUNDINGDAY" : "'1921-09-24'"
+          }
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 496, "y" : 424 }
+      },
+      "connect" : { "id" : "f11", "to" : "f13" }
+    }, {
+      "id" : "f16",
+      "type" : "Split",
+      "visual" : {
+        "at" : { "x" : 232, "y" : 376 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f3", "outVar" : "out1" },
+        { "id" : "f18", "to" : "f5", "outVar" : "out2" }
+      ]
     } ]
 }

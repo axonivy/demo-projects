@@ -1,0 +1,12 @@
+GameInterfaceData #class
+db.demos.GameInterface #namespace
+player db.demos.Player #field
+player PERSISTENT #fieldModifier
+players List<db.demos.Player> #field
+players PERSISTENT #fieldModifier
+shared db.demos.shared #field
+shared PERSISTENT #fieldModifier
+team db.demos.Team #field
+team PERSISTENT #fieldModifier
+teams List<db.demos.Team> #field
+teams PERSISTENT #fieldModifier

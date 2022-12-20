@@ -1,0 +1,8 @@
+TeamInterfaceData #class
+db.demos.TeamInterface #namespace
+team db.demos.Team #field
+team PERSISTENT #fieldModifier
+teams List<db.demos.Team> #field
+teams PERSISTENT #fieldModifier
+shared db.demos.shared #field
+shared PERSISTENT #fieldModifier
