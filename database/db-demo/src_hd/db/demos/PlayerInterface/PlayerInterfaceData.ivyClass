@@ -4,5 +4,5 @@ player db.demos.Player #field
 player PERSISTENT #fieldModifier
 players java.util.List<db.demos.Player> #field
 players PERSISTENT #fieldModifier
-shared db.demos.shared #field
+shared db.demos.Shared #field
 shared PERSISTENT #fieldModifier

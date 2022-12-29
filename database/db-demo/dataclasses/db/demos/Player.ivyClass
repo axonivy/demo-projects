@@ -4,9 +4,11 @@ birthday Date #field
 birthday PERSISTENT #fieldModifier
 favoritecolor String #field
 favoritecolor PERSISTENT #fieldModifier
-PID Integer #field
-PID PERSISTENT #fieldModifier
-name String #field
-name PERSISTENT #fieldModifier
 id Integer #field
 id PERSISTENT #fieldModifier
+name String #field
+name PERSISTENT #fieldModifier
+PID Integer #field
+PID PERSISTENT #fieldModifier
+team db.demos.Team #field
+team PERSISTENT #fieldModifier

@@ -33,8 +33,9 @@
 
 						<p:column headerText="Delete">
 							<p:commandButton id="delete"
+								style="background-color: FireBrick; border-style: none;"
 								actionListener="#{logic.deleteTeam(team)}" value="Delete"
-								update="j_id_3i:teamListForm" icon="pi pi-check" />
+								update="Teams:teamListForm" icon="pi pi-trash" />
 
 						</p:column>
 
@@ -50,10 +51,10 @@
 						columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
 
 						<p:outputLabel for="foundationDay" value="FoundationDay" />
-					<p:calendar id="foundationDay" value="#{data.team.foundationDay}"
-						pattern="dd.MM.yyyy" required="true">
-						<f:convertDateTime pattern="dd.MM.yyyy" />
-					</p:calendar>
+						<p:calendar id="foundationDay" value="#{data.team.foundationDay}"
+							pattern="dd.MM.yyyy" required="true">
+							<f:convertDateTime pattern="dd.MM.yyyy" />
+						</p:calendar>
 
 						<p:outputLabel for="Teamname" value="Teamname" />
 						<p:inputText id="Teamname" value="#{data.team.teamname}"
@@ -62,9 +63,9 @@
 					</p:panelGrid>
 
 					<div class="command-btns">
-						<p:commandButton id="saveTeam"
-							actionListener="#{logic.saveTeam}" value="SaveTeam"
-							update="@all" icon="pi pi-check" />
+						<p:commandButton id="saveTeam" actionListener="#{logic.saveTeam}"
+							value="SaveTeam" update="@all" icon="pi pi-save"
+							style="background-color: Green; border-style: none;" />
 					</div>
 				</h:form>
 

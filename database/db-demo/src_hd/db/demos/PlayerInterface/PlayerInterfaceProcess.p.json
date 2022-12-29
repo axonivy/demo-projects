@@ -25,14 +25,18 @@
     }, {
       "id" : "f7",
       "type" : "HtmlDialogStart",
-      "name" : "start()",
+      "name" : "start(shared)",
       "config" : {
         "callSignature" : "start",
         "input" : {
+          "params" : [
+            { "name" : "shared", "type" : "db.demos.Shared" }
+          ],
           "map" : {
             "out.player.birthday" : "'1984-10-18'",
             "out.player.favoritecolor" : "\"blau\"",
-            "out.player.name" : "\"Tom\""
+            "out.player.name" : "\"Tom\"",
+            "out.shared" : "param.shared"
           }
         },
         "guid" : "1851132D2DA77620"

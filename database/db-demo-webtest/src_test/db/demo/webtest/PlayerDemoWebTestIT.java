@@ -10,29 +10,41 @@ import org.openqa.selenium.WebElement;
 
 import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
+import com.axonivy.ivy.webtest.primeui.PrimeUi;
+import com.axonivy.ivy.webtest.primeui.widget.SelectOneMenu;
 
-
-@IvyWebTest(headless = false) 
+@IvyWebTest(headless = false)
 public class PlayerDemoWebTestIT {
 
 	@Test
 	public void fillDialogForm() {
 		open(EngineUrl.createProcessUrl("db-demo/184BD5B00AD6A83D/start2.ivp"));
 
-		$(By.id("playerInputForm:name")).sendKeys("Tom");
-		$(By.id("playerInputForm:Birthday")).sendKeys("11.11.2010");
-		$(By.id("playerInputForm:FavoriteColor")).sendKeys("Yellow");
-		  
-		$(By.xpath("//tbody[@id = 'playerListForm:player_data']/tr[1]/td[4]"))
-		  .shouldBe(visible, match("is a primary key", el -> isNumber(el)));
-		$(By.id("playerInputForm:save")).shouldBe(enabled).click();
-		$(By.id("playerListForm:player:0:delete")).should(enabled).click();
+		$(By.id("Teams:teamInputForm:foundationDay_input")).sendKeys("11.11.2010");
+		$(By.id("Teams:teamInputForm:Teamname")).sendKeys("FCL");
+
+		$(By.xpath("//*[@id=\"Teams:teamListForm:team_data\"]/tr[1]/td[1]")).shouldBe(visible,
+				match("is a primary key", el -> isNumber(el)));
+		$(By.id("Teams:teamInputForm:saveTeam")).shouldBe(enabled).click();
+		$(By.id("Teams:teamListForm:team:0:delete")).should(enabled).click();
+
+		$(By.id("Players:playerInputForm:name")).sendKeys("Tom");
+		$(By.id("Players:playerInputForm:Birthday_input")).sendKeys("11.11.2010");
+		$(By.id("Players:playerInputForm:FavoriteColor")).sendKeys("Yellow");
+		SelectOneMenu menu = PrimeUi.selectOne(By.id("Players:playerInputForm:basic"));
+		menu.selectItemByLabel("FCB");
+
+		$(By.xpath("//*[@id=\"Players:playerListForm:player_data\"]/tr[2]/td[4]")).shouldBe(visible,
+				match("is a primary key", el -> isNumber(el)));
+		$(By.id("Players:playerInputForm:savePlayer")).shouldBe(enabled).click();
+		$(By.id("Players:playerListForm:player:0:delete")).should(enabled).click();
+
 	}
-	
+
 	private boolean isNumber(WebElement element) {
 		String text = element.getText();
 		int z = Integer.parseInt(text);
 		return z >= 0;
 	}
-	
+
 }

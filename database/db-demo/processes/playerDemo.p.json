@@ -8,7 +8,7 @@
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 776, "y" : 376 }
+        "at" : { "x" : 808, "y" : 376 }
       }
     }, {
       "id" : "f3",
@@ -23,6 +23,7 @@
             "name varchar(200),",
             "birthday date,",
             "favoritecolor varchar(50),",
+            "TID integer",
             ")"
           ]
         },
@@ -59,15 +60,15 @@
       "name" : "Interface",
       "config" : {
         "dialogId" : "db.demos.GameInterface",
-        "startMethod" : "start(db.demos.shared)",
+        "startMethod" : "start(db.demos.Shared)",
         "call" : {
           "params" : [
-            { "name" : "shared", "type" : "db.demos.shared" }
+            { "name" : "shared", "type" : "db.demos.Shared" }
           ]
         }
       },
       "visual" : {
-        "at" : { "x" : 664, "y" : 376 }
+        "at" : { "x" : 696, "y" : 376 }
       },
       "connect" : { "id" : "f4", "to" : "f1" }
     }, {
@@ -81,7 +82,8 @@
           "fields" : {
             "NAME" : "\"Timo\"",
             "FAVORITECOLOR" : "\"blau\"",
-            "BIRTHDAY" : "'1984-10-18'"
+            "BIRTHDAY" : "'1984-10-18'",
+            "TID" : "2"
           }
         },
         "dbUrl" : "FootballDB"
@@ -89,7 +91,7 @@
       "visual" : {
         "at" : { "x" : 496, "y" : 328 }
       },
-      "connect" : { "id" : "f20", "to" : "f13" }
+      "connect" : { "id" : "f11", "to" : "f19", "var" : "in2" }
     }, {
       "id" : "f5",
       "type" : "Database",
@@ -137,7 +139,7 @@
       "visual" : {
         "at" : { "x" : 496, "y" : 424 }
       },
-      "connect" : { "id" : "f11", "to" : "f13" }
+      "connect" : { "id" : "f21", "to" : "f19", "var" : "in1" }
     }, {
       "id" : "f16",
       "type" : "Split",
@@ -147,6 +149,15 @@
       "connect" : [
         { "id" : "f2", "to" : "f3", "outVar" : "out1" },
         { "id" : "f18", "to" : "f5", "outVar" : "out2" }
+      ]
+    }, {
+      "id" : "f19",
+      "type" : "Join",
+      "visual" : {
+        "at" : { "x" : 592, "y" : 376 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f13" }
       ]
     } ]
 }

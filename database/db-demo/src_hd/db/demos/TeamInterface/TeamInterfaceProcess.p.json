@@ -8,9 +8,17 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "HtmlDialogStart",
-      "name" : "start()",
+      "name" : "start(shared)",
       "config" : {
         "callSignature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "shared", "type" : "db.demos.Shared" }
+          ],
+          "map" : {
+            "out.shared" : "param.shared"
+          }
+        },
         "guid" : "1850FE353065187D"
       },
       "visual" : {

@@ -15,7 +15,6 @@
 			<ui:define name="title">PlayerInterface</ui:define>
 			<ui:define name="content">
 
-
 				<h:form id="playerListForm">
 					<p:messages />
 					<p:dataTable id="player" var="player" value="#{data.players}"
@@ -38,13 +37,14 @@
 						</p:column>
 
 						<p:column headerText="TID">
-							<h:outputText value="#{data.shared.team.TID}" />
+							<h:outputText value="#{player.team.TID}" />
 						</p:column>
 
 						<p:column headerText="Delete">
 							<p:commandButton id="delete"
+								style="background-color: FireBrick; border-style: none;"
 								actionListener="#{logic.deletePlayer(player)}" value="Delete"
-								update="j_id_h:playerListForm" icon="pi pi-check" />
+								update="Players:playerListForm" icon="pi pi-trash" />
 						</p:column>
 
 					</p:dataTable>
@@ -64,18 +64,18 @@
 						<p:calendar id="Birthday" value="#{data.player.birthday}"
 							pattern="dd.MM.yyyy" required="true">
 							<f:convertDateTime pattern="dd.MM.yyyy" />
-						</p:calendar> 
+						</p:calendar>
 
 						<p:outputLabel for="FavoriteColor" value="FavoriteColor" />
 						<p:inputText id="FavoriteColor"
 							value="#{data.player.favoritecolor}" required="true"></p:inputText>
 
 						<p:outputLabel for="@next" value="Team" />
-						<p:selectOneMenu id="basic" var="team"
-							value="#{data.shared.teams}">
-							<f:selectItem itemLabel="Select Team" itemValue="" />
+						<p:selectOneMenu id="basic" value="#{data.player.team}"
+							converter="ivy.ListItem">
+							<f:selectItem itemLabel="Select One" itemValue="" />
 							<f:selectItems value="#{data.shared.teams}" var="team"
-								itemValue="#{team.TID}" itemLabel="#{team.teamname}">
+								itemValue="#{team}" itemLabel="#{team.teamname}">
 							</f:selectItems>
 						</p:selectOneMenu>
 
@@ -84,8 +84,10 @@
 					<div class="command-btns">
 						<p:commandButton id="savePlayer"
 							actionListener="#{logic.savePlayer}" value="SavePlayer"
-							update="@all" icon="pi pi-check" />
+							update="@all" icon="pi pi-save"
+							style="background-color: Green; border-style: none;" />
 					</div>
+
 				</h:form>
 				<p:commandButton id="proceed" actionListener="#{logic.close}"
 					value="Proceed" update="playerListForm" icon="pi pi-check" />
