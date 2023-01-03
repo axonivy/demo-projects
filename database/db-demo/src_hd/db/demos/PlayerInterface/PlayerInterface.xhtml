@@ -71,7 +71,7 @@
 							value="#{data.player.favoritecolor}" required="true"></p:inputText>
 
 						<p:outputLabel for="@next" value="Team" />
-						<p:selectOneMenu id="basic" value="#{data.player.team}"
+						<p:selectOneMenu id="team" value="#{data.player.team}"
 							converter="ivy.ListItem">
 							<f:selectItem itemLabel="Select One" itemValue="" />
 							<f:selectItems value="#{data.shared.teams}" var="team"

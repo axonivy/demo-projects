@@ -4,6 +4,7 @@ import static com.codeborne.selenide.Condition.*;
 
 import static com.codeborne.selenide.Selenide.*;
 
+import org.hibernate.validator.internal.util.privilegedactions.LoadClass;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -26,18 +27,19 @@ public class PlayerDemoWebTestIT {
 		$(By.xpath("//*[@id=\"Teams:teamListForm:team_data\"]/tr[1]/td[1]")).shouldBe(visible,
 				match("is a primary key", el -> isNumber(el)));
 		$(By.id("Teams:teamInputForm:saveTeam")).shouldBe(enabled).click();
-		$(By.id("Teams:teamListForm:team:0:delete")).should(enabled).click();
-
+		$(By.id("Teams:teamListForm:team:1:delete")).should(enabled).click();
+		refresh();
 		$(By.id("Players:playerInputForm:name")).sendKeys("Tom");
 		$(By.id("Players:playerInputForm:Birthday_input")).sendKeys("11.11.2010");
+		refresh();
 		$(By.id("Players:playerInputForm:FavoriteColor")).sendKeys("Yellow");
-		SelectOneMenu menu = PrimeUi.selectOne(By.id("Players:playerInputForm:basic"));
+		SelectOneMenu menu = PrimeUi.selectOne(By.id("Players:playerInputForm:team"));
 		menu.selectItemByLabel("FCB");
-
-		$(By.xpath("//*[@id=\"Players:playerListForm:player_data\"]/tr[2]/td[4]")).shouldBe(visible,
+		
+		$(By.xpath("//*[@id=\"Players:playerListForm:player_data\"]/tr[1]/td[4]")).shouldBe(visible,
 				match("is a primary key", el -> isNumber(el)));
-		$(By.id("Players:playerInputForm:savePlayer")).shouldBe(enabled).click();
 		$(By.id("Players:playerListForm:player:0:delete")).should(enabled).click();
+		$(By.id("Players:playerInputForm:savePlayer")).shouldBe(enabled).click();
 
 	}
 

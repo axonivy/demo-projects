@@ -8,7 +8,7 @@
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 808, "y" : 376 }
+        "at" : { "x" : 960, "y" : 376 }
       }
     }, {
       "id" : "f3",
@@ -38,9 +38,9 @@
           "visual" : {
             "at" : { "x" : 360, "y" : 362 }
           },
-          "connect" : { "id" : "f8", "to" : "f12" }
+          "connect" : { "id" : "f24", "to" : "f22" }
         } ],
-      "connect" : { "id" : "f0", "to" : "f12" }
+      "connect" : { "id" : "f23", "to" : "f22" }
     }, {
       "id" : "f6",
       "type" : "RequestStart",
@@ -68,7 +68,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 696, "y" : 376 }
+        "at" : { "x" : 856, "y" : 376 }
       },
       "connect" : { "id" : "f4", "to" : "f1" }
     }, {
@@ -89,7 +89,7 @@
         "dbUrl" : "FootballDB"
       },
       "visual" : {
-        "at" : { "x" : 496, "y" : 328 }
+        "at" : { "x" : 648, "y" : 328 }
       },
       "connect" : { "id" : "f11", "to" : "f19", "var" : "in2" }
     }, {
@@ -116,11 +116,11 @@
           "id" : "f14",
           "type" : "ErrorBoundaryEvent",
           "visual" : {
-            "at" : { "x" : 360, "y" : 464 }
+            "at" : { "x" : 360, "y" : 456 }
           },
-          "connect" : { "id" : "f15", "to" : "f9" }
+          "connect" : { "id" : "f26", "to" : "f8" }
         } ],
-      "connect" : { "id" : "f10", "to" : "f9" }
+      "connect" : { "id" : "f25", "to" : "f8" }
     }, {
       "id" : "f9",
       "type" : "Database",
@@ -137,7 +137,7 @@
         "dbUrl" : "FootballDB"
       },
       "visual" : {
-        "at" : { "x" : 496, "y" : 424 }
+        "at" : { "x" : 648, "y" : 424 }
       },
       "connect" : { "id" : "f21", "to" : "f19", "var" : "in1" }
     }, {
@@ -154,10 +154,40 @@
       "id" : "f19",
       "type" : "Join",
       "visual" : {
-        "at" : { "x" : 592, "y" : 376 }
+        "at" : { "x" : 752, "y" : 376 }
       },
       "connect" : [
         { "id" : "f20", "to" : "f13" }
       ]
+    }, {
+      "id" : "f22",
+      "type" : "Database",
+      "name" : "Delete",
+      "config" : {
+        "query" : {
+          "kind" : "delete",
+          "table" : "PLAYERS"
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 488, "y" : 328 }
+      },
+      "connect" : { "id" : "f0", "to" : "f12" }
+    }, {
+      "id" : "f8",
+      "type" : "Database",
+      "name" : "Delete",
+      "config" : {
+        "query" : {
+          "kind" : "delete",
+          "table" : "TEAMS"
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 488, "y" : 424 }
+      },
+      "connect" : { "id" : "f10", "to" : "f9" }
     } ]
 }
