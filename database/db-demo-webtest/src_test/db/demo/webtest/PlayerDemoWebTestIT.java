@@ -14,7 +14,7 @@ import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.axonivy.ivy.webtest.primeui.PrimeUi;
 import com.axonivy.ivy.webtest.primeui.widget.SelectOneMenu;
 
-@IvyWebTest(headless = false)
+@IvyWebTest(headless = true)
 public class PlayerDemoWebTestIT {
 
 	@Test
