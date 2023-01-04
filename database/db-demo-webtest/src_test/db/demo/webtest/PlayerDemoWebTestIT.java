@@ -4,9 +4,9 @@ import static com.codeborne.selenide.Condition.*;
 
 import static com.codeborne.selenide.Selenide.*;
 
-import org.hibernate.validator.internal.util.privilegedactions.LoadClass;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import com.axonivy.ivy.webtest.IvyWebTest;
@@ -31,7 +31,7 @@ public class PlayerDemoWebTestIT {
 		refresh();
 		$(By.id("Players:playerInputForm:name")).sendKeys("Tom");
 		$(By.id("Players:playerInputForm:Birthday_input")).sendKeys("11.11.2010");
-		refresh();
+		$(By.id("Players:playerInputForm:Birthday_input")).sendKeys(Keys.TAB);
 		$(By.id("Players:playerInputForm:FavoriteColor")).sendKeys("Yellow");
 		SelectOneMenu menu = PrimeUi.selectOne(By.id("Players:playerInputForm:team"));
 		menu.selectItemByLabel("FCB");
