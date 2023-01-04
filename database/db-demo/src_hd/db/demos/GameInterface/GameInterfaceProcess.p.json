@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "format" : "11.1.0",
   "id" : "185100DEA8585324",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -11,18 +11,6 @@
       "name" : "start(shared)",
       "config" : {
         "callSignature" : "start",
-        "input" : {
-          "params" : [
-            { "name" : "shared", "type" : "db.demos.Shared" }
-          ],
-          "map" : {
-            "out.shared" : "param.shared"
-          },
-          "code" : [
-            "ivy.log.fatal(\"Start\");",
-            "ivy.log.info(\"Start\");"
-          ]
-        },
         "result" : {
           "params" : [
             { "name" : "player", "type" : "db.demos.Player" },
@@ -31,6 +19,14 @@
           "map" : {
             "result.player" : "in.player",
             "result.team" : "in.team"
+          }
+        },
+        "input" : {
+          "params" : [
+            { "name" : "shared", "type" : "db.demos.Shared" }
+          ],
+          "map" : {
+            "out.shared" : "param.shared"
           }
         },
         "guid" : "0185100DEA857D0B"
@@ -142,10 +138,7 @@
           "map" : {
             "out.player" : "param.player"
           },
-          "code" : [
-            "out.players.remove(param.player);",
-            "ivy.log.info(\"delete player\");"
-          ]
+          "code" : "out.players.remove(param.player);"
         },
         "guid" : "1851133987147F21"
       },
