@@ -5,8 +5,8 @@
       "data": {
         "projects": [
           {
-            "groupId": "MY-GROUP-ID",
-            "artifactId": "MY-PRODUCT-NAME-demo",
+            "groupId": "dbdemo",
+            "artifactId": "db-demo-demo",
             "version": "${version}",
             "type": "iar"
           }
@@ -27,8 +27,8 @@
       "data": {
         "dependencies": [
           {
-            "groupId": "MY-GROUP-ID",
-            "artifactId": "MY-PRODUCT-NAME",
+            "groupId": "dbdemo",
+            "artifactId": "db-demo",
             "version": "${version}",
             "type": "iar"
           }
