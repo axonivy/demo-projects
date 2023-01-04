@@ -11,7 +11,7 @@
     <!--<module>${project.name}-demo</module>-->
     <module>${project.name}-test</module>
     <module>${project.name}-webtest</module>
-    <!--<module>${project.name}-product</module>-->
+    <module>${project.name}-product</module>
   </modules>
 
   <scm>

@@ -1,11 +1,12 @@
-# MY-PRODUCT-NAME
+# database-demos
 
-YOUR DESCRIPTION GOES HERE
+[![CI Build](https://github.com/axonivy-market/db-demos/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/db-demos/actions/workflows/ci.yml)
 
-## Demo
+Axon Ivy's database demo shows how to create, read, update and delete data from database tables. With the help of database activities, you can integrate existing databases perfectly.
 
-YOUR DEMO DESCRIPTION GOES HERE
+## Test
 
-## Setup
+Database demo Shows how to test dabases with Process Test and Webtest.
 
-YOUR SETUP DESCRIPTION GOES HERE
+
+
