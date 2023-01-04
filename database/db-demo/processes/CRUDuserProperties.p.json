@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "format" : "11.1.0",
   "id" : "184A3F87F479F367",
   "config" : {
     "data" : "db.demos.Player"
@@ -128,6 +128,13 @@
       "visual" : {
         "at" : { "x" : 336, "y" : 256 }
       },
+      "boundaries" : [ {
+          "id" : "f17",
+          "type" : "ErrorBoundaryEvent",
+          "visual" : {
+            "at" : { "x" : 368, "y" : 296 }
+          }
+        } ],
       "connect" : { "id" : "f15", "to" : "f4" }
     }, {
       "id" : "f1",

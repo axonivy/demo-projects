@@ -1,0 +1,10 @@
+Shared #class
+db.demos #namespace
+player db.demos.Player #field
+player PERSISTENT #fieldModifier
+players List<db.demos.Player> #field
+players PERSISTENT #fieldModifier
+team db.demos.Team #field
+team PERSISTENT #fieldModifier
+teams List<db.demos.Team> #field
+teams PERSISTENT #fieldModifier
