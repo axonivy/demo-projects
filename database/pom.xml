@@ -3,7 +3,7 @@
   <groupId>com.axonivy.demo</groupId>
   <name>db-demos</name>
   <artifactId>db-demos-modules</artifactId><!-- fill your product name + a "-modules" postfix -->
-  <version>10.0.1-SNAPSHOT</version>
+  <version>10.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
