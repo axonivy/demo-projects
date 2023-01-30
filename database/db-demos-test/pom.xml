@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.axonivy.demo</groupId>
-  <artifactId>db-demo-test</artifactId>
+  <artifactId>db-demos-test</artifactId>
   <version>10.0.0-SNAPSHOT</version>
   <packaging>iar</packaging>
   <dependencies>
