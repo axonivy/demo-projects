@@ -1,4 +1,4 @@
-package db.demo.webtest;
+package db.demos.webtest;
 
 import static com.codeborne.selenide.Condition.*;
 
@@ -19,7 +19,7 @@ public class PlayerDemoWebTestIT {
 
 	@Test
 	public void fillDialogForm() {
-		open(EngineUrl.createProcessUrl("db-demo/184BD5B00AD6A83D/start2.ivp"));
+		open(EngineUrl.createProcessUrl("db-demos/184BD5B00AD6A83D/start2.ivp"));
 
 		$(By.id("Teams:teamInputForm:foundationDay_input")).sendKeys("11.11.2010");
 		$(By.id("Teams:teamInputForm:Teamname")).sendKeys("FCL");
