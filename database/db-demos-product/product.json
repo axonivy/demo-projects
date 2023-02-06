@@ -5,7 +5,7 @@
       "data": {
         "projects": [
           {
-            "groupId": "db.demo",
+            "groupId": "com.axonivy.demo",
             "artifactId": "db-demos",
             "version": "${version}",
             "type": "iar"
