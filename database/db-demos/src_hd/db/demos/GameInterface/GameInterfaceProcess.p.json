@@ -1,5 +1,5 @@
 {
-  "format" : "11.1.0",
+  "format" : "10.0.0",
   "id" : "185100DEA8585324",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -235,7 +235,7 @@
         "dbUrl" : "FootballDB"
       },
       "visual" : {
-        "at" : { "x" : 472, "y" : 336 }
+        "at" : { "x" : 480, "y" : 336 }
       },
       "connect" : { "id" : "f26", "to" : "f17" }
     }, {
@@ -274,7 +274,7 @@
         "dbUrl" : "FootballDB"
       },
       "visual" : {
-        "at" : { "x" : 640, "y" : 336 }
+        "at" : { "x" : 648, "y" : 336 }
       },
       "connect" : { "id" : "f6", "to" : "f1" }
     }, {
@@ -288,7 +288,7 @@
         "at" : { "x" : 336, "y" : 624 },
         "labelOffset" : { "x" : 11, "y" : 27 }
       },
-      "connect" : { "id" : "f27", "to" : "f25" }
+      "connect" : { "id" : "f15", "to" : "f25" }
     }, {
       "id" : "f25",
       "type" : "Database",
@@ -319,12 +319,55 @@
       "visual" : {
         "at" : { "x" : 472, "y" : 624 }
       },
-      "connect" : { "id" : "f15", "to" : "f13" }
+      "connect" : { "id" : "f31", "to" : "f29" }
     }, {
       "id" : "f13",
       "type" : "HtmlDialogEnd",
       "visual" : {
-        "at" : { "x" : 608, "y" : 624 }
+        "at" : { "x" : 776, "y" : 624 }
+      }
+    }, {
+      "id" : "f29",
+      "type" : "Database",
+      "name" : "ReadTeamTable",
+      "config" : {
+        "query" : {
+          "kind" : "read",
+          "table" : "TEAMS"
+        },
+        "output" : {
+          "code" : [
+            "import db.demos.Team;",
+            "",
+            "out.teams.clear();",
+            "out.shared.teams.clear();",
+            "",
+            "for (int i = 0; i < recordset.size(); i++) {",
+            "  Date foundationDay = recordset.getAt(i).getField(\"foundationDay\") as Date;",
+            "  Integer TID = recordset.getAt(i).getField(\"TID\") as Integer;",
+            "  String teamname = recordset.getAt(i).getField(\"teamname\") as String;",
+            "  ",
+            "  Team team = new Team();",
+            "  team.setTeamname(teamname);",
+            "  team.setFoundationDay(foundationDay);",
+            "  team.setTID(TID);",
+            "  out.teams.add(team);",
+            "  out.shared.teams.add(team);",
+            "  ",
+            "  }"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 648, "y" : 624 }
+      },
+      "connect" : { "id" : "f34", "to" : "f13" }
+    }, {
+      "id" : "f32",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 776, "y" : 624 }
       }
     } ]
 }

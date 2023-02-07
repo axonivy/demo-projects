@@ -1,7 +1,7 @@
-# MY-PRODUCT-NAME
+# Database Demos
 
-[![CI Build](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml)
+[![CI Build](https://github.com/axonivy-market/db-demos/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/db-demos/actions/workflows/ci.yml)
 
-"YOUR SHORT DESCRIPTION GOES HERE"
+Axon Ivy's database demo shows how to create, read, update and delete data from database tables. With the help of database activities, you can integrate existing databases perfectly.
 
-Read our [documentation](MY-PRODUCT-NAME-product/README.md).
+Read our [documentation](https://github.com/axonivy-market/db-demos/blob/master/db-demos-product/README.md).
