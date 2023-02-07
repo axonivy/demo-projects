@@ -4,4 +4,4 @@
 
 Axon Ivy's database demo shows how to create, read, update and delete data from database tables. With the help of database activities, you can integrate existing databases perfectly.
 
-Read our [documentation](https://dev.axonivy.com/doc/10.0/designer-guide/configuration/databases.html#databases).
+Read our [documentation](https://github.com/axonivy-market/db-demos/blob/master/db-demos-product/README.md).
