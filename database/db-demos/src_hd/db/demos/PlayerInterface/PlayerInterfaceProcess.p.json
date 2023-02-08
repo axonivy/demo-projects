@@ -13,14 +13,14 @@
         "guid" : "184BE51DDAED2BBA"
       },
       "visual" : {
-        "at" : { "x" : 344, "y" : 336 }
+        "at" : { "x" : 344, "y" : 496 }
       },
       "connect" : { "id" : "f17", "to" : "f4" }
     }, {
       "id" : "f4",
       "type" : "HtmlDialogExit",
       "visual" : {
-        "at" : { "x" : 496, "y" : 336 }
+        "at" : { "x" : 608, "y" : 496 }
       }
     }, {
       "id" : "f7",
@@ -42,14 +42,151 @@
         "guid" : "1851132D2DA77620"
       },
       "visual" : {
-        "at" : { "x" : 344, "y" : 264 }
+        "at" : { "x" : 344, "y" : 256 }
       },
-      "connect" : { "id" : "f0", "to" : "f8" }
+      "connect" : { "id" : "f2", "to" : "f5" }
     }, {
       "id" : "f8",
       "type" : "HtmlDialogEnd",
       "visual" : {
-        "at" : { "x" : 496, "y" : 264 }
+        "at" : { "x" : 608, "y" : 256 }
       }
+    }, {
+      "id" : "f18",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 336 }
+      }
+    }, {
+      "id" : "f20",
+      "type" : "HtmlDialogEventStart",
+      "name" : "savePlayer",
+      "config" : {
+        "guid" : "1863071AEEA3BE01"
+      },
+      "visual" : {
+        "at" : { "x" : 344, "y" : 336 },
+        "labelOffset" : { "x" : 11, "y" : 27 }
+      },
+      "connect" : { "id" : "f10", "to" : "f23" }
+    }, {
+      "id" : "f21",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 416 }
+      }
+    }, {
+      "id" : "f22",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "deletePlayer(player)",
+      "config" : {
+        "callSignature" : "deletePlayer",
+        "input" : {
+          "params" : [
+            { "name" : "player", "type" : "db.demos.Player" }
+          ],
+          "map" : {
+            "out.player" : "param.player"
+          },
+          "code" : "out.players.remove(param.player);"
+        },
+        "guid" : "1863071AEEA7E7ED"
+      },
+      "visual" : {
+        "at" : { "x" : 344, "y" : 416 }
+      },
+      "connect" : { "id" : "f30", "to" : "f24" }
+    }, {
+      "id" : "f23",
+      "type" : "Database",
+      "name" : "WritePlayer",
+      "config" : {
+        "query" : {
+          "kind" : "write",
+          "table" : "PLAYERS",
+          "fields" : {
+            "FAVORITECOLOR" : "in.player.favoritecolor",
+            "BIRTHDAY" : "in.player.birthday",
+            "NAME" : "in.player.name",
+            "TID" : "in.player.team.TID"
+          }
+        },
+        "output" : {
+          "code" : [
+            "import db.demos.Player;",
+            "in.player.setPID(lastInsertedId);",
+            "out.players.add(in.player);",
+            "out.player = new Player();"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 480, "y" : 336 }
+      },
+      "connect" : { "id" : "f1", "to" : "f18" }
+    }, {
+      "id" : "f24",
+      "type" : "Database",
+      "name" : "DeletePlayer",
+      "config" : {
+        "query" : {
+          "kind" : "delete",
+          "table" : "PLAYERS",
+          "condition" : "PID = <%=in.player.PID%>"
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 480, "y" : 416 }
+      },
+      "connect" : { "id" : "f28", "to" : "f21" }
+    }, {
+      "id" : "f5",
+      "type" : "Database",
+      "name" : "ReadPlayerTable",
+      "config" : {
+        "query" : {
+          "kind" : "read",
+          "table" : "PLAYERS"
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.player.birthday" : "'1922-11-07'",
+            "out.player.favoritecolor" : "\"Blue\"",
+            "out.player.name" : "\"Tom\""
+          },
+          "code" : [
+            "import db.demos.Player;",
+            "import db.demos.Team;",
+            "",
+            "for (int i = 0; i < recordset.size(); i++) {",
+            "  String name = recordset.getAt(i).getField(\"name\") as String;",
+            "  String favoritecolor = recordset.getAt(i).getField(\"favoritecolor\") as String;",
+            "  Date birthday = recordset.getAt(i).getField(\"birthday\") as Date;",
+            "  Integer PID = recordset.getAt(i).getField(\"PID\") as Integer;",
+            "  Integer TID = recordset.getAt(i).getField(\"TID\") as Integer;",
+            "  ",
+            "  Player player = new Player();",
+            "  player.setFavoritecolor(favoritecolor);",
+            "  player.setName(name);",
+            "  player.setBirthday(birthday);",
+            "  player.setPID(PID);",
+            "  Team team = new Team();",
+            "  team.setTID(TID);",
+            "  player.setTeam(team);",
+            "  out.players.add(player);",
+            "  out.shared.players.add(player);",
+            "",
+            "  }"
+          ]
+        },
+        "dbUrl" : "FootballDB"
+      },
+      "visual" : {
+        "at" : { "x" : 480, "y" : 256 }
+      },
+      "connect" : { "id" : "f0", "to" : "f8" }
     } ]
 }

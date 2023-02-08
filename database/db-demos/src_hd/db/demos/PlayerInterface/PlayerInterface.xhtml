@@ -7,92 +7,86 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 <cc:interface componentType="IvyComponent">
+
+	<cc:implementation>
+
+		<h:form id="playerListForm">
+			<p:messages />
+			<p:dataTable id="player" var="player" value="#{data.players}"
+				showGridlines="true">
+
+				<p:column headerText="Name">
+					<h:outputText value="#{player.name}" />
+				</p:column>
+
+				<p:column headerText="Birthday">
+					<h:outputText value="#{player.birthday}" />
+				</p:column>
+
+				<p:column headerText="Favorite Color">
+					<h:outputText value="#{player.favoritecolor}" />
+				</p:column>
+
+				<p:column headerText="PID">
+					<h:outputText value="#{player.PID}" />
+				</p:column>
+
+				<p:column headerText="TID">
+					<h:outputText value="#{player.team.TID}" />
+				</p:column>
+
+				<p:column headerText="Delete">
+					<p:commandButton id="delete"
+						style="background-color: FireBrick; border-style: none;"
+						actionListener="#{logic.deletePlayer(player)}" value="Delete"
+						update="Players:playerListForm" icon="pi pi-trash" />
+				</p:column>
+
+			</p:dataTable>
+			<br />
+			<div class="command-btns"></div>
+		</h:form>
+		<h:form id="playerInputForm">
+			<p:panelGrid columns="2" layout="grid"
+				styleClass="ui-panelgrid-blank ui-fluid"
+				columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
+
+				<p:outputLabel for="name" value="Name" />
+				<p:inputText id="name" value="#{data.player.name}" required="true"></p:inputText>
+
+
+				<p:outputLabel for="Birthday" value="Birthday" />
+				<p:calendar id="Birthday" value="#{data.player.birthday}"
+					pattern="dd.MM.yyyy" required="true">
+					<f:convertDateTime pattern="dd.MM.yyyy" />
+				</p:calendar>
+
+				<p:outputLabel for="FavoriteColor" value="FavoriteColor" />
+				<p:inputText id="FavoriteColor" value="#{data.player.favoritecolor}"
+					required="true"></p:inputText>
+
+				<p:outputLabel for="@next" value="Team" />
+				<p:selectOneMenu id="team" value="#{data.player.team}"
+					converter="ivy.ListItem">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItems value="#{data.shared.teams}" var="team"
+						itemValue="#{team}" itemLabel="#{team.teamname}">
+					</f:selectItems>
+				</p:selectOneMenu>
+
+			</p:panelGrid>
+
+			<div class="command-btns">
+				<p:commandButton id="savePlayer"
+					actionListener="#{logic.savePlayer}" value="SavePlayer"
+					update="@all" icon="pi pi-save"
+					style="background-color: Green; border-style: none;" />
+			</div>
+
+		</h:form>
+		<p:commandButton id="proceed" actionListener="#{logic.close}"
+			value="Proceed" update="playerListForm" icon="pi pi-check" />
+
+	</cc:implementation>
 </cc:interface>
-<cc:implementation>
-	<h:body>
-
-		<ui:composition template="/layouts/frame-10.xhtml">
-			<ui:define name="title">PlayerInterface</ui:define>
-			<ui:define name="content">
-
-				<h:form id="playerListForm">
-					<p:messages />
-					<p:dataTable id="player" var="player" value="#{data.players}"
-						showGridlines="true">
-
-						<p:column headerText="Name">
-							<h:outputText value="#{player.name}" />
-						</p:column>
-
-						<p:column headerText="Birthday">
-							<h:outputText value="#{player.birthday}" />
-						</p:column>
-
-						<p:column headerText="Favorite Color">
-							<h:outputText value="#{player.favoritecolor}" />
-						</p:column>
-
-						<p:column headerText="PID">
-							<h:outputText value="#{player.PID}" />
-						</p:column>
-
-						<p:column headerText="TID">
-							<h:outputText value="#{player.team.TID}" />
-						</p:column>
-
-						<p:column headerText="Delete">
-							<p:commandButton id="delete"
-								style="background-color: FireBrick; border-style: none;"
-								actionListener="#{logic.deletePlayer(player)}" value="Delete"
-								update="Players:playerListForm" icon="pi pi-trash" />
-						</p:column>
-
-					</p:dataTable>
-					<br />
-					<div class="command-btns"></div>
-				</h:form>
-				<h:form id="playerInputForm">
-					<p:panelGrid columns="2" layout="grid"
-						styleClass="ui-panelgrid-blank ui-fluid"
-						columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
-
-						<p:outputLabel for="name" value="Name" />
-						<p:inputText id="name" value="#{data.player.name}" required="true"></p:inputText>
-
-
-						<p:outputLabel for="Birthday" value="Birthday" />
-						<p:calendar id="Birthday" value="#{data.player.birthday}"
-							pattern="dd.MM.yyyy" required="true">
-							<f:convertDateTime pattern="dd.MM.yyyy" />
-						</p:calendar>
-
-						<p:outputLabel for="FavoriteColor" value="FavoriteColor" />
-						<p:inputText id="FavoriteColor"
-							value="#{data.player.favoritecolor}" required="true"></p:inputText>
-
-						<p:outputLabel for="@next" value="Team" />
-						<p:selectOneMenu id="team" value="#{data.player.team}"
-							converter="ivy.ListItem">
-							<f:selectItem itemLabel="Select One" itemValue="" />
-							<f:selectItems value="#{data.shared.teams}" var="team"
-								itemValue="#{team}" itemLabel="#{team.teamname}">
-							</f:selectItems>
-						</p:selectOneMenu>
-
-					</p:panelGrid>
-
-					<div class="command-btns">
-						<p:commandButton id="savePlayer"
-							actionListener="#{logic.savePlayer}" value="SavePlayer"
-							update="@all" icon="pi pi-save"
-							style="background-color: Green; border-style: none;" />
-					</div>
-
-				</h:form>
-				<p:commandButton id="proceed" actionListener="#{logic.close}"
-					value="Proceed" update="playerListForm" icon="pi pi-check" />
-			</ui:define>
-		</ui:composition>
-	</h:body>
-</cc:implementation>
 </html>
