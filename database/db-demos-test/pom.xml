@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>db-demos-test</artifactId>
-  <version>10.0.5-SNAPSHOT</version>
+  <version>10.0.5</version>
   <packaging>iar</packaging>
   <dependencies>
     <dependency>
