@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "184BD5B00AD6A83D",
   "config" : {
     "data" : "db.demos.Player"
@@ -14,16 +14,18 @@
           "name" : "CreateTeam",
           "config" : {
             "query" : {
-              "kind" : "any",
-              "stmt" : [
-                "create table teams(",
-                "TID integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY not null,",
-                "foundingday date,",
-                "teamname varchar(200)",
-                ")"
-              ]
-            },
-            "dbUrl" : "FootballDB"
+              "dbName" : "FootballDB",
+              "sql" : {
+                "kind" : "ANY",
+                "stmt" : [
+                  "create table teams(",
+                  "TID integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY not null,",
+                  "foundingday date,",
+                  "teamname varchar(200)",
+                  ")"
+                ]
+              }
+            }
           },
           "visual" : {
             "at" : { "x" : 192, "y" : 152 }
@@ -34,24 +36,32 @@
               "visual" : {
                 "at" : { "x" : 232, "y" : 186 }
               },
-              "connect" : { "id" : "S20-f3", "to" : "S20-f8" }
+              "connect" : [
+                { "id" : "S20-f3", "to" : "S20-f8" }
+              ]
             } ],
-          "connect" : { "id" : "S20-f25", "to" : "S20-f8" }
+          "connect" : [
+            { "id" : "S20-f25", "to" : "S20-f8" }
+          ]
         }, {
           "id" : "S20-f8",
           "type" : "Database",
           "name" : "Delete",
           "config" : {
             "query" : {
-              "kind" : "delete",
-              "table" : "TEAMS"
-            },
-            "dbUrl" : "FootballDB"
+              "dbName" : "FootballDB",
+              "sql" : {
+                "kind" : "DELETE",
+                "table" : "TEAMS"
+              }
+            }
           },
           "visual" : {
             "at" : { "x" : 352, "y" : 152 }
           },
-          "connect" : { "id" : "S20-f1", "to" : "S20-g1" }
+          "connect" : [
+            { "id" : "S20-f1", "to" : "S20-g1" }
+          ]
         }, {
           "id" : "S20-g0",
           "type" : "EmbeddedStart",
@@ -60,7 +70,9 @@
             "at" : { "x" : 64, "y" : 152 }
           },
           "parentConnector" : "f0",
-          "connect" : { "id" : "S20-f0", "to" : "S20-f5" }
+          "connect" : [
+            { "id" : "S20-f0", "to" : "S20-f5" }
+          ]
         }, {
           "id" : "S20-g1",
           "type" : "EmbeddedEnd",
@@ -73,7 +85,9 @@
       "visual" : {
         "at" : { "x" : 488, "y" : 424 }
       },
-      "connect" : { "id" : "f2", "to" : "f9" }
+      "connect" : [
+        { "id" : "f2", "to" : "f9" }
+      ]
     }, {
       "id" : "S10",
       "type" : "EmbeddedProcess",
@@ -84,33 +98,39 @@
           "name" : "Delete",
           "config" : {
             "query" : {
-              "kind" : "delete",
-              "table" : "PLAYERS"
-            },
-            "dbUrl" : "FootballDB"
+              "dbName" : "FootballDB",
+              "sql" : {
+                "kind" : "DELETE",
+                "table" : "PLAYERS"
+              }
+            }
           },
           "visual" : {
             "at" : { "x" : 352, "y" : 160 }
           },
-          "connect" : { "id" : "S10-f1", "to" : "S10-g1" }
+          "connect" : [
+            { "id" : "S10-f1", "to" : "S10-g1" }
+          ]
         }, {
           "id" : "S10-f3",
           "type" : "Database",
           "name" : "CreatePlayer",
           "config" : {
             "query" : {
-              "kind" : "any",
-              "stmt" : [
-                "create table players(",
-                "PID integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY not null,",
-                "name varchar(200),",
-                "birthday date,",
-                "favoritecolor varchar(50),",
-                "TID integer",
-                ")"
-              ]
-            },
-            "dbUrl" : "FootballDB"
+              "dbName" : "FootballDB",
+              "sql" : {
+                "kind" : "ANY",
+                "stmt" : [
+                  "create table players(",
+                  "PID integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY not null,",
+                  "name varchar(200),",
+                  "birthday date,",
+                  "favoritecolor varchar(50),",
+                  "TID integer",
+                  ")"
+                ]
+              }
+            }
           },
           "visual" : {
             "at" : { "x" : 192, "y" : 160 }
@@ -121,9 +141,13 @@
               "visual" : {
                 "at" : { "x" : 224, "y" : 200 }
               },
-              "connect" : { "id" : "S10-f4", "to" : "S10-f22" }
+              "connect" : [
+                { "id" : "S10-f4", "to" : "S10-f22" }
+              ]
             } ],
-          "connect" : { "id" : "S10-f23", "to" : "S10-f22" }
+          "connect" : [
+            { "id" : "S10-f23", "to" : "S10-f22" }
+          ]
         }, {
           "id" : "S10-g0",
           "type" : "EmbeddedStart",
@@ -132,7 +156,9 @@
             "at" : { "x" : 64, "y" : 160 }
           },
           "parentConnector" : "f15",
-          "connect" : { "id" : "S10-f0", "to" : "S10-f3" }
+          "connect" : [
+            { "id" : "S10-f0", "to" : "S10-f3" }
+          ]
         }, {
           "id" : "S10-g1",
           "type" : "EmbeddedEnd",
@@ -145,7 +171,9 @@
       "visual" : {
         "at" : { "x" : 488, "y" : 328 }
       },
-      "connect" : { "id" : "f27", "to" : "f12" }
+      "connect" : [
+        { "id" : "f27", "to" : "f12" }
+      ]
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
@@ -157,58 +185,62 @@
       "type" : "DialogCall",
       "name" : "Interface",
       "config" : {
-        "dialogId" : "db.demos.GameInterface",
-        "startMethod" : "start(db.demos.Shared)",
-        "call" : {
-          "params" : [
-            { "name" : "shared", "type" : "db.demos.Shared" }
-          ]
-        }
+        "dialog" : "db.demos.GameInterface:start(db.demos.Shared)"
       },
       "visual" : {
         "at" : { "x" : 856, "y" : 376 }
       },
-      "connect" : { "id" : "f4", "to" : "f1" }
+      "connect" : [
+        { "id" : "f4", "to" : "f1" }
+      ]
     }, {
       "id" : "f12",
       "type" : "Database",
       "name" : "Write",
       "config" : {
         "query" : {
-          "kind" : "write",
-          "table" : "PLAYERS",
-          "fields" : {
-            "NAME" : "\"Timo\"",
-            "FAVORITECOLOR" : "\"blau\"",
-            "BIRTHDAY" : "'1984-10-18'",
-            "TID" : "2"
+          "dbName" : "FootballDB",
+          "sql" : {
+            "kind" : "WRITE",
+            "table" : "PLAYERS",
+            "fields" : {
+              "NAME" : "\"Timo\"",
+              "FAVORITECOLOR" : "\"blau\"",
+              "BIRTHDAY" : "'1984-10-18'",
+              "TID" : "2"
+            }
           }
-        },
-        "dbUrl" : "FootballDB"
+        }
       },
       "visual" : {
         "at" : { "x" : 648, "y" : 328 }
       },
-      "connect" : { "id" : "f11", "to" : "f19", "var" : "in2" }
+      "connect" : [
+        { "id" : "f11", "to" : "f19", "var" : "in2" }
+      ]
     }, {
       "id" : "f9",
       "type" : "Database",
       "name" : "Write",
       "config" : {
         "query" : {
-          "kind" : "write",
-          "table" : "TEAMS",
-          "fields" : {
-            "TEAMNAME" : "\"FCB\"",
-            "FOUNDINGDAY" : "'1921-09-24'"
+          "dbName" : "FootballDB",
+          "sql" : {
+            "kind" : "WRITE",
+            "table" : "TEAMS",
+            "fields" : {
+              "TEAMNAME" : "\"FCB\"",
+              "FOUNDINGDAY" : "'1921-09-24'"
+            }
           }
-        },
-        "dbUrl" : "FootballDB"
+        }
       },
       "visual" : {
         "at" : { "x" : 648, "y" : 424 }
       },
-      "connect" : { "id" : "f21", "to" : "f19", "var" : "in1" }
+      "connect" : [
+        { "id" : "f21", "to" : "f19", "var" : "in1" }
+      ]
     }, {
       "id" : "f16",
       "type" : "Split",
@@ -233,12 +265,13 @@
       "type" : "RequestStart",
       "name" : "crudPlayerDialog.ivp",
       "config" : {
-        "callSignature" : "crudPlayerDialog",
-        "outLink" : "crudPlayerDialog.ivp"
+        "signature" : "crudPlayerDialog"
       },
       "visual" : {
         "at" : { "x" : 328, "y" : 376 }
       },
-      "connect" : { "id" : "f5", "to" : "f16" }
+      "connect" : [
+        { "id" : "f5", "to" : "f16" }
+      ]
     } ]
 }

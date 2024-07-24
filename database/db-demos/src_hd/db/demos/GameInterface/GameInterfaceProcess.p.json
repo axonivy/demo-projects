@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "185100DEA8585324",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -10,23 +10,23 @@
       "type" : "HtmlDialogStart",
       "name" : "start(shared)",
       "config" : {
-        "callSignature" : "start",
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "shared", "type" : "db.demos.Shared", "desc" : "" }
+          ],
+          "map" : {
+            "out.shared" : "param.shared"
+          }
+        },
         "result" : {
           "params" : [
-            { "name" : "player", "type" : "db.demos.Player" },
-            { "name" : "team", "type" : "db.demos.Team" }
+            { "name" : "player", "type" : "db.demos.Player", "desc" : "" },
+            { "name" : "team", "type" : "db.demos.Team", "desc" : "" }
           ],
           "map" : {
             "result.player" : "in.player",
             "result.team" : "in.team"
-          }
-        },
-        "input" : {
-          "params" : [
-            { "name" : "shared", "type" : "db.demos.Shared" }
-          ],
-          "map" : {
-            "out.shared" : "param.shared"
           }
         },
         "guid" : "0185100DEA857D0B"
@@ -34,7 +34,9 @@
       "visual" : {
         "at" : { "x" : 336, "y" : 336 }
       },
-      "connect" : { "id" : "f5", "to" : "f1" }
+      "connect" : [
+        { "id" : "f5", "to" : "f1" }
+      ]
     }, {
       "id" : "f3",
       "type" : "HtmlDialogEventStart",
@@ -45,7 +47,9 @@
       "visual" : {
         "at" : { "x" : 336, "y" : 400 }
       },
-      "connect" : { "id" : "f4", "to" : "f2" }
+      "connect" : [
+        { "id" : "f4", "to" : "f2" }
+      ]
     }, {
       "id" : "f1",
       "type" : "HtmlDialogEnd",

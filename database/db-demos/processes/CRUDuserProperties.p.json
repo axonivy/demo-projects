@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "184A3F87F479F367",
   "config" : {
     "data" : "db.demos.Player"
@@ -10,30 +10,36 @@
       "name" : "Update",
       "config" : {
         "query" : {
-          "kind" : "update",
-          "table" : "IWA_USERPROPERTY",
-          "fields" : {
-            "PROPERTYNAME" : "\"FavoritColor\"",
-            "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
-            "PROPERTYVALUE" : "\"Red\""
-          },
-          "condition" : "USERPROPERTYID  = <%=in.Id%>"
-        },
-        "dbUrl" : "IvySystemDatabase"
+          "dbName" : "IvySystemDatabase",
+          "sql" : {
+            "kind" : "UPDATE",
+            "table" : "IWA_USERPROPERTY",
+            "condition" : "USERPROPERTYID  = <%=in.Id%>",
+            "fields" : {
+              "PROPERTYNAME" : "\"FavoritColor\"",
+              "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
+              "PROPERTYVALUE" : "\"Red\""
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 664, "y" : 256 }
       },
-      "connect" : { "id" : "f8", "to" : "f7" }
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
     }, {
       "id" : "f4",
       "type" : "Database",
       "name" : "Read",
       "config" : {
         "query" : {
-          "kind" : "read",
-          "table" : "IWA_USERPROPERTY",
-          "condition" : "USERPROPERTYID  = <%=in.Id%>"
+          "dbName" : "IvySystemDatabase",
+          "sql" : {
+            "table" : "IWA_USERPROPERTY",
+            "condition" : "USERPROPERTYID  = <%=in.Id%>"
+          }
         },
         "output" : {
           "map" : {
@@ -46,84 +52,94 @@
             "String color = record.getField(\"PROPERTYVALUE\") as String;",
             "ivy.log.info(\"your favorite color is \" + color);"
           ]
-        },
-        "dbUrl" : "IvySystemDatabase"
+        }
       },
       "visual" : {
         "at" : { "x" : 496, "y" : 256 }
       },
-      "connect" : { "id" : "f14", "to" : "f5" }
+      "connect" : [
+        { "id" : "f14", "to" : "f5" }
+      ]
     }, {
       "id" : "f6",
       "type" : "RequestStart",
       "name" : "Update.ivp",
       "config" : {
-        "callSignature" : "Update",
-        "outLink" : "Update.ivp"
+        "signature" : "Update"
       },
       "visual" : {
         "at" : { "x" : 664, "y" : 192 },
         "labelOffset" : { "x" : 17, "y" : -15 }
       },
-      "connect" : { "id" : "f10", "to" : "f5" }
+      "connect" : [
+        { "id" : "f10", "to" : "f5" }
+      ]
     }, {
       "id" : "f9",
       "type" : "RequestStart",
       "name" : "Delete.ivp",
       "config" : {
-        "callSignature" : "Detelet",
-        "outLink" : "Detelet.ivp"
+        "signature" : "Detelet"
       },
       "visual" : {
         "at" : { "x" : 824, "y" : 192 },
         "labelOffset" : { "x" : 17, "y" : -15 }
       },
-      "connect" : { "id" : "f11", "to" : "f7" }
+      "connect" : [
+        { "id" : "f11", "to" : "f7" }
+      ]
     }, {
       "id" : "f7",
       "type" : "Database",
       "name" : "Delete",
       "config" : {
         "query" : {
-          "kind" : "delete",
-          "table" : "IWA_USERPROPERTY",
-          "condition" : "USERPROPERTYID  = <%=in.Id%>"
-        },
-        "dbUrl" : "IvySystemDatabase"
+          "dbName" : "IvySystemDatabase",
+          "sql" : {
+            "kind" : "DELETE",
+            "table" : "IWA_USERPROPERTY",
+            "condition" : "USERPROPERTYID  = <%=in.Id%>"
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 824, "y" : 256 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     }, {
       "id" : "f3",
       "type" : "RequestStart",
       "name" : "Read.ivp",
       "config" : {
-        "callSignature" : "Read",
-        "outLink" : "Read.ivp"
+        "signature" : "Read"
       },
       "visual" : {
         "at" : { "x" : 496, "y" : 192 },
         "labelOffset" : { "x" : 17, "y" : -15 }
       },
-      "connect" : { "id" : "f16", "to" : "f4" }
+      "connect" : [
+        { "id" : "f16", "to" : "f4" }
+      ]
     }, {
       "id" : "f12",
       "type" : "Database",
       "name" : "Create",
       "config" : {
         "query" : {
-          "kind" : "write",
-          "table" : "IWA_USERPROPERTY",
-          "fields" : {
-            "PROPERTYNAME" : "\"FavoritColor\"",
-            "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
-            "PROPERTYVALUE" : "\"blue\"",
-            "USERPROPERTYID" : "in.Id"
+          "dbName" : "IvySystemDatabase",
+          "sql" : {
+            "kind" : "WRITE",
+            "table" : "IWA_USERPROPERTY",
+            "fields" : {
+              "PROPERTYNAME" : "\"FavoritColor\"",
+              "SECURITYMEMBERID" : "ivy.session.getSessionUser().getSecurityMemberId()",
+              "PROPERTYVALUE" : "\"blue\"",
+              "USERPROPERTYID" : "in.Id"
+            }
           }
-        },
-        "dbUrl" : "IvySystemDatabase"
+        }
       },
       "visual" : {
         "at" : { "x" : 336, "y" : 256 }
@@ -135,7 +151,9 @@
             "at" : { "x" : 368, "y" : 296 }
           }
         } ],
-      "connect" : { "id" : "f15", "to" : "f4" }
+      "connect" : [
+        { "id" : "f15", "to" : "f4" }
+      ]
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
@@ -147,18 +165,19 @@
       "type" : "RequestStart",
       "name" : "Create.ivp",
       "config" : {
-        "callSignature" : "Create",
+        "signature" : "Create",
         "input" : {
           "map" : {
             "out.Id" : "23"
           }
-        },
-        "outLink" : "Create.ivp"
+        }
       },
       "visual" : {
         "at" : { "x" : 232, "y" : 256 },
         "labelOffset" : { "x" : 17, "y" : 33 }
       },
-      "connect" : { "id" : "f13", "to" : "f12" }
+      "connect" : [
+        { "id" : "f13", "to" : "f12" }
+      ]
     } ]
 }

@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "184BE51DDAD4D046",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -15,7 +15,9 @@
       "visual" : {
         "at" : { "x" : 344, "y" : 496 }
       },
-      "connect" : { "id" : "f17", "to" : "f4" }
+      "connect" : [
+        { "id" : "f17", "to" : "f4" }
+      ]
     }, {
       "id" : "f4",
       "type" : "HtmlDialogExit",
@@ -27,10 +29,10 @@
       "type" : "HtmlDialogStart",
       "name" : "start(shared)",
       "config" : {
-        "callSignature" : "start",
+        "signature" : "start",
         "input" : {
           "params" : [
-            { "name" : "shared", "type" : "db.demos.Shared" }
+            { "name" : "shared", "type" : "db.demos.Shared", "desc" : "" }
           ],
           "map" : {
             "out.player.birthday" : "'1984-10-18'",
@@ -44,7 +46,9 @@
       "visual" : {
         "at" : { "x" : 344, "y" : 256 }
       },
-      "connect" : { "id" : "f2", "to" : "f5" }
+      "connect" : [
+        { "id" : "f2", "to" : "f5" }
+      ]
     }, {
       "id" : "f8",
       "type" : "HtmlDialogEnd",
@@ -68,7 +72,9 @@
         "at" : { "x" : 344, "y" : 336 },
         "labelOffset" : { "x" : 11, "y" : 27 }
       },
-      "connect" : { "id" : "f10", "to" : "f23" }
+      "connect" : [
+        { "id" : "f10", "to" : "f23" }
+      ]
     }, {
       "id" : "f21",
       "type" : "HtmlDialogEnd",
@@ -80,10 +86,10 @@
       "type" : "HtmlDialogMethodStart",
       "name" : "deletePlayer(player)",
       "config" : {
-        "callSignature" : "deletePlayer",
+        "signature" : "deletePlayer",
         "input" : {
           "params" : [
-            { "name" : "player", "type" : "db.demos.Player" }
+            { "name" : "player", "type" : "db.demos.Player", "desc" : "" }
           ],
           "map" : {
             "out.player" : "param.player"
@@ -95,20 +101,25 @@
       "visual" : {
         "at" : { "x" : 344, "y" : 416 }
       },
-      "connect" : { "id" : "f30", "to" : "f24" }
+      "connect" : [
+        { "id" : "f30", "to" : "f24" }
+      ]
     }, {
       "id" : "f23",
       "type" : "Database",
       "name" : "WritePlayer",
       "config" : {
         "query" : {
-          "kind" : "write",
-          "table" : "PLAYERS",
-          "fields" : {
-            "FAVORITECOLOR" : "in.player.favoritecolor",
-            "BIRTHDAY" : "in.player.birthday",
-            "NAME" : "in.player.name",
-            "TID" : "in.player.team.TID"
+          "dbName" : "FootballDB",
+          "sql" : {
+            "kind" : "WRITE",
+            "table" : "PLAYERS",
+            "fields" : {
+              "FAVORITECOLOR" : "in.player.favoritecolor",
+              "BIRTHDAY" : "in.player.birthday",
+              "NAME" : "in.player.name",
+              "TID" : "in.player.team.TID"
+            }
           }
         },
         "output" : {
@@ -118,37 +129,44 @@
             "out.players.add(in.player);",
             "out.player = new Player();"
           ]
-        },
-        "dbUrl" : "FootballDB"
+        }
       },
       "visual" : {
         "at" : { "x" : 480, "y" : 336 }
       },
-      "connect" : { "id" : "f1", "to" : "f18" }
+      "connect" : [
+        { "id" : "f1", "to" : "f18" }
+      ]
     }, {
       "id" : "f24",
       "type" : "Database",
       "name" : "DeletePlayer",
       "config" : {
         "query" : {
-          "kind" : "delete",
-          "table" : "PLAYERS",
-          "condition" : "PID = <%=in.player.PID%>"
-        },
-        "dbUrl" : "FootballDB"
+          "dbName" : "FootballDB",
+          "sql" : {
+            "kind" : "DELETE",
+            "table" : "PLAYERS",
+            "condition" : "PID = <%=in.player.PID%>"
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 480, "y" : 416 }
       },
-      "connect" : { "id" : "f28", "to" : "f21" }
+      "connect" : [
+        { "id" : "f28", "to" : "f21" }
+      ]
     }, {
       "id" : "f5",
       "type" : "Database",
       "name" : "ReadPlayerTable",
       "config" : {
         "query" : {
-          "kind" : "read",
-          "table" : "PLAYERS"
+          "dbName" : "FootballDB",
+          "sql" : {
+            "table" : "PLAYERS"
+          }
         },
         "output" : {
           "map" : {
@@ -181,12 +199,13 @@
             "",
             "  }"
           ]
-        },
-        "dbUrl" : "FootballDB"
+        }
       },
       "visual" : {
         "at" : { "x" : 480, "y" : 256 }
       },
-      "connect" : { "id" : "f0", "to" : "f8" }
+      "connect" : [
+        { "id" : "f0", "to" : "f8" }
+      ]
     } ]
 }
