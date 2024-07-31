@@ -5,6 +5,9 @@
   <artifactId>db-demos</artifactId>
   <version>11.3.1-SNAPSHOT</version>
   <packaging>iar</packaging>
+  <properties>
+    <project.build.plugin.version>11.3.0</project.build.plugin.version>
+  </properties>
 	<pluginRepositories>
 		<pluginRepository>
 			<snapshots>
@@ -19,7 +22,7 @@
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <version>11.3.0</version>
+        <version>${project.build.plugin.version}</version>
         <extensions>true</extensions>
       </plugin>
     </plugins>

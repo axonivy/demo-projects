@@ -5,6 +5,28 @@
   <artifactId>db-demos-webtest</artifactId>
   <version>11.3.1-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
+  <properties>
+    <project.build.plugin.version>11.3.0</project.build.plugin.version>
+    <tester.version>11.3.0</tester.version>
+  </properties>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  <repositories>
+    <repository>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>com.axonivy.demo</groupId>
@@ -15,7 +37,7 @@
     <dependency>
       <groupId>com.axonivy.ivy.webtest</groupId>
       <artifactId>web-tester</artifactId>
-      <version>11.3.0</version>
+      <version>${tester.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -25,7 +47,7 @@
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <version>11.3.0</version>
+        <version>${project.build.plugin.version}</version>
         <extensions>true</extensions>
       </plugin>
     </plugins>

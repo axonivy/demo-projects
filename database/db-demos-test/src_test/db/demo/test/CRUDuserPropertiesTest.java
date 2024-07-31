@@ -9,7 +9,7 @@ import ch.ivyteam.ivy.bpm.engine.client.element.*;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import db.demos.Player;
 
-@IvyProcessTest
+@IvyProcessTest(enableWebServer = true)
 public class CRUDuserPropertiesTest {
 
 	private static final BpmProcess testee = BpmProcess.path("CRUDuserProperties");
