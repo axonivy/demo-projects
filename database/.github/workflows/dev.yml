@@ -8,4 +8,4 @@ on:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v4
+    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v5
