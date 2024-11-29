@@ -125,7 +125,7 @@
         "output" : {
           "code" : [
             "import db.demos.Player;",
-            "in.player.setPID(lastInsertedId);",
+            "in.player.setPid(lastInsertedId);",
             "out.players.add(in.player);",
             "out.player = new Player();"
           ]
@@ -190,9 +190,9 @@
             "  player.setFavoritecolor(favoritecolor);",
             "  player.setName(name);",
             "  player.setBirthday(birthday);",
-            "  player.setPID(PID);",
+            "  player.setPid(PID);",
             "  Team team = new Team();",
-            "  team.setTID(TID);",
+            "  team.setTid(TID);",
             "  player.setTeam(team);",
             "  out.players.add(player);",
             "  out.shared.players.add(player);",

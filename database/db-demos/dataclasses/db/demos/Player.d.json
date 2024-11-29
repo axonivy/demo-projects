@@ -20,7 +20,7 @@
     "type" : "String",
     "modifiers" : [ "PERSISTENT" ]
   }, {
-    "name" : "PID",
+    "name" : "pid",
     "type" : "Integer",
     "modifiers" : [ "PERSISTENT" ]
   }, {

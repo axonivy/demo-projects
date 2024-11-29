@@ -12,7 +12,7 @@
     "type" : "String",
     "modifiers" : [ "PERSISTENT" ]
   }, {
-    "name" : "TID",
+    "name" : "tid",
     "type" : "Integer",
     "modifiers" : [ "PERSISTENT" ]
   } ]
