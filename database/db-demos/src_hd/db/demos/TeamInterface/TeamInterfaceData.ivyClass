@@ -1,8 +1,0 @@
-TeamInterfaceData #class
-db.demos.TeamInterface #namespace
-shared db.demos.Shared #field
-shared PERSISTENT #fieldModifier
-team db.demos.Team #field
-team PERSISTENT #fieldModifier
-teams List<db.demos.Team> #field
-teams PERSISTENT #fieldModifier
