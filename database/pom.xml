@@ -3,7 +3,7 @@
   <groupId>com.axonivy.demo</groupId>
   <name>db-demos</name>
   <artifactId>db-demos-modules</artifactId><!-- fill your product name + a "-modules" postfix -->
-  <version>12.0.0</version>
+  <version>12.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -16,7 +16,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/axonivy-market/${project.name}.git</developerConnection>
-    <tag>v12.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
