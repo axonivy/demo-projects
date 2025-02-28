@@ -4,4 +4,4 @@ on: workflow_dispatch
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/release.yml@v5
+    uses: axonivy-market/github-workflows/.github/workflows/release.yml@v6
