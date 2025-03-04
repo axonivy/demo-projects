@@ -1,2 +1,11 @@
-*  @weissreto @ivy-cst @ivy-rew @ivy-bb @ivy-lli @ivy-lmu @ivy-tgr @ivy-edp @ivy-lgi @ivy-fhe @ivy-jh
+/*.*  @ivy-cst
+Jenkinsfile @ivy-cst
+Dockerfile @ivy-cst
 
+connectivity/ @ivy-rew
+demos-app/ @ivy-cst
+error-handling/ @weissreto
+html-dialog/ @ivy-lli
+quick-start-tutorial/ @ivy-bb
+rule-engine/ @weissreto @ivy-bb
+workflow/ @weissreto @ivy-bb
