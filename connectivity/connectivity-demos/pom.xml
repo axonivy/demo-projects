@@ -11,7 +11,7 @@
 
   <properties>
     <jersey.version>2.31</jersey.version>
-    <project-build-plugin>10.0.6</project-build-plugin>
+    <project-build-plugin>10.0.17</project-build-plugin>
   </properties>
 
   <pluginRepositories>
