@@ -13,6 +13,7 @@ import javax.ws.rs.core.UriBuilder;
 
 import ch.ivyteam.ivy.process.call.SubProcessCall;
 import ch.ivyteam.ivy.workflow.ITask;
+import ch.ivyteam.ivy.workflow.task.responsible.Responsible;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 /**
@@ -26,8 +27,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
  */
 @Path("approve")
 @Tag(name = ApiConstants.DEMO_TAG)
-public class ApprovalService
-{
+public class ApprovalService {
 
   /**
    * Runs a callable SubProcess to create new Task for a boss.
@@ -40,37 +40,37 @@ public class ApprovalService
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
   public Response create(
-          @FormParam("title") String title,
-          @FormParam("description") String description)
-  {
+      @FormParam("title") String title,
+      @FormParam("description") String description) {
     ITask task = SubProcessCall.withPath("rest/createApproval")
-            .withParam("title", title)
-            .withParam("description", description)
-            .call()
-            .get("approvalTask", ITask.class);
+        .withParam("title", title)
+        .withParam("description", description)
+        .call()
+        .get("approvalTask", ITask.class);
 
     var uri = "/api/workflow/task/{id}";
     var createdLink = Link.fromPath(uri).rel("approvalTask").build(task.getId());
     return Response.status(Status.CREATED)
-            .location(UriBuilder.fromPath(uri).build(task.getId()))
-            .links(createdLink)
-            .entity(new TaskMeta(task))
-            .build();
+        .location(UriBuilder.fromPath(uri).build(task.getId()))
+        .links(createdLink)
+        .entity(new TaskMeta(task))
+        .build();
   }
 
-  public static class TaskMeta
-  {
+  public static class TaskMeta {
     public final long id;
     public final String name;
     public final String description;
     public final String activator;
 
-    public TaskMeta(ITask task)
-    {
+    public TaskMeta(ITask task) {
       this.id = task.getId();
       this.name = task.getName();
       this.description = task.getDescription();
-      this.activator = task.getActivatorName();
+      this.activator = task.responsibles().all().stream()
+          .map(Responsible::memberName)
+          .findFirst()
+          .orElse(null);
     }
   }
 }
