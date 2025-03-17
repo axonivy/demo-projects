@@ -12,7 +12,7 @@ jobs:
 
     - name: Get branch name
       id: branch-name
-      uses: tj-actions/branch-names@v7.0.7
+      uses: tj-actions/branch-names@v8.0.1
 
     - name: Setup Java JDK
       uses: actions/setup-java@v4
