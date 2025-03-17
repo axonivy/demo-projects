@@ -56,12 +56,12 @@ public class TestExpriy {
 
     var nextTask = getNextTask(result);
     assertThat(nextTask.responsibles().all())
-        .extracting(Responsible::memberName)
+        .extracting(Responsible::name)
         .containsOnlyOnce("Everybody");
 
     nextTask.setExpiryTimestamp(YESTERDAY);
     assertThat(nextTask.responsibles().all())
-        .extracting(Responsible::memberName)
+        .extracting(Responsible::name)
         .containsOnlyOnce("Manager");
 
     assertThatThrownBy(() -> bpmClient.start().task(nextTask).as().everybody().execute())
