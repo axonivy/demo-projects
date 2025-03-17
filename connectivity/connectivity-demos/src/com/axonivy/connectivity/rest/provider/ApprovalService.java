@@ -12,6 +12,7 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriBuilder;
 
 import ch.ivyteam.ivy.process.call.SubProcessCall;
+import ch.ivyteam.ivy.security.ISecurityMember;
 import ch.ivyteam.ivy.workflow.ITask;
 import ch.ivyteam.ivy.workflow.task.responsible.Responsible;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -68,7 +69,8 @@ public class ApprovalService {
       this.name = task.getName();
       this.description = task.getDescription();
       this.activator = task.responsibles().all().stream()
-          .map(Responsible::memberName)
+          .map(Responsible::get)
+          .map(ISecurityMember::getMemberName)
           .findFirst()
           .orElse(null);
     }
