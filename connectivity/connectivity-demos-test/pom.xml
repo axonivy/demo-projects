@@ -8,7 +8,7 @@
 
   <properties>
     <wss4j.version>2.4.3</wss4j.version>
-    <jersey.version>2.45</jersey.version>
+    <jersey.version>2.46</jersey.version>
     <project-build-plugin>13.1.0-SNAPSHOT</project-build-plugin>
     <web.tester.version>12.0.1</web.tester.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
