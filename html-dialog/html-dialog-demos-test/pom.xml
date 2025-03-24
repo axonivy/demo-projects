@@ -46,7 +46,7 @@
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide-proxy</artifactId>
-      <version>6.9.0</version>
+      <version>6.19.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
