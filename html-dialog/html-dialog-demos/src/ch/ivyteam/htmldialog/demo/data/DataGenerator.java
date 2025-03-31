@@ -22,7 +22,7 @@ public class DataGenerator {
       "Lustig", "Muster", "Lang"};
 
   public static List<Person> generatePersons(int count) {
-    List<Person> persons = new ArrayList<Person>();
+    List<Person> persons = new ArrayList<>();
     for (int i = 0; i < count; i++) {
       Person person = new Person();
       person.setId(i + 1);

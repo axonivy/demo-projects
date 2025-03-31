@@ -15,8 +15,7 @@ import workflow.order.Order;
 import workflow.order.Person;
 
 @IvyProcessTest
-public class TestOrder
-{
+public class TestOrder {
   private static final BpmProcess ORDER_PROCESS = BpmProcess.name("OrderProcess");
 
   private static final BpmElement START_ORDER = ORDER_PROCESS.elementName("startOrder");
@@ -29,16 +28,14 @@ public class TestOrder
   private static final Person CUSTOMER = new Person();
   private static final Order ORDER = new Order();
 
-  static
-  {
+  static {
     CUSTOMER.setName("Doe");
     CUSTOMER.setSurname("John");
     ORDER.setProduct("Ferrari Testarossa");
   }
 
   @Test
-  void runProcess(BpmClient bpmClient, NotificationAccess notifications)
-  {
+  void runProcess(BpmClient bpmClient, NotificationAccess notifications) {
     bpmClient.mock().uiOf(INPUT_ORDER).with(this::inputOrder);
     bpmClient.mock().uiOf(PROCESS_ORDER).withNoAction();
     bpmClient.mock().uiOf(DELIVER_ORDER).withNoAction();
@@ -49,7 +46,7 @@ public class TestOrder
     var notificationsCount = notifications.count();
 
     var result = bpmClient.start().process(START_ORDER)
-            .as().everybody().execute();
+        .as().everybody().execute();
     bpmClient.start().anyActiveTask(result).as().role("Processor").execute();
     bpmClient.start().anyActiveTask(result).as().role("Deliverer").execute();
     bpmClient.start().anyActiveTask(result).as().role("Finance").execute();
@@ -59,15 +56,11 @@ public class TestOrder
     assertThat(notifications.count()).isEqualTo(notificationsCount + 9);
   }
 
-  private void inputOrder(Tuple parameters, Tuple results)
-  {
-    try
-    {
+  private void inputOrder(Tuple parameters, Tuple results) {
+    try {
       results.set("customer", CUSTOMER);
       results.set("order", ORDER);
-    }
-    catch (NoSuchFieldException ex)
-    {
+    } catch (NoSuchFieldException ex) {
       throw new RuntimeException(ex);
     }
   }

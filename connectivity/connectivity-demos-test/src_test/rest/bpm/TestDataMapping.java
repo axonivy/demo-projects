@@ -17,8 +17,7 @@ import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.environment.AppFixture;
 
 @IvyProcessTest(enableWebServer = true)
-class TestDataMapping
-{
+class TestDataMapping {
   @BeforeAll
   static void setUp(AppFixture fixture) {
     fixture.config("RestClients.jsonPlaceholder.Url", "http://jsonplaceholder:3000/");
@@ -26,7 +25,7 @@ class TestDataMapping
   }
 
   @Test
-  void odataJsonMapping_single(BpmClient bpmClient){
+  void odataJsonMapping_single(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/openapi_odata/readById.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -40,8 +39,7 @@ class TestDataMapping
   }
 
   @Test
-  void odataJsonMapping_collection(BpmClient bpmClient)
-  {
+  void odataJsonMapping_collection(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/openapi_odata/readCollection.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -50,8 +48,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_rawJSON(BpmClient bpmClient)
-  {
+  void dataMapping_rawJSON(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/rawJSON.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -63,8 +60,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_formData(BpmClient bpmClient)
-  {
+  void dataMapping_formData(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/formData.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -76,8 +72,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_complexObject(BpmClient bpmClient)
-  {
+  void dataMapping_complexObject(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/complexObject.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -89,8 +84,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_readPartialObject(BpmClient bpmClient)
-  {
+  void dataMapping_readPartialObject(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/readPartialObject.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -102,8 +96,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_readGenerated(BpmClient bpmClient)
-  {
+  void dataMapping_readGenerated(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/readGenerated.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -117,8 +110,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_readJsonNode(BpmClient bpmClient)
-  {
+  void dataMapping_readJsonNode(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/readJsonNode.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -130,8 +122,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_queryParameters(BpmClient bpmClient)
-  {
+  void dataMapping_queryParameters(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/queryParameters.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -140,8 +131,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_pathParameters(BpmClient bpmClient)
-  {
+  void dataMapping_pathParameters(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/pathParameters.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -150,8 +140,7 @@ class TestDataMapping
   }
 
   @Test
-  void dataMapping_acceptType(BpmClient bpmClient)
-  {
+  void dataMapping_acceptType(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/dataMapping/acceptType.ivp").execute();
     assertThat(result).isNotNull();
 

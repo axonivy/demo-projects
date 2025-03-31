@@ -23,21 +23,18 @@ import ch.ivyteam.ivy.security.IUser;
  * @since 9.1
  */
 @IvyProcessTest
-class TestStartProcessAs
-{
+class TestStartProcessAs {
   private static final BpmProcess PROCESS = BpmProcess.name("FlowPatterns");
   private static final BpmElement START = PROCESS.elementName("start.ivp");
   private static final BpmElement HTML_DIALOG = PROCESS.element().fieldId("f5");
 
   @BeforeEach
-  void before(BpmClient client)
-  {
+  void before(BpmClient client) {
     client.mock().element(HTML_DIALOG).withNoAction();
   }
 
   @Test
-  void noAs(BpmClient client)
-  {
+  void noAs(BpmClient client) {
     ExecutionResult result = client
         .start().process(START)
         .execute();
@@ -47,8 +44,7 @@ class TestStartProcessAs
   }
 
   @Test
-  void asAnonymous(BpmClient client)
-  {
+  void asAnonymous(BpmClient client) {
     ExecutionResult result = client
         .start().process(START)
         .as().anonymous()
@@ -59,8 +55,7 @@ class TestStartProcessAs
   }
 
   @Test
-  void asEverybody(BpmClient client, IRole everybody)
-  {
+  void asEverybody(BpmClient client, IRole everybody) {
     ExecutionResult result = client
         .start().process(START)
         .as().everybody()
@@ -73,8 +68,7 @@ class TestStartProcessAs
   }
 
   @Test
-  void asRoleName(BpmClient client, @Named("HR Manager") IRole hrManager)
-  {
+  void asRoleName(BpmClient client, @Named("HR Manager") IRole hrManager) {
     ExecutionResult result = client
         .start().process(START)
         .as().role("HR Manager")
@@ -87,8 +81,7 @@ class TestStartProcessAs
   }
 
   @Test
-  void asRole(BpmClient client, @Named("HR Manager") IRole hrManager)
-  {
+  void asRole(BpmClient client, @Named("HR Manager") IRole hrManager) {
     ExecutionResult result = client
         .start().process(START)
         .as().role(hrManager)
@@ -101,8 +94,7 @@ class TestStartProcessAs
   }
 
   @Test
-  void asUserName(BpmClient client, @Named("jb") IUser jamesBond)
-  {
+  void asUserName(BpmClient client, @Named("jb") IUser jamesBond) {
     ExecutionResult result = client
         .start().process(START)
         .as().user("jb")
@@ -114,8 +106,7 @@ class TestStartProcessAs
   }
 
   @Test
-  void asUser(BpmClient client, @Named("jb") IUser jamesBond)
-  {
+  void asUser(BpmClient client, @Named("jb") IUser jamesBond) {
     ExecutionResult result = client
         .start().process(START)
         .as().user(jamesBond)
@@ -127,8 +118,7 @@ class TestStartProcessAs
   }
 
   @Test
-  void asSystemUser(BpmClient client, IApplication app)
-  {
+  void asSystemUser(BpmClient client, IApplication app) {
     ExecutionResult result = client
         .start().process(START)
         .as().systemUser()
@@ -140,8 +130,7 @@ class TestStartProcessAs
   }
 
   @Test
-  void asSession(BpmClient client, ISession session, @Named("jb") IUser jamesBond)
-  {
+  void asSession(BpmClient client, ISession session, @Named("jb") IUser jamesBond) {
     session.authenticateSessionUser(jamesBond, "testing");
 
     ExecutionResult result = client

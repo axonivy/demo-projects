@@ -14,52 +14,42 @@ import ch.ivyteam.ivy.scripting.objects.DateTime;
 import ch.ivyteam.ivy.scripting.objects.File;
 import rule.engine.demo.enums.MemberType;
 
-public class RuleRepo
-{
+public class RuleRepo {
 
   static String CSV_PATH = "resources/";
 
-  public static List<Rule> loadRules(String filename) throws IOException
-  {
-    String csvFile = CSV_PATH+filename;
+  public static List<Rule> loadRules(String filename) throws IOException {
+    String csvFile = CSV_PATH + filename;
     List<String> lines;
     File ivyFile = new File(csvFile);
 
-    if (ivyFile.exists())
-    {
+    if (ivyFile.exists()) {
       lines = FileUtils.readLines(new File(csvFile).getJavaFile(), StandardCharsets.UTF_8);
-    }
-    else
-    {
-      try(var input = RuleRepo.class.getClassLoader().getResourceAsStream(csvFile))
-      {
+    } else {
+      try (var input = RuleRepo.class.getClassLoader().getResourceAsStream(csvFile)) {
         lines = IOUtils.readLines(input, StandardCharsets.UTF_8);
-      }
-      catch(Exception ex)
-      {
+      } catch (Exception ex) {
         Ivy.log().error("Couldn't read file", ex);
         lines = List.of();
       }
     }
     return lines.stream()
-            .map(RuleRepo::convertLineToRule)
-            .collect(Collectors.toList());
+        .map(RuleRepo::convertLineToRule)
+        .collect(Collectors.toList());
   }
 
-  public static String saveRules(List<Rule> rules) throws IOException
-  {
+  public static String saveRules(List<Rule> rules) throws IOException {
     String content = rules.stream()
-            .map(RuleRepo::convertRulesToLines)
-            .collect(Collectors.joining("\n"));
-    String csvFile = (CSV_PATH +(new DateTime()) + ".csv").replaceAll(":", "-");
+        .map(RuleRepo::convertRulesToLines)
+        .collect(Collectors.joining("\n"));
+    String csvFile = (CSV_PATH + (new DateTime()) + ".csv").replace(':', '-');
     File ivyFile = new File(csvFile);
     ivyFile.createNewFile();
     ivyFile.write(content);
     return ivyFile.getName();
   }
- 
-  private static Rule convertLineToRule(String line)
-  {
+
+  private static Rule convertLineToRule(String line) {
     String[] data = line.split(",");
     Rule rule = new Rule();
     rule.setName(data[0]);
@@ -70,15 +60,14 @@ public class RuleRepo
     return rule;
   }
 
-  private static String convertRulesToLines(Rule rule)
-  {
+  private static String convertRulesToLines(Rule rule) {
     return new StringJoiner(",")
-            .add(rule.getName())
-            .add(rule.getLowerLimit().toString())
-            .add(rule.getUpperLimit().toString())
-            .add(rule.getMemberType().name())
-            .add(rule.getDiscount().toString())
-            .toString();
+        .add(rule.getName())
+        .add(rule.getLowerLimit().toString())
+        .add(rule.getUpperLimit().toString())
+        .add(rule.getMemberType().name())
+        .add(rule.getDiscount().toString())
+        .toString();
   }
 
 }

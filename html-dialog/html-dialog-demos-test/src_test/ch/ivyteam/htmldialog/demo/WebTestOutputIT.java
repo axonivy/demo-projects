@@ -125,11 +125,11 @@ class WebTestOutputIT {
 
   private void editList(int elementPosition, int buttonPosition, String name) {
     $(By.id("personListForm:personsList")).find(".ui-orderlist-item", elementPosition)
-            .shouldBe(text(name)).click();
+        .shouldBe(text(name)).click();
     $(By.id("personListForm:personsList")).find(".ui-orderlist-controls").find("button", buttonPosition)
-            .shouldBe(visible, enabled).click();
+        .shouldBe(visible, enabled).click();
     $(By.id("personListForm:personsList")).find(".ui-orderlist-item", elementPosition)
-            .shouldNotBe(text(name));
+        .shouldNotBe(text(name));
   }
 
   @Test
@@ -210,7 +210,7 @@ class WebTestOutputIT {
   void jsfAgnosticForm() {
     startProcess("145D1862CF17F2C9/JsfAgnosticFormDemo.ivp");
     $$("span").shouldHave(anyMatch("build-form is rendered",
-      span -> span.getText().contains("the FormEditor")));
+        span -> span.getText().contains("the FormEditor")));
   }
 
   private void clearInput(By inputLocator) {

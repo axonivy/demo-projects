@@ -1,12 +1,15 @@
 package com.axonivy.connectivity.rest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
+
 import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 import org.junit.jupiter.api.Test;
+
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -24,8 +27,8 @@ class IntegrationTestRestfulDateResource {
     JsonNode json = response.readEntity(JsonNode.class);
     String localizedDate = json.get("delivery").asText();
     assertThat(localizedDate)
-      .as("dates are customized by the @Provider deployed with the project")
-      .endsWith("Z");
+        .as("dates are customized by the @Provider deployed with the project")
+        .endsWith("Z");
   }
 
   private static WebTarget getPersonsClient() {

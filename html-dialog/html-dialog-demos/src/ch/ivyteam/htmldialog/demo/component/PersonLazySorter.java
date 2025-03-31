@@ -24,22 +24,34 @@ public class PersonLazySorter implements Comparator<Person> {
   public int compare(Person person1, Person person2) {
     try {
       int value = 0;
-      if ("id".equals(sortField)) {
-        int id1 = (int) person1.getId();
-        int id2 = (int) person2.getId();
-        value = id1 - id2;
-      } else if ("name".equals(sortField)) {
-        String name1 = person1.getName();
-        String name2 = person2.getName();
-        value = name1.compareTo(name2);
-      } else if ("firstname".equals(sortField)) {
-        String firstname1 = person1.getFirstname();
-        String firstname2 = person2.getFirstname();
-        value = firstname1.compareTo(firstname2);
-      } else if ("birthYear".equals(sortField)) {
-        int year1 = (int) person1.getBirthYear();
-        int year2 = (int) person2.getBirthYear();
-        value = year1 - year2;
+      switch (sortField) {
+        case "id": {
+          int id1 = (int) person1.getId();
+          int id2 = (int) person2.getId();
+          value = id1 - id2;
+          break;
+        }
+        case "name": {
+          String name1 = person1.getName();
+          String name2 = person2.getName();
+          value = name1.compareTo(name2);
+          break;
+        }
+        case "firstname": {
+          String firstname1 = person1.getFirstname();
+          String firstname2 = person2.getFirstname();
+          value = firstname1.compareTo(firstname2);
+          break;
+        }
+        case "birthYear": {
+          int year1 = (int) person1.getBirthYear();
+          int year2 = (int) person2.getBirthYear();
+          value = year1 - year2;
+          break;
+        }
+        case null:
+        default:
+          break;
       }
       return SortOrder.ASCENDING.equals(sortOrder) ? value : -1 * value;
     } catch (Exception e) {

@@ -29,17 +29,14 @@ import org.junit.jupiter.api.Test;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
-public class IntegrationTestFileUpload
-{
+public class IntegrationTestFileUpload {
 
   @Test
-  public void checkingRealPdf() throws IOException
-  {
+  public void checkingRealPdf() throws IOException {
     String fileName = "test.pdf";
     File realPdf = new File(fileName);
     try (InputStream pdf = this.getClass().getResourceAsStream(fileName);
-            OutputStream os = new FileOutputStream(realPdf))
-    {
+        OutputStream os = new FileOutputStream(realPdf)) {
       IOUtils.copy(pdf, os);
     }
     Response pdfResponse = uploadPdf(realPdf);
@@ -48,12 +45,11 @@ public class IntegrationTestFileUpload
     realPdf.delete();
     String uri = EngineUrl.createRestUrl("/file/" + fileName);
     Response downloadResponse = createAuthenticatedClient()
-            .target(uri)
-            .request().accept(MediaType.APPLICATION_OCTET_STREAM).get();
+        .target(uri)
+        .request().accept(MediaType.APPLICATION_OCTET_STREAM).get();
     assertThat(downloadResponse.getStatus()).isEqualTo(Status.OK.getStatusCode());
     try (InputStream target = this.getClass().getResourceAsStream(fileName);
-            InputStream restStream = downloadResponse.readEntity(InputStream.class))
-    {
+        InputStream restStream = downloadResponse.readEntity(InputStream.class)) {
       byte[] received = IOUtils.toByteArray(restStream);
       byte[] expected = IOUtils.toByteArray(target);
       assertThat(received).isEqualTo(expected);
@@ -61,15 +57,13 @@ public class IntegrationTestFileUpload
   }
 
   @Test
-  public void apacheConnectorProvider() throws IOException
-  {
+  public void apacheConnectorProvider() throws IOException {
     String fileName = "test.pdf";
     String uri = EngineUrl.createRestUrl("/file");
 
     File realPdf = new File(fileName);
     try (InputStream pdf = this.getClass().getResourceAsStream(fileName);
-            OutputStream os = new FileOutputStream(realPdf))
-    {
+        OutputStream os = new FileOutputStream(realPdf)) {
       IOUtils.copy(pdf, os);
     }
 
@@ -81,23 +75,21 @@ public class IntegrationTestFileUpload
     contentType = Boundary.addBoundary(contentType);
 
     Response apacheConnectorResponse = client
-            .target(uri).request()
-            .header("X-Requested-By", "ivy")
-            .put(Entity.entity(createMultipart(realPdf), contentType));
+        .target(uri).request()
+        .header("X-Requested-By", "ivy")
+        .put(Entity.entity(createMultipart(realPdf), contentType));
     assertThat(apacheConnectorResponse.getStatus()).isEqualTo(Status.CREATED.getStatusCode());
     realPdf.delete();
   }
 
   @Test
-  public void httpUrlConnectorProvider() throws IOException
-  {
+  public void httpUrlConnectorProvider() throws IOException {
     String fileName = "test.pdf";
     String uri = EngineUrl.createRestUrl("/file");
 
     File realPdf = new File(fileName);
     try (InputStream pdf = this.getClass().getResourceAsStream(fileName);
-            OutputStream os = new FileOutputStream(realPdf))
-    {
+        OutputStream os = new FileOutputStream(realPdf)) {
       IOUtils.copy(pdf, os);
     }
 
@@ -106,16 +98,15 @@ public class IntegrationTestFileUpload
     Client client = createClientCustom(clientConfig);
 
     Response httpUrlConnectorResponse = client
-            .target(uri).request()
-            .header("X-Requested-By", "ivy")
-            .put(Entity.entity(createMultipart(realPdf), MediaType.MULTIPART_FORM_DATA_TYPE));
+        .target(uri).request()
+        .header("X-Requested-By", "ivy")
+        .put(Entity.entity(createMultipart(realPdf), MediaType.MULTIPART_FORM_DATA_TYPE));
     assertThat(httpUrlConnectorResponse.getStatus()).isEqualTo(Status.CREATED.getStatusCode());
     realPdf.delete();
   }
 
   @Test
-  public void sendPdfFile() throws IOException
-  {
+  public void sendPdfFile() throws IOException {
     java.io.File createWrongEmptyFile = createTempFile("test", ".pdf");
     Response pdfResponse = uploadPdf(createWrongEmptyFile);
     assertThat(pdfResponse.getStatus()).isEqualTo(Status.CREATED.getStatusCode());
@@ -123,52 +114,44 @@ public class IntegrationTestFileUpload
   }
 
   @Test
-  public void fileWrongExtension() throws IOException
-  {
+  public void fileWrongExtension() throws IOException {
     java.io.File createWrongEmptyFile = createTempFile("empty", ".docx");
     Response notPdfResponse = uploadPdf(createWrongEmptyFile);
     assertThat(notPdfResponse.getStatus()).isEqualTo(Status.INTERNAL_SERVER_ERROR.getStatusCode());
   }
 
-  private static Response uploadPdf(java.io.File createWrongEmptyFile) throws IOException
-  {
+  private static Response uploadPdf(java.io.File createWrongEmptyFile) throws IOException {
     String uri = EngineUrl.createRestUrl("/file");
-    Response pdfResponse = createAuthenticatedClient()
-            .target(uri).request()
-            .header("X-Requested-By", "ivy")
-            .header("MIME-Version", "1.0")
-            .put(Entity.entity(createMultipart(createWrongEmptyFile), MediaType.MULTIPART_FORM_DATA_TYPE));
-    return pdfResponse;
+    return createAuthenticatedClient()
+        .target(uri).request()
+        .header("X-Requested-By", "ivy")
+        .header("MIME-Version", "1.0")
+        .put(Entity.entity(createMultipart(createWrongEmptyFile), MediaType.MULTIPART_FORM_DATA_TYPE));
   }
 
-  private static FormDataMultiPart createMultipart(java.io.File createWrongEmptyFile) throws IOException
-  {
+  private static FormDataMultiPart createMultipart(java.io.File createWrongEmptyFile) throws IOException {
     FormDataMultiPart multipart;
-    try (FormDataMultiPart formDataMultiPart = new FormDataMultiPart())
-    {
+    try (FormDataMultiPart formDataMultiPart = new FormDataMultiPart()) {
       FileDataBodyPart filePart = new FileDataBodyPart("file", createWrongEmptyFile);
       multipart = (FormDataMultiPart) formDataMultiPart.bodyPart(filePart);
     }
     return multipart;
   }
 
-  private static java.io.File createTempFile(String fileName, String extension) throws IOException
-  {
+  private static java.io.File createTempFile(String fileName, String extension) throws IOException {
     return java.nio.file.Files.createTempFile(fileName, extension).toFile();
   }
 
   private static final String login = "restUser";
 
-  private static Client createAuthenticatedClient()
-  {
+  private static Client createAuthenticatedClient() {
     Client httpClient = createClient();
     httpClient.register(HttpAuthenticationFeature.basic(login, login));
     return httpClient;
   }
 
   @SuppressWarnings("deprecation")
-  private static Client createClient()
-  {
+  private static Client createClient() {
     Client httpClient = ClientBuilder.newClient();
     httpClient.register(JacksonJsonProvider.class);
     httpClient.register(MultiPartFeature.class);
@@ -177,8 +160,7 @@ public class IntegrationTestFileUpload
   }
 
   @SuppressWarnings("deprecation")
-  private static Client createClientCustom(ClientConfig config)
-  {
+  private static Client createClientCustom(ClientConfig config) {
     Client httpClient = ClientBuilder.newClient(config);
     httpClient.register(JacksonJsonProvider.class);
     httpClient.register(MultiPartFeature.class);

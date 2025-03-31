@@ -35,7 +35,7 @@ public class WebTestOtherIT {
     $(By.id("Form:Name")).shouldBe(visible).sendKeys("name");
     $(By.id("Form:Email")).sendKeys("email@ivyteam.ch");
     ((JavascriptExecutor) WebDriverRunner.getWebDriver())
-            .executeScript("document.getElementById('Form:Birthdate').setAttribute('value', '2016-01-01')");
+        .executeScript("document.getElementById('Form:Birthdate').setAttribute('value', '2016-01-01')");
     $(By.id("Form:Captcha")).sendKeys("21");
     $(By.id("Submit")).click();
     $(By.id("captchaError")).shouldHave(text("Error!"));

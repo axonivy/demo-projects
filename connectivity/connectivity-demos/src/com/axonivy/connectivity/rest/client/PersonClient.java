@@ -19,48 +19,43 @@ import ch.ivyteam.ivy.rest.client.GenericTypes;
  *
  * @since 6.1.1
  */
-public class PersonClient
-{
+public class PersonClient {
 
   /**
    * GET request that returns a list of complex types.
    */
-  public static List<Person> getPersons()
-  {
+  public static List<Person> getPersons() {
     return Ivy.rest().client("personService")
-            .request().get(GenericTypes.listOf(Person.class));
+        .request().get(GenericTypes.listOf(Person.class));
   }
 
   /**
    * PUT request the accepts form parameters as input.
    */
-  public static Response add(String firstName, String lastName)
-  {
+  public static Response add(String firstName, String lastName) {
     MultivaluedMap<String, String> formData = new MultivaluedHashMap<>();
     formData.add("firstname", firstName);
     formData.add("lastname", lastName);
     return Ivy.rest().client("personService")
-            .request().header("X-Requested-By", "ivy").put(Entity.form(formData));
+        .request().header("X-Requested-By", "ivy").put(Entity.form(formData));
   }
 
   /**
    * POST request that sends a complex type instance
    */
-  public static Response update(Person person)
-  {
+  public static Response update(Person person) {
     return Ivy.rest().client("personService")
-            .path(person.getId().toString())
-            .request().header("X-Requested-By", "ivy").post(Entity.json(person));
+        .path(person.getId().toString())
+        .request().header("X-Requested-By", "ivy").post(Entity.json(person));
   }
 
   /**
    * DELETE request: defines the person to delete with its path
    */
-  public static Response delete(UUID personId)
-  {
+  public static Response delete(UUID personId) {
     return Ivy.rest().client("personService")
-            .path(personId.toString())
-            .request().header("X-Requested-By", "ivy").delete();
+        .path(personId.toString())
+        .request().header("X-Requested-By", "ivy").delete();
   }
 
 }

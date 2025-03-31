@@ -42,8 +42,8 @@ public class WebTestOfflineIT {
     $(By.id("form:email")).sendKeys("someone.else@admin.ch");
     $(By.id("form:timeOfArrival")).sendKeys("13:15");
     Selenide.$$(".ui-message-error").find(Condition.attribute("data-target", "form:personName"))
-            .shouldHave(text("Length is less than allowable minimum of '3'"));
+        .shouldHave(text("Length is less than allowable minimum of '3'"));
     Selenide.$$(".ui-message-error").find(Condition.attribute("data-target", "form:addressZip"))
-            .shouldHave(text("Specified attribute is not between the expected values of 1000 and 9999."));
+        .shouldHave(text("Specified attribute is not between the expected values of 1000 and 9999."));
   }
 }

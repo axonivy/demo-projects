@@ -41,9 +41,9 @@ public class WebTestRestProcessStarts {
     var procUrl = createProcessUrl("connectivity-demos-test/180D6E5562D69BF0/configure.ivp");
     var engineProcUri = URI.create(procUrl.replaceAll("localhost", System.getProperty("test.host.name", "localhost")));
     URI configure = UriBuilder
-      .fromUri(engineProcUri)
-      .queryParam("key", Smartbear.ENDPOINT_URI_KEY)
-      .queryParam("value", Smartbear.MOCK_SERVICE).build();
+        .fromUri(engineProcUri)
+        .queryParam("key", Smartbear.ENDPOINT_URI_KEY)
+        .queryParam("value", Smartbear.MOCK_SERVICE).build();
     open(configure.toURL());
   }
 

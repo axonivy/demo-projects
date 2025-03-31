@@ -6,7 +6,6 @@ import javax.ws.rs.core.Feature;
 import javax.ws.rs.core.FeatureContext;
 import javax.ws.rs.ext.Provider;
 
-
 /**
  * Enables logging for the REST backend.
  */

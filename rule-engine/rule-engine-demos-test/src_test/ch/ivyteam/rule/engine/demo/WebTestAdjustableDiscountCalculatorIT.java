@@ -17,8 +17,7 @@ import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.axonivy.ivy.webtest.primeui.PrimeUi;
 
 @IvyWebTest
-public class WebTestAdjustableDiscountCalculatorIT
-{
+public class WebTestAdjustableDiscountCalculatorIT {
   private static final String MAIN_MESSAGE = "form:mainMessage";
   private static final String MEMBER_PURCHASE_AMOUNT_MESSAGE = "form:memberPurchaseAmountMessage";
   private static final String MEMBER_PURCHASE_AMOUNT = "form:memberPurchaseAmount";
@@ -29,22 +28,19 @@ public class WebTestAdjustableDiscountCalculatorIT
   private static final String RULETABLE_SAVED_MSG = "tableform:saved_msg";
 
   @BeforeEach
-  public void openRuleDemo()
-  {
+  public void openRuleDemo() {
     open(EngineUrl.createProcessUrl("rule-engine-demos/153EAAA7649F85DA/start2.ivp"));
   }
 
   @Test
-  public void noAmount()
-  {
+  public void noAmount() {
     $(By.id(MEMBER_PURCHASE_AMOUNT_MESSAGE)).shouldBe(empty);
     $(By.id(APPLY_DRL)).shouldBe(visible).click();
     $(By.id(MAIN_MESSAGE)).shouldBe(text("Value is required"));
   }
 
   @Test
-  public void changedRule()
-  {
+  public void changedRule() {
     setMemberType("Silver");
     assertDiscountForAmount(900, 5);
 
@@ -62,8 +58,7 @@ public class WebTestAdjustableDiscountCalculatorIT
   }
 
   @Test
-  public void amountTooBig()
-  {
+  public void amountTooBig() {
     setMemberType("Silver");
     setPurchaseAmount(10000);
     $(By.id(APPLY_DRL)).shouldBe(visible).click();
@@ -74,21 +69,18 @@ public class WebTestAdjustableDiscountCalculatorIT
     $(By.id(MAIN_MESSAGE)).shouldBe(text("Discount NOT defined"));
   }
 
-  private void assertDiscountForAmount(int amount, int discount)
-  {
+  private void assertDiscountForAmount(int amount, int discount) {
     setPurchaseAmount(amount);
     $(By.id(APPLY_DRL)).shouldBe(visible).click();
     $(By.id(MEMBER_DISCOUNT)).shouldBe(exactText(String.valueOf(discount)));
   }
 
-  private void setPurchaseAmount(int value)
-  {
+  private void setPurchaseAmount(int value) {
     $(By.id(MEMBER_PURCHASE_AMOUNT)).shouldBe(visible).clear();
     $(By.id(MEMBER_PURCHASE_AMOUNT)).sendKeys(String.valueOf(value));
   }
 
-  private void setMemberType(String type)
-  {
+  private void setMemberType(String type) {
     PrimeUi.selectOneRadio(By.id(MEMBER_TYPE)).selectItemByValue(type);
   }
 }

@@ -41,27 +41,25 @@ import io.swagger.v3.oas.annotations.tags.Tag;
  */
 @Path("file")
 @Tag(name = ApiConstants.DEMO_TAG)
-public class FileService
-{
+public class FileService {
   @GET
   @Path("/{fileName}")
   @Produces(MediaType.APPLICATION_OCTET_STREAM)
-  public Response downloadFile(@PathParam("fileName") String fileName) throws IOException
-  {
+  public Response downloadFile(@PathParam("fileName") String fileName) throws IOException {
     File ivyFile = new File(fileName);
     InputStream fis = new FileInputStream(ivyFile.getJavaFile());
     return Response
-            .ok(fis, MediaType.APPLICATION_OCTET_STREAM)
-            .header("content-disposition", "attachment; filename = " + fileName)
-            .build();
+        .ok(fis, MediaType.APPLICATION_OCTET_STREAM)
+        .header("content-disposition", "attachment; filename = " + fileName)
+        .build();
 
   }
-  
+
   /**
    * Adds documents to the workflow application <b>without using multi-part forms</b>.
-   * 
+   *
    * <p>Pure MediaType#APPLICATION_OCTET_STREAM based APIs can be an easier easier to use for some clients.</p>
-   * 
+   *
    * @param fileName as mandatory path parameter: since the payload does not declare the name.
    * @param payload the binary input representing a file.
    * @return upload message
@@ -70,23 +68,21 @@ public class FileService
   @POST
   @Path("/{fileName}")
   @Consumes(MediaType.APPLICATION_OCTET_STREAM)
-  public Response addDocument(@PathParam("fileName") String fileName, byte[] payload) throws IOException
-  {
+  public Response addDocument(@PathParam("fileName") String fileName, byte[] payload) throws IOException {
     checkExtension(fileName);
-    try(InputStream is = new ByteArrayInputStream(payload))
-    {
+    try (InputStream is = new ByteArrayInputStream(payload)) {
       File newFile = createIvyFile(is, fileName);
       String result = "File was uploaded succesfully to: " + newFile.getAbsolutePath();
       return Response.status(201)
-        .header("uploadedFile", fileName)
-        .entity(result)
-        .build();
+          .header("uploadedFile", fileName)
+          .entity(result)
+          .build();
     }
   }
-  
+
   /**
    * Adds documents to the workflow application through a multi-part form interface.
-   * 
+   *
    * @param fileUploadStream the stream containing binary data
    * @param fileUploadDetail informations on the file being sent das binary
    * @return upload message
@@ -96,24 +92,23 @@ public class FileService
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.MULTIPART_FORM_DATA)
   public Response uploadFile(
-          @FormDataParam("file") InputStream fileUploadStream,
-          @Parameter(required = true) @FormDataParam("file") FormDataContentDisposition fileUploadDetail,
-          @FormDataParam("description") String description,
-          @FormDataParam("ownerId") Long ownerId) throws IOException
-  {
+      @FormDataParam("file") InputStream fileUploadStream,
+      @Parameter(required = true) @FormDataParam("file") FormDataContentDisposition fileUploadDetail,
+      @FormDataParam("description") String description,
+      @FormDataParam("ownerId") Long ownerId) throws IOException {
     String fileName = fileUploadDetail.getFileName();
     checkExtension(fileName);
     API.checkNotNull(fileUploadDetail, "fileUploadDetail");
     File ivyFile = createIvyFile(fileUploadStream, fileName);
     String result = "File was uploaded succesfully to: " + ivyFile.getAbsolutePath();
     return Response.status(201)
-            .header("uploadedFile", fileName)
-            .header("description", description)
-            .header("ownerId", ownerId)
-            .entity(result)
-            .build();
+        .header("uploadedFile", fileName)
+        .header("description", description)
+        .header("ownerId", ownerId)
+        .entity(result)
+        .build();
   }
-  
+
   /**
    * demonstrates a service resource that consumes multiple files at once through
    * a multi-part request.
@@ -123,15 +118,12 @@ public class FileService
   @Produces(MediaType.TEXT_PLAIN)
   @Path("multi")
   public Response shareFiles(
-          @FormDataParam("files") List<FormDataBodyPart> fileParts,
-          @FormDataParam("description") @DefaultValue("#") String description,
-          @FormDataParam("ownerId") @DefaultValue("-1") Integer ownerId) throws IOException
-  {
+      @FormDataParam("files") List<FormDataBodyPart> fileParts,
+      @FormDataParam("description") @DefaultValue("#") String description,
+      @FormDataParam("ownerId") @DefaultValue("-1") Integer ownerId) throws IOException {
     List<File> uploads = new ArrayList<>();
-    if (fileParts != null)
-    {
-      for(FormDataBodyPart filePart : fileParts)
-      {
+    if (fileParts != null) {
+      for (FormDataBodyPart filePart : fileParts) {
         BodyPartEntity bodyPartEntity = (BodyPartEntity) filePart.getEntity();
         File aFile = createIvyFile(bodyPartEntity.getInputStream(), filePart.getContentDisposition().getFileName());
         uploads.add(aFile);
@@ -139,34 +131,28 @@ public class FileService
     }
     String fileNames = uploads.stream().map(File::getName).collect(Collectors.joining(", "));
     return Response.status(201)
-      .header("uploadedFiles", fileNames)
-      .header("description", description)
-      .header("ownerId", ownerId)
-      .entity("got "+uploads.size()+" files.")
-      .build();
+        .header("uploadedFiles", fileNames)
+        .header("description", description)
+        .header("ownerId", ownerId)
+        .entity("got " + uploads.size() + " files.")
+        .build();
   }
 
   private static File createIvyFile(InputStream fileUploadStream, String fileName)
-          throws IOException
-  {
+      throws IOException {
     File ivyFile = new File(fileName, false);
-    try (OutputStream os = new FileOutputStream(ivyFile.getJavaFile()))
-    {
+    try (OutputStream os = new FileOutputStream(ivyFile.getJavaFile())) {
       IOUtils.copy(fileUploadStream, os);
       return ivyFile;
-    }
-    catch (IOException ex)
-    {
+    } catch (IOException ex) {
       Ivy.log().fatal("File could not be uploaded: " + fileName, ex);
       throw new IOException("File could not be uploaded: " + fileName, ex);
     }
   }
 
-  private static void checkExtension(String fileName)
-  {
+  private static void checkExtension(String fileName) {
     String extension = FilenameUtils.getExtension(fileName);
-    if (!checkIfStringContainsList(extension))
-    {
+    if (!checkIfStringContainsList(extension)) {
       Ivy.log().fatal("The file is not allowed! Your file is: '." + extension + "'");
       throw new IllegalArgumentException("The file is not allowed! Your file is: '." + extension + "'");
     }
@@ -174,8 +160,7 @@ public class FileService
 
   public static List<String> whitelistedExtensions = Arrays.asList("pdf", "txt", "jpg", "jpeg", "png");
 
-  private static boolean checkIfStringContainsList(String extension)
-  {
+  private static boolean checkIfStringContainsList(String extension) {
     return whitelistedExtensions.contains(extension);
   }
 }

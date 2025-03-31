@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @since 7.3.0
  */
-public class ChatMessage
-{
+public class ChatMessage {
   @JsonProperty
   public String sender;
   @JsonProperty
@@ -21,12 +20,10 @@ public class ChatMessage
   public String message;
 
   @SuppressWarnings("unused")
-  private ChatMessage()
-  { // for JACKSON
+  private ChatMessage() { // for JACKSON
   }
 
-  public ChatMessage(String sender, String receiver, String message)
-  {
+  public ChatMessage(String sender, String receiver, String message) {
     this.sender = sender;
     this.receiver = receiver;
     this.sentDate = new Date();
@@ -34,8 +31,7 @@ public class ChatMessage
   }
 
   @Override
-  public String toString()
-  {
+  public String toString() {
     return "@" + sender + ">@" + receiver + ": " + message;
   }
 }

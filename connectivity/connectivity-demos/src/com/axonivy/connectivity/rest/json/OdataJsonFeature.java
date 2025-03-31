@@ -23,9 +23,9 @@ import ch.ivyteam.ivy.rest.client.mapper.JsonFeature;
  * </p>
  *
  * <pre>
- *  {
- *   "@odata.context":"http://services.odata.org/TripPinRESTierService/(S(5jklwgt1fhflbw1mxbymqdqe))/$metadata#People",
- *   "value":[{"UserName":"russellwhyte","FirstName":"Russell,...},{...}]
+ * {
+ * &nbsp;&nbsp;"@odata.context":"http://services.odata.org/TripPinRESTierService/(S(5jklwgt1fhflbw1mxbymqdqe))/$metadata#People",
+ * &nbsp;&nbsp;"value":[{"UserName":"russellwhyte","FirstName":"Russell,...},{...}]
  * }"
  * </pre>
  *
@@ -42,30 +42,26 @@ import ch.ivyteam.ivy.rest.client.mapper.JsonFeature;
  * http://services.odata.org/TripPinRESTierService/(S(5jklwgt1fhflbw1mxbymqdqe))/People
  * </p>
  * @see "http://www.odata.org/"
- * 
+ *
  * @since 6.7.1
- * @deprecated since 9.2, where such manual JSON transformations are no longer necessary. 
- * Instead of applying payload transformations, one can convert ODATA$metadata to Open API 3.0 
- * and use it directly with full type support on Rest Client call elements.
- * https://github.com/ivy-samples/ivy-project-demos/blob/playground/odataConvert/connectivity/odata-converter/convert.sh
+ * @deprecated since 9.2, where such manual JSON transformations are no longer necessary.
+ *             Instead of applying payload transformations, one can convert ODATA$metadata to Open API 3.0
+ *             and use it directly with full type support on Rest Client call elements.
+ *             https://github.com/ivy-samples/ivy-project-demos/blob/playground/odataConvert/connectivity/odata-converter/convert.sh
  */
 @Deprecated
-public class OdataJsonFeature extends JsonFeature
-{
+public class OdataJsonFeature extends JsonFeature {
   @Override
-  public boolean configure(FeatureContext context)
-  {
+  public boolean configure(FeatureContext context) {
     JacksonJsonProvider provider = new ODataMapperProvider();
     configure(provider, context.getConfiguration());
     context.register(provider, Priorities.ENTITY_CODER);
     return true;
   }
 
-  public static class ODataMapperProvider extends JsonModifier
-  {
+  public static class ODataMapperProvider extends JsonModifier {
     @Override
-    public ObjectMapper locateMapper(Class<?> type, MediaType mediaType)
-    {
+    public ObjectMapper locateMapper(Class<?> type, MediaType mediaType) {
       ObjectMapper mapper = super.locateMapper(type, mediaType);
       // odata provides fields starting with an upper case character!
       mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
@@ -77,18 +73,15 @@ public class OdataJsonFeature extends JsonFeature
      * field.
      */
     @Override
-    protected JsonNode manipulateJson(JsonNode node)
-    {
-      if (node.has(Field.VALUE) && node.has(Field.CONTEXT))
-      {
+    protected JsonNode manipulateJson(JsonNode node) {
+      if (node.has(Field.VALUE) && node.has(Field.CONTEXT)) {
         node = node.get(Field.VALUE);
       }
       return node;
     }
 
     /** Well known OData fields */
-    private interface Field
-    {
+    private interface Field {
       String VALUE = "value";
       String CONTEXT = "@odata.context";
     }

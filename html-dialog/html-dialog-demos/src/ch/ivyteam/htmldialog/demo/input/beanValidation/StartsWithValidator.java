@@ -14,7 +14,7 @@ public class StartsWithValidator implements ConstraintValidator<StartsWith, Stri
 
   @Override
   public boolean isValid(String fieldValue,
-          ConstraintValidatorContext constraintContext) {
+      ConstraintValidatorContext constraintContext) {
     if (fieldValue == null) {
       return true;
     }

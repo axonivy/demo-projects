@@ -6,23 +6,20 @@ package com.axonivy.connectivity.soap.interceptor;
 @javax.jws.WebService
 @org.apache.cxf.interceptor.OutFaultInterceptors(classes = {ErrorResponseInterceptor.class})
 public class serviceWithException
-        extends ch.ivyteam.ivy.webservice.process.restricted.AbstractWebServiceProcess
-{
+    extends ch.ivyteam.ivy.webservice.process.restricted.AbstractWebServiceProcess {
 
   public serviceWithException(
-          ch.ivyteam.ivy.webservice.process.restricted.IWebServiceProcessBeanRuntime webServiceProcessBeanRuntime)
-  {
+      ch.ivyteam.ivy.webservice.process.restricted.IWebServiceProcessBeanRuntime webServiceProcessBeanRuntime) {
     super(webServiceProcessBeanRuntime);
   }
 
   @javax.jws.WebMethod
   @javax.jws.WebResult(name = "exceptionMessage")
   public java.lang.String call(@javax.jws.WebParam(name = "throwException") java.lang.Boolean throwException,
-          @javax.jws.WebParam(name = "exceptionMessage") java.lang.String exceptionMessage)
-          throws ch.ivyteam.ivy.webservice.process.restricted.WebServiceProcessTechnicalException,
-          ch.ivyteam.ivy.webservice.process.restricted.WebServiceProcessBusinessException
-  {
-    java.util.Map<String, Object> params = new java.util.HashMap<String, Object>();
+      @javax.jws.WebParam(name = "exceptionMessage") java.lang.String exceptionMessage)
+      throws ch.ivyteam.ivy.webservice.process.restricted.WebServiceProcessTechnicalException,
+      ch.ivyteam.ivy.webservice.process.restricted.WebServiceProcessBusinessException {
+    java.util.Map<String, Object> params = new java.util.HashMap<>();
     ch.ivyteam.ivy.scripting.objects.Tuple processResult;
 
     params.put("throwException", throwException);

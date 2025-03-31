@@ -5,11 +5,9 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 @ApplicationScoped
-public class MemberTypeBean
-{
+public class MemberTypeBean {
 
-  public MemberType[] getMemberTypes()
-  {
+  public MemberType[] getMemberTypes() {
     return MemberType.values();
   }
 }

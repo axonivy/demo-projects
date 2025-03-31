@@ -15,15 +15,12 @@ import com.axonivy.connectivity.Person;
  *
  * @since 7.1
  */
-public class PersonRepository
-{
+public class PersonRepository {
 
   private static PersonRepository INSTANCE;
 
-  public synchronized static PersonRepository getInstance()
-  {
-    if (INSTANCE == null)
-    {
+  public synchronized static PersonRepository getInstance() {
+    if (INSTANCE == null) {
       INSTANCE = new PersonRepository();
     }
     return INSTANCE;
@@ -31,8 +28,7 @@ public class PersonRepository
 
   private final List<Person> persons = new ArrayList<>();
 
-  private PersonRepository()
-  {
+  private PersonRepository() {
     persons.add(createPerson("Bruno", "Bütler"));
     persons.add(createPerson("Reto", "Weiss"));
     persons.add(createPerson("Renato", "Stalder"));
@@ -40,23 +36,18 @@ public class PersonRepository
     persons.add(createPerson("Reguel", "Wermelinger"));
   }
 
-  public List<Person> findAll()
-  {
+  public List<Person> findAll() {
     return new ArrayList<>(persons);
   }
 
-  public Person addPerson(Person person)
-  {
-    if (person == null)
-    {
+  public Person addPerson(Person person) {
+    if (person == null) {
       throw new IllegalArgumentException("person must not be null");
     }
-    if (StringUtils.isBlank(person.getFirstname()) || StringUtils.isBlank(person.getLastname()))
-    {
+    if (StringUtils.isBlank(person.getFirstname()) || StringUtils.isBlank(person.getLastname())) {
       throw new IllegalArgumentException("first and lastname is mandatory");
     }
-    if (person.getId() == null)
-    {
+    if (person.getId() == null) {
       person.setId(UUID.randomUUID());
     }
     persons.add(person);
@@ -68,15 +59,12 @@ public class PersonRepository
    * @return deleted person or <code>null</code> if person was not in
    *         repository.
    */
-  public Person delete(Person person)
-  {
+  public Person delete(Person person) {
     Iterator<Person> iterator = persons.iterator();
-    while (iterator.hasNext())
-    {
+    while (iterator.hasNext()) {
       Person p = iterator.next();
       if (p.getFirstname().equals(person.getFirstname()) &&
-              p.getLastname().equals(person.getLastname()))
-      {
+          p.getLastname().equals(person.getLastname())) {
         iterator.remove();
         return p;
       }
@@ -84,8 +72,7 @@ public class PersonRepository
     return null;
   }
 
-  private Person createPerson(String firstname, String lastname)
-  {
+  private Person createPerson(String firstname, String lastname) {
     Person p = new Person();
     p.setId(UUID.randomUUID());
     p.setFirstname(firstname);

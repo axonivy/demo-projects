@@ -24,13 +24,11 @@ import ch.ivyteam.ivy.workflow.TaskState;
 /**
  * Tests the REST interface of the {@link com.axonivy.connectivity.rest.provider.ApprovalService}.
  */
-public class IntegrationTestRestfulApprovalService
-{
+public class IntegrationTestRestfulApprovalService {
   public static final String REST_USER = "restUser";
 
   @Test
-  public void putNewEntity()
-  {
+  public void putNewEntity() {
     Entity<Form> entity = createApproval("I need a break", "really i'm working really hard");
     Response response = getApprovalClient().request().header("X-Requested-By", "ivy").put(entity);
     assertThat(response.getStatus()).isEqualTo(Response.Status.CREATED.getStatusCode());
@@ -47,28 +45,25 @@ public class IntegrationTestRestfulApprovalService
     bossClient.register(JacksonJsonProvider.class);
     bossClient.register(HttpAuthenticationFeature.basic("theBoss", "theBoss"));
     Response mobileWfTask = bossClient.target(taskLink).request().get();
-    assertThat(mobileWfTask.getStatus()).as("can read mobile WF task "+mobileWfTask).isEqualTo(200);
+    assertThat(mobileWfTask.getStatus()).as("can read mobile WF task " + mobileWfTask).isEqualTo(200);
     JsonNode fullTaskNode = mobileWfTask.readEntity(JsonNode.class);
     assertThat(TaskState.valueOf(fullTaskNode.get("state").asInt()))
-            .isEqualTo(TaskState.SUSPENDED);
+        .isEqualTo(TaskState.SUSPENDED);
   }
 
-  private static Entity<Form> createApproval(String title, String description)
-  {
+  private static Entity<Form> createApproval(String title, String description) {
     MultivaluedMap<String, String> formData = new MultivaluedHashMap<>();
     formData.add("title", title);
     formData.add("description", description);
     return Entity.form(formData);
   }
 
-  private static WebTarget getApprovalClient()
-  {
+  private static WebTarget getApprovalClient() {
     return createAuthenticatedClient().target(EngineUrl.createRestUrl("/approve"));
   }
 
   @SuppressWarnings("deprecation")
-  private static Client createAuthenticatedClient()
-  {
+  private static Client createAuthenticatedClient() {
     Client httpClient = ClientBuilder.newClient();
     httpClient.register(JacksonJsonProvider.class);
     httpClient.register(HttpAuthenticationFeature.basic(REST_USER, REST_USER));

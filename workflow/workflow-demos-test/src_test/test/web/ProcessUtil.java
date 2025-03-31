@@ -6,21 +6,17 @@ import static com.codeborne.selenide.WebDriverConditions.currentFrameUrlContaini
 
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 
-public class ProcessUtil
-{
+public class ProcessUtil {
 
-  public static void startProcess(String pathToIvp)
-  {
+  public static void startProcess(String pathToIvp) {
     open(EngineUrl.createProcessUrl("/workflow-demos/" + pathToIvp));
   }
 
-  public static void startTestProcess(String pathToIvp)
-  {
+  public static void startTestProcess(String pathToIvp) {
     open(EngineUrl.createProcessUrl("/workflow-demos-test/" + pathToIvp));
   }
 
-  public static void checkEndPage()
-  {
+  public static void checkEndPage() {
     webdriver().shouldHave(currentFrameUrlContaining("endedTaskId="));
   }
 

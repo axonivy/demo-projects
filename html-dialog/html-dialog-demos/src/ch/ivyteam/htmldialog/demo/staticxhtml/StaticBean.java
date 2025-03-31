@@ -18,6 +18,6 @@ public class StaticBean {
 
   public void buttonAction() {
     text = Ivy.session().getSessionUserName() + " clicked the button in application '"
-            + IApplication.current().getName() + "'.";
+        + IApplication.current().getName() + "'.";
   }
 }

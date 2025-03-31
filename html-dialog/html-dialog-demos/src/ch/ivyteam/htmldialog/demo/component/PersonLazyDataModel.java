@@ -31,10 +31,9 @@ public class PersonLazyDataModel extends LazyDataModel<Person> {
 
   @Override
   public List<Person> load(int first, int pageSize, Map<String, SortMeta> sortBy,
-          Map<String, FilterMeta> filterBy) {
+      Map<String, FilterMeta> filterBy) {
     this.setRowCount(source.count(filterBy));
-    List<Person> persons = source.query(filterBy, sortBy, pageSize, first);
-    return persons;
+    return source.query(filterBy, sortBy, pageSize, first);
   }
 
   @Override

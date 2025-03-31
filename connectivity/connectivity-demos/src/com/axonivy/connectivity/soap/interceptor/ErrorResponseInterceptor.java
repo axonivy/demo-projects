@@ -12,17 +12,14 @@ import org.apache.cxf.phase.Phase;
  * WebService Call Activity properties To see the returned status code check the
  * "Runtime Log View"
  */
-public class ErrorResponseInterceptor extends AbstractSoapInterceptor
-{
+public class ErrorResponseInterceptor extends AbstractSoapInterceptor {
 
-  public ErrorResponseInterceptor()
-  {
+  public ErrorResponseInterceptor() {
     super(Phase.PRE_STREAM);
   }
 
   @Override
-  public void handleMessage(SoapMessage soapMessage) throws Fault
-  {
+  public void handleMessage(SoapMessage soapMessage) throws Fault {
     soapMessage.put(Message.RESPONSE_CODE, 400);
   }
 }
