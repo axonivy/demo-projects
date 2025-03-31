@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 
 import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
+import com.axonivy.ivy.webtest.engine.WebAppFixture;
 
 @IvyWebTest
 public class WebTestErrorHandlingIT
@@ -95,17 +96,32 @@ public class WebTestErrorHandlingIT
   }
 
   @Test
-  public void session_expired()
-  {
+  public void session_expired_withUser(WebAppFixture fixture) {
+    fixture.login("demoUser1", "demoUser1");
     startProcess("145D1862CF17F2C9/ErrorHandlingDemo.ivp");
     $(By.id("form:expireSession")).shouldBe(visible).click();
     $(By.id("form:ajaxWithExpiredSession")).shouldBe(visible).click();
 
     $(By.id("viewExpiredExceptionDialog_title")).shouldHave(text("View or Session Expired"));
     $(By.id("viewExpiredExceptionDialog_content")).shouldHave(
-            text("Custom Exception Handling for ViewExpiredException"),
-            text("The view or session has expired"),
-            text("Please login again"));
+        text("Custom Exception Handling for ViewExpiredException"),
+        text("The view or session has expired"),
+        // We are still logged in because we only invalidate the http session and not the ivy session
+        text("Please restart"));
+  }
+
+  @Test
+  public void session_expired_unknownSessionUser(WebAppFixture fixture) {
+    fixture.login("demoUser1", "demoUser1");
+    fixture.logout();
+    startProcess("145D1862CF17F2C9/ErrorHandlingDemo.ivp");
+    $(By.id("form:expireSession")).shouldBe(visible).click();
+    $(By.id("form:ajaxWithExpiredSession")).shouldBe(visible).click();
+    $(By.id("viewExpiredExceptionDialog_title")).shouldHave(text("View or Session Expired"));
+    $(By.id("viewExpiredExceptionDialog_content")).shouldHave(
+        text("Custom Exception Handling for ViewExpiredException"),
+        text("The view or session has expired"),
+        text("Please login again"));
   }
 
 }
