@@ -10,12 +10,10 @@ import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 
 @IvyWebTest
-public class WebTestCreateNewEmployeeIT
-{
+public class WebTestCreateNewEmployeeIT {
 
   @Test
-  public void testCreateNewEmployee()
-  {
+  public void testCreateNewEmployee() {
     open(EngineUrl.createProcessUrl("/workflow-demos-test/1537FF3C3382D47F/start.ivp"));
     open(EngineUrl.createProcessUrl("/workflow-demos/15254CF1CE56AE72/start.ivp"));
     $("#form\\:employeeName").sendKeys("Charlie");

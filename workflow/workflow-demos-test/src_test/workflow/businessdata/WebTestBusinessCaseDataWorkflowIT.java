@@ -21,19 +21,16 @@ import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.codeborne.selenide.Selenide;
 
 @IvyWebTest
-public class WebTestBusinessCaseDataWorkflowIT
-{
+public class WebTestBusinessCaseDataWorkflowIT {
 
   @BeforeEach
-  void cleanElasticSearch()
-  {
+  void cleanElasticSearch() {
     startTestProcess("1537FF3C3382D47F/clearDemoDossiers.ivp?embedInFrame");
     checkEndPage();
   }
 
   @Test
-  void testInterview()
-  {
+  void testInterview() {
     login();
 
     startProcess("16EF567002B146F2/create.ivp");
@@ -53,18 +50,16 @@ public class WebTestBusinessCaseDataWorkflowIT
     $(By.id("form:proceed")).click();
 
     startProcess("16EF567002B146F2/browse.ivp");
-    sleep(1000); //wait for elastic search
+    sleep(1000); // wait for elastic search
     $$("button").find(text("Search")).shouldBe(visible, enabled).click();
     $$("#interviewTable tbody tr").first().shouldHave(text("Hans"),
-            text("Mustermann"),
-            text("This is an interview"),
-            text("13.12.2025"));
+        text("Mustermann"),
+        text("This is an interview"),
+        text("13.12.2025"));
   }
 
-  private void login()
-  {
-    if (!EngineUrl.isDesigner())
-    {
+  private void login() {
+    if (!EngineUrl.isDesigner()) {
       open(EngineUrl.create().path("login").toUrl());
       $(By.id("loginForm:userName")).shouldBe(visible).sendKeys("hb");
       $(By.id("loginForm:password")).sendKeys("hb");
@@ -72,6 +67,5 @@ public class WebTestBusinessCaseDataWorkflowIT
       $(By.id("sessionUserName")).shouldBe(text("hb"));
     }
   }
-
 
 }

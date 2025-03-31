@@ -61,7 +61,7 @@ class WebTestDynamicDialog {
   @Test
   void configurationOptions() {
     $(By.id("form:openConfigurated")).shouldBe(visible).click();
-    switchToDialogs(firstDialog );
+    switchToDialogs(firstDialog);
     var widht = $(By.id("ConfiguratedDialogForm")).getSize().getWidth();
     assertThat(widht).isEqualTo(713).as("The Widht of the dialog wasn't the 713px as defined.");
     $(By.id("dialogForm:closeDialog")).shouldBe(visible).click();
@@ -69,12 +69,12 @@ class WebTestDynamicDialog {
     $(By.id("form:proceed")).shouldBe(visible).click();
   }
 
-    private void switchToDialogs(int index) {
-      switchToForm();
-      driver.switchTo().frame(index);
-    }
+  private void switchToDialogs(int index) {
+    switchToForm();
+    driver.switchTo().frame(index);
+  }
 
-    private void switchToForm() {
-      driver.switchTo().defaultContent();
-    }
+  private void switchToForm() {
+    driver.switchTo().defaultContent();
+  }
 }

@@ -56,7 +56,7 @@ public class WebTestInputDownloadIT {
     startProcess("145D18298A3E81CF/FileUploadAdvancedModeDemo.ivp");
     File tempImage = File.createTempFile("tempImageFile", ".png");
     try (InputStream inputImage = getClass().getResourceAsStream("ExampleImage.png");
-            FileOutputStream outputImage = new FileOutputStream(tempImage);) {
+        FileOutputStream outputImage = new FileOutputStream(tempImage);) {
       IOUtils.copy(inputImage, outputImage);
     }
     $(By.id("pictureGalleryForm:fileUpload_input")).shouldBe(exist).sendKeys(tempImage.getAbsolutePath());

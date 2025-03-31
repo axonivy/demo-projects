@@ -25,14 +25,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
  */
 @Path("batch")
 @Tag(name = ApiConstants.DEMO_TAG)
-public class BatchService
-{
+public class BatchService {
 
   @GET
   @Produces(MediaType.TEXT_PLAIN)
   public String executeBlocking(@QueryParam("blockSeconds") Integer secondsToBlock)
-          throws InterruptedException
-  {
+      throws InterruptedException {
     simulateLongRunningExecution(secondsToBlock);
     return "Sorry for the delay!";
   }
@@ -51,31 +49,25 @@ public class BatchService
   @Produces(MediaType.TEXT_PLAIN)
   @ManagedAsync // auto executes method body in a separate thread pool!
   public void executeAsync(
-          @Suspended AsyncResponse asyncResponse,
-          @QueryParam("blockSeconds") Integer secondsToBlock)
-  {
-    try
-    {
+      @Suspended AsyncResponse asyncResponse,
+      @QueryParam("blockSeconds") Integer secondsToBlock) {
+    try {
       simulateLongRunningExecution(secondsToBlock);
 
       Response result = Response.status(200)
-              .entity("Sorry for the slow processing!")
-              .header("responseThread", Thread.currentThread().getName())
-              .header("sessionUser", Ivy.session().getSessionUserName())
-              .build();
+          .entity("Sorry for the slow processing!")
+          .header("responseThread", Thread.currentThread().getName())
+          .header("sessionUser", Ivy.session().getSessionUserName())
+          .build();
 
       asyncResponse.resume(result);
-    }
-    catch (InterruptedException ex)
-    {
+    } catch (InterruptedException ex) {
       asyncResponse.resume(ex); // propagate exception async
     }
   }
 
-  private void simulateLongRunningExecution(Integer secondsToBlock) throws InterruptedException
-  {
-    if (secondsToBlock == null)
-    {
+  private void simulateLongRunningExecution(Integer secondsToBlock) throws InterruptedException {
+    if (secondsToBlock == null) {
       secondsToBlock = 32;
     }
     Thread.sleep(TimeUnit.SECONDS.toMillis(secondsToBlock));

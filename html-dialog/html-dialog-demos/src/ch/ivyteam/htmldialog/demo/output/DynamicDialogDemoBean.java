@@ -22,7 +22,7 @@ public class DynamicDialogDemoBean {
         .width("713px")
         .build();
     Map<String, List<String>> parameters = Map.of(
-            "Films", List.of("Harry Potter", "Lord of the Rings", "Pirates of the Caribbean"));
+        "Films", List.of("Harry Potter", "Lord of the Rings", "Pirates of the Caribbean"));
     new IvyDynamicDialog().open(view, options, parameters);
   }
 }

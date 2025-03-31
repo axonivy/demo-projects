@@ -10,20 +10,18 @@ import rule.engine.demo.Member;
 import rule.engine.demo.enums.MemberType;
 
 @IvyTest
-class RuleDrlTest
-{
+class RuleDrlTest {
   @ParameterizedTest
   @CsvFileSource(resources = "test-cases.csv", numLinesToSkip = 1)
-  void test(String memberType, String purchaseAmount, String discount)
-  {
+  void test(String memberType, String purchaseAmount, String discount) {
     var member = new Member();
     member.setPurchaseAmount(Integer.valueOf(purchaseAmount));
     member.setMemberType(MemberType.valueOf(memberType));
 
     Rules.create()
-            .namespace("rule.engine.demo.drl")
-            .executor()
-            .execute(member);
+        .namespace("rule.engine.demo.drl")
+        .executor()
+        .execute(member);
 
     Assertions.assertEquals(Integer.valueOf(discount), member.getDiscount());
   }

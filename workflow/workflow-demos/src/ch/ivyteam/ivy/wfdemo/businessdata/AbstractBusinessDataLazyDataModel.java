@@ -45,9 +45,9 @@ public abstract class AbstractBusinessDataLazyDataModel<T> extends LazyDataModel
     Ivy.log().info(sortBy);
     SortMetaConverter sort = new SortMetaConverter(sortBy);
     Result<T> result = filter(ivy.repo.search(businessDataType))
-      .orderBy().field(sort.toField()).direction(toDirection(sort.toOrder()))
-      .limit(first, pageSize)
-      .execute();
+        .orderBy().field(sort.toField()).direction(toDirection(sort.toOrder()))
+        .limit(first, pageSize)
+        .execute();
     setRowCount((int) result.totalCount());
     return result.getAll();
   }

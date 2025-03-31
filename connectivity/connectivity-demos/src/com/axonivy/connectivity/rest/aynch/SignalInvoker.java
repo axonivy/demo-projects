@@ -21,33 +21,28 @@ import ch.ivyteam.ivy.request.async.IvyAsyncExecutor;
  *
  * @since 7.3.0
  */
-public class SignalInvoker implements InvocationCallback<String>
-{
+public class SignalInvoker implements InvocationCallback<String> {
   private final SignalCode successSignal;
   private final SignalCode errorSignal;
   private final IvyAsyncExecutor asyncExecutor;
 
-  public SignalInvoker(String successSignal)
-  {
+  public SignalInvoker(String successSignal) {
     this(successSignal, "ivy:error:rest:client:async");
   }
 
-  public SignalInvoker(String successSignal, String errorSignal)
-  {
+  public SignalInvoker(String successSignal, String errorSignal) {
     this.successSignal = new SignalCode(successSignal);
     this.errorSignal = new SignalCode(errorSignal);
     this.asyncExecutor = IvyAsyncExecutor.create();
   }
 
   @Override
-  public void completed(String response)
-  {
+  public void completed(String response) {
     asyncExecutor.run(() -> Ivy.wf().signals().create().data(response).send(successSignal));
   }
 
   @Override
-  public void failed(Throwable throwable)
-  {
+  public void failed(Throwable throwable) {
     asyncExecutor.run(() -> Ivy.wf().signals().create().data(throwable).send(errorSignal));
   }
 

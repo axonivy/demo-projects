@@ -55,13 +55,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Singleton
 @Path("persons")
 @Tag(name = ApiConstants.DEMO_TAG)
-public class PersonService
-{
+public class PersonService {
 
-  private Map<UUID, Person> persons = new HashMap<UUID, Person>();
+  private final Map<UUID, Person> persons = new HashMap<>();
 
-  public PersonService()
-  {
+  public PersonService() {
     addNewPerson("Bruno", "Bütler");
     addNewPerson("Reto", "Weiss");
     addNewPerson("Renato", "Stalder");
@@ -72,25 +70,18 @@ public class PersonService
   @Produces(MediaType.APPLICATION_JSON)
   @Operation(description = "lists persons which are well known in the ivy-core society.")
   public List<Person> getPersons(
-    @QueryParam("name") 
-    @Parameter(description = "filters persons which contain the given name part in first or lastname.") 
-    String name)
-  {
-    if (StringUtils.isBlank(name))
-    {
+      @QueryParam("name") @Parameter(description = "filters persons which contain the given name part in first or lastname.") String name) {
+    if (StringUtils.isBlank(name)) {
       return new ArrayList<>(persons.values());
     }
     return findPersons(name);
   }
 
-  private List<Person> findPersons(String name)
-  {
+  private List<Person> findPersons(String name) {
     List<Person> matches = new ArrayList<>();
-    for (Person candidate : persons.values())
-    {
+    for (Person candidate : persons.values()) {
       if (candidate.getFirstname().contains(name) ||
-              candidate.getLastname().contains(name))
-      {
+          candidate.getLastname().contains(name)) {
         matches.add(candidate);
       }
     }
@@ -100,17 +91,13 @@ public class PersonService
   @GET
   @Path("/{entryNo}")
   @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-  public Response getPerson(@PathParam("entryNo") int entryNo)
-  {
-    try
-    {
+  public Response getPerson(@PathParam("entryNo") int entryNo) {
+    try {
       UUID personId = new ArrayList<>(persons.keySet()).get(entryNo);
       return Response.status(Status.OK)
-              .entity(persons.get(personId))
-              .build();
-    }
-    catch (IndexOutOfBoundsException ex)
-    {
+          .entity(persons.get(personId))
+          .build();
+    } catch (IndexOutOfBoundsException ex) {
       return Response.status(Status.NOT_FOUND).build();
     }
   }
@@ -119,25 +106,22 @@ public class PersonService
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
   public Response add(
-    @Parameter(required = true) @FormParam("firstname") @Size(min = 2, max = 255) String firstname,
-    @Parameter(required = true) @FormParam("lastname") String lastname)
-  {
+      @Parameter(required = true) @FormParam("firstname") @Size(min = 2, max = 255) String firstname,
+      @Parameter(required = true) @FormParam("lastname") String lastname) {
     Person person = addNewPerson(firstname, lastname);
     Link createdLink = Link.fromPath("persons/{id}").rel("createdPerson").build(person.getId());
     return Response.status(Status.CREATED)
-            .location(createdLink.getUri())
-            .links(createdLink)
-            .entity(new CreatedPersonMeta(person.getId()))
-            .build();
+        .location(createdLink.getUri())
+        .links(createdLink)
+        .entity(new CreatedPersonMeta(person.getId()))
+        .build();
   }
 
-  public static class CreatedPersonMeta
-  {
+  public static class CreatedPersonMeta {
     public final UUID id;
     public final Calendar createdAt;
 
-    private CreatedPersonMeta(UUID uuid)
-    {
+    private CreatedPersonMeta(UUID uuid) {
       this.id = uuid;
       this.createdAt = Calendar.getInstance();
     }
@@ -147,17 +131,13 @@ public class PersonService
   @Path("/{personId}")
   @Produces(MediaType.APPLICATION_JSON)
   @Operation(description = "remove a person from the ivy-core universe.")
-  public Response deletePerson(@PathParam("personId") UUID personId)
-  {
-    try
-    {
+  public Response deletePerson(@PathParam("personId") UUID personId) {
+    try {
       Person deleted = persons.remove(personId);
       return Response.status(Status.OK)
-              .entity(deleted)
-              .build();
-    }
-    catch (IndexOutOfBoundsException ex)
-    {
+          .entity(deleted)
+          .build();
+    } catch (IndexOutOfBoundsException ex) {
       return Response.status(Status.NOT_FOUND).build();
     }
   }
@@ -165,25 +145,20 @@ public class PersonService
   @POST
   @Path("/{personId}")
   @Consumes(MediaType.APPLICATION_JSON)
-  public Response update(@PathParam("personId") UUID personId, Person person)
-  {
-    try
-    {
+  public Response update(@PathParam("personId") UUID personId, Person person) {
+    try {
       Person existing = persons.get(personId);
       persons.replace(existing.getId(), person);
       return Response.status(Status.OK)
-              .build();
-    }
-    catch (IndexOutOfBoundsException ex)
-    {
+          .build();
+    } catch (IndexOutOfBoundsException ex) {
       return Response.status(Status.NOT_FOUND)
-              .entity("user with id '" + personId + "' does not exist.")
-              .build();
+          .entity("user with id '" + personId + "' does not exist.")
+          .build();
     }
   }
 
-  private Person addNewPerson(String firstname, String lastname)
-  {
+  private Person addNewPerson(String firstname, String lastname) {
     Person person = new Person();
     person.setFirstname(firstname);
     person.setLastname(lastname);

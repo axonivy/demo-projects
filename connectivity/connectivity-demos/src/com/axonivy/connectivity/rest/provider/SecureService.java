@@ -49,10 +49,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Singleton
 @Path("admin")
 @Tag(name = ApiConstants.DEMO_TAG)
-public class SecureService
-{
+public class SecureService {
 
-  private List<String> entries = new ArrayList<>(Arrays.asList("Hello world"));
+  private final List<String> entries = new ArrayList<>(Arrays.asList("Hello world"));
 
   /**
    * {@link PermitAll}: no authentication required to call this method.
@@ -61,11 +60,10 @@ public class SecureService
   @GET
   @PermitAll
   @Produces(MediaType.APPLICATION_JSON)
-  public Response showEntries()
-  {
+  public Response showEntries() {
     return Response.status(Status.OK)
-            .entity(entries)
-            .build();
+        .entity(entries)
+        .build();
   }
 
   /**
@@ -74,12 +72,11 @@ public class SecureService
    */
   @PUT
   @Consumes(MediaType.TEXT_PLAIN)
-  public Response addEntry(String newEntry)
-  {
+  public Response addEntry(String newEntry) {
     entries.add(newEntry);
     return Response.status(Status.OK)
-            .entity("Added entry '" + newEntry + "'")
-            .build();
+        .entity("Added entry '" + newEntry + "'")
+        .build();
   }
 
   /**
@@ -89,12 +86,11 @@ public class SecureService
   @POST
   @Path("/{entryId}")
   @RolesAllowed("Boss")
-  public Response updateEntry(@PathParam("entryId") int id, String newEntry)
-  {
+  public Response updateEntry(@PathParam("entryId") int id, String newEntry) {
     entries.set(id, newEntry);
     return Response.status(Status.OK)
-            .entity("Update entry with id (" + id + ") to '" + newEntry + "'")
-            .build();
+        .entity("Update entry with id (" + id + ") to '" + newEntry + "'")
+        .build();
   }
 
   /**
@@ -103,8 +99,7 @@ public class SecureService
   @DELETE
   @Path("/{entryId}")
   @DenyAll
-  public void removeEntry(@PathParam("entryId") int id)
-  {
+  public void removeEntry(@PathParam("entryId") int id) {
     entries.remove(id);
   }
 

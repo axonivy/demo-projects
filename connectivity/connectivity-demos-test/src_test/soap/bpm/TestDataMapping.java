@@ -16,7 +16,7 @@ import ch.ivyteam.ivy.environment.AppFixture;
 @IvyProcessTest(enableWebServer = true)
 public class TestDataMapping {
 
-  public static interface Smartbear {
+  public interface Smartbear {
     String ENDPOINT_URI_KEY = "WebServiceClients.smartbearTests.Endpoints.SampleWebServiceSoap12";
     String MOCK_SERVICE = "http://test-webservices.ivyteam.io:7086/mockSampleWebServiceSoap12";
   }
@@ -24,14 +24,14 @@ public class TestDataMapping {
   @Test
   void resolveToCache(BpmClient bpmClient, AppFixture fixture) {
     fixture.config(Smartbear.ENDPOINT_URI_KEY,
-      Smartbear.MOCK_SERVICE);
+        Smartbear.MOCK_SERVICE);
 
     var result = bpmClient.start().process("soap/client/dataMapping/resolveToCache.ivp").execute();
     assertThat(result).isNotNull();
 
     DataMappingData data = result.data().last();
     assertThat(data.getTime().toJavaDate()).isBetween(
-            Instant.now().minus(1, ChronoUnit.DAYS), Instant.now().plus(1, ChronoUnit.DAYS));
+        Instant.now().minus(1, ChronoUnit.DAYS), Instant.now().plus(1, ChronoUnit.DAYS));
   }
 
   @Test

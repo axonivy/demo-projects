@@ -44,7 +44,7 @@ class WebTestInputIT {
     $(By.id("Form:Mail")).shouldBe(visible).sendKeys("notValidMail[at]test.ch");
     $(By.id("Form:Mail")).shouldBe(visible, enabled).submit();
     $$(".ui-messages-error span").find(text("E-mail validation failed: invalid mail address"))
-            .shouldBe(visible);
+        .shouldBe(visible);
   }
 
   @Test

@@ -28,9 +28,9 @@ public class WebTestComponentIT {
 
   private void fillAddressComponent(String prefix) {
     $(By.id("demoForm:personComponent:" + prefix + "AddressComponent:street")).sendKeys(
-            prefix + "Street");
+        prefix + "Street");
     $(By.id("demoForm:personComponent:" + prefix + "AddressComponent:country")).sendKeys(
-            prefix + "Country" + Keys.ENTER);
+        prefix + "Country" + Keys.ENTER);
     $(By.id("demoForm:result")).shouldHave(text(prefix + "Street"), text(prefix + "Country"));
   }
 
@@ -60,7 +60,7 @@ public class WebTestComponentIT {
   private void increaseCounter(String panel, int increaseClicks) {
     for (int i = 1; i <= increaseClicks; i++) {
       $(By.id("Form:increaseP" + panel + "Button"))
-              .shouldBe(visible, enabled).click();
+          .shouldBe(visible, enabled).click();
     }
   }
 

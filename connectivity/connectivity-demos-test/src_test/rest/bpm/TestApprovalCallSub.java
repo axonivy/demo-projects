@@ -11,17 +11,15 @@ import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 
 @IvyProcessTest
-public class TestApprovalCallSub
-{
+public class TestApprovalCallSub {
   @Test
-  public void callSub(BpmClient bpmClient)
-  {
+  public void callSub(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start()
-      .process("rest/testApprovalCreation/test.ivp")
-      .as().user("restUser")
-      .execute();
+        .process("rest/testApprovalCreation/test.ivp")
+        .as().user("restUser")
+        .execute();
     CreateApprovalData data = result.data().last();
     assertThat(data.getCreatedTask().getName())
-      .isEqualTo("Approve request from restUser");
+        .isEqualTo("Approve request from restUser");
   }
 }

@@ -30,7 +30,7 @@ public class ImageGenerator {
 
   public static StreamedContent createImage(String text) throws Exception {
     BufferedImage bufferedImg = new BufferedImage(120, 40,
-            BufferedImage.TYPE_INT_RGB);
+        BufferedImage.TYPE_INT_RGB);
     Graphics2D g2 = bufferedImg.createGraphics();
     g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     g2.setColor(Color.WHITE);
@@ -41,8 +41,8 @@ public class ImageGenerator {
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     ImageIO.write(bufferedImg, "png", os);
     return DefaultStreamedContent.builder()
-            .stream(() -> new ByteArrayInputStream(os.toByteArray()))
-            .contentType("image/png")
-            .build();
+        .stream(() -> new ByteArrayInputStream(os.toByteArray()))
+        .contentType("image/png")
+        .build();
   }
 }

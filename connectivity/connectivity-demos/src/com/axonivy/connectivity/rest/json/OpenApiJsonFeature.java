@@ -13,26 +13,22 @@ import ch.ivyteam.ivy.rest.client.mapper.JsonFeature;
 
 /**
  * JSON object mapper that complies with generated JAX-RS client pojos.
- * 
+ *
  * @since 9.2
  */
-public class OpenApiJsonFeature extends JsonFeature
-{
+public class OpenApiJsonFeature extends JsonFeature {
   @Override
-  public boolean configure(FeatureContext context)
-  {
+  public boolean configure(FeatureContext context) {
     JacksonJsonProvider provider = new JaxRsClientJson();
     configure(provider, context.getConfiguration());
-    context.register(provider, Priorities.ENTITY_CODER); 
+    context.register(provider, Priorities.ENTITY_CODER);
     return true;
   }
 
-  public static class JaxRsClientJson extends JacksonJsonProvider
-  {
+  public static class JaxRsClientJson extends JacksonJsonProvider {
     @Override
     @SuppressWarnings("deprecation")
-    public ObjectMapper locateMapper(Class<?> type, MediaType mediaType)
-    {
+    public ObjectMapper locateMapper(Class<?> type, MediaType mediaType) {
       ObjectMapper mapper = super.locateMapper(type, mediaType);
       // match our generated jax-rs client beans: that contain JSR310 data types
       mapper.registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule());

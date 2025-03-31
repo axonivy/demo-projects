@@ -15,18 +15,15 @@ import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.environment.AppFixture;
 
 @IvyProcessTest
-class TestOpenApi
-{
+class TestOpenApi {
   @BeforeAll
-  static void setUp(AppFixture fixture)
-  {
+  static void setUp(AppFixture fixture) {
     fixture.config("RestClients.jsonPlaceholder.Url", "http://jsonplaceholder:3000/");
     fixture.config("RestClients.openApiService.Url", "http://test-webservices.ivyteam.io:8090/api/v3");
   }
 
   @Test
-  void openApi_petListing(BpmClient bpmClient)
-  {
+  void openApi_petListing(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/openapi/listPets.ivp").execute();
     assertThat(result).isNotNull();
 
@@ -36,18 +33,16 @@ class TestOpenApi
   }
 
   @Test
-  void openApi_petQuery(BpmClient bpmClient)
-  {
+  void openApi_petQuery(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/openapi/login.ivp").execute();
     assertThat(result).isNotNull();
 
-    long sessionId = Long.parseLong((String)result.workflow().session().getAttribute("pet.session.id"));
+    long sessionId = Long.parseLong((String) result.workflow().session().getAttribute("pet.session.id"));
     assertThat(sessionId).as("got session ID from pet store api login").isGreaterThan(1);
   }
 
   @Test
-  void openApi_fileUpload(BpmClient bpmClient)
-  {
+  void openApi_fileUpload(BpmClient bpmClient) {
     ExecutionResult result = bpmClient.start().process("rest/openapi/upload.ivp").execute();
     assertThat(result).isNotNull();
 

@@ -18,20 +18,17 @@ import com.axonivy.ivy.webtest.primeui.widget.Table;
 import com.codeborne.selenide.Selenide;
 
 @IvyWebTest
-public class WebTestBusinessDataIT
-{
+public class WebTestBusinessDataIT {
   private static final String BROWSE_DOSSIERS_LINK = "155BB4328F79B2D5/browse.ivp";
 
   @Test
-  public void testBrowseBusinessData() throws Exception
-  {
+  public void testBrowseBusinessData() throws Exception {
     cleanAndOpenBrowseDossier();
     dossierTable().contains("Euler");
   }
 
   @Test
-  public void createBusibenessData() throws Exception
-  {
+  public void createBusibenessData() throws Exception {
     cleanAndOpenBrowseDossier();
     dossierTable().containsNot("Bernoulli");
 
@@ -39,26 +36,23 @@ public class WebTestBusinessDataIT
     createPersonDossier("Bernoulli");
 
     $("#infoGrowl_container").shouldBe(visible, text("Search index might not be immediately up-to-date"));
-    Selenide.sleep(1000); //wait for elasic search
+    Selenide.sleep(1000); // wait for elasic search
     $$("button").find(text("Search")).shouldBe(visible, enabled).click();
     dossierTable().contains("Bernoulli");
   }
 
-  private void cleanAndOpenBrowseDossier()
-  {
+  private void cleanAndOpenBrowseDossier() {
     startTestProcess("1537FF3C3382D47F/clearDemoDossiers.ivp");
     checkEndPage();
-    Selenide.sleep(1000); //wait for elasic search
+    Selenide.sleep(1000); // wait for elasic search
     startProcess(BROWSE_DOSSIERS_LINK);
   }
 
-  private Table dossierTable()
-  {
+  private Table dossierTable() {
     return PrimeUi.table(By.id("dossierTable"));
   }
 
-  private void createPersonDossier(String name)
-  {
+  private void createPersonDossier(String name) {
     $("#form\\:dossierName").shouldBe(visible).sendKeys(name.toUpperCase());
     $("#form\\:dossierPersonLastName").sendKeys(name);
     $("#form\\:save").click();

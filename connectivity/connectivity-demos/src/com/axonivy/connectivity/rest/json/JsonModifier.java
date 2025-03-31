@@ -21,38 +21,33 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
  * as usual.
  *
  * @since 8.0.0
- * @deprecated since 9.2, where such manual JSON transformations are no longer necessary. 
- * Instead of applying payload transformations, one can convert ODATA$metadata to Open API 3.0 
- * and use it directly with full type support on Rest Client call elements.
- * https://github.com/ivy-samples/ivy-project-demos/blob/playground/odataConvert/connectivity/odata-converter/convert.sh
+ * @deprecated since 9.2, where such manual JSON transformations are no longer necessary.
+ *             Instead of applying payload transformations, one can convert ODATA$metadata to Open API 3.0
+ *             and use it directly with full type support on Rest Client call elements.
+ *             https://github.com/ivy-samples/ivy-project-demos/blob/playground/odataConvert/connectivity/odata-converter/convert.sh
  */
 @Deprecated
-public class JsonModifier extends JacksonJsonProvider
-{
+public class JsonModifier extends JacksonJsonProvider {
   private static final ObjectMapper ROOT_MAPPER = new ObjectMapper();
 
   @Override
   public Object readFrom(Class<Object> type, Type genericType,
-          Annotation[] annotations, MediaType mediaType,
-          MultivaluedMap<String, String> httpHeaders,
-          InputStream entityStream) throws IOException
-  {
+      Annotation[] annotations, MediaType mediaType,
+      MultivaluedMap<String, String> httpHeaders,
+      InputStream entityStream) throws IOException {
     InputStream inputStream = unwrapValueRoot(entityStream);
     return super.readFrom(type, genericType, annotations, mediaType, httpHeaders, inputStream);
   }
 
   protected InputStream unwrapValueRoot(InputStream entityStream)
-          throws IOException, JsonProcessingException
-  {
+      throws IOException, JsonProcessingException {
     JsonNode node = ROOT_MAPPER.readTree(entityStream);
     node = manipulateJson(node);
     String json = ROOT_MAPPER.writeValueAsString(node);
-    InputStream inputStream = IOUtils.toInputStream(json, Charset.defaultCharset());
-    return inputStream;
+    return IOUtils.toInputStream(json, Charset.defaultCharset());
   }
 
-  protected JsonNode manipulateJson(JsonNode node)
-  {
+  protected JsonNode manipulateJson(JsonNode node) {
     return node;
   }
 }
