@@ -10,4 +10,4 @@ Die Demos:
 - Konzepte wie wiederverwendbare Formular-Komponenten
 - unterstützten die Integration von Frontend-Frameworks wie HTML5 oder Bootstrap
 
-Mehr zum Thema Benutzeroberflächen findest du in unserer Dokumentation.
+Mehr zum Thema Benutzeroberflächen findest du in unserer [Dokumentation](https://developer.axonivy.com/doc/9/designer-guide/user-interface/index.html).
