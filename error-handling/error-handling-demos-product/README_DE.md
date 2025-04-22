@@ -1,6 +1,6 @@
 # Demos für die Fehlerbehandlung
 
-Die Fehlerbehandlungs-Demos von Axon Ivy zeigen dir auf einfache und anschauliche Weise, wie du mit **exceptions** in der Prozessautomatisierung umgehen kannst. Fehler werden genutzt, um Abweichungen vom Standardprozess abzubilden. In Axon Ivy unterscheidet man zwischen technischen Fehlern (z. B. Verbindungsproblem zur Datenbank) und fachlichen Fehlern (z. B. Ablehnung einer Freigabe).  
+Die Fehlerbehandlungs-Demos zeigen dir auf einfache und anschauliche Weise, wie du mit **exceptions** in der Prozessautomatisierung in Axon Ivy umgehen kannst. Fehler werden genutzt, um Abweichungen vom Standardprozess abzubilden. In Axon Ivy unterscheidet man zwischen technischen Fehlern (z. B. Verbindungsproblem zur Datenbank) und fachlichen Fehlern (z. B. Ablehnung einer Freigabe).  
 
 Die Lösung:  
 
