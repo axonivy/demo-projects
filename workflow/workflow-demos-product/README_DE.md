@@ -2,9 +2,10 @@
 
 Die Workflow-Demo von Axon Ivy zeigt die an konkreten Beispielen die Umsetzung verschiedener Workflow - Use Cases auf der Axon Ivy Plattform. 
 
+Die Demo:  
 - enthält eine voll funktionsfähige Casemap mit ACM-Funktionen und agilen Prozessen  
-- demonstriert sequentielle und parallele Aufgabenbearbeitung mit menschlicher Interaktion  
-- hebt das Konzept und die Stärke von Signalen und Triggern hervor  
+- zeigt sequentielle und parallele Aufgabenbearbeitung mit manueller Interaktion  
+- zeigt die Konzepte und die Stärken von Signalen und Triggern  
 - zeigt die Bedeutung von Business-Daten und deren Verwendung  
 - enthält viele weitere Beispiele in Kombination mit Workflow-Aktivitäten  
 
