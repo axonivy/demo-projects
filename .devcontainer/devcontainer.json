@@ -14,7 +14,7 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["axon-ivy.designer-11"],
+      "extensions": ["axonivy.vscode-designer-13"],
       "settings": {
         "engine.runByExtension": false,
         "engine.url": "http://localhost:8080/",
