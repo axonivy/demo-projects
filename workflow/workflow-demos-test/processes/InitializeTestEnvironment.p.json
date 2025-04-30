@@ -10,7 +10,8 @@
       "name" : "start.ivp",
       "config" : {
         "callSignature" : "start",
-        "outLink" : "start.ivp"
+        "outLink" : "start.ivp",
+        "case" : { }
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
@@ -35,7 +36,7 @@
             "ivy.session.loginSessionUser(\"admin\",\"admin\");",
             "",
             "IRole role = ivy.security.roles().find(\"HR Manager\");",
-            "ivy.session.assignRole(role);"
+            "ivy.session.getSessionUser().addRole(role);"
           ]
         }
       },
@@ -50,7 +51,8 @@
       "name" : "clearDemoDossiers.ivp",
       "config" : {
         "callSignature" : "clearDemoDossiers",
-        "outLink" : "clearDemoDossiers.ivp"
+        "outLink" : "clearDemoDossiers.ivp",
+        "case" : { }
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 160 }
