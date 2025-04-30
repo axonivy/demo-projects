@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "15254DCE818AD7A2",
   "config" : {
     "data" : "workflow.humantask.ProcurementRequest"
@@ -19,7 +19,10 @@
           ]
         },
         "permission" : {
-          "role" : "Employee"
+          "anonymous" : false,
+          "roles" : [
+            "Employee"
+          ]
         },
         "task" : {
           "category" : "Input/Procurement"
@@ -80,7 +83,9 @@
           "name" : "<%=ivy.cms.co(\"/TaskDescriptions/verifyRequest\")%>: <%=in.amount%> <%=ivy.cms.co(\"/Dialogs/procurementRequest/piecesOf\")%> '<%=in.description%>' <%=ivy.cms.co(\"/Dialogs/procurementRequest/forTotal\")%> <%=in.totalPrice%><%=ivy.cms.co(\"/TaskDescriptions/currencySymbol\")%>",
           "category" : "Review/Procurement",
           "responsible" : {
-            "activator" : "Manager"
+            "roles" : [
+              "Manager"
+            ]
           }
         },
         "output" : {
@@ -112,7 +117,9 @@
           "name" : "<%=ivy.cms.co(\"/TaskDescriptions/acceptRequest\")%>: <%=in.amount%> <%=ivy.cms.co(\"/Dialogs/procurementRequest/piecesOf\")%> '<%=in.description%>' <%=ivy.cms.co(\"/Dialogs/procurementRequest/forTotal\")%> <%=in.totalPrice%><%=ivy.cms.co(\"/TaskDescriptions/currencySymbol\")%>",
           "category" : "Accept/Procurement",
           "responsible" : {
-            "activator" : "Executive Manager"
+            "roles" : [
+              "Executive Manager"
+            ]
           }
         },
         "output" : {
@@ -196,7 +203,10 @@
       ],
       "visual" : {
         "at" : { "x" : 312, "y" : 392 },
-        "size" : { "width" : 176, "height" : 44 }
+        "size" : { "width" : 176, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f15", "to" : "f5" }
@@ -211,7 +221,10 @@
       ],
       "visual" : {
         "at" : { "x" : 352, "y" : 48 },
-        "size" : { "width" : 576 }
+        "size" : { "width" : 576, "height" : 60 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ],
   "layout" : {

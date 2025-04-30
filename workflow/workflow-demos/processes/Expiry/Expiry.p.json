@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "171E51B493DDB838",
   "config" : {
     "data" : "workflow.humantask.Data"
@@ -97,7 +97,9 @@
           "expiry" : {
             "timeout" : "'1m'",
             "responsible" : {
-              "activator" : "Manager"
+              "roles" : [
+                "Manager"
+              ]
             }
           }
         }
@@ -163,7 +165,10 @@
       ],
       "visual" : {
         "at" : { "x" : 608, "y" : 64 },
-        "size" : { "width" : 368, "height" : 44 }
+        "size" : { "width" : 368, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f18",
@@ -174,7 +179,10 @@
       ],
       "visual" : {
         "at" : { "x" : 624, "y" : 224 },
-        "size" : { "width" : 400, "height" : 44 }
+        "size" : { "width" : 400, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f19",
@@ -186,7 +194,10 @@
       ],
       "visual" : {
         "at" : { "x" : 672, "y" : 384 },
-        "size" : { "width" : 496 }
+        "size" : { "width" : 496, "height" : 60 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ]
 }

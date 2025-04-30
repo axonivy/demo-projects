@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "1525503525CD0CCC",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -51,7 +51,7 @@
       },
       "visual" : {
         "at" : { "x" : 64, "y" : 160 },
-        "labelOffset" : { "x" : 9, "y" : 35 }
+        "labelOffset" : { "x" : 9 }
       },
       "connect" : [
         { "id" : "f5", "to" : "f3" }
@@ -233,8 +233,7 @@
         "guid" : "14ADE4A40F9E30A6"
       },
       "visual" : {
-        "at" : { "x" : 64, "y" : 400 },
-        "labelOffset" : { "x" : 15, "y" : 35 }
+        "at" : { "x" : 64, "y" : 400 }
       },
       "connect" : [
         { "id" : "f16", "to" : "f15" }
@@ -314,7 +313,7 @@
       },
       "visual" : {
         "at" : { "x" : 64, "y" : 328 },
-        "labelOffset" : { "x" : 11, "y" : 35 }
+        "labelOffset" : { "x" : 11 }
       },
       "connect" : [
         { "id" : "f21", "to" : "f18" }
@@ -380,7 +379,7 @@
       },
       "visual" : {
         "at" : { "x" : 64, "y" : 480 },
-        "labelOffset" : { "x" : 10, "y" : 35 }
+        "labelOffset" : { "x" : 10 }
       },
       "connect" : [
         { "id" : "f33", "to" : "f32" }
@@ -420,8 +419,7 @@
         "guid" : "14BEECEBE2A5DE80"
       },
       "visual" : {
-        "at" : { "x" : 64, "y" : 576 },
-        "labelOffset" : { "y" : 35 }
+        "at" : { "x" : 64, "y" : 576 }
       },
       "connect" : [
         { "id" : "f38", "to" : "f37" }
@@ -506,7 +504,7 @@
       },
       "visual" : {
         "at" : { "x" : 64, "y" : 672 },
-        "labelOffset" : { "x" : 14, "y" : 35 }
+        "labelOffset" : { "x" : 14 }
       },
       "connect" : [
         { "id" : "f41", "to" : "f39" }
@@ -530,7 +528,7 @@
       },
       "visual" : {
         "at" : { "x" : 64, "y" : 768 },
-        "labelOffset" : { "x" : 18, "y" : 35 }
+        "labelOffset" : { "x" : 18 }
       },
       "connect" : [
         { "id" : "f49", "to" : "f48" }
@@ -555,8 +553,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 64, "y" : 864 },
-        "labelOffset" : { "x" : 15, "y" : 35 }
+        "at" : { "x" : 64, "y" : 864 }
       },
       "connect" : [
         { "id" : "f52", "to" : "f51" }

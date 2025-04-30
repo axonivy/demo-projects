@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "151CA15592649FFE",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -30,8 +30,7 @@
         "guid" : "151CA15597D428A3"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 64 },
-        "labelOffset" : { "y" : 35 }
+        "at" : { "x" : 96, "y" : 64 }
       },
       "connect" : [
         { "id" : "f2", "to" : "f1" }

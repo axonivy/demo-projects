@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "151CA0D8CBDD2DEC",
   "config" : {
     "data" : "workflow.signal.CreateUserProcess"
@@ -29,7 +29,10 @@
       ],
       "visual" : {
         "at" : { "x" : 800, "y" : 216 },
-        "size" : { "width" : 528, "height" : 300 }
+        "size" : { "width" : 528, "height" : 300 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f11",
@@ -47,7 +50,9 @@
           "description" : "<%=ivy.cms.co(\"/TaskDescriptions/prepareOfficeKeyDesc\")%> <%=in.user.name%> [<%=in.user.userKey%>]",
           "category" : "Assign/OfficeKey",
           "responsible" : {
-            "activator" : "Office Manager"
+            "roles" : [
+              "Office Manager"
+            ]
           }
         },
         "case" : {
@@ -154,7 +159,9 @@
           "description" : "<%=ivy.cms.co(\"/TaskDescriptions/setupWorkstationDesc\")%> <%=in.user.name%> [<%=in.user.userKey%>]",
           "category" : "Setup/Workstation",
           "responsible" : {
-            "activator" : "IT Manager"
+            "roles" : [
+              "IT Manager"
+            ]
           }
         },
         "case" : {
@@ -331,7 +338,10 @@
           ]
         },
         "permission" : {
-          "role" : "HR Manager"
+          "anonymous" : false,
+          "roles" : [
+            "HR Manager"
+          ]
         },
         "task" : {
           "category" : "Input/Employee"

@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "16AC5A6319BD9D86",
   "config" : {
     "data" : "workflow.humantask.Data"
@@ -174,7 +174,10 @@
       ],
       "visual" : {
         "at" : { "x" : 632, "y" : 288 },
-        "size" : { "width" : 192, "height" : 44 }
+        "size" : { "width" : 192, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f24",
@@ -185,7 +188,10 @@
       ],
       "visual" : {
         "at" : { "x" : 608, "y" : 576 },
-        "size" : { "width" : 144, "height" : 44 }
+        "size" : { "width" : 144, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ],
   "layout" : {
