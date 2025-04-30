@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "18DD058BCE48D418",
   "config" : {
     "data" : "workflow.order.OrderData"
@@ -97,7 +97,9 @@
           "name" : "Process order <%= in1.order.product %> for customer <%= in1.customer.surname %> <%= in1.customer.name %>",
           "description" : "Please process the order of a <%= in1.order.product %> for the customer <%= in1.customer.surname %> <%= in1.customer.name %>",
           "responsible" : {
-            "activator" : "Processor"
+            "roles" : [
+              "Processor"
+            ]
           }
         },
         "case" : {
@@ -168,7 +170,9 @@
           "name" : "Deliver order <%= in1.order.product %> to customer <%= in1.customer.surname %> <%= in1.customer.name %>",
           "description" : "Please deliver the order <%= in1.order.product %> to customer <%= in1.customer.surname %> <%=in1.customer.name %>",
           "responsible" : {
-            "activator" : "Deliverer"
+            "roles" : [
+              "Deliverer"
+            ]
           }
         }
       },
@@ -300,7 +304,9 @@
           "name" : "Book payment for order <%= in1.order.product %> by customer <%= in1.customer.surname %> <%= in1.customer.name %>",
           "description" : "Please book payment for the order <%= in1.order.product %> by the customer <%= in1.customer.surname %> <%=in1.customer.name %>",
           "responsible" : {
-            "activator" : "Finance"
+            "roles" : [
+              "Finance"
+            ]
           }
         }
       },
@@ -372,7 +378,10 @@
       ],
       "visual" : {
         "at" : { "x" : 696, "y" : 92 },
-        "size" : { "width" : 416, "height" : 132 }
+        "size" : { "width" : 416, "height" : 132 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ],
   "layout" : {

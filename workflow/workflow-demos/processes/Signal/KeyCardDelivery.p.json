@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "1523FF963044280C",
   "config" : {
     "data" : "workflow.signal.FacilityManagementData"
@@ -64,7 +64,9 @@
           "description" : "<%=ivy.cms.co(\"/TaskDescriptions/DeliverKeyCardDesc\")%><%=in.user.name%> [<%=in.user.userKey%>]",
           "category" : "Assign/ParkingLot",
           "responsible" : {
-            "activator" : "Facility Manager"
+            "roles" : [
+              "Facility Manager"
+            ]
           }
         },
         "case" : {
@@ -114,7 +116,10 @@
       ],
       "visual" : {
         "at" : { "x" : 392, "y" : 136 },
-        "size" : { "width" : 496, "height" : 44 }
+        "size" : { "width" : 496, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f1", "to" : "f28" }
@@ -125,7 +130,10 @@
       "name" : "This process is part of the signal demo process. It is started by a signal sent from the CreateUser process.",
       "visual" : {
         "at" : { "x" : 356, "y" : 48 },
-        "size" : { "width" : 592, "height" : 30 }
+        "size" : { "width" : 592, "height" : 30 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ],
   "layout" : {

@@ -21,7 +21,7 @@ import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.codeborne.selenide.Selenide;
 
 @IvyWebTest
-public class WebTestBusinessCaseDataWorkflowIT {
+class WebTestBusinessCaseDataWorkflowIT {
 
   @BeforeEach
   void cleanElasticSearch() {
@@ -30,7 +30,7 @@ public class WebTestBusinessCaseDataWorkflowIT {
   }
 
   @Test
-  void testInterview() {
+  void interview() {
     login();
 
     startProcess("16EF567002B146F2/create.ivp");
@@ -67,5 +67,4 @@ public class WebTestBusinessCaseDataWorkflowIT {
       $(By.id("sessionUserName")).shouldBe(text("hb"));
     }
   }
-
 }

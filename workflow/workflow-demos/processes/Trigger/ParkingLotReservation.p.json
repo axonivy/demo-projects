@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "15254CF47A16DEA1",
   "config" : {
     "data" : "workflow.trigger.NewEmployeeData"
@@ -26,7 +26,9 @@
           "name" : "<%=ivy.cms.co(\"/TaskDescriptions/reserveParkingLotFor\")%> <%=param.newEmployeeData.name%>",
           "category" : "Assign/ParkingLot",
           "responsible" : {
-            "activator" : "Facility Manager"
+            "roles" : [
+              "Facility Manager"
+            ]
           }
         },
         "case" : {
@@ -111,7 +113,10 @@
       ],
       "visual" : {
         "at" : { "x" : 208, "y" : 152 },
-        "size" : { "width" : 208, "height" : 44 }
+        "size" : { "width" : 208, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f8", "to" : "f0" }
@@ -122,7 +127,10 @@
       "name" : "This process can be started by a trigger step. It is part of the Trigger demo case.",
       "visual" : {
         "at" : { "x" : 296, "y" : 48 },
-        "size" : { "width" : 448, "height" : 30 }
+        "size" : { "width" : 448, "height" : 30 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ],
   "layout" : {

@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "18F0EE10B46A554B",
   "config" : {
     "data" : "workflow.humantask.ProcurementRequest"
@@ -58,7 +58,7 @@
           "name" : "<%= in.dynamicRole %>: <%=ivy.cms.co(\"/TaskDescriptions/verifyRequest\")%>: <%=in.amount%> <%=ivy.cms.co(\"/Dialogs/procurementRequest/piecesOf\")%> '<%=in.description%>' <%=ivy.cms.co(\"/Dialogs/procurementRequest/forTotal\")%> <%=in.totalPrice%><%=ivy.cms.co(\"/TaskDescriptions/currencySymbol\")%>",
           "responsible" : {
             "type" : "ROLE_FROM_ATTRIBUTE",
-            "activator" : "in.dynamicRole"
+            "script" : "in.dynamicRole"
           }
         },
         "output" : {
@@ -97,13 +97,17 @@
         "tasks" : [ {
             "id" : "TaskA",
             "responsible" : {
-              "activator" : "SYSTEM"
+              "roles" : [
+                "SYSTEM"
+              ]
             },
             "skipTasklist" : true
           }, {
             "id" : "TaskB",
             "responsible" : {
-              "activator" : "SYSTEM"
+              "roles" : [
+                "SYSTEM"
+              ]
             }
           } ],
         "output" : {
@@ -325,7 +329,9 @@
       "config" : {
         "task" : {
           "responsible" : {
-            "activator" : "SYSTEM"
+            "roles" : [
+              "SYSTEM"
+            ]
           }
         }
       },
@@ -371,7 +377,10 @@
       ],
       "visual" : {
         "at" : { "x" : 724, "y" : 208 },
-        "size" : { "width" : 340, "height" : 76 }
+        "size" : { "width" : 340, "height" : 76 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ],
   "layout" : {

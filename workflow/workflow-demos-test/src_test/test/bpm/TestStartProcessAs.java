@@ -63,7 +63,7 @@ class TestStartProcessAs {
 
     assertThat(result.workflow().activeCase().getCreatorUser())
         .isEqualTo(result.workflow().session().getSessionUser());
-    assertThat(result.workflow().session().hasRole(everybody, false))
+    assertThat(result.workflow().session().hasRole(everybody))
         .isTrue();
   }
 
@@ -76,7 +76,7 @@ class TestStartProcessAs {
 
     assertThat(result.workflow().activeCase().getCreatorUser())
         .isEqualTo(result.workflow().session().getSessionUser());
-    assertThat(result.workflow().session().hasRole(hrManager, false))
+    assertThat(result.workflow().session().hasRole(hrManager))
         .isTrue();
   }
 
@@ -89,7 +89,7 @@ class TestStartProcessAs {
 
     assertThat(result.workflow().activeCase().getCreatorUser())
         .isEqualTo(result.workflow().session().getSessionUser());
-    assertThat(result.workflow().session().hasRole(hrManager, false))
+    assertThat(result.workflow().session().hasRole(hrManager))
         .isTrue();
   }
 

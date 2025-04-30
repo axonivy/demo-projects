@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "156E5D9AA7D41BAA",
   "config" : {
     "data" : "workflow.businessdata.Data"
@@ -36,7 +36,10 @@
       ],
       "visual" : {
         "at" : { "x" : 352, "y" : 396 },
-        "size" : { "width" : 656, "height" : 380 }
+        "size" : { "width" : 656, "height" : 380 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f1", "to" : "f31", "via" : [ { "x" : 176, "y" : 388 } ] }
@@ -125,7 +128,10 @@
       "name" : "This use case highlights the handling of Business Data over a Task Switch.",
       "visual" : {
         "at" : { "x" : 273, "y" : 46 },
-        "size" : { "width" : 480, "height" : 44 }
+        "size" : { "width" : 480, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ]
 }

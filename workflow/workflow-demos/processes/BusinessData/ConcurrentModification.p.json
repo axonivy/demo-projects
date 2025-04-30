@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "156DB84CCE78254F",
   "config" : {
     "data" : "workflow.businessdata.Data"
@@ -154,7 +154,10 @@
       ],
       "visual" : {
         "at" : { "x" : 240, "y" : 576 },
-        "size" : { "width" : 352, "height" : 76 }
+        "size" : { "width" : 352, "height" : 76 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f18",
@@ -193,7 +196,10 @@
       ],
       "visual" : {
         "at" : { "x" : 304, "y" : 120 },
-        "size" : { "width" : 480, "height" : 204 }
+        "size" : { "width" : 480, "height" : 204 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f19",
@@ -201,7 +207,10 @@
       "name" : "partial *overwrite* Business Data",
       "visual" : {
         "at" : { "x" : 600, "y" : 272 },
-        "size" : { "width" : 176, "height" : 30 }
+        "size" : { "width" : 176, "height" : 30 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f20", "to" : "f6" }
@@ -212,7 +221,10 @@
       "name" : "*reload Business Data *when necessary",
       "visual" : {
         "at" : { "x" : 608, "y" : 504 },
-        "size" : { "width" : 224, "height" : 30 }
+        "size" : { "width" : 224, "height" : 30 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f22", "to" : "f7" }
