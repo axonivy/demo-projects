@@ -1,5 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.axonivy.ivy.api</groupId>
+    <artifactId>ivy-project-parent</artifactId>
+    <version>13.1.0-SNAPSHOT</version>
+    <relativePath></relativePath>
+  </parent>
 
   <groupId>com.axonivy.demo</groupId>
   <artifactId>html-dialog-demos-test</artifactId>
@@ -7,25 +13,41 @@
   <packaging>iar-integration-test</packaging>
 
   <properties>
-    <project-build-plugin>13.1.0-SNAPSHOT</project-build-plugin>
     <web.tester.version>12.0.1</web.tester.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>central.snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <snapshots>
         <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>maven.axonivy.com</id>
+      <url>https://maven.axonivy.com</url>
+      <releases>
+        <enabled>true</enabled>
       </releases>
       <snapshots>
         <updatePolicy>always</updatePolicy>
       </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+    </repository>
+  </repositories>
 
   <dependencies>
+    <dependency>
+      <groupId>com.axonivy.ivy.api</groupId>
+      <artifactId>ivy-api</artifactId>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>com.axonivy.demo</groupId>
       <artifactId>html-dialog-demos</artifactId>
@@ -58,8 +80,6 @@
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <version>${project-build-plugin}</version>
-        <extensions>true</extensions>
         <configuration>
           <deployTargetFileFormat>EXPANDED</deployTargetFileFormat> <!-- need for input/download test -->
           <additionalVmArgs>
@@ -68,24 +88,5 @@
         </configuration>
       </plugin>
     </plugins>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.4</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.3.1</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.4</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
 </project>
