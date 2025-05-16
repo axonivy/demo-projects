@@ -10,7 +10,7 @@
   </organization>
 
   <properties>
-    <project-build-plugin>13.1.0-SNAPSHOT</project-build-plugin>
+    <project-build-plugin>13.1.1-SNAPSHOT</project-build-plugin>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
