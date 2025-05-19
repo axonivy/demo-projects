@@ -15,24 +15,22 @@
   <h:outputStylesheet name="form.css" library="ivy-form" />
   <h:outputScript name="js/layout.js" library="#{ivyFreyaTheme.library}" />
 </h:head>
-<h:body>
+<h:body class="body-hd #{ivyFreyaTheme.mode}">
   <div class="layout-wrapper layout-topbar-#{ivyFreyaTheme.mode} layout-menu-#{ivyFreyaTheme.mode} layout-sidebar layout-static">
     <ui:include src="./includes/topbar.xhtml" />
 
     <div class="layout-main">
       <div class="layout-content">
-        <div class="ui-fluid">
-          <div class="grid">
-            <div class="col-12">
-              <div class="card card-w-title">
-                <p:messages id="message" showDetail="true" closable="true" />
-                <h2>
-                  <span class="#{headerIcon}" /> #{centerHeader}
-                </h2>
-                <ui:insert name="content">
-                  <!-- The actual page content is inserted here -->
-                </ui:insert>
-              </div>
+        <div class="grid">
+          <div class="col-12">
+            <div class="card card-w-title">
+              <p:messages id="message" showDetail="true" closable="true" />
+              <h2>
+                <span class="#{headerIcon}" /> #{centerHeader}
+              </h2>
+              <ui:insert name="content">
+                <!-- The actual page content is inserted here -->
+              </ui:insert>
             </div>
           </div>
         </div>
@@ -43,6 +41,12 @@
   <ui:insert name="exception">
     <ui:include src="/layouts/includes/exception.xhtml" />
   </ui:insert>
+  
+  <style>
+  body.body-hd.light {
+    background-color: #F3F3F3;
+  }
+  </style>
 
 </h:body>
 
