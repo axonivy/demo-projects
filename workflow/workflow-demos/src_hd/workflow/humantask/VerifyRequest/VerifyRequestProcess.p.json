@@ -61,7 +61,7 @@
             "out.logEntry.activity" : "ivy.cms.co(\"/Dialogs/procurementRequest/verifiedBy\")",
             "out.logEntry.timestamp" : "new DateTime()",
             "out.logEntry.user.fullName" : "ivy.session.getSessionUser().fullName",
-            "out.logEntry.user.role" : "ivy.task.activator.getMemberName()"
+            "out.logEntry.user.role" : "ivy.task.responsibles().displayName()"
           }
         }
       },
@@ -128,7 +128,7 @@
             "out.logEntry.activity" : "ivy.cms.co(\"/Dialogs/procurementRequest/declinedBy\")",
             "out.logEntry.timestamp" : "new DateTime()",
             "out.logEntry.user.fullName" : "ivy.session.getSessionUser().fullName",
-            "out.logEntry.user.role" : "ivy.task.activator.getMemberName()"
+            "out.logEntry.user.role" : "ivy.task.responsibles().displayName()"
           }
         }
       },
