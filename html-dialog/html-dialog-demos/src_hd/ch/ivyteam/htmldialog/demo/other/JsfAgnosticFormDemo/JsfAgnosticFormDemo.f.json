@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/form/12.0.1/form.json",
+  "$schema" : "https://json-schema.axonivy.com/form/13.1.0/form.json",
   "id" : "a35c9de8-3e2a-49d4-b7a5-5edc08a80658",
   "components" : [ {
     "cid" : "text1",
@@ -8,18 +8,31 @@
       "content" : "This form was built with the FormEditor, introduced as alpha in 11.3.0"
     }
   }, {
-    "cid" : "input2",
-    "type" : "Input",
+    "cid" : "text5",
+    "type" : "Text",
     "config" : {
-      "required" : "false",
-      "label" : "Name"
+      "type" : "MARKDOWN",
+      "content" : "Forms are: \neasy to create using the form-editor, maintained technology agnostic, but rendered as JSF view at build time."
     }
   }, {
-    "cid" : "input3",
-    "type" : "Input",
+    "cid" : "layout10",
+    "type" : "Layout",
     "config" : {
-      "required" : "false",
-      "label" : "Lastname"
+      "components" : [ {
+        "cid" : "input2",
+        "type" : "Input",
+        "config" : {
+          "required" : "false",
+          "label" : "Name"
+        }
+      }, {
+        "cid" : "input3",
+        "type" : "Input",
+        "config" : {
+          "required" : "false",
+          "label" : "Lastname"
+        }
+      } ]
     }
   }, {
     "cid" : "input4",
@@ -30,18 +43,36 @@
       "type" : "EMAIL"
     }
   }, {
-    "cid" : "text5",
-    "type" : "Text",
+    "cid" : "layout7",
+    "type" : "Layout",
     "config" : {
-      "type" : "MARKDOWN",
-      "content" : "Forms are: \neasy to create using the form-editor, maintained technology agnostic, but rendered as JSF view at built time."
-    }
-  }, {
-    "cid" : "button6",
-    "type" : "Button",
-    "config" : {
-      "name" : "Proceed",
-      "action" : "#{logic.close}"
+      "components" : [ {
+        "cid" : "button8",
+        "type" : "Button",
+        "config" : {
+          "name" : "Cancel",
+          "action" : "#{ivyWorkflowView.cancel()}",
+          "variant" : "SECONDARY",
+          "style" : "FLAT",
+          "icon" : "si si-remove",
+          "processOnlySelf" : true,
+          "confirmHeader" : "Delete Confirmation",
+          "confirmMessage" : "Are you sure you want to delete this row?"
+        }
+      }, {
+        "cid" : "button9",
+        "type" : "Button",
+        "config" : {
+          "name" : "Proceed",
+          "action" : "#{logic.close}",
+          "type" : "SUBMIT",
+          "icon" : "si si-check-1",
+          "confirmHeader" : "Delete Confirmation",
+          "confirmMessage" : "Are you sure you want to delete this row?"
+        }
+      } ],
+      "type" : "FLEX",
+      "justifyContent" : "END"
     }
   } ]
 }
