@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "15A60076034F7437",
   "config" : {
     "data" : "com.axonivy.connectivity.rest.DataMappingData"
@@ -511,7 +511,10 @@
       ],
       "visual" : {
         "at" : { "x" : 288, "y" : 48 },
-        "size" : { "width" : 320, "height" : 44 }
+        "size" : { "width" : 320, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f36",

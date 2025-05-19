@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "16249376A44F1F8E",
   "config" : {
     "data" : "com.axonivy.connectivity.soap.service.CreateOrderServiceData"
@@ -25,14 +25,17 @@
           "isVisibleOnStartList" : false
         },
         "permission" : {
-          "role" : "Team"
+          "anonymous" : false,
+          "roles" : [
+            "Team"
+          ]
         },
         "triggerable" : true,
         "task" : {
           "name" : "Approve Order of <%=param.order.requester%>",
           "responsible" : {
             "type" : "ROLE_FROM_ATTRIBUTE",
-            "activator" : "param.responsibleRole"
+            "script" : "param.responsibleRole"
           }
         }
       },
@@ -128,7 +131,10 @@
       ],
       "visual" : {
         "at" : { "x" : 256, "y" : 160 },
-        "size" : { "width" : 352 }
+        "size" : { "width" : 352, "height" : 60 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f13", "to" : "f0", "via" : [ { "x" : 56, "y" : 160 } ] }

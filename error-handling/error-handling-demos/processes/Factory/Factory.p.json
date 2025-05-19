@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "15066B87D449F453",
   "config" : {
     "data" : "error.handling.demo.Data"
@@ -71,7 +71,9 @@
       "visual" : {
         "at" : { "x" : 360, "y" : 56 },
         "size" : { "width" : 592, "height" : 44 },
-        "color" : "NodeStyle3"
+        "description" : "",
+        "color" : "NodeStyle3",
+        "icon" : ""
       }
     }, {
       "id" : "f5",

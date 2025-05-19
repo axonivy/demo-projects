@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "169B3B8EB21D10D8",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -139,7 +139,10 @@
       "name" : "The files are transfered as MediaType.MULTIPART_FORM_DATA into Response.",
       "visual" : {
         "at" : { "x" : 592, "y" : 168 },
-        "size" : { "width" : 496, "height" : 30 }
+        "size" : { "width" : 496, "height" : 30 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f23",
