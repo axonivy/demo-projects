@@ -27,7 +27,7 @@
             "import ch.ivyteam.ivy.workflow.ITask;",
             "",
             "for (ITask itask : ivy.case.tasks().all()) {",
-            "  if(!\"#SYSTEM\".equalsIgnoreCase(itask.getActivatorName()) ",
+            "  if(!\"#SYSTEM\".equalsIgnoreCase(itask.responsibles().displayName()) ",
             "    && itask.getEndTimestamp().toString().length()>0",
             "    && !\"AD_HOC_MODIFIED\".equals(itask.customFields().stringField(\"CustomVarCharField1\").getOrNull()))",
             "  {",
