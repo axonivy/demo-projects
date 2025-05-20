@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "162492A1649E72DF",
   "kind" : "WEB_SERVICE",
   "config" : {
@@ -149,7 +149,10 @@
       },
       "visual" : {
         "at" : { "x" : 312, "y" : 328 },
-        "size" : { "width" : 448 }
+        "size" : { "width" : 448, "height" : 60 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f10", "to" : "ws0", "via" : [ { "x" : 72, "y" : 328 } ] }

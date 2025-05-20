@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "16D29C451A0AF7D5",
   "config" : {
     "data" : "com.axonivy.connectivity.soap.service.ExceptionData"
@@ -69,7 +69,10 @@
       ],
       "visual" : {
         "at" : { "x" : 336, "y" : 144 },
-        "size" : { "width" : 512, "height" : 44 }
+        "size" : { "width" : 512, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f6", "to" : "f2" }

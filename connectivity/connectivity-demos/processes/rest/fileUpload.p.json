@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "169B3B7F5EF38D8F",
   "config" : {
     "data" : "com.axonivy.connectivity.Data"
@@ -50,7 +50,10 @@
       "name" : "This Demo uses a Rest Service Call to upload a File",
       "visual" : {
         "at" : { "x" : 224, "y" : 32 },
-        "size" : { "width" : 336, "height" : 30 }
+        "size" : { "width" : 336, "height" : 30 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     }, {
       "id" : "f6",

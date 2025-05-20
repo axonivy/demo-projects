@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "162B95BB70C3178E",
   "kind" : "WEB_SERVICE",
   "config" : {
@@ -82,7 +82,10 @@
       "name" : "simulates a slow service for the 'batchServiceClient'",
       "visual" : {
         "at" : { "x" : 344, "y" : 192 },
-        "size" : { "width" : 336, "height" : 30 }
+        "size" : { "width" : 336, "height" : 30 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f1", "to" : "f14", "via" : [ { "x" : 131, "y" : 192 } ] }
