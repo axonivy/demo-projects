@@ -285,7 +285,7 @@
             "    .template(\"Order\")",
             "    .payload(in.customer)",
             "    .message().fromCms(\"InvoiceSent\", in.order.product)",
-            "    .receivers().ofTask().addActivator()",
+            "    .receivers().ofTask().addAllResponsibles()",
             "    .send();"
           ]
         }

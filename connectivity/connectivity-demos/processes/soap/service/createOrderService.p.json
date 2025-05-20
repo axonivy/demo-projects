@@ -63,7 +63,7 @@
         "output" : {
           "map" : {
             "out" : "in",
-            "out.task.activator" : "triggeredTask.getActivatorName()",
+            "out.task.activator" : "triggeredTask.responsibles().displayName()",
             "out.task.id" : "triggeredTask.getId()",
             "out.task.name" : "triggeredTask.getName()"
           }
@@ -124,7 +124,7 @@
         "output" : {
           "map" : {
             "out" : "in",
-            "out.task.activator" : "triggeredTask.getActivatorName()",
+            "out.task.activator" : "triggeredTask.responsibles().displayName()",
             "out.task.id" : "triggeredTask.getId()",
             "out.task.name" : "triggeredTask.getName()"
           }

@@ -35,7 +35,7 @@
             "ivy.session.loginSessionUser(\"admin\",\"admin\");",
             "",
             "IRole role = ivy.security.roles().find(\"HR Manager\");",
-            "ivy.session.assignRole(role);"
+            "ivy.session.getSessionUser().addRole(role);"
           ]
         },
         "sudo" : true
