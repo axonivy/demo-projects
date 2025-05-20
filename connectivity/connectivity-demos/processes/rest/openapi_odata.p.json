@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "15DEF1BE5B9E5A42",
   "config" : {
     "data" : "com.axonivy.connectivity.rest.odata.OData"
@@ -126,7 +126,10 @@
       ],
       "visual" : {
         "at" : { "x" : 376, "y" : 64 },
-        "size" : { "width" : 704 }
+        "size" : { "width" : 704, "height" : 60 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       }
     } ]
 }

@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "14ED397D47F3083D",
   "config" : {
     "data" : "error.handling.demo.Approval"
@@ -15,7 +15,9 @@
         },
         "permission" : {
           "anonymous" : false,
-          "role" : "Team"
+          "roles" : [
+            "Team"
+          ]
         }
       },
       "tags" : [
@@ -50,7 +52,9 @@
       "visual" : {
         "at" : { "x" : 248, "y" : 56 },
         "size" : { "width" : 336, "height" : 44 },
-        "color" : "NodeStyle3"
+        "description" : "",
+        "color" : "NodeStyle3",
+        "icon" : ""
       }
     }, {
       "id" : "f3",
@@ -87,7 +91,9 @@
         "task" : {
           "name" : "Approve Request for a <%=in.description%>",
           "responsible" : {
-            "activator" : "Boss"
+            "roles" : [
+              "Boss"
+            ]
           }
         }
       },
@@ -130,7 +136,7 @@
           "name" : "Request for <%=in.description%> approved",
           "responsible" : {
             "type" : "USER_FROM_ATTRIBUTE",
-            "activator" : "ivy.case.getCreatorUser().getName()"
+            "script" : "ivy.case.getCreatorUser().getName()"
           }
         }
       },
@@ -155,7 +161,7 @@
           "name" : "Request for <%=in.description%> declined",
           "responsible" : {
             "type" : "USER_FROM_ATTRIBUTE",
-            "activator" : "ivy.case.getCreatorUserName()"
+            "script" : "ivy.case.getCreatorUserName()"
           }
         }
       },

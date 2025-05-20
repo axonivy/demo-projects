@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "1549FE9E911A1812",
   "config" : {
     "data" : "com.axonivy.connectivity.rest.Approval"
@@ -26,7 +26,9 @@
           "name" : "Approve request from <%=param.approval.requestedBy%>",
           "description" : "<%=param.approval.title%>",
           "responsible" : {
-            "activator" : "Boss"
+            "roles" : [
+              "Boss"
+            ]
           }
         }
       },
@@ -50,7 +52,10 @@
       "name" : "private start: only triggerable!",
       "visual" : {
         "at" : { "x" : 248, "y" : 280 },
-        "size" : { "width" : 160, "height" : 30 }
+        "size" : { "width" : 160, "height" : 30 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f4", "to" : "f0", "via" : [ { "x" : 128, "y" : 264 } ] }
@@ -112,7 +117,10 @@
       ],
       "visual" : {
         "at" : { "x" : 224, "y" : 40 },
-        "size" : { "width" : 224, "height" : 44 }
+        "size" : { "width" : 224, "height" : 44 },
+        "description" : "",
+        "color" : "",
+        "icon" : ""
       },
       "connect" : [
         { "id" : "f13", "to" : "f5", "via" : [ { "x" : 128, "y" : 88 } ] }

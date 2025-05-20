@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "1508AE543CAEEEC1",
   "config" : {
     "data" : "misc.CancelStartData"
@@ -110,7 +110,9 @@
       "visual" : {
         "at" : { "x" : 272, "y" : 48 },
         "size" : { "width" : 464, "height" : 44 },
-        "color" : "NodeStyle3"
+        "description" : "",
+        "color" : "NodeStyle3",
+        "icon" : ""
       }
     } ],
   "layout" : {
