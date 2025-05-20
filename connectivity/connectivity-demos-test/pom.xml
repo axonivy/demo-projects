@@ -14,7 +14,6 @@
   <packaging>iar-integration-test</packaging>
   <properties>
     <web.tester.version>13.1.0</web.tester.version>
-    <jersey.version>2.46</jersey.version>
     <wss4j.version>2.4.3</wss4j.version>
     <project-build-plugin>13.1.1-SNAPSHOT</project-build-plugin>
   </properties>
@@ -28,7 +27,6 @@
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-client</artifactId>
-      <version>${jersey.version}</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -40,7 +38,6 @@
     <dependency>
       <groupId>org.glassfish.jersey.connectors</groupId>
       <artifactId>jersey-apache-connector</artifactId>
-      <version>${jersey.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -91,7 +88,6 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.17.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
