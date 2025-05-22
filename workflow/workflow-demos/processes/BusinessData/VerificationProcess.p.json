@@ -36,10 +36,7 @@
       ],
       "visual" : {
         "at" : { "x" : 352, "y" : 396 },
-        "size" : { "width" : 656, "height" : 380 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 656, "height" : 380 }
       },
       "connect" : [
         { "id" : "f1", "to" : "f31", "via" : [ { "x" : 176, "y" : 388 } ] }
@@ -100,7 +97,16 @@
           ],
           "map" : {
             "out.id" : "param.id"
-          }
+          },
+          "code" : [
+            "import ch.ivyteam.ivy.bpm.error.BpmError;",
+            "",
+            "if (param.id.length() == 0) {",
+            "  BpmError.create(\"verification:error\")",
+            "    .withMessage(\"This process should be called with a dossier id.\")",
+            "    .throwError();",
+            "}"
+          ]
         },
         "request" : {
           "name" : "Verify Dossier Process",
@@ -128,10 +134,7 @@
       "name" : "This use case highlights the handling of Business Data over a Task Switch.",
       "visual" : {
         "at" : { "x" : 273, "y" : 46 },
-        "size" : { "width" : 480, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 480, "height" : 44 }
       }
     } ]
 }

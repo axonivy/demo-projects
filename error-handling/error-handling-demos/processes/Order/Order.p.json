@@ -52,7 +52,6 @@
       "elements" : [ {
           "id" : "S10-g0",
           "type" : "EmbeddedStart",
-          "name" : "",
           "visual" : {
             "at" : { "x" : 32, "y" : 256 }
           },
@@ -63,7 +62,6 @@
         }, {
           "id" : "S10-g1",
           "type" : "EmbeddedEnd",
-          "name" : "",
           "visual" : {
             "at" : { "x" : 616, "y" : 256 }
           },
@@ -300,9 +298,7 @@
       "visual" : {
         "at" : { "x" : 240, "y" : 48 },
         "size" : { "width" : 368, "height" : 44 },
-        "description" : "",
-        "color" : "NodeStyle3",
-        "icon" : ""
+        "color" : "NodeStyle3"
       }
     }, {
       "id" : "S30",

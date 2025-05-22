@@ -93,10 +93,7 @@
       "name" : "This demo explains how to use the Rule Engine to execute the rules from DRL files, decision tables (XLS) and DMN models.",
       "visual" : {
         "at" : { "x" : 392, "y" : 56 },
-        "size" : { "width" : 688, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 688, "height" : 30 }
       }
     }, {
       "id" : "f11",

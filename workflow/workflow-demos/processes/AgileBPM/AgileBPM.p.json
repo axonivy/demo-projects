@@ -606,10 +606,7 @@
       "name" : "Self Service Process: Launch an ad-hoc Workflow based on a predefined flow pattern.",
       "visual" : {
         "at" : { "x" : 304, "y" : 48 },
-        "size" : { "width" : 480, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 480, "height" : 30 }
       }
     } ],
   "layout" : {

@@ -134,10 +134,7 @@
       ],
       "visual" : {
         "at" : { "x" : 336, "y" : 48 },
-        "size" : { "width" : 544, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 544, "height" : 44 }
       }
     }, {
       "id" : "f13",

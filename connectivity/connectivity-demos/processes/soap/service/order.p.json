@@ -131,10 +131,7 @@
       ],
       "visual" : {
         "at" : { "x" : 256, "y" : 160 },
-        "size" : { "width" : 352, "height" : 60 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 352 }
       },
       "connect" : [
         { "id" : "f13", "to" : "f0", "via" : [ { "x" : 56, "y" : 160 } ] }

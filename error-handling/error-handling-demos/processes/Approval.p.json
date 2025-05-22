@@ -52,9 +52,7 @@
       "visual" : {
         "at" : { "x" : 248, "y" : 56 },
         "size" : { "width" : 336, "height" : 44 },
-        "description" : "",
-        "color" : "NodeStyle3",
-        "icon" : ""
+        "color" : "NodeStyle3"
       }
     }, {
       "id" : "f3",

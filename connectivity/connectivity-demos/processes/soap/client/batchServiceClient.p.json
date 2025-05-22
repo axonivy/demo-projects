@@ -90,10 +90,7 @@
       ],
       "visual" : {
         "at" : { "x" : 304, "y" : 232 },
-        "size" : { "width" : 400, "height" : 172 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 400, "height" : 172 }
       },
       "connect" : [
         { "id" : "f6", "to" : "f3" }

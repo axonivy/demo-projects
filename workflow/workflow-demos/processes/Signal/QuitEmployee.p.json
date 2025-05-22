@@ -103,10 +103,7 @@
       ],
       "visual" : {
         "at" : { "x" : 360, "y" : 48 },
-        "size" : { "width" : 592, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 592, "height" : 44 }
       }
     }, {
       "id" : "f7",

@@ -169,10 +169,8 @@
       ],
       "visual" : {
         "at" : { "x" : 232, "y" : 48 },
-        "size" : { "width" : 336, "height" : 60 },
-        "description" : "",
-        "color" : "NodeStyle3",
-        "icon" : ""
+        "size" : { "width" : 336 },
+        "color" : "NodeStyle3"
       }
     }, {
       "id" : "f14",

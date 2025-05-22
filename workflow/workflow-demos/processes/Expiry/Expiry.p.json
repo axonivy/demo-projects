@@ -165,10 +165,7 @@
       ],
       "visual" : {
         "at" : { "x" : 608, "y" : 64 },
-        "size" : { "width" : 368, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 368, "height" : 44 }
       }
     }, {
       "id" : "f18",
@@ -179,10 +176,7 @@
       ],
       "visual" : {
         "at" : { "x" : 624, "y" : 224 },
-        "size" : { "width" : 400, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 400, "height" : 44 }
       }
     }, {
       "id" : "f19",
@@ -194,10 +188,7 @@
       ],
       "visual" : {
         "at" : { "x" : 672, "y" : 384 },
-        "size" : { "width" : 496, "height" : 60 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 496 }
       }
     } ]
 }

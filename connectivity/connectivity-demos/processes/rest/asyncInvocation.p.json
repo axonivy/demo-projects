@@ -121,10 +121,7 @@
       ],
       "visual" : {
         "at" : { "x" : 160, "y" : 584 },
-        "size" : { "width" : 160, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 160, "height" : 44 }
       },
       "connect" : [
         { "id" : "f26", "to" : "f12", "via" : [ { "x" : 72, "y" : 584 }, { "x" : 72, "y" : 472 } ] }
@@ -139,10 +136,7 @@
       ],
       "visual" : {
         "at" : { "x" : 424, "y" : 288 },
-        "size" : { "width" : 256, "height" : 60 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 256 }
       },
       "connect" : [
         { "id" : "f25", "to" : "f10" }

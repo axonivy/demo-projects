@@ -149,10 +149,7 @@
       },
       "visual" : {
         "at" : { "x" : 312, "y" : 328 },
-        "size" : { "width" : 448, "height" : 60 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 448 }
       },
       "connect" : [
         { "id" : "f10", "to" : "ws0", "via" : [ { "x" : 72, "y" : 328 } ] }

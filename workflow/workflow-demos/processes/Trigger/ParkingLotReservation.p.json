@@ -113,10 +113,7 @@
       ],
       "visual" : {
         "at" : { "x" : 208, "y" : 152 },
-        "size" : { "width" : 208, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 208, "height" : 44 }
       },
       "connect" : [
         { "id" : "f8", "to" : "f0" }
@@ -127,10 +124,7 @@
       "name" : "This process can be started by a trigger step. It is part of the Trigger demo case.",
       "visual" : {
         "at" : { "x" : 296, "y" : 48 },
-        "size" : { "width" : 448, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 448, "height" : 30 }
       }
     } ],
   "layout" : {
