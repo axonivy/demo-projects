@@ -154,10 +154,7 @@
       ],
       "visual" : {
         "at" : { "x" : 240, "y" : 576 },
-        "size" : { "width" : 352, "height" : 76 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 352, "height" : 76 }
       }
     }, {
       "id" : "f18",
@@ -196,10 +193,7 @@
       ],
       "visual" : {
         "at" : { "x" : 304, "y" : 120 },
-        "size" : { "width" : 480, "height" : 204 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 480, "height" : 204 }
       }
     }, {
       "id" : "f19",
@@ -207,10 +201,7 @@
       "name" : "partial *overwrite* Business Data",
       "visual" : {
         "at" : { "x" : 600, "y" : 272 },
-        "size" : { "width" : 176, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 176, "height" : 30 }
       },
       "connect" : [
         { "id" : "f20", "to" : "f6" }
@@ -221,10 +212,7 @@
       "name" : "*reload Business Data *when necessary",
       "visual" : {
         "at" : { "x" : 608, "y" : 504 },
-        "size" : { "width" : 224, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 224, "height" : 30 }
       },
       "connect" : [
         { "id" : "f22", "to" : "f7" }

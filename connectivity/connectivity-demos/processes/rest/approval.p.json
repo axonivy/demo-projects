@@ -52,10 +52,7 @@
       "name" : "private start: only triggerable!",
       "visual" : {
         "at" : { "x" : 248, "y" : 280 },
-        "size" : { "width" : 160, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 160, "height" : 30 }
       },
       "connect" : [
         { "id" : "f4", "to" : "f0", "via" : [ { "x" : 128, "y" : 264 } ] }
@@ -117,10 +114,7 @@
       ],
       "visual" : {
         "at" : { "x" : 224, "y" : 40 },
-        "size" : { "width" : 224, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 224, "height" : 44 }
       },
       "connect" : [
         { "id" : "f13", "to" : "f5", "via" : [ { "x" : 128, "y" : 88 } ] }

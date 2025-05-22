@@ -377,10 +377,7 @@
       ],
       "visual" : {
         "at" : { "x" : 724, "y" : 208 },
-        "size" : { "width" : 340, "height" : 76 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 340, "height" : 76 }
       }
     } ],
   "layout" : {

@@ -174,10 +174,7 @@
       ],
       "visual" : {
         "at" : { "x" : 632, "y" : 288 },
-        "size" : { "width" : 192, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 192, "height" : 44 }
       }
     }, {
       "id" : "f24",
@@ -188,10 +185,7 @@
       ],
       "visual" : {
         "at" : { "x" : 608, "y" : 576 },
-        "size" : { "width" : 144, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 144, "height" : 44 }
       }
     } ],
   "layout" : {

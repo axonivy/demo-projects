@@ -276,10 +276,7 @@
       ],
       "visual" : {
         "at" : { "x" : 328, "y" : 48 },
-        "size" : { "width" : 528, "height" : 60 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 528 }
       }
     }, {
       "id" : "f24",
@@ -292,10 +289,7 @@
       ],
       "visual" : {
         "at" : { "x" : 272, "y" : 544 },
-        "size" : { "width" : 352, "height" : 76 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 352, "height" : 76 }
       },
       "connect" : [
         { "id" : "f25", "to" : "f2" }

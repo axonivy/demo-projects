@@ -110,9 +110,7 @@
       "visual" : {
         "at" : { "x" : 272, "y" : 48 },
         "size" : { "width" : 464, "height" : 44 },
-        "description" : "",
-        "color" : "NodeStyle3",
-        "icon" : ""
+        "color" : "NodeStyle3"
       }
     } ],
   "layout" : {

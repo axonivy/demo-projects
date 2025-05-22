@@ -40,10 +40,7 @@
           "name" : "Dummy-Subprocess",
           "visual" : {
             "at" : { "x" : 88, "y" : 176 },
-            "size" : { "width" : 128, "height" : 30 },
-            "description" : "",
-            "color" : "",
-            "icon" : ""
+            "size" : { "width" : 128, "height" : 30 }
           }
         } ],
       "visual" : {
@@ -103,10 +100,7 @@
           "name" : "Dummy-Subprocess",
           "visual" : {
             "at" : { "x" : 96, "y" : 192 },
-            "size" : { "width" : 128, "height" : 30 },
-            "description" : "",
-            "color" : "",
-            "icon" : ""
+            "size" : { "width" : 128, "height" : 30 }
           }
         } ],
       "visual" : {
@@ -159,10 +153,7 @@
           "name" : "Dummy-Subprocess",
           "visual" : {
             "at" : { "x" : 104, "y" : 176 },
-            "size" : { "width" : 128, "height" : 30 },
-            "description" : "",
-            "color" : "",
-            "icon" : ""
+            "size" : { "width" : 128, "height" : 30 }
           }
         } ],
       "visual" : {
@@ -216,10 +207,7 @@
           "name" : "Dummy-Subprocess",
           "visual" : {
             "at" : { "x" : 128, "y" : 208 },
-            "size" : { "width" : 128, "height" : 30 },
-            "description" : "",
-            "color" : "",
-            "icon" : ""
+            "size" : { "width" : 128, "height" : 30 }
           }
         } ],
       "visual" : {
@@ -294,10 +282,7 @@
           "name" : "Dummy-Subprocess",
           "visual" : {
             "at" : { "x" : 120, "y" : 200 },
-            "size" : { "width" : 128, "height" : 30 },
-            "description" : "",
-            "color" : "",
-            "icon" : ""
+            "size" : { "width" : 128, "height" : 30 }
           }
         } ],
       "visual" : {
@@ -319,10 +304,7 @@
       "name" : "**ToDo**",
       "visual" : {
         "at" : { "x" : 40, "y" : 168 },
-        "size" : { "width" : 48, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 48, "height" : 30 }
       }
     }, {
       "id" : "f14",
@@ -330,10 +312,7 @@
       "name" : "**Question-Answer**",
       "visual" : {
         "at" : { "x" : 72, "y" : 400 },
-        "size" : { "width" : 112, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 112, "height" : 30 }
       }
     }, {
       "id" : "U12",
@@ -371,10 +350,7 @@
           "name" : "Dummy-Subprocess",
           "visual" : {
             "at" : { "x" : 88, "y" : 208 },
-            "size" : { "width" : 128, "height" : 30 },
-            "description" : "",
-            "color" : "",
-            "icon" : ""
+            "size" : { "width" : 128, "height" : 30 }
           }
         } ],
       "visual" : {
@@ -411,10 +387,7 @@
           "name" : "Dummy-Subprocess",
           "visual" : {
             "at" : { "x" : 104, "y" : 184 },
-            "size" : { "width" : 128, "height" : 30 },
-            "description" : "",
-            "color" : "",
-            "icon" : ""
+            "size" : { "width" : 128, "height" : 30 }
           }
         } ],
       "visual" : {
@@ -483,10 +456,7 @@
       "name" : "**Approval**",
       "visual" : {
         "at" : { "x" : 48, "y" : 280 },
-        "size" : { "width" : 64, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 64, "height" : 30 }
       }
     }, {
       "id" : "f24",
@@ -514,10 +484,7 @@
       ],
       "visual" : {
         "at" : { "x" : 320, "y" : 48 },
-        "size" : { "width" : 512, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 512, "height" : 44 }
       }
     } ],
   "layout" : {

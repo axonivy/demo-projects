@@ -203,10 +203,7 @@
       ],
       "visual" : {
         "at" : { "x" : 312, "y" : 392 },
-        "size" : { "width" : 176, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 176, "height" : 44 }
       },
       "connect" : [
         { "id" : "f15", "to" : "f5" }
@@ -221,10 +218,7 @@
       ],
       "visual" : {
         "at" : { "x" : 352, "y" : 48 },
-        "size" : { "width" : 576, "height" : 60 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 576 }
       }
     } ],
   "layout" : {

@@ -58,10 +58,7 @@
       ],
       "visual" : {
         "at" : { "x" : 288, "y" : 280 },
-        "size" : { "width" : 432, "height" : 108 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 432, "height" : 108 }
       }
     }, {
       "id" : "f7",
@@ -78,10 +75,7 @@
       ],
       "visual" : {
         "at" : { "x" : 280, "y" : 416 },
-        "size" : { "width" : 416, "height" : 140 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 416, "height" : 140 }
       }
     } ]
 }

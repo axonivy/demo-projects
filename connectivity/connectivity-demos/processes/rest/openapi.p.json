@@ -51,10 +51,7 @@
       ],
       "visual" : {
         "at" : { "x" : 240, "y" : 64 },
-        "size" : { "width" : 416, "height" : 60 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 416 }
       }
     }, {
       "id" : "f6",

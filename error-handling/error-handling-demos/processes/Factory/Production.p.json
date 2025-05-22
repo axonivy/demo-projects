@@ -51,9 +51,7 @@
       "visual" : {
         "at" : { "x" : 336, "y" : 64 },
         "size" : { "width" : 592, "height" : 76 },
-        "description" : "",
-        "color" : "NodeStyle3",
-        "icon" : ""
+        "color" : "NodeStyle3"
       }
     }, {
       "id" : "f7",

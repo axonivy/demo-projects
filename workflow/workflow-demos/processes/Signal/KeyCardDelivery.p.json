@@ -116,10 +116,7 @@
       ],
       "visual" : {
         "at" : { "x" : 392, "y" : 136 },
-        "size" : { "width" : 496, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 496, "height" : 44 }
       },
       "connect" : [
         { "id" : "f1", "to" : "f28" }
@@ -130,10 +127,7 @@
       "name" : "This process is part of the signal demo process. It is started by a signal sent from the CreateUser process.",
       "visual" : {
         "at" : { "x" : 356, "y" : 48 },
-        "size" : { "width" : 592, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 592, "height" : 30 }
       }
     } ],
   "layout" : {

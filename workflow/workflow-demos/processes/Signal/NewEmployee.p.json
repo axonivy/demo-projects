@@ -29,10 +29,7 @@
       ],
       "visual" : {
         "at" : { "x" : 800, "y" : 216 },
-        "size" : { "width" : 528, "height" : 300 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 528, "height" : 300 }
       }
     }, {
       "id" : "f11",

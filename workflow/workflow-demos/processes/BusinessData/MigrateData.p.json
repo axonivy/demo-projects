@@ -62,10 +62,7 @@
       ],
       "visual" : {
         "at" : { "x" : 328, "y" : 168 },
-        "size" : { "width" : 608, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 608, "height" : 44 }
       },
       "connect" : [
         { "id" : "f6", "to" : "f0", "via" : [ { "x" : 96, "y" : 120 } ] }

@@ -139,10 +139,7 @@
       "name" : "The files are transfered as MediaType.MULTIPART_FORM_DATA into Response.",
       "visual" : {
         "at" : { "x" : 592, "y" : 168 },
-        "size" : { "width" : 496, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 496, "height" : 30 }
       }
     }, {
       "id" : "f23",

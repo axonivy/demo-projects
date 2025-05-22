@@ -175,10 +175,7 @@
       ],
       "visual" : {
         "at" : { "x" : 392, "y" : 72 },
-        "size" : { "width" : 672, "height" : 56 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 672, "height" : 56 }
       }
     } ]
 }

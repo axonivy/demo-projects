@@ -511,10 +511,7 @@
       ],
       "visual" : {
         "at" : { "x" : 288, "y" : 48 },
-        "size" : { "width" : 320, "height" : 44 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 320, "height" : 44 }
       }
     }, {
       "id" : "f36",

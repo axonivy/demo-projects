@@ -82,10 +82,7 @@
       "name" : "simulates a slow service for the 'batchServiceClient'",
       "visual" : {
         "at" : { "x" : 344, "y" : 192 },
-        "size" : { "width" : 336, "height" : 30 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 336, "height" : 30 }
       },
       "connect" : [
         { "id" : "f1", "to" : "f14", "via" : [ { "x" : 131, "y" : 192 } ] }

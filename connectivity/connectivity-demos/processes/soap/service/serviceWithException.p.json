@@ -60,10 +60,7 @@
       ],
       "visual" : {
         "at" : { "x" : 496, "y" : 160 },
-        "size" : { "width" : 832, "height" : 88 },
-        "description" : "",
-        "color" : "",
-        "icon" : ""
+        "size" : { "width" : 832, "height" : 88 }
       }
     } ]
 }
