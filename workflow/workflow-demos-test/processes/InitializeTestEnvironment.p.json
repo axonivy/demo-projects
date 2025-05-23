@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "1537FF3C3382D47F",
   "config" : {
     "data" : "workflow.demos.test.Data"
@@ -35,7 +35,7 @@
             "ivy.session.loginSessionUser(\"admin\",\"admin\");",
             "",
             "IRole role = ivy.security.roles().find(\"HR Manager\");",
-            "ivy.session.assignRole(role);"
+            "ivy.session.getSessionUser().addRole(role);"
           ]
         },
         "sudo" : true
