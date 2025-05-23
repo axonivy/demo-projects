@@ -23,6 +23,16 @@
       <version>${project.version}</version>
       <type>iar</type>
     </dependency>
+
+    <dependency>
+      <groupId>com.axonivy.ivy.api</groupId>
+      <artifactId>ivy-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>com.axonivy.ivy.webtest</groupId>
       <artifactId>web-tester</artifactId>
@@ -39,10 +49,6 @@
       <artifactId>selenide-proxy</artifactId>
       <version>7.9.2</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.axonivy.ivy.api</groupId>
-      <artifactId>ivy-api</artifactId>
     </dependency>
   </dependencies>
   <repositories>
