@@ -15,7 +15,7 @@
   <properties>
     <web.tester.version>13.1.0</web.tester.version>
     <wss4j.version>2.4.3</wss4j.version>
-    <project-build-plugin>13.1.1-SNAPSHOT</project-build-plugin>
+    <project-build-plugin>13.1.2-SNAPSHOT</project-build-plugin>
   </properties>
   <dependencies>
     <dependency>

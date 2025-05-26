@@ -17,7 +17,7 @@
     <url>https://www.axonivy.com</url>
   </organization>
   <properties>
-    <project-build-plugin>13.1.1-SNAPSHOT</project-build-plugin>
+    <project-build-plugin>13.1.2-SNAPSHOT</project-build-plugin>
   </properties>
   <dependencies>
     <dependency>
