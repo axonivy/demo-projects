@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -22,7 +22,6 @@ import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
 
 import ch.ivyteam.ivy.environment.Ivy;
-import ch.ivyteam.ivy.project.IIvyProject;
 
 /**
  * <p>
@@ -77,7 +76,7 @@ public class FileUpload {
    * @return an {@link IFile} resource
    */
   public static IFile getHdResource(String dialogId, String pathToFileInDialog) throws FileNotFoundException {
-    IProject eclipseProject = IIvyProject.of(Ivy.request().project()).getProject();
+    IProject eclipseProject = Ivy.request().getProcessModelVersion().getProject();
     String dialogPath = dialogId.replace(".", "/");
 
     IFolder dialogDir = eclipseProject.getFolder("src_hd").getFolder(dialogPath);
