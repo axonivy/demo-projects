@@ -4,8 +4,7 @@ pipeline {
   }
 
   triggers {
-    pollSCM '@hourly'
-    cron '@midnight'
+    cron '@weekly'
   }
 
   options {
