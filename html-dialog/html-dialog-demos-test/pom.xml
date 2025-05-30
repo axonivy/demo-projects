@@ -14,7 +14,7 @@
   <packaging>iar-integration-test</packaging>
   <properties>
     <web.tester.version>13.1.0</web.tester.version>
-    <project-build-plugin>13.1.2-SNAPSHOT</project-build-plugin>
+    <project-build-plugin>13.2.0-SNAPSHOT</project-build-plugin>
   </properties>
   <dependencies>
     <dependency>
