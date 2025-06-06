@@ -46,7 +46,7 @@
 
   <pluginRepositories>
     <pluginRepository>
-      <id>central.snapshots</id>
+      <id>central.sonatype.snapshots</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
       <releases>
         <enabled>false</enabled>
