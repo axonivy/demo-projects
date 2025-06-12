@@ -13,6 +13,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.awaitility.Awaitility;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -22,6 +23,8 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.FileDownloadMode;
 import com.codeborne.selenide.Selenide;
 
+import ch.ivyteam.htmldialog.server.test.ProcessUtil;
+
 @IvyWebTest
 public class WebTestExcelExportIT {
 
@@ -30,7 +33,15 @@ public class WebTestExcelExportIT {
     Selenide.closeWebDriver();
     Configuration.proxyEnabled = true;
     Configuration.fileDownload = FileDownloadMode.PROXY;
-    Selenide.open();
+    ProcessUtil.open();
+  }
+
+  @AfterAll
+  static void cleanUp() {
+    Selenide.closeWebDriver();
+    Configuration.proxyEnabled = false;
+    Configuration.fileDownload = FileDownloadMode.HTTPGET;
+    ProcessUtil.open();
   }
 
   @Test
