@@ -78,7 +78,6 @@
             "import org.apache.commons.lang3.StringUtils;",
             "import java.io.InputStream;",
             "import org.primefaces.model.file.UploadedFile;",
-            "import ch.ivyteam.ivy.cm.CoType;",
             "import ch.ivyteam.ivy.cm.ContentObject;",
             "import ch.ivyteam.ivy.cm.ContentObjectValue;",
             "",
