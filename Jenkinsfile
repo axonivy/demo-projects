@@ -13,7 +13,7 @@ pipeline {
     string(
        name: 'engineListUrl',
        description: 'Engine to use for build',
-       defaultValue: 'https://product.ivyteam.io'
+       defaultValue: 'https://jenkins.ivyteam.io/job/core_product-engine/job/security-headers/lastSuccessfulBuild/'
     )
   }
   stages {
