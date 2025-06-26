@@ -1,9 +1,9 @@
 package com.axonivy.connectivity.rest.client.file;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 
 import javax.ws.rs.client.Entity;
@@ -12,17 +12,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
+import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.media.multipart.Boundary;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
-
-import ch.ivyteam.ivy.environment.Ivy;
-import ch.ivyteam.ivy.project.IIvyProject;
 
 /**
  * <p>
@@ -47,50 +40,24 @@ public class FileUpload {
         .put(Entity.entity(multipart, contentType));
   }
 
-  public static Response upload(WebTarget target, IFile resource) throws IOException {
-    File finishedFile = toTempIoFile(resource);
-    Response response = upload(target, finishedFile);
-    finishedFile.delete();
-    return response;
-  }
-
-  public static File toTempIoFile(IFile resource) throws IOException {
-    String name = StringUtils.substringBeforeLast(resource.getName(), ".");
-    String extension = "." + resource.getFileExtension();
+  public static File toTempIoFile(String fileName, InputStream resource) throws IOException {
+    String name = StringUtils.substringBeforeLast(fileName, ".");
+    String extension = "." + StringUtils.substringAfterLast(fileName, ".");
     File tempFile = Files.createTempFile(name, extension).toFile();
-    try {
-      IOUtils.copy(resource.getContents(), new FileOutputStream(tempFile));
-    } catch (CoreException ex) {
-      throw new IOException("There was some problem while creating tempFile", ex);
+    try(var os = new FileOutputStream(tempFile)) {
+      IOUtils.copy(resource, os);
     }
     return tempFile;
   }
 
-  /**
-   * Files from an IvyProject must be read with the eclipse resource layer to
-   * support packed and bare projects.
-   *
-   * @param dialogId dot separated user dialog identifier (e.g.
-   *          com.axonivy.MyDialog)
-   * @param pathToFileInDialog path to a file in the html dialog (e.g.
-   *          resources/myGif.gif)
-   * @return an {@link IFile} resource
-   */
-  public static IFile getHdResource(String dialogId, String pathToFileInDialog) throws FileNotFoundException {
-    IProject eclipseProject = IIvyProject.of(Ivy.request().project()).getProject();
-    String dialogPath = dialogId.replace(".", "/");
-
-    IFolder dialogDir = eclipseProject.getFolder("src_hd").getFolder(dialogPath);
-    IFile resource = dialogDir.getFile(pathToFileInDialog);
-    if (!resource.exists()) {
-      throw new FileNotFoundException("File " + pathToFileInDialog + " does not exist in " + dialogId);
-    }
-    return resource;
+  public static File getIvyLogo() throws IOException {
+    return getResource("ivy_favicon_48.png");
   }
 
-  public static File getIvyLogo() throws IOException {
-    IFile ivyLogoResource = getHdResource("com.axonivy.connectivity.rest.FileUpload", "resources/ivy_favicon_48.png");
-    return toTempIoFile(ivyLogoResource);
+  public static File getResource(String fileName) throws IOException {
+    try(var resource = FileUpload.class.getResourceAsStream(fileName)) {
+      return toTempIoFile(fileName, resource);
+    }
   }
 
 }
