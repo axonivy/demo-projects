@@ -45,7 +45,7 @@
         "guid" : "169B3B8EB4542063"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 384 },
+        "at" : { "x" : 96, "y" : 392 },
         "labelOffset" : { "x" : 8, "y" : 32 }
       },
       "connect" : [
@@ -55,13 +55,13 @@
       "id" : "f4",
       "type" : "HtmlDialogExit",
       "visual" : {
-        "at" : { "x" : 224, "y" : 384 }
+        "at" : { "x" : 320, "y" : 392 }
       }
     }, {
       "id" : "f14",
       "type" : "HtmlDialogEnd",
       "visual" : {
-        "at" : { "x" : 320, "y" : 320 }
+        "at" : { "x" : 320, "y" : 328 }
       }
     }, {
       "id" : "f12",
@@ -102,7 +102,6 @@
         },
         "code" : [
           "import com.axonivy.connectivity.rest.client.file.FileUpload;",
-          "import org.eclipse.core.resources.IFile;",
           "import javax.ws.rs.client.Entity;",
           "import javax.ws.rs.core.MediaType;",
           "import javax.ws.rs.core.Response;",
@@ -110,8 +109,7 @@
           "import org.glassfish.jersey.media.multipart.FormDataMultiPart;",
           "import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;",
           "",
-          "IFile resource = FileUpload.getHdResource(\"com.axonivy.connectivity.rest.FileUpload\",\"resources/\"+in.resourceName);",
-          "java.io.File file = FileUpload.toTempIoFile(resource);",
+          "java.io.File file = FileUpload.getResource(in.resourceName);",
           "",
           "FormDataMultiPart formDataMultiPart = new FormDataMultiPart();",
           "FileDataBodyPart filePart = new FileDataBodyPart(\"file\", file);",
@@ -121,9 +119,12 @@
           "Response jaxrsresponse = client.request().header(\"X-Requested-By\", \"ivy\")",
           " .header(\"MIME-Version\", \"1.0\")",
           " .put(Entity.entity(multipart, contentType));",
-          "",
-          "in.downloadName = jaxrsresponse.getHeaderString(\"uploadedFile\");",
-          "in.listFile.add(jaxrsresponse.getHeaderString(\"uploadedFile\"));"
+          "try {",
+          "  in.downloadName = jaxrsresponse.getHeaderString(\"uploadedFile\");",
+          "  in.listFile.add(jaxrsresponse.getHeaderString(\"uploadedFile\"));",
+          "} finally {",
+          "  jaxrsresponse.close();",
+          "}"
         ]
       },
       "visual" : {
@@ -131,7 +132,7 @@
         "size" : { "width" : 128 }
       },
       "connect" : [
-        { "id" : "f9", "to" : "f13" }
+        { "id" : "f9", "to" : "f13", "via" : [ { "x" : 320, "y" : 128 } ] }
       ]
     }, {
       "id" : "f15",
@@ -160,21 +161,24 @@
         },
         "code" : [
           "import com.axonivy.connectivity.rest.client.file.FileUpload;",
-          "import org.eclipse.core.resources.IFile;",
           "import javax.ws.rs.core.Response;",
           "",
-          "IFile resource = FileUpload.getHdResource(\"com.axonivy.connectivity.rest.FileUpload\", ",
-          "    \"resources/\"+in.resourceName);",
+          "java.io.File resource = FileUpload.getResource(in.resourceName);",
           "Response response = FileUpload.upload(client, resource);",
-          "in.downloadName = response.getHeaderString(\"uploadedFile\");",
-          "in.listFile.add(in.downloadName);"
+          "try {",
+          "  in.downloadName = response.getHeaderString(\"uploadedFile\");",
+          "  in.listFile.add(in.downloadName);",
+          "} finally {",
+          "  response.close();",
+          "}"
         ]
       },
       "visual" : {
-        "at" : { "x" : 208, "y" : 192 }
+        "at" : { "x" : 208, "y" : 201 },
+        "size" : { "width" : 128, "height" : 62 }
       },
       "connect" : [
-        { "id" : "f8", "to" : "f13" }
+        { "id" : "f8", "to" : "f13", "via" : [ { "x" : 320, "y" : 200 } ] }
       ]
     }, {
       "id" : "f26",
@@ -184,7 +188,7 @@
         "guid" : "169DD5240BB13E40"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 192 },
+        "at" : { "x" : 96, "y" : 200 },
         "labelOffset" : { "x" : 7, "y" : 37 }
       },
       "connect" : [
@@ -223,8 +227,8 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 208, "y" : 320 },
-        "size" : { "height" : 40 }
+        "at" : { "x" : 208, "y" : 332 },
+        "size" : { "width" : 128, "height" : 56 }
       },
       "connect" : [
         { "id" : "f21", "to" : "f14" }
@@ -246,7 +250,7 @@
         "guid" : "169FD080F277361F"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 320 }
+        "at" : { "x" : 96, "y" : 328 }
       },
       "connect" : [
         { "id" : "f10", "to" : "f19" }
@@ -287,7 +291,7 @@
         "guid" : "16AD5002D41CB6BC"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 256 },
+        "at" : { "x" : 96, "y" : 264 },
         "size" : { "width" : 24, "height" : 24 },
         "labelOffset" : { "x" : 32, "y" : 36 }
       },
@@ -298,7 +302,7 @@
       "id" : "f18",
       "type" : "HtmlDialogEnd",
       "visual" : {
-        "at" : { "x" : 320, "y" : 256 }
+        "at" : { "x" : 320, "y" : 264 }
       }
     } ]
 }

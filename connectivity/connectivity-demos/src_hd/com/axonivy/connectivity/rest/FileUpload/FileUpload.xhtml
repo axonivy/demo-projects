@@ -38,7 +38,7 @@
         <p:dataTable value="#{data.listFile}" widgetVar="dlFiles" var="file" id="dataTable" style="width: 500px"
           emptyMessage="No files were uploaded yet.">
           <p:column headerText="Uploaded Files">
-            <p:outputLabel value="#{file}" />
+            <h:outputText value="#{file}" />
           </p:column>
           <p:column headerText="Download" style="width: 120px">
             <p:commandButton id="dl" value="Download" ajax="false" actionListener="#{logic.download(file)}"
