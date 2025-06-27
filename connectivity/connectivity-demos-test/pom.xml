@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>connectivity-demos-test</artifactId>
-  <version>13.1.1-SNAPSHOT</version>
+  <version>13.1.2-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
   <properties>
     <web.tester.version>13.1.0</web.tester.version>
