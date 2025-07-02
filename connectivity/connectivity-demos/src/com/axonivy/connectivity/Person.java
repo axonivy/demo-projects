@@ -15,6 +15,11 @@ public class Person {
   private UUID id;
   private java.lang.String firstname;
   private java.lang.String lastname;
+  private Salutation salutation;
+
+  public enum Salutation {
+    Mr, Mrs, Dr
+  }
 
   @XmlElement
   public UUID getId() {
@@ -43,6 +48,14 @@ public class Person {
     lastname = _lastname;
   }
 
+  public Salutation getSalutation() {
+    return salutation;
+  }
+
+  public void setSalutation(Salutation salutation) {
+    this.salutation = salutation;
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {
@@ -59,6 +72,7 @@ public class Person {
         .append(id, other.id)
         .append(firstname, other.firstname)
         .append(lastname, other.lastname)
+        .append(salutation, other.salutation)
         .isEquals();
   }
 
@@ -68,6 +82,7 @@ public class Person {
         .append(id)
         .append(firstname)
         .append(lastname)
+        .append(salutation)
         .toHashCode();
   }
 
@@ -75,4 +90,5 @@ public class Person {
   public String toString() {
     return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
   }
+
 }

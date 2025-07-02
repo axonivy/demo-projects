@@ -614,7 +614,7 @@
       "id" : "f39",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 542, "y" : 808 }
+        "at" : { "x" : 696, "y" : 808 }
       }
     }, {
       "id" : "f43",
@@ -654,7 +654,7 @@
         "at" : { "x" : 408, "y" : 808 }
       },
       "connect" : [
-        { "id" : "f40", "to" : "f39" }
+        { "id" : "f40", "to" : "f60" }
       ]
     }, {
       "id" : "f44",
@@ -920,6 +920,35 @@
       },
       "connect" : [
         { "id" : "f27", "to" : "f23" }
+      ]
+    }, {
+      "id" : "f60",
+      "type" : "RestClientCall",
+      "config" : {
+        "method" : "PUT",
+        "target" : {
+          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3"
+        },
+        "body" : {
+          "form" : {
+            "firstName" : [ "\"Fritz\"" ],
+            "lastName" : [ "\"Frosch\"" ]
+          },
+          "entity" : {
+            "type" : "com.axonivy.connectivity.Person",
+            "map" : {
+              "param.firstname" : "\"Caroline\"",
+              "param.lastname" : "\"Frosch\"",
+              "param.salutation" : "com.axonivy.connectivity.Person.Salutation.Mrs"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 568, "y" : 808 }
+      },
+      "connect" : [
+        { "id" : "f61", "to" : "f39", "color" : "default" }
       ]
     } ],
   "layout" : {

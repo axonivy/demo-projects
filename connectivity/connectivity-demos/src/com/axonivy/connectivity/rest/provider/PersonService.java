@@ -27,6 +27,7 @@ import javax.ws.rs.core.Response.Status;
 import org.apache.commons.lang3.StringUtils;
 
 import com.axonivy.connectivity.Person;
+import com.axonivy.connectivity.Person.Salutation;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -60,10 +61,10 @@ public class PersonService {
   private final Map<UUID, Person> persons = new HashMap<>();
 
   public PersonService() {
-    addNewPerson("Bruno", "Bütler");
-    addNewPerson("Reto", "Weiss");
-    addNewPerson("Renato", "Stalder");
-    addNewPerson("Reguel", "Wermelinger");
+    addNewPerson("Bruno", "Bütler", Salutation.Dr);
+    addNewPerson("Reto", "Weiss", Salutation.Mr);
+    addNewPerson("Renato", "Stalder", Salutation.Mr);
+    addNewPerson("Reguel", "Wermelinger", Salutation.Mr);
   }
 
   @GET
@@ -108,7 +109,7 @@ public class PersonService {
   public Response add(
       @Parameter(required = true) @FormParam("firstname") @Size(min = 2, max = 255) String firstname,
       @Parameter(required = true) @FormParam("lastname") String lastname) {
-    Person person = addNewPerson(firstname, lastname);
+    Person person = addNewPerson(firstname, lastname, null);
     Link createdLink = Link.fromPath("persons/{id}").rel("createdPerson").build(person.getId());
     return Response.status(Status.CREATED)
         .location(createdLink.getUri())
@@ -158,10 +159,11 @@ public class PersonService {
     }
   }
 
-  private Person addNewPerson(String firstname, String lastname) {
+  private Person addNewPerson(String firstname, String lastname, Salutation salutation) {
     Person person = new Person();
     person.setFirstname(firstname);
     person.setLastname(lastname);
+    person.setSalutation(salutation);
     person.setId(UUID.randomUUID());
     persons.put(person.getId(), person);
     return person;
