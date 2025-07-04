@@ -3,6 +3,7 @@ Jenkinsfile @ivy-cst
 Dockerfile @ivy-cst
 
 connectivity/ @ivy-rew
+database/ @ivy-tgr @ivy-rew
 demos-app/ @ivy-cst
 error-handling/ @weissreto
 html-dialog/ @ivy-lli
