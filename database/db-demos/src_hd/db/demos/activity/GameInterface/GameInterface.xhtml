@@ -11,17 +11,14 @@
   <ui:composition template="/layouts/frame-10.xhtml">
     <ui:define name="title">Interface</ui:define>
     <ui:define name="content">
-
       <div>
         <div>
-          <ic:db.demos.PlayerInterface shared="#{data.shared}"
-            id="Players" />
+          <ic:db.demos.activity.PlayerInterface shared="#{data.shared}" id="Players" />
         </div>
         <div>
-          <ic:db.demos.TeamInterface shared="#{data.shared}" id="Teams" />
+          <ic:db.demos.activity.TeamInterface shared="#{data.shared}" id="Teams" />
         </div>
       </div>
-
     </ui:define>
   </ui:composition>
 </h:body>

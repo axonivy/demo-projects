@@ -1,4 +1,4 @@
-package db.demo.test;
+package db.demo.activity.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -10,15 +10,15 @@ import ch.ivyteam.ivy.bpm.engine.client.History;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmProcess;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
-import db.demos.Player;
+import db.demos.activity.Player;
 
 @IvyProcessTest(enableWebServer = true)
 public class CRUDuserPropertiesTest {
 
-  private static final BpmProcess testee = BpmProcess.path("CRUDuserProperties");
+  private static final BpmProcess testee = BpmProcess.path("activity/CRUDuserProperties");
 
   @Test
-  public void callProcess(BpmClient bpmClient) {
+  void callProcess(BpmClient bpmClient) {
     BpmElement startable = testee.elementName("Create.ivp");
     ExecutionResult result = bpmClient.start().process(startable).as().user("Alvin").execute();
 
