@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.axonivy.com/market/10.0.0/product.json",
+    "installers": [
+    {
+      "id": "maven-import",
+      "data": {
+        "projects": [
+          {
+            "groupId": "com.axonivy.demo",
+            "artifactId": "db-demos",
+            "version": "${version}",
+            "type": "iar"
+          }
+        ],
+        "repositories": [
+          {
+            "id": "maven.axonivy.com",
+            "url": "https://maven.axonivy.com",
+            "snapshots": {
+              "enabled": "true"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
