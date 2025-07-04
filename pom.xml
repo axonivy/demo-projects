@@ -7,6 +7,7 @@
 
   <modules>
     <module>html-dialog</module>
+    <module>database</module>
     <module>error-handling</module>
     <module>quick-start-tutorial</module>
     <module>rule-engine</module>
