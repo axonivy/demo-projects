@@ -2,7 +2,7 @@
   "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
   "id" : "184BD5B00AD6A83D",
   "config" : {
-    "data" : "db.demos.Player"
+    "data" : "db.demos.activity.Player"
   },
   "elements" : [ {
       "id" : "S20",
@@ -185,7 +185,7 @@
       "type" : "DialogCall",
       "name" : "Interface",
       "config" : {
-        "dialog" : "db.demos.GameInterface:start(db.demos.Shared)"
+        "dialog" : "db.demos.activity.GameInterface:start(db.demos.activity.Shared)"
       },
       "visual" : {
         "at" : { "x" : 856, "y" : 376 }
