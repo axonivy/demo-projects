@@ -17,6 +17,11 @@
       <groupId>com.axonivy.ivy.api</groupId>
       <artifactId>ivy-api</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-processor</artifactId>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <repositories>
     <repository>
@@ -48,8 +53,25 @@
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <extensions>true</extensions>
+        <configuration>
+          <compilerWarnings>false</compilerWarnings>
+          <compilerOptions>
+            <compilerOption>-XprintProcessorInfo</compilerOption>
+            <compilerOption>-verbose</compilerOption>
+            <compilerOption>-s</compilerOption>
+            <compilerOption>${project.basedir}/src_dataClasses</compilerOption>
+          </compilerOptions>
+        </configuration>
       </plugin>
     </plugins>
   </build>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>jakarta.inject</groupId>
+        <artifactId>jakarta.inject-api</artifactId>
+        <version>2.0.1</version><!-- jakarta.data repos use it in generated code -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>
