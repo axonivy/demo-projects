@@ -1,0 +1,40 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "simpleName" : "Player",
+  "namespace" : "db.demos.persistence",
+  "isBusinessCaseData" : false,
+  "entity" : { },
+  "fields" : [ {
+    "name" : "id",
+    "type" : "Integer",
+    "comment" : "Identifier",
+    "modifiers" : [ "PERSISTENT", "ID", "GENERATED" ],
+    "entity" : {
+      "orphanRemoval" : false
+    }
+  }, {
+    "name" : "firstName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ],
+    "entity" : {
+      "cascadeTypes" : [ "PERSIST", "MERGE" ],
+      "orphanRemoval" : false
+    }
+  }, {
+    "name" : "lastName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ],
+    "entity" : {
+      "cascadeTypes" : [ "PERSIST", "MERGE" ],
+      "orphanRemoval" : false
+    }
+  }, {
+    "name" : "birthDate",
+    "type" : "Date",
+    "modifiers" : [ "PERSISTENT" ],
+    "entity" : {
+      "cascadeTypes" : [ "PERSIST", "MERGE" ],
+      "orphanRemoval" : false
+    }
+  } ]
+}
