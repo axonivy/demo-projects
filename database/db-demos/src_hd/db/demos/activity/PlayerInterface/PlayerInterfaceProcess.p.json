@@ -3,7 +3,7 @@
   "id" : "184BE51DDAD4D046",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "db.demos.PlayerInterface.PlayerInterfaceData"
+    "data" : "db.demos.activity.PlayerInterface.PlayerInterfaceData"
   },
   "elements" : [ {
       "id" : "f3",
@@ -32,7 +32,7 @@
         "signature" : "start",
         "input" : {
           "params" : [
-            { "name" : "shared", "type" : "db.demos.Shared", "desc" : "" }
+            { "name" : "shared", "type" : "db.demos.activity.Shared", "desc" : "" }
           ],
           "map" : {
             "out.player.birthday" : "'1984-10-18'",
@@ -89,7 +89,7 @@
         "signature" : "deletePlayer",
         "input" : {
           "params" : [
-            { "name" : "player", "type" : "db.demos.Player", "desc" : "" }
+            { "name" : "player", "type" : "db.demos.activity.Player", "desc" : "" }
           ],
           "map" : {
             "out.player" : "param.player"
@@ -124,7 +124,7 @@
         },
         "output" : {
           "code" : [
-            "import db.demos.Player;",
+            "import db.demos.activity.Player;",
             "in.player.setPid(lastInsertedId);",
             "out.players.add(in.player);",
             "out.player = new Player();"
@@ -176,8 +176,8 @@
             "out.player.name" : "\"Tom\""
           },
           "code" : [
-            "import db.demos.Player;",
-            "import db.demos.Team;",
+            "import db.demos.activity.Player;",
+            "import db.demos.activity.Team;",
             "",
             "for (int i = 0; i < recordset.size(); i++) {",
             "  String name = recordset.getAt(i).getField(\"name\") as String;",

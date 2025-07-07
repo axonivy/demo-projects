@@ -3,7 +3,7 @@
   "id" : "185100DEA8585324",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "db.demos.GameInterface.GameInterfaceData"
+    "data" : "db.demos.activity.GameInterface.GameInterfaceData"
   },
   "elements" : [ {
       "id" : "f0",
@@ -13,7 +13,7 @@
         "signature" : "start",
         "input" : {
           "params" : [
-            { "name" : "shared", "type" : "db.demos.Shared", "desc" : "" }
+            { "name" : "shared", "type" : "db.demos.activity.Shared", "desc" : "" }
           ],
           "map" : {
             "out.shared" : "param.shared"
@@ -21,8 +21,8 @@
         },
         "result" : {
           "params" : [
-            { "name" : "player", "type" : "db.demos.Player", "desc" : "" },
-            { "name" : "team", "type" : "db.demos.Team", "desc" : "" }
+            { "name" : "player", "type" : "db.demos.activity.Player", "desc" : "" },
+            { "name" : "team", "type" : "db.demos.activity.Team", "desc" : "" }
           ],
           "map" : {
             "result.player" : "in.player",

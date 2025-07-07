@@ -3,7 +3,7 @@
   "id" : "1850FE35305559CA",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "db.demos.TeamInterface.TeamInterfaceData"
+    "data" : "db.demos.activity.TeamInterface.TeamInterfaceData"
   },
   "elements" : [ {
       "id" : "f0",
@@ -13,7 +13,7 @@
         "signature" : "start",
         "input" : {
           "params" : [
-            { "name" : "shared", "type" : "db.demos.Shared", "desc" : "" }
+            { "name" : "shared", "type" : "db.demos.activity.Shared", "desc" : "" }
           ],
           "map" : {
             "out.shared" : "param.shared"
@@ -67,7 +67,7 @@
         "signature" : "deleteTeam",
         "input" : {
           "params" : [
-            { "name" : "team", "type" : "db.demos.Team", "desc" : "" }
+            { "name" : "team", "type" : "db.demos.activity.Team", "desc" : "" }
           ],
           "map" : {
             "out.team" : "param.team"
@@ -134,7 +134,7 @@
         },
         "output" : {
           "code" : [
-            "import db.demos.Team;",
+            "import db.demos.activity.Team;",
             "",
             "in.team.setTid(lastInsertedId);",
             "out.teams.add(in.team);",
@@ -170,7 +170,7 @@
         },
         "output" : {
           "code" : [
-            "import db.demos.Team;",
+            "import db.demos.activity.Team;",
             "",
             "out.teams.clear();",
             "out.shared.teams.clear();",
@@ -215,7 +215,7 @@
             "out.team.teamname" : "\"FCL\""
           },
           "code" : [
-            "import db.demos.Team;",
+            "import db.demos.activity.Team;",
             "",
             "for (int i = 0; i < recordset.size(); i++) {",
             "  Date foundationDay = recordset.getAt(i).getField(\"foundationDay\") as Date;",
@@ -252,7 +252,7 @@
         },
         "output" : {
           "code" : [
-            "import db.demos.Team;",
+            "import db.demos.activity.Team;",
             "",
             "out.teams.clear();",
             "out.shared.teams.clear();",

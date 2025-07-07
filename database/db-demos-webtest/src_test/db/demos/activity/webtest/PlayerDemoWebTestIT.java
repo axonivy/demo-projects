@@ -1,4 +1,4 @@
-package db.demos.webtest;
+package db.demos.activity.webtest;
 
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.match;
