@@ -70,7 +70,7 @@
       <dependency>
         <groupId>jakarta.inject</groupId>
         <artifactId>jakarta.inject-api</artifactId>
-        <version>2.0.1</version><!-- jakarta.data repos use it in generated code -->
+        <version>2.0.1.MR</version><!-- jakarta.data repos use it in generated code -->
       </dependency>
     </dependencies>
   </dependencyManagement>
