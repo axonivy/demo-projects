@@ -1,9 +1,11 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/13.2.0/data-class.json",
   "simpleName" : "Player",
   "namespace" : "db.demos.persistence",
   "isBusinessCaseData" : false,
-  "entity" : { },
+  "entity" : {
+    "generateRepo": true
+   },
   "fields" : [ {
     "name" : "id",
     "type" : "Integer",
