@@ -32,7 +32,7 @@
       "type" : "DialogCall",
       "name" : "Show Players",
       "config" : {
-        "dialog" : "db.demos.peristence.PlayerInterface:start()"
+        "dialog" : "db.demos.persistence.PlayerInterface:start()"
       },
       "visual" : {
         "at" : { "x" : 224, "y" : 64 }

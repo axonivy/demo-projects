@@ -3,7 +3,7 @@
   "id" : "197F3260FF453EF3",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "db.demos.peristence.PlayerInterface.PlayerInterfaceData"
+    "data" : "db.demos.persistence.PlayerInterface.PlayerInterfaceData"
   },
   "elements" : [ {
       "id" : "f0",
