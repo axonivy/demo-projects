@@ -1,0 +1,44 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "id" : "197F321EE10A76E6",
+  "config" : {
+    "data" : "activity.persistenceDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start",
+      "config" : {
+        "signature" : "start",
+        "request" : {
+          "name" : "Persistence Entity Repository Demo",
+          "description" : "Demonstrates how a Html Dialog can use an Entity Repository to edit data from a database table"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f5",
+      "type" : "DialogCall",
+      "name" : "Show Players",
+      "config" : {
+        "dialog" : "db.demos.persistence.PlayerInterface:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f1", "color" : "default" }
+      ]
+    } ]
+}
