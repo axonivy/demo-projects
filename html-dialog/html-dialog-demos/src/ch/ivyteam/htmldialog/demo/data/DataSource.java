@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.primefaces.model.FilterMeta;
 import org.primefaces.model.SortMeta;
 
@@ -66,15 +66,15 @@ public class DataSource {
 
   private static boolean matches(String filterValue, Person person, String filterProperty) {
     if ("globalFilter".equals(filterProperty)) {
-      if (StringUtils.containsIgnoreCase(person.getName(), filterValue)
-          || StringUtils.containsIgnoreCase(person.getFirstname(), filterValue)
+      if (Strings.CI.contains(person.getName(), filterValue)
+          || Strings.CI.contains(person.getFirstname(), filterValue)
           || person.getBirthYear().toString().contains(filterValue)) {
         return true;
       }
       return false;
     }
     String fieldValue = getValue(person, filterProperty);
-    return StringUtils.startsWithIgnoreCase(fieldValue, filterValue);
+    return Strings.CI.startsWith(fieldValue, filterValue);
   }
 
   private static String getValue(Person person, String filterProperty) {
