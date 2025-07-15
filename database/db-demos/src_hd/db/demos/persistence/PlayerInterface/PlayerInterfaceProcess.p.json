@@ -92,7 +92,7 @@
             "import db.demos.persistence.Player;",
             "",
             "Player player = PlayerFactory.create();",
-            "in.playersModel.repository().insert(player);"
+            "Player.repository().insert(player);"
           ]
         }
       },
@@ -139,7 +139,7 @@
           "code" : [
             "import db.demos.persistence.Player;",
             "",
-            "in.playersModel.repository().delete(in.player);"
+            "Player.repository().delete(in.player);"
           ]
         }
       },
@@ -155,7 +155,10 @@
       "name" : "Save Player",
       "config" : {
         "output" : {
-          "code" : "in.playersModel.repository().update(in.player);"
+          "code" : [
+            "import db.demos.persistence.Player;",
+            "Player.repository().update(in.player);"
+          ]
         }
       },
       "visual" : {

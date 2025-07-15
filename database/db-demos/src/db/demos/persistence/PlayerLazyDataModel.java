@@ -3,23 +3,20 @@ package db.demos.persistence;
 import java.util.List;
 import java.util.Map;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.StatelessSession;
 import org.primefaces.model.FilterMeta;
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortMeta;
 import org.primefaces.model.SortOrder;
 
-import ch.ivyteam.ivy.environment.Ivy;
 import jakarta.data.Direction;
 import jakarta.data.Order;
 import jakarta.data.Sort;
 import jakarta.data.page.PageRequest;
-import jakarta.data.repository.Repository;
 
 public class PlayerLazyDataModel extends LazyDataModel<Player> {
+  private static final long serialVersionUID = 1L;
 
-  private final PlayerRepo repository = new PlayerRepo_(session());
+  private final PlayerRepo repository = Player.repository();
 
   @Override
   public int count(Map<String, FilterMeta> filterBy) {
@@ -41,20 +38,5 @@ public class PlayerLazyDataModel extends LazyDataModel<Player> {
   private static Sort<Player> toSort(SortMeta sort) {
     var direction = sort.getOrder() == SortOrder.ASCENDING ? Direction.ASC : Direction.DESC;
     return Sort.of(sort.getField(), direction, false);
-  }
-
-  public PlayerRepo repository() {
-    return repository;
-  }
-
-  private static StatelessSession session() {
-    var repoInterface = PlayerRepo.class;
-    var repository = repoInterface.getAnnotation(Repository.class);
-    if (repository == null) {
-      throw new IllegalArgumentException("No " + Repository.class + " annotation found on " + repoInterface);
-    }
-    var em = Ivy.persistence().get(repository.dataStore()).createEntityManager();
-    var sessionFactory = em.getEntityManagerFactory().unwrap(SessionFactory.class);
-    return sessionFactory.openStatelessSession();
   }
 }
