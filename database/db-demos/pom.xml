@@ -22,6 +22,11 @@
       <artifactId>hibernate-processor</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-envers</artifactId>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <repositories>
     <repository>
