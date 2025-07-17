@@ -2,14 +2,11 @@
   "$schema" : "https://json-schema.axonivy.com/data-class/13.2.0/data-class.json",
   "simpleName" : "PlayerInterfaceData",
   "namespace" : "db.demos.persistence.PlayerInterface",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "playersModel",
-    "type" : "db.demos.persistence.PlayerLazyDataModel",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "db.demos.persistence.PlayerDataModel"
   }, {
     "name" : "player",
-    "type" : "db.demos.persistence.Player",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "db.demos.persistence.Player"
   } ]
 }
