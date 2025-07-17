@@ -51,8 +51,8 @@
       "config" : {
         "output" : {
           "code" : [
-            "import db.demos.persistence.PlayerLazyDataModel;",
-            "in.playersModel = new PlayerLazyDataModel();"
+            "import db.demos.persistence.PlayerDataModel;",
+            "in.playersModel = new PlayerDataModel();"
           ]
         }
       },
