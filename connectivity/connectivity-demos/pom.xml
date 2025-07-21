@@ -62,7 +62,7 @@
         <artifactId>project-build-plugin</artifactId>
         <configuration>
           <compilerOptions>
-            <compilerOption>-nowarn:[${project.basedir}/src_generated/io]</compilerOption>
+            <compilerOption>-nowarn:[${project.basedir}/src_generatedClient/]</compilerOption>
           </compilerOptions>
         </configuration>
       </plugin>
@@ -85,7 +85,7 @@
           </execution>
         </executions>
         <configuration>
-          <outputDirectory>${basedir}/src_generated</outputDirectory>
+          <outputDirectory>${basedir}/src_generatedClient</outputDirectory>
           <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
         </configuration>
       </plugin>
