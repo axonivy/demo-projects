@@ -10,12 +10,12 @@
   </parent>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>connectivity-demos-test</artifactId>
-  <version>13.1.2-SNAPSHOT</version>
+  <version>13.1.1-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
   <properties>
     <web.tester.version>13.1.0</web.tester.version>
     <wss4j.version>2.4.3</wss4j.version>
-    <project-build-plugin>13.1.2-SNAPSHOT</project-build-plugin>
+    <project-build-plugin>13.1.1</project-build-plugin>
   </properties>
   <dependencies>
     <dependency>

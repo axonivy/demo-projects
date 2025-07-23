@@ -8,6 +8,8 @@ on:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v6
+    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v5
     with:
+      ivyVersion: 13.1
+      ivyPluginVersion: 13.1.1
       mvnArgs: -Dmaven.test.skip=true # We run the tests on our Jenkins CI
