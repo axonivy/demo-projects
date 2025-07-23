@@ -9,7 +9,7 @@
   </parent>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>rule-engine-demos</artifactId>
-  <version>13.1.1</version>
+  <version>13.1.2-SNAPSHOT</version>
   <packaging>iar</packaging>
   <organization>
     <name>Axon Ivy AG</name>
