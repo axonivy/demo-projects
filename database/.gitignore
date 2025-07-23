@@ -15,6 +15,7 @@ target/
 lib/mvn-deps/
 logs/
 src_dataClasses/
+src_generated/
 src_wsproc/
 
 .metadata/
