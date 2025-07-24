@@ -10,6 +10,6 @@ import jakarta.data.repository.Repository;
 public interface PlayerRepo extends CrudRepository<Player, Integer> {
 
   @Find
-  List<Player> findByLastName(String lastName);
+  List<Player> findByLastName22X1p1f922(String lastName);
 
 }

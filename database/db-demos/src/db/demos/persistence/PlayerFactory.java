@@ -20,7 +20,7 @@ public class PlayerFactory {
     var month = Month.of(RANDOM.nextInt(12) + 1);
     var yearMonth = YearMonth.of(year.getValue(), month);
     var day = RANDOM.nextInt(yearMonth.atEndOfMonth().getDayOfMonth()) + 1;
-    player.setBirthDate(new Date(year.getValue(), month.getValue(), day));
+    //player.setBirthDate(new Date(year.getValue(), month.getValue(), day));
     return player;
   }
 }
