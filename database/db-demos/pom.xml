@@ -54,24 +54,11 @@
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
         <configuration>
-          <compilerWarnings>false</compilerWarnings>
           <compilerOptions>
             <compilerOption>-XprintProcessorInfo</compilerOption>
-            <compilerOption>-verbose</compilerOption>
-            <compilerOption>-s</compilerOption>
-            <compilerOption>${project.basedir}/src_dataClasses</compilerOption>
           </compilerOptions>
         </configuration>
       </plugin>
     </plugins>
   </build>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>jakarta.inject</groupId>
-        <artifactId>jakarta.inject-api</artifactId>
-        <version>2.0.1.MR</version><!-- jakarta.data repos use it in generated code -->
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 </project>
