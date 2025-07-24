@@ -3,7 +3,7 @@
   "id" : "197F3260FF453EF3",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "db.demos.persistence.PlayerInterface.PlayerInterfaceData"
+    "data" : "db.demos.persistence.Persons.PersonsData"
   },
   "elements" : [ {
       "id" : "f0",
@@ -51,8 +51,9 @@
       "config" : {
         "output" : {
           "code" : [
-            "import db.demos.persistence.PlayerDataModel;",
-            "in.playersModel = new PlayerDataModel();"
+            "import db.demos.persistence.Person;",
+            "import db.demos.persistence.PersonDataModel;",
+            "in.personsModel = new PersonDataModel();"
           ]
         }
       },
@@ -84,15 +85,15 @@
     }, {
       "id" : "f11",
       "type" : "Script",
-      "name" : "Add player",
+      "name" : "Add Person",
       "config" : {
         "output" : {
           "code" : [
-            "import db.demos.persistence.PlayerFactory;",
-            "import db.demos.persistence.Player;",
+            "import db.demos.persistence.PersonFactory;",
+            "import db.demos.persistence.Person;",
             "",
-            "Player player = PlayerFactory.create();",
-            "Player.repository().insert(player);"
+            "Person person = PersonFactory.create();",
+            "Person.repository().insert(person);"
           ]
         }
       },
@@ -105,15 +106,15 @@
     }, {
       "id" : "f13",
       "type" : "HtmlDialogMethodStart",
-      "name" : "delete(Player)",
+      "name" : "delete(Person)",
       "config" : {
         "signature" : "delete",
         "input" : {
           "params" : [
-            { "name" : "player", "type" : "db.demos.persistence.Player", "desc" : "" }
+            { "name" : "person", "type" : "db.demos.persistence.Person", "desc" : "" }
           ],
           "map" : {
-            "out.player" : "param.player"
+            "out.person" : "param.person"
           }
         },
         "guid" : "197F39B283AFEAF2"
@@ -133,13 +134,13 @@
     }, {
       "id" : "f16",
       "type" : "Script",
-      "name" : "Delete player",
+      "name" : "Delete Person",
       "config" : {
         "output" : {
           "code" : [
-            "import db.demos.persistence.Player;",
+            "import db.demos.persistence.Person;",
             "",
-            "Player.repository().delete(in.player);"
+            "Person.repository().delete(in.person);"
           ]
         }
       },
@@ -152,12 +153,12 @@
     }, {
       "id" : "f19",
       "type" : "Script",
-      "name" : "Save Player",
+      "name" : "Save Person",
       "config" : {
         "output" : {
           "code" : [
-            "import db.demos.persistence.Player;",
-            "Player.repository().update(in.player);"
+            "import db.demos.persistence.Person;",
+            "Person.repository().update(in.person);"
           ]
         }
       },
@@ -181,11 +182,11 @@
         "guid" : "197F3C768309A9DA",
         "output" : {
           "code" : [
-            "import db.demos.persistence.Player;",
+            "import db.demos.persistence.Person;",
             "import org.primefaces.event.RowEditEvent;",
             "",
             "RowEditEvent e = event as RowEditEvent;",
-            "in.player = e.getObject() as Player;"
+            "in.person = e.getObject() as Person;"
           ]
         }
       },

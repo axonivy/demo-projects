@@ -1,0 +1,21 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/13.2.0/data-class.json",
+  "simpleName" : "Person",
+  "namespace" : "db.demos.persistence",
+  "entity" : {
+    "generateRepo" : true
+  },
+  "fields" : [ {
+    "name" : "id",
+    "type" : "Integer",
+    "comment" : "Identifier",
+    "modifiers" : [ "PERSISTENT", "ID", "GENERATED" ]
+  }, {
+    "name" : "firstName"
+  }, {
+    "name" : "lastName"
+  }, {
+    "name" : "birthDate",
+    "type" : "Date"
+  } ]
+}
