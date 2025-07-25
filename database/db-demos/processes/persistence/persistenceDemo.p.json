@@ -30,9 +30,9 @@
     }, {
       "id" : "f5",
       "type" : "DialogCall",
-      "name" : "Show Players",
+      "name" : "Show Persons",
       "config" : {
-        "dialog" : "db.demos.persistence.PlayerInterface:start()"
+        "dialog" : "db.demos.persistence.Persons:start()"
       },
       "visual" : {
         "at" : { "x" : 224, "y" : 64 }
@@ -40,5 +40,17 @@
       "connect" : [
         { "id" : "f6", "to" : "f1", "color" : "default" }
       ]
+    }, {
+      "id" : "f8",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "This demonstration illustrates how Axon Ivy Persistence can be utilized to create, read, update, and delete (CRUD) records of persons stored in a database. Additionally, it shows how to display these persons in an HTML Dialog using the Primefaces DataTable component.",
+        "",
+        "The demo defines the Entity Data Class `Person`. The `Person` data repository `PersonRepo` is employed to execute CRUD operations on the database. Lastly, a `LazyRepositoryDataModel` is utilized to supply data to the Primefaces DataTable component."
+      ],
+      "visual" : {
+        "at" : { "x" : 352, "y" : 176 },
+        "size" : { "width" : 582, "height" : 118 }
+      }
     } ]
 }

@@ -2,11 +2,11 @@ package db.demos.persistence;
 
 import ch.ivyteam.ivy.jsf.primefaces.model.LazyRepositoryDataModel;
 
-public class PlayerDataModel extends LazyRepositoryDataModel<Player> {
+public class PersonDataModel extends LazyRepositoryDataModel<Person> {
 
   private static final long serialVersionUID = 1L;
 
-  public PlayerDataModel() {
-    super(Player.repository());
+  public PersonDataModel() {
+    super(Person.repository());
   }
 }

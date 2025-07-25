@@ -4,56 +4,56 @@
   xmlns:pe="http://primefaces.org/ui/extensions">
 <h:body>
   <ui:composition template="/layouts/frame-10.xhtml">
-    <ui:define name="title">PlayerInterface</ui:define>
+    <ui:define name="title">Persons</ui:define>
     <ui:define name="content">
 
       <h3>
-        PLayers Demo uses a LazyDataModel that is implemented using the Person's Entity data repository.
+        Persons Demo uses a LazyDataModel that is implemented using the Person's Entity data repository.
       </h3>
 
       <h:form id="form">
         <p:messages />
         <h:panelGroup id="data" layout="block" styleClass="ui-fluid">  
         
-          <p:dataTable id="playersTable" widgetVar="playersTable" value="#{data.playersModel}" var="player" rows="10" rowKey="#{player.id}"
+          <p:dataTable id="personsTable" widgetVar="personsTable" value="#{data.personsModel}" var="person" rows="10" rowKey="#{person.id}"
               draggableColumns="true" draggableRows="true" paginator="true" rowsPerPageTemplate="10, 20, 50" lazy="true" editable="true"
               paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}">
             
-            <p:column headerText="Id" sortBy="#{player.id}" filterStyle="display:none">
-              <p:outputLabel value="#{player.id}" />
+            <p:column headerText="Id" sortBy="#{person.id}" filterStyle="display:none">
+              <p:outputLabel value="#{person.id}" />
             </p:column>
 
-            <p:column headerText="First name" sortBy="#{player.firstName}"> 
+            <p:column headerText="First name" sortBy="#{person.firstName}"> 
               <p:cellEditor>
                 <f:facet name="output">
-                  <p:outputLabel value="#{player.firstName}"/>
+                  <p:outputLabel value="#{person.firstName}"/>
                 </f:facet>
                 <f:facet name="input">
-                  <h:inputText value="#{player.firstName}" id="inputFirstName"/>
+                  <h:inputText value="#{person.firstName}" id="inputFirstName"/>
                 </f:facet>
               </p:cellEditor>          
             </p:column>
               
-            <p:column headerText="Last name" sortBy="#{player.lastName}">
+            <p:column headerText="Last name" sortBy="#{person.lastName}">
               <p:cellEditor>
                 <f:facet name="output">
-                  <p:outputLabel value="#{player.lastName}"/>
+                  <p:outputLabel value="#{person.lastName}"/>
                 </f:facet>
                 <f:facet name="input">
-                  <h:inputText value="#{player.lastName}" id="inputLastName"/>
+                  <h:inputText value="#{person.lastName}" id="inputLastName"/>
                 </f:facet>
               </p:cellEditor>
             
             </p:column>
 
-            <p:column headerText="Birth Date" sortBy="#{player.birthDate}">
-              <p:outputLabel value="#{player.birthDate}"></p:outputLabel>
+            <p:column headerText="Birth Date" sortBy="#{person.birthDate}">
+              <p:outputLabel value="#{person.birthDate}"></p:outputLabel>
             </p:column>
             
             <p:column headerText="Controls">
               <p:rowEditor id="rowEditor" />
               <div class="ui-row-editor">
-                <p:commandLink actionListener="#{logic.delete(player)}" update="form" title="Delete"
+                <p:commandLink actionListener="#{logic.delete(person)}" update="form" title="Delete"
                   id="delete" style="display: inline-block;">
                   <i class="pi pi-trash"></i>
                 </p:commandLink>
