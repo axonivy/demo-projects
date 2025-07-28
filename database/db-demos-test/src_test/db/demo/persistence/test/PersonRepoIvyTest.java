@@ -65,6 +65,23 @@ class PersonRepoIvyTest {
     }
   }
 
+  @Test
+  void query_byJDQL() {
+    List<Person> pilots = AviationFactory.createPilots();
+    repository.insertAll(pilots);
+
+    try {
+      var the1867s = repository.bornIn(1867);
+      assertThat(the1867s)
+          .as("JDQL query statements empower repositories to do advanced search queries")
+          .extracting(Person::getFirstName)
+          .containsOnly("Wilbur");
+
+    } finally {
+      repository.deleteAll(pilots);
+    }
+  }
+
   static class AviationFactory {
 
     static List<Person> createPilots() {
