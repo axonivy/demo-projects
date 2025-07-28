@@ -10,6 +10,7 @@ import ch.ivyteam.ivy.environment.IvyTest;
 import ch.ivyteam.ivy.scripting.objects.Date;
 import db.demos.persistence.Person;
 import db.demos.persistence.PersonRepo;
+import db.demos.persistence._Person;
 
 @IvyTest
 class PersonRepoIvyTest {
@@ -42,35 +43,49 @@ class PersonRepoIvyTest {
   }
 
   @Test
+  @SuppressWarnings("unchecked")
   void query_findByLastName() {
-    var orville = new Person();
-    orville.setFirstName("Orville");
-    orville.setLastName("Wright");
-    orville.setBirthDate(new Date(1871, 8, 19));
-
-    var wilbur = new Person();
-    wilbur.setFirstName("Wilbur");
-    wilbur.setLastName("Wright");
-    wilbur.setBirthDate(new Date(1867, 4, 16));
-
-    var louis = new Person();
-    louis.setFirstName("Louis Charles Joseph");
-    louis.setLastName("Blériot");
-    louis.setBirthDate(new Date(1872, 7, 1));
-
-    List<Person> pilots = List.of(orville, wilbur, louis);
+    List<Person> pilots = AviationFactory.createPilots();
     repository.insertAll(pilots);
 
-    List<Person> wrightBrothers = repository.findByLastName("Wright");
-    assertThat(wrightBrothers)
-        .extracting(Person::getFirstName)
-        .containsOnly("Orville", "Wilbur");
+    try {
+      List<Person> wrightBrothers = repository.findByLastName("Wright",
+          _Person.birthDate.asc(),
+          _Person.firstName.descIgnoreCase());
+      assertThat(wrightBrothers)
+          .as("Optional sorting parameters create ordered results")
+          .extracting(Person::getFirstName)
+          .containsExactly("Wilbur", "Orville");
 
-    assertThat(repository.findByLastName("Blériot"))
-        .extracting(Person::getFirstName)
-        .containsOnly("Louis Charles Joseph");
+      assertThat(repository.findByLastName("Blériot"))
+          .extracting(Person::getFirstName)
+          .containsOnly("Louis Charles Joseph");
+    } finally {
+      repository.deleteAll(pilots);
+    }
+  }
 
-    repository.deleteAll(pilots);
+  static class AviationFactory {
+
+    static List<Person> createPilots() {
+      var orville = new Person();
+      orville.setFirstName("Orville");
+      orville.setLastName("Wright");
+      orville.setBirthDate(new Date(1871, 8, 19));
+
+      var wilbur = new Person();
+      wilbur.setFirstName("Wilbur");
+      wilbur.setLastName("Wright");
+      wilbur.setBirthDate(new Date(1867, 4, 16));
+
+      var louis = new Person();
+      louis.setFirstName("Louis Charles Joseph");
+      louis.setLastName("Blériot");
+      louis.setBirthDate(new Date(1872, 7, 1));
+
+      return List.of(orville, wilbur, louis);
+    }
+
   }
 
 }
