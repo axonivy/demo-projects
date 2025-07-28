@@ -1,0 +1,117 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/form/13.1.0/form.json",
+  "id" : "4f3c571f-0815-4360-a79d-d365a6a7a81c",
+  "components" : [ {
+    "cid" : "text19",
+    "type" : "Text",
+    "config" : {
+      "content" : "PersonsForm Demo uses a LazyDataModel that is implemented using the Person's Entity data repository."
+    }
+  }, {
+    "cid" : "datatable1",
+    "type" : "DataTable",
+    "config" : {
+      "components" : [ {
+        "cid" : "datatablecolumn9",
+        "type" : "DataTableColumn",
+        "config" : {
+          "header" : "id",
+          "value" : "id"
+        }
+      }, {
+        "cid" : "datatablecolumn8",
+        "type" : "DataTableColumn",
+        "config" : {
+          "header" : "First name",
+          "value" : "firstName"
+        }
+      }, {
+        "cid" : "datatablecolumn10",
+        "type" : "DataTableColumn",
+        "config" : {
+          "header" : "Last name",
+          "value" : "lastName"
+        }
+      }, {
+        "cid" : "datatablecolumn7",
+        "type" : "DataTableColumn",
+        "config" : {
+          "header" : "Birth date",
+          "value" : "birthDate"
+        }
+      }, {
+        "cid" : "datatablecolumn3",
+        "type" : "DataTableColumn",
+        "config" : {
+          "header" : "Actions",
+          "components" : [ {
+            "cid" : "button4",
+            "type" : "Button",
+            "config" : {
+              "action" : "editRow",
+              "type" : "EDIT",
+              "icon" : "pi pi-pencil"
+            }
+          }, {
+            "cid" : "button5",
+            "type" : "Button",
+            "config" : {
+              "action" : "deleteRow",
+              "variant" : "DANGER",
+              "type" : "DELETE",
+              "icon" : "pi pi-trash",
+              "confirmDialog" : true,
+              "confirmHeader" : "Delete Confirmation",
+              "confirmMessage" : "Are you sure you want to delete row: #{row}?",
+              "confirmOkValue" : "Yes",
+              "confirmCancelValue" : "No"
+            }
+          } ],
+          "asActionColumn" : true
+        }
+      } ],
+      "value" : "#{data.personsModel}",
+      "maxRows" : "10",
+      "isEditable" : true,
+      "editDialogId" : "dialog2",
+      "addButton" : true
+    }
+  }, {
+    "cid" : "dialog2",
+    "type" : "Dialog",
+    "config" : {
+      "components" : [ {
+        "cid" : "input17",
+        "type" : "Input",
+        "config" : {
+          "label" : "Id",
+          "value" : "#{currentRow.id}",
+          "type" : "NUMBER"
+        }
+      }, {
+        "cid" : "input16",
+        "type" : "Input",
+        "config" : {
+          "label" : "First name",
+          "value" : "#{currentRow.firstName}"
+        }
+      }, {
+        "cid" : "input18",
+        "type" : "Input",
+        "config" : {
+          "label" : "Last name",
+          "value" : "#{currentRow.lastName}"
+        }
+      }, {
+        "cid" : "datepicker15",
+        "type" : "DatePicker",
+        "config" : {
+          "label" : "Birth date",
+          "value" : "#{currentRow.birthDate}"
+        }
+      } ],
+      "header" : "Edit Row",
+      "linkedComponent" : "datatable1"
+    }
+  } ]
+}

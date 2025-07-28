@@ -7,12 +7,12 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "RequestStart",
-      "name" : "start",
+      "name" : "start with xhtml",
       "config" : {
         "signature" : "start",
         "request" : {
           "name" : "Persistence Entity Repository Demo",
-          "description" : "Demonstrates how a Html Dialog can use an Entity Repository to edit data from a database table"
+          "description" : "Demonstrates how an HTML Dialog with a manually coded XHTML page can use an Entity Repository to edit data from a database table."
         }
       },
       "visual" : {
@@ -44,13 +44,49 @@
       "id" : "f8",
       "type" : "ProcessAnnotation",
       "name" : [
-        "This demonstration illustrates how Axon Ivy Persistence can be utilized to create, read, update, and delete (CRUD) records of persons stored in a database. Additionally, it shows how to display these persons in an HTML Dialog using the Primefaces DataTable component.",
+        "This demonstration illustrates how Axon Ivy Persistence can be utilized to create, read, update, and delete (CRUD) records of persons stored in a database. Additionally, it shows how to display these persons in an HTML Dialog using the Primefaces DataTable component, either via XHTML or by using the Form Editor.",
         "",
         "The demo defines the Entity Data Class `Person`. The `Person` data repository `PersonRepo` is employed to execute CRUD operations on the database. Lastly, a `LazyRepositoryDataModel` is utilized to supply data to the Primefaces DataTable component."
       ],
       "visual" : {
-        "at" : { "x" : 352, "y" : 176 },
+        "at" : { "x" : 352, "y" : 272 },
         "size" : { "width" : 582, "height" : 118 }
       }
+    }, {
+      "id" : "f9",
+      "type" : "DialogCall",
+      "name" : "Show Persons",
+      "config" : {
+        "dialog" : "db.demos.persistence.PersonsForm:start(db.demos.persistence.Person,db.demos.persistence.PersonDataModel)"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 144 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f11", "color" : "default" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 144 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "RequestStart",
+      "name" : "start with Form",
+      "config" : {
+        "signature" : "start2",
+        "request" : {
+          "name" : "Persistence Entity Repository Demo",
+          "description" : "Demonstrates how a Form Editor-based HTML Dialog can use an Entity Repository to edit data from a database table."
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 144 }
+      },
+      "connect" : [
+        { "id" : "f13", "to" : "f9" }
+      ]
     } ]
 }
