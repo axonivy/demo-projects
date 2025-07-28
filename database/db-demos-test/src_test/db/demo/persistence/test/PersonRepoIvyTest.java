@@ -11,6 +11,7 @@ import ch.ivyteam.ivy.scripting.objects.Date;
 import db.demos.persistence.Person;
 import db.demos.persistence.PersonRepo;
 import db.demos.persistence._Person;
+import jakarta.data.page.PageRequest;
 
 @IvyTest
 class PersonRepoIvyTest {
@@ -66,6 +67,21 @@ class PersonRepoIvyTest {
   }
 
   @Test
+  void query_findByLikePattern() {
+    List<Person> pilots = AviationFactory.createPilots();
+    repository.insertAll(pilots);
+
+    try {
+      assertThat(repository.findByNamePart("Wri%"))
+          .extracting(Person::getLastName)
+          .containsOnly("Wright");
+
+    } finally {
+      repository.deleteAll(pilots);
+    }
+  }
+
+  @Test
   void query_byJDQL() {
     List<Person> pilots = AviationFactory.createPilots();
     repository.insertAll(pilots);
@@ -76,6 +92,23 @@ class PersonRepoIvyTest {
           .as("JDQL query statements empower repositories to do advanced search queries")
           .extracting(Person::getFirstName)
           .containsOnly("Wilbur");
+
+    } finally {
+      repository.deleteAll(pilots);
+    }
+  }
+
+  @Test
+  void query_distinctNamesWithFilters() {
+    List<Person> pilots = AviationFactory.createPilots();
+    repository.insertAll(pilots);
+
+    try {
+      var names = repository.namesOfLength(3, 10, PageRequest.ofSize(10));
+      assertThat(names)
+          .as("omit names longer than 10 characters")
+          .containsOnly("Wilbur", "Orville")
+          .doesNotContain("Louis Charles Joseph");
 
     } finally {
       repository.deleteAll(pilots);
