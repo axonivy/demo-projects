@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.axonivy.com/data-class/13.2.0/data-class.json",
-  "simpleName" : "Person",
+  "simpleName" : "Address",
   "namespace" : "db.demos.persistence",
   "entity" : {
     "generateRepo" : true
@@ -14,27 +14,19 @@
       "cascadeTypes" : [ ]
     }
   }, {
-    "name" : "firstName",
+    "name" : "street",
     "entity" : {
       "cascadeTypes" : [ ]
     }
   }, {
-    "name" : "lastName",
+    "name" : "zip",
     "entity" : {
       "cascadeTypes" : [ ]
     }
   }, {
-    "name" : "birthDate",
-    "type" : "Date",
+    "name" : "city",
     "entity" : {
       "cascadeTypes" : [ ]
-    }
-  }, {
-    "name" : "address",
-    "type" : "db.demos.persistence.Address",
-    "entity" : {
-      "association" : "ONE_TO_ONE",
-      "cascadeTypes" : [ "PERSIST", "MERGE", "REMOVE" ]
     }
   } ]
 }
