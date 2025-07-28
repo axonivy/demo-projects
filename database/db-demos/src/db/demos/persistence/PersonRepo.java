@@ -29,4 +29,7 @@ public interface PersonRepo extends CrudRepository<Person, Integer> {
       @Param("max") int maxLength,
       PageRequest pageRequest);
 
+  @Query("WHERE address.city = :city")
+  List<Person> livingIn(String city);
+
 }
