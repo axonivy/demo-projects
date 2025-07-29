@@ -1,0 +1,12 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/13.2.0/data-class.json",
+  "simpleName" : "PersonsFormData",
+  "namespace" : "db.demos.persistence.PersonsForm",
+  "fields" : [ {
+    "name" : "person",
+    "type" : "db.demos.persistence.Person"
+  }, {
+    "name" : "personsModel",
+    "type" : "db.demos.persistence.PersonDataModel"
+  } ]
+}
