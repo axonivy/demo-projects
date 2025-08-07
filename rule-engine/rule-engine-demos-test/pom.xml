@@ -42,6 +42,12 @@
       <artifactId>web-tester</artifactId>
       <version>${web.tester.version}</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
 

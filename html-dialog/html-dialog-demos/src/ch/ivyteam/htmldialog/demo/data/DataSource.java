@@ -2,41 +2,30 @@ package ch.ivyteam.htmldialog.demo.data;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.primefaces.model.FilterMeta;
 import org.primefaces.model.SortMeta;
 
 import ch.ivyteam.htmldialog.demo.Person;
 import ch.ivyteam.htmldialog.demo.component.PersonLazySorter;
 
-public class DataSource
-{
-  private List<Person> allPersons;
+public class DataSource {
+  private final List<Person> allPersons;
 
-  public DataSource(int sourceSize)
-  {
+  public DataSource(int sourceSize) {
     allPersons = DataGenerator.generatePersons(sourceSize);
   }
 
-  private List<Person> paginate(int first, int pageSize, List<Person> filteredPersons)
-  {
-    if (filteredPersons.size() > pageSize)
-    {
-      if (first + pageSize > filteredPersons.size())
-      {
+  private List<Person> paginate(int first, int pageSize, List<Person> filteredPersons) {
+    if (filteredPersons.size() > pageSize) {
+      if (first + pageSize > filteredPersons.size()) {
         return filteredPersons.subList(first, first + (filteredPersons.size() % pageSize));
-      }
-      else
-      {
+      } else {
         return filteredPersons.subList(first, first + pageSize);
       }
-    }
-    else
-    {
+    } else {
       return filteredPersons;
     }
   }
@@ -52,7 +41,7 @@ public class DataSource
     if (filters == null) {
       return allPersons;
     }
-    List<Person> filteredPersons = new ArrayList<Person>();
+    List<Person> filteredPersons = new ArrayList<>();
     for (Person person : allPersons) {
       if (filter(filters, person)) {
         filteredPersons.add(person);
@@ -66,40 +55,43 @@ public class DataSource
       return true;
     }
     boolean allFiltersMatch = true;
-    for (Iterator<String> it = filters.keySet().iterator(); it.hasNext();) {
-      String filterProperty = it.next();
+    for (String filterProperty : filters.keySet()) {
       String filterValue = filters.get(filterProperty).getFilterValue().toString();
       allFiltersMatch = allFiltersMatch && matches(filterValue, person, filterProperty);
     }
     return allFiltersMatch;
   }
 
-  private static boolean matches(String filterValue, Person person, String filterProperty) {
-    if (filterProperty.equals("globalFilter")) {
-      if (StringUtils.containsIgnoreCase(person.getName(), filterValue)
-          || StringUtils.containsIgnoreCase(person.getFirstname(), filterValue)
-          || person.getBirthYear().toString().contains(filterValue)) {
-        return true;
-      }
+  private static boolean containsIgnoreCase(String text, String search) {
+    if (text == null || search == null) {
       return false;
     }
-    String fieldValue = getValue(person, filterProperty);
-    return StringUtils.startsWithIgnoreCase(fieldValue, filterValue);
+    return text.toLowerCase().contains(search.toLowerCase());
+  }
+
+  private static boolean matches(String filterValue, Person person, String filterProperty) {
+    if ("globalFilter".equals(filterProperty)) {
+      return containsIgnoreCase(person.getName(), filterValue)
+          || containsIgnoreCase(person.getFirstname(), filterValue)
+          || (person.getBirthYear() != null && filterValue != null && person.getBirthYear().toString().contains(filterValue));
+    }
+    var fieldValue = getValue(person, filterProperty);
+    return fieldValue != null && filterValue != null && fieldValue.toLowerCase().startsWith(filterValue.toLowerCase());
   }
 
   private static String getValue(Person person, String filterProperty) {
-    if (filterProperty.equals("name")) {
+    if ("name".equals(filterProperty)) {
       return person.getName();
-    } else if (filterProperty.equals("firstname")) {
+    } else if ("firstname".equals(filterProperty)) {
       return person.getFirstname();
-    } else if (filterProperty.equals("birthYear")) {
+    } else if ("birthYear".equals(filterProperty)) {
       return person.getBirthYear().toString();
     }
     return null;
   }
 
   public Person getPerson(String rowKey) {
-    for (Person person : allPersons)  {
+    for (Person person : allPersons) {
       if (person.getId().equals(Double.valueOf(rowKey))) {
         return person;
       }
@@ -110,12 +102,10 @@ public class DataSource
   public List<Person> query(Map<String, FilterMeta> filters, Map<String, SortMeta> sortBy, int pageSize, int first) {
     List<Person> persons = filter(filters);
     persons = sort(sortBy, persons);
-    persons = paginate(first, pageSize, persons);
-    return persons;
+    return paginate(first, pageSize, persons);
   }
 
-  public int count(Map<String, FilterMeta> filters)
-  {
+  public int count(Map<String, FilterMeta> filters) {
     return filter(filters).size();
   }
 }
