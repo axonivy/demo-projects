@@ -24,6 +24,8 @@ import com.axonivy.ivy.webtest.primeui.PrimeUi;
 import com.axonivy.ivy.webtest.primeui.widget.SelectManyCheckbox;
 import com.axonivy.ivy.webtest.primeui.widget.SelectOneMenu;
 import com.axonivy.ivy.webtest.primeui.widget.Table;
+import com.codeborne.selenide.ScrollIntoViewOptions;
+import com.codeborne.selenide.ScrollIntoViewOptions.Block;
 
 import ch.ivyteam.htmldialog.server.test.ProcessUtil;
 
@@ -66,7 +68,7 @@ class WebTestOutputIT {
     table.containsNot("Yvonne");
     table.contains("2300");
     table.containsNot("1324");
-    $(By.id("form:theTable:scoreId")).scrollIntoView("{block: \"center\"}").click();
+    $(By.id("form:theTable:scoreId")).scrollIntoView(ScrollIntoViewOptions.instant().block(Block.center)).click();
     table.valueAtShouldBe(0, 2, exactText("testPerson"));
     $(By.id("form:theTable:scoreId")).click();
     table.valueAtShouldBe(0, 2, exactText("Tim"));
