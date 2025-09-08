@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "HouseKeeperData",
+  "namespace" : "Maintenance",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "count",
+    "type" : "Long",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}
