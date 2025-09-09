@@ -1,0 +1,213 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "id" : "1992974ABEA507A9",
+  "config" : {
+    "data" : "Maintenance.HouseKeeperData"
+  },
+  "elements" : [ {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 392, "y" : 144 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "ProgramStart",
+      "name" : "cleanOldCases",
+      "config" : {
+        "javaClass" : "ch.ivyteam.ivy.process.eventstart.beans.TimerBean",
+        "userConfig" : {
+          "time" : "\"0 0 * * *\"\""
+        },
+        "link" : "eventLink.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 144 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f0" }
+      ]
+    }, {
+      "id" : "f0",
+      "type" : "Script",
+      "name" : [
+        "clean DONE",
+        "cases"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.wfdemo.maintenance.CaseChore;",
+            "CaseChore.cleanup();"
+          ]
+        },
+        "sudo" : true
+      },
+      "visual" : {
+        "at" : { "x" : 240, "y" : 144 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1", "color" : "default" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "RequestStart",
+      "name" : "simulate",
+      "config" : {
+        "signature" : "simulate"
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 320 },
+        "labelOffset" : { "x" : 17, "y" : 33 },
+        "color" : "private"
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f0", "via" : [ { "x" : 240, "y" : 320 } ] }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "ProcessAnnotation",
+      "name" : "configure; automatic clean-up times as CRON pattern",
+      "visual" : {
+        "at" : { "x" : 128, "y" : 232 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f9",
+      "type" : "ProcessAnnotation",
+      "name" : "Delete done Cases by example, in order to free the Database from no longer relevant data.",
+      "visual" : {
+        "at" : { "x" : 245, "y" : 37 },
+        "size" : { "width" : 374, "height" : 54 }
+      }
+    }, {
+      "id" : "f10",
+      "type" : "RequestStart",
+      "name" : "createOldCases",
+      "config" : {
+        "signature" : "createOldCases",
+        "input" : {
+          "map" : {
+            "out.count" : "10"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 408 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "Alternative",
+      "config" : {
+        "conditions" : {
+          "f13" : "in.count > 0",
+          "f17" : ""
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 280, "y" : 408 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f17", "to" : "f16" },
+        { "id" : "f13", "to" : "f23" }
+      ]
+    }, {
+      "id" : "f16",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 280, "y" : 496 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f15",
+      "type" : "Script",
+      "name" : "count--",
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.count" : "in.count -1"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 456, "y" : 360 }
+      },
+      "connect" : [
+        { "id" : "f19", "to" : "f11", "via" : [ { "x" : 280, "y" : 360 } ], "color" : "default" }
+      ]
+    }, {
+      "id" : "f20",
+      "type" : "RequestStart",
+      "name" : "systemTask",
+      "config" : {
+        "signature" : "systemTask",
+        "input" : {
+          "params" : [
+            { "name" : "no", "type" : "Long", "desc" : "" }
+          ],
+          "map" : {
+            "out.count" : "param.no"
+          }
+        },
+        "request" : {
+          "isHttpRequestable" : false
+        },
+        "triggerable" : true,
+        "task" : {
+          "responsible" : {
+            "activator" : "SYSTEM"
+          }
+        },
+        "case" : {
+          "name" : "cleanable case <%=param.no%>",
+          "attachToBusinessCase" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 552 },
+        "color" : "private"
+      },
+      "connect" : [
+        { "id" : "f22", "to" : "f21" }
+      ]
+    }, {
+      "id" : "f21",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 176, "y" : 552 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f23",
+      "type" : "TriggerCall",
+      "name" : "create detached case",
+      "config" : {
+        "processCall" : "Maintenance/HouseKeeper:systemTask(Long)",
+        "call" : {
+          "map" : {
+            "param.no" : "in.count"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 448, "y" : 464 }
+      },
+      "connect" : [
+        { "id" : "f24", "to" : "f15", "via" : [ { "x" : 552, "y" : 464 }, { "x" : 552, "y" : 360 } ], "color" : "default" }
+      ]
+    } ],
+  "layout" : {
+    "colors" : {
+      "private" : "#f66151"
+    }
+  }
+}
