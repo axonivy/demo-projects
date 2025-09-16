@@ -31,7 +31,7 @@ pipeline {
                 docker.build('maven-selenium').inside("--name ${ivyName} --network ${networkName}") {
                   def workspace = pwd()
                   def phase = isReleasingBranch() ? 'deploy' : 'verify'
-                  maven cmd: "clean ${phase} -Dmaven.test.failure.ignore=true  " +
+                  maven cmd: "clean ${phase} -Dmaven.test.failure.ignore=true -T 1C " +
                             "-Dengine.directory=${workspace}/html-dialog-demos/html-dialog-demos/target/ivyEngine " +
                             "-Divy.engine.version.latest.minor=true " +
                             "-Divy.engine.list.url=${params.engineListUrl} " +
