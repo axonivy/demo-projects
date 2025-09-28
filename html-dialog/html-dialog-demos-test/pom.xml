@@ -79,8 +79,7 @@
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <configuration>
-          <deployTargetFileFormat>EXPANDED</deployTargetFileFormat>
+        <configuration>          
           <additionalVmArgs>
             <additionalVmArg>-Divy.Errors.ShowDetailsToEndUser=true</additionalVmArg>
           </additionalVmArgs>
