@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
-import javax.inject.Singleton;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -23,10 +22,13 @@ import javax.ws.rs.container.AsyncResponse;
 import javax.ws.rs.container.Suspended;
 import javax.ws.rs.core.MediaType;
 
+import jakarta.inject.Singleton;
+
 import com.axonivy.connectivity.rest.provider.ApiConstants;
 
-import ch.ivyteam.ivy.environment.Ivy;
 import io.swagger.v3.oas.annotations.tags.Tag;
+
+import ch.ivyteam.ivy.environment.Ivy;
 
 /**
  * Demonstrates asynchronous REST communication:
