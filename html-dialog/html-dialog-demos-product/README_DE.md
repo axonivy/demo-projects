@@ -8,6 +8,6 @@ Die Demos:
 - zeigen Möglichkeiten zur Datenausgabe mit Charts, Datentabellen, Auswahllisten und mehr
 - enthalten Beispiele für statische HTML Dialoge und Offline-Formulare
 - Konzepte wie wiederverwendbare Formular-Komponenten
-- unterstützten die Integration von Frontend-Frameworks wie HTML5 oder Bootstrap
+- unterstützten die Integration von Frontend-Frameworks wie HTML5
 
 Mehr zum Thema Benutzeroberflächen findest du in unserer [Dokumentation](https://developer.axonivy.com/doc/9/designer-guide/user-interface/index.html).

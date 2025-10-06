@@ -11,8 +11,7 @@ solution:
   and many more
 - includes examples for static HTML dialogs and offline forms
 - introduces concepts such as reusable form components
-- gives access to front-end framework integration such as plain HTML5 or
-  bootstrap
+- gives access to front-end framework integration such as plain HTML5
 
 Learn more about [user interface](https://developer.axonivy.com/doc/9/designer-guide/user-interface/index.html)
 in our documentation.
