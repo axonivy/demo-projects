@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.annotation.security.PermitAll;
 import javax.validation.constraints.Size;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -23,8 +24,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import jakarta.inject.Singleton;
-
 import org.apache.commons.lang3.StringUtils;
 
 import com.axonivy.connectivity.Person;
@@ -32,6 +31,7 @@ import com.axonivy.connectivity.Person;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.inject.Singleton;
 
 /**
  * Simple RESTful service. The REST interface is defined by the JAX-RS
@@ -132,6 +132,7 @@ public class PersonService {
   @Path("/{personId}")
   @Produces(MediaType.APPLICATION_JSON)
   @Operation(description = "remove a person from the ivy-core universe.")
+  @PermitAll
   public Response deletePerson(@PathParam("personId") UUID personId) {
     try {
       Person deleted = persons.remove(personId);
@@ -154,7 +155,7 @@ public class PersonService {
           .build();
     } catch (IndexOutOfBoundsException ex) {
       return Response.status(Status.NOT_FOUND)
-          .entity("user with id '" + personId + "' does not exist.")
+          .entity("user with given personId does not exist.")
           .build();
     }
   }
