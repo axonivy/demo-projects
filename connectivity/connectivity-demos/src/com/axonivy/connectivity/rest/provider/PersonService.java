@@ -154,7 +154,7 @@ public class PersonService {
           .build();
     } catch (IndexOutOfBoundsException ex) {
       return Response.status(Status.NOT_FOUND)
-          .entity("user with id '" + personId + "' does not exist.")
+          .entity("user with given personId does not exist.")
           .build();
     }
   }

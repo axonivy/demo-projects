@@ -76,7 +76,7 @@ public class SecureService {
   public Response addEntry(String newEntry) {
     entries.add(newEntry);
     return Response.status(Status.OK)
-        .entity("Added entry '" + newEntry + "'")
+        .entity("Added new entry")
         .build();
   }
 
@@ -90,7 +90,7 @@ public class SecureService {
   public Response updateEntry(@PathParam("entryId") int id, String newEntry) {
     entries.set(id, newEntry);
     return Response.status(Status.OK)
-        .entity("Update entry with id (" + id + ") to '" + newEntry + "'")
+        .entity("Update entry with id '" + id + "'")
         .build();
   }
 
@@ -103,5 +103,4 @@ public class SecureService {
   public void removeEntry(@PathParam("entryId") int id) {
     entries.remove(id);
   }
-
 }
