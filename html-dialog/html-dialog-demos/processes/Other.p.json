@@ -23,32 +23,10 @@
         "dialog" : "ch.ivyteam.htmldialog.demo.other.ManagedBeanDemo:start()"
       },
       "visual" : {
-        "at" : { "x" : 304, "y" : 352 }
+        "at" : { "x" : 304, "y" : 264 }
       },
       "connect" : [
         { "id" : "f46", "to" : "f43" }
-      ]
-    }, {
-      "id" : "f109",
-      "type" : "RequestStart",
-      "name" : "Html5BootstrapDemo.ivp",
-      "config" : {
-        "signature" : "Html5BootstrapDemo",
-        "request" : {
-          "name" : "Html 5 Bootstrap Demo",
-          "category" : "other",
-          "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-drivers-license-o" },
-            { "name" : "embedInFrame", "value" : "false" }
-          ]
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 128, "y" : 160 },
-        "labelOffset" : { "x" : 16 }
-      },
-      "connect" : [
-        { "id" : "f113", "to" : "f112" }
       ]
     }, {
       "id" : "f38",
@@ -57,7 +35,7 @@
         "dialog" : "ch.ivyteam.htmldialog.demo.other.AjaxMethodCallDemo:start()"
       },
       "visual" : {
-        "at" : { "x" : 304, "y" : 256 }
+        "at" : { "x" : 304, "y" : 168 }
       },
       "connect" : [
         { "id" : "f103", "to" : "f102" }
@@ -72,7 +50,7 @@
       "id" : "f37",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 712, "y" : 256 }
+        "at" : { "x" : 712, "y" : 168 }
       }
     }, {
       "id" : "f106",
@@ -112,7 +90,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 128, "y" : 352 },
+        "at" : { "x" : 128, "y" : 264 },
         "description" : "ManagedBean Demo"
       },
       "connect" : [
@@ -125,35 +103,17 @@
         "dialog" : "ch.ivyteam.htmldialog.demo.Main:start()"
       },
       "visual" : {
-        "at" : { "x" : 528, "y" : 256 }
+        "at" : { "x" : 528, "y" : 168 }
       },
       "connect" : [
         { "id" : "f41", "to" : "f37" }
       ]
     }, {
-      "id" : "f110",
-      "type" : "TaskEnd",
-      "visual" : {
-        "at" : { "x" : 480, "y" : 160 }
-      }
-    }, {
       "id" : "f43",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 480, "y" : 352 }
+        "at" : { "x" : 480, "y" : 264 }
       }
-    }, {
-      "id" : "f112",
-      "type" : "DialogCall",
-      "config" : {
-        "dialog" : "ch.ivyteam.htmldialog.demo.other.Html5BootstrapDemo:start()"
-      },
-      "visual" : {
-        "at" : { "x" : 304, "y" : 160 }
-      },
-      "connect" : [
-        { "id" : "f111", "to" : "f110" }
-      ]
     }, {
       "id" : "f39",
       "type" : "RequestStart",
@@ -170,7 +130,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 128, "y" : 256 },
+        "at" : { "x" : 128, "y" : 168 },
         "labelOffset" : { "x" : 17 }
       },
       "connect" : [
@@ -192,7 +152,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 128, "y" : 448 },
+        "at" : { "x" : 128, "y" : 360 },
         "labelOffset" : { "y" : 37 },
         "description" : "ErrorHandling Demo"
       },
@@ -206,7 +166,7 @@
         "dialog" : "ch.ivyteam.htmldialog.demo.other.ErrorHandling:start()"
       },
       "visual" : {
-        "at" : { "x" : 304, "y" : 448 }
+        "at" : { "x" : 304, "y" : 360 }
       },
       "connect" : [
         { "id" : "f4", "to" : "f2" }
@@ -215,7 +175,7 @@
       "id" : "f2",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 480, "y" : 448 }
+        "at" : { "x" : 480, "y" : 360 }
       }
     }, {
       "id" : "f5",
@@ -233,7 +193,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 128, "y" : 544 },
+        "at" : { "x" : 128, "y" : 456 },
         "labelOffset" : { "x" : 18, "y" : 36 }
       },
       "connect" : [
@@ -243,7 +203,7 @@
       "id" : "f6",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 480, "y" : 544 }
+        "at" : { "x" : 480, "y" : 456 }
       }
     }, {
       "id" : "f8",
@@ -252,7 +212,7 @@
         "dialog" : "ch.ivyteam.htmldialog.demo.other.ResponsiveGridDemo:start()"
       },
       "visual" : {
-        "at" : { "x" : 304, "y" : 544 }
+        "at" : { "x" : 304, "y" : 456 }
       },
       "connect" : [
         { "id" : "f7", "to" : "f6" }
@@ -273,7 +233,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 128, "y" : 640 }
+        "at" : { "x" : 128, "y" : 552 }
       },
       "connect" : [
         { "id" : "f12", "to" : "f11" }
@@ -285,7 +245,7 @@
         "dialog" : "ch.ivyteam.htmldialog.demo.other.JsfAgnosticFormDemo:start()"
       },
       "visual" : {
-        "at" : { "x" : 304, "y" : 640 }
+        "at" : { "x" : 304, "y" : 552 }
       },
       "connect" : [
         { "id" : "f14", "to" : "f13" }
@@ -294,7 +254,7 @@
       "id" : "f13",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 480, "y" : 640 },
+        "at" : { "x" : 480, "y" : 552 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
     } ]
