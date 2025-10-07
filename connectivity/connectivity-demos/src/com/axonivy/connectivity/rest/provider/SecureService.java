@@ -20,6 +20,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import org.apache.cxf.transport.commons_text.StringEscapeUtils;
+
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 /**
@@ -76,9 +78,10 @@ public class SecureService
   @Consumes(MediaType.TEXT_PLAIN)
   public Response addEntry(String newEntry)
   {
-    entries.add(newEntry);
+    var entry = StringEscapeUtils.escapeHtml4(newEntry);
+    entries.add(entry);
     return Response.status(Status.OK)
-            .entity("Added entry '" + newEntry + "'")
+            .entity("Added entry '" + entry + "'")
             .build();
   }
 
@@ -91,9 +94,10 @@ public class SecureService
   @RolesAllowed("Boss")
   public Response updateEntry(@PathParam("entryId") int id, String newEntry)
   {
-    entries.set(id, newEntry);
+    var entry = StringEscapeUtils.escapeHtml4(newEntry);
+    entries.set(id, entry);
     return Response.status(Status.OK)
-            .entity("Update entry with id (" + id + ") to '" + newEntry + "'")
+            .entity("Update entry with id (" + id + ") to '" + entry + "'")
             .build();
   }
 
