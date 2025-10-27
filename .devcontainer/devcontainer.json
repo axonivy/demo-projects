@@ -1,23 +1,26 @@
 {
-  "name": "Axon Ivy Dev Container",
+  "name": "Axon Ivy",
   "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   "forwardPorts": [8080],
-  "containerEnv": { "JAVA_OPTS_IVY_SYSTEM": "-Ddev.mode=true -Divy.engine.testheadless=true" },
-  "postStartCommand": "mkdir -p logs && rm -f logs/eninge-nohup.out && nohup bash -c '/usr/lib/axonivy-engine/bin/AxonIvyEngine &'> logs/engine-nohup.out",
+  "onCreateCommand": "mvn clean package --batch-mode -Dmaven.test.skip=true -Divy.engine.directory=/usr/lib/axonivy-engine",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "21",
       "installMaven": "true",
       "jdkDistro": "tem"
     },
-    "ghcr.io/axonivy/devcontainer-features/engine:1": {}
+    "ghcr.io/axonivy/devcontainer-features/engine:1": {
+      "downloadUrl": "https://dev.axonivy.com/permalink/dev/axonivy-engine-slim.zip",
+      "engineHome": "/usr/lib/axonivy-engine"
+    }
   },
   "customizations": {
     "vscode": {
-      "extensions": ["axonivy.vscode-designer-13"],
+      "extensions": [
+        "axonivy.vscode-designer-13@prerelease",
+        "vscjava.vscode-java-pack"
+      ],
       "settings": {
-        "engine.runByExtension": false,
-        "engine.url": "http://localhost:8080/",
         "engine.directory": "/usr/lib/axonivy-engine"
       }
     }
