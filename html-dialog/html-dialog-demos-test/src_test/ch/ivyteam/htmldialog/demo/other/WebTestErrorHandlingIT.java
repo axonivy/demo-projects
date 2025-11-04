@@ -76,7 +76,7 @@ public class WebTestErrorHandlingIT {
         text("Faces Servlet"),
         text("Application"),
         text(EngineUrl.applicationName()),
-        text("Thread local values"),
+        text("Request context"),
         text("application"),
         text("session"),
         text("requestId"),
@@ -88,7 +88,7 @@ public class WebTestErrorHandlingIT {
         text("ch.ivyteam.htmldialog.demo.other.ErrorHandling"),
         text("processElement"),
         text("15E519280889B152-f9"),
-        text("Stack-Trace"));
+        text("Stack Trace"));
   }
 
   @Test
