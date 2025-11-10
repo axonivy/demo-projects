@@ -21,8 +21,6 @@
       <groupId>com.axonivy.ivy.api</groupId>
       <artifactId>ivy-api</artifactId>
     </dependency>
-
-    <!-- For KeepAliveFeature -->
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
