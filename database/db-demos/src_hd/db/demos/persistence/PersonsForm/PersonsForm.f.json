@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/form/13.1.0/form.json",
+  "$schema" : "https://json-schema.axonivy.com/form/13.2.0/form.json",
   "id" : "4f3c571f-0815-4360-a79d-d365a6a7a81c",
   "components" : [ {
     "cid" : "text19",
@@ -111,7 +111,27 @@
         }
       } ],
       "header" : "Edit Row",
-      "linkedComponent" : "datatable1"
+      "linkedComponent" : "datatable1",
+      "buttons" : [ {
+        "cid" : "button20",
+        "type" : "Button",
+        "config" : {
+          "name" : "Cancel",
+          "action" : "cancelEdit",
+          "variant" : "SECONDARY",
+          "style" : "FLAT",
+          "type" : "DIALOGCANCEL"
+        }
+      }, {
+        "cid" : "button21",
+        "type" : "Button",
+        "config" : {
+          "name" : "Save",
+          "action" : "saveEdit",
+          "type" : "DIALOGSAVE",
+          "icon" : "si si-check-1"
+        }
+      } ]
     }
   } ]
 }
