@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "157B33AB7587F1F1",
   "config" : {
     "data" : "com.axonivy.connectivity.rest.BatchServiceData"
