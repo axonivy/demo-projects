@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/form/13.1.0/form.json",
+  "$schema" : "https://json-schema.axonivy.com/form/13.2.0/form.json",
   "id" : "a35c9de8-3e2a-49d4-b7a5-5edc08a80658",
   "components" : [ {
     "cid" : "text1",
