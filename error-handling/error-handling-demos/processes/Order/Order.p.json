@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "14ECFC90CDE278D0",
   "config" : {
     "data" : "error.handling.demo.Data"
@@ -52,6 +52,7 @@
       "elements" : [ {
           "id" : "S10-g0",
           "type" : "EmbeddedStart",
+          "name" : "",
           "visual" : {
             "at" : { "x" : 32, "y" : 256 }
           },
@@ -62,6 +63,7 @@
         }, {
           "id" : "S10-g1",
           "type" : "EmbeddedEnd",
+          "name" : "",
           "visual" : {
             "at" : { "x" : 616, "y" : 256 }
           },

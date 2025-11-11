@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "15DEF1BE5B9E5A42",
   "config" : {
     "data" : "com.axonivy.connectivity.rest.odata.OData"
