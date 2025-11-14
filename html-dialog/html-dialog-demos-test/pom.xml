@@ -24,9 +24,8 @@
       <artifactId>ivy-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi</artifactId>
-      <scope>provided</scope>
+      <groupId>com.axonivy.ivy.api</groupId>
+      <artifactId>ivy-poi-api</artifactId>
     </dependency>
     <dependency>
       <groupId>com.axonivy.ivy.api.test</groupId>
