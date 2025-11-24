@@ -12,6 +12,7 @@
     "Indentation": false,
     "InsertFinalNewline": false,
     "TrimTrailingWhitespace": false,
-    "IndentSize": true
+    "IndentSize": true,
+    "Charset": true
   }
 }
