@@ -78,7 +78,7 @@ Axon Ivy-Anwendung.
 
 ![Odata](connectivity-odata1.png)
 
-## Einrichtung
+## Setup
 
 Installieren Sie einfach den Connector aus dem Designer heraus – mehr müssen Sie
 nicht tun :blush:
