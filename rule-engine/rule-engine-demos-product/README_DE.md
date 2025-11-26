@@ -19,7 +19,7 @@ finden Sie in unserer Dokumentation.
 ![Rule Engine Demo 1](screen1.png "Regel-Engine-Demo 1") ![Rule Engine Demo
 2](screen2.png "Regel-Engine-Demo 2")
 
-## Einrichtung
+## Setup
 
 Um die volle Design-Time-Unterstützung zu erhalten, wie z. B. die
 Autovervollständigung für DRL-Bedingungen, konfigurieren Sie bitte alle Projekte
