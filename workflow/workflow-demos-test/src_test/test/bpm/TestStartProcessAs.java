@@ -2,7 +2,7 @@ package test.bpm;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
