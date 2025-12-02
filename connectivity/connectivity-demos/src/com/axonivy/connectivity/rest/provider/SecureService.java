@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.security.DenyAll;
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
+import javax.inject.Singleton;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -22,7 +23,6 @@ import javax.ws.rs.core.Response.Status;
 import org.apache.cxf.transport.commons_text.StringEscapeUtils;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.inject.Singleton;
 
 /**
  * Demonstrates a service which protects it's methods with
