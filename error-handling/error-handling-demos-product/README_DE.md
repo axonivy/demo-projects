@@ -1,14 +1,26 @@
-# Demos für die Fehlerbehandlung
+# Fehlerbehandlung Demo
+Die Fehlerbehandlungsdemo von Axon Ivy zeigt anschaulich, wie einfach es sein
+kann, auf Ausnahmen während der Prozessautomatisierung zu reagieren. Fehler
+werden verwendet, um außergewöhnliche Prozesspfade zu modellieren. Mit einem
+Fehler wird der Happy Path eines Prozesses verlassen. In Axon Ivy werden Fehler
+in technische Fehler (z. B. Datenbankverbindungsproblem) und Geschäftsfehler (z.
+B. Genehmigung abgelehnt) unterteilt. Die Lösung:
 
-Die Fehlerbehandlungs-Demos zeigen dir auf einfache und anschauliche Weise, wie du mit **exceptions** in der Prozessautomatisierung in Axon Ivy umgehen kannst. Fehler werden genutzt, um Abweichungen vom Standardprozess abzubilden. In Axon Ivy unterscheidet man zwischen technischen Fehlern (z. B. Verbindungsproblem zur Datenbank) und fachlichen Fehlern (z. B. Ablehnung einer Freigabe).  
+- Veranschaulicht einen Geschäftsfehler, der einen alternativen Ablauf auslöst.
+- zeigt einen Geschäftsfehler, der den Happy Path unterbricht und
+  Rollback-Aktivitäten auslöst.
+- zeigt, wie ein Geschäftsprozess aufgrund eines Geschäftsfehlers beendet wird
+- Enthält ein Beispiel dafür, wie man einen Ivy-Fehler lokal abfängt und als
+  benutzerdefinierten Fehler weiterleitet.
+- Veranschaulicht die Verwendung globaler Fehler
+- bietet Zugriff auf gebrauchsfertige Vorlagen, z. B. zum Abbrechen eines
+  Dialogs.
 
-Die Demos:  
+Weitere Informationen zur
+[Fehlerbehandlung](https://developer.axonivy.com/doc/9/concepts/error-handling.html)
+finden Sie in unserer Dokumentation.
 
-- zeigen, wie ein alternativer Prozess durch einen einen Business-Fehler gestartet wird
-- demonstrieren einen Business-Fehler, der den Happy Path unterbricht und Rollback-Aktivitäten auslöst  
-- zeigen, wie ein Business-Prozess durch einen Business-Fehler beendet wird  
-- enthalten ein Beispiel, das zeigt, wie ein technischer Fehler lokal abgefangen und als benutzerdefinierter Fehler weitergegeben wird  
-- demonstrieren das Handling eines globalen Fehlers 
-- bieten einsatzbereite Templates, z. B. zum Abbrechen eines Dialogs  
+## Demo
 
-Mehr zur [Fehlerbehandlung](https://developer.axonivy.com/doc/9/concepts/error-handling.html) findest du in unserer Dokumentation.
+![Flugausfall](screen1.png "Flugstornierung") ![Geschäftlicher
+Fehler](screen2.png "Geschäftsfehler")
