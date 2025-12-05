@@ -27,11 +27,7 @@
 			<attribute name="ignore_optional_problems" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="con" path="IVY_CONTAINER">
-		<accessrules>
-			<accessrule kind="accessible" pattern="org/glassfish/jersey/filter/LoggingFilter"/>
-		</accessrules>
-	</classpathentry>
+	<classpathentry exported="true" kind="con" path="IVY_CONTAINER" />
 	<classpathentry kind="con" path="WEBAPP_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">

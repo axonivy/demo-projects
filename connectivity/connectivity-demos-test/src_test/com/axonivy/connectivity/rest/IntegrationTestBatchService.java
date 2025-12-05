@@ -40,12 +40,10 @@ public class IntegrationTestBatchService {
         .isEqualTo(REST_USER);
   }
 
-  @SuppressWarnings("deprecation")
   private static Client createAuthenticatedClient() {
     Client httpClient = ClientBuilder.newClient();
     httpClient.register(JacksonJsonProvider.class);
     httpClient.register(HttpAuthenticationFeature.basic(REST_USER, REST_USER));
-    httpClient.register(new org.glassfish.jersey.filter.LoggingFilter());
     return httpClient;
   }
 

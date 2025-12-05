@@ -86,11 +86,9 @@ public class IntegrationTestSecureService {
     return httpClient;
   }
 
-  @SuppressWarnings("deprecation")
   private static Client createClient() {
     Client httpClient = ClientBuilder.newClient();
     httpClient.register(JacksonJsonProvider.class);
-    httpClient.register(new org.glassfish.jersey.filter.LoggingFilter());
     return httpClient;
   }
 

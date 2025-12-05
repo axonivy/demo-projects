@@ -36,13 +36,11 @@ class IntegrationTestRestfulDateResource {
     return createAuthenticatedClient().target(uri);
   }
 
-  @SuppressWarnings("deprecation")
   private static Client createAuthenticatedClient() {
     Client httpClient = ClientBuilder.newClient();
     HttpAuthenticationFeature feature = HttpAuthenticationFeature.basic(REST_USER, REST_USER);
     httpClient.register(com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider.class);
     httpClient.register(feature);
-    httpClient.register(new org.glassfish.jersey.filter.LoggingFilter());
     return httpClient;
   }
 }
