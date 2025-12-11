@@ -14,7 +14,7 @@
   <packaging>iar-integration-test</packaging>
 
   <properties>
-    <drools.version>10.0.0</drools.version>
+    <drools.version>10.1.0</drools.version>
   </properties>
 
   <dependencies>
