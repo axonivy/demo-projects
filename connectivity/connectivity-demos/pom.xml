@@ -22,8 +22,12 @@
       <artifactId>ivy-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.axonivy.ivy.api</groupId>
-      <artifactId>ivy-webservice-cxf-api</artifactId>
+      <groupId>com.axonivy.ivy.spi</groupId>
+      <artifactId>ivy-rest-jersey-spi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.axonivy.ivy.spi</groupId>
+      <artifactId>ivy-webservice-cxf-spi</artifactId>
     </dependency>
 
     <!-- For KeepAliveFeature -->
