@@ -58,3 +58,6 @@ RestClients:
     - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     Properties:
       JSON.Deserialization.FAIL_ON_UNKNOWN_PROPERTIES: 'false'
+    OpenAPI:
+      SpecUrl: https://petstore3.swagger.io/api/v3/openapi.json
+      Namespace: io.swagger.petstore.client
