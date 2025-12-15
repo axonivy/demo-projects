@@ -5,49 +5,6 @@
     "data" : "workflow.agileBPM.Data"
   },
   "elements" : [ {
-      "id" : "U31",
-      "type" : "UserBpmnElement",
-      "name" : [
-        "User",
-        "ToDo task"
-      ],
-      "elements" : [ {
-          "id" : "U31-f0",
-          "type" : "RequestStart",
-          "name" : "",
-          "config" : {
-            "signature" : "dummy",
-            "request" : {
-              "isHttpRequestable" : false,
-              "isVisibleOnStartList" : false
-            }
-          },
-          "visual" : {
-            "at" : { "x" : 32, "y" : 240 }
-          },
-          "connect" : [
-            { "id" : "U31-f2", "to" : "U31-f1" }
-          ]
-        }, {
-          "id" : "U31-f1",
-          "type" : "TaskEnd",
-          "visual" : {
-            "at" : { "x" : 576, "y" : 240 }
-          }
-        }, {
-          "id" : "U31-f3",
-          "type" : "ProcessAnnotation",
-          "name" : "Dummy-Subprocess",
-          "visual" : {
-            "at" : { "x" : 88, "y" : 176 },
-            "size" : { "width" : 128, "height" : 30 }
-          }
-        } ],
-      "visual" : {
-        "at" : { "x" : 360, "y" : 216 },
-        "color" : "NodeStyle2"
-      }
-    }, {
       "id" : "f0",
       "type" : "RequestStart",
       "name" : "start.ivp",
@@ -125,41 +82,6 @@
       "connect" : [
         { "id" : "f3", "to" : "U10" }
       ]
-    }, {
-      "id" : "U20",
-      "type" : "UserBpmnElement",
-      "name" : [
-        "User",
-        "answer Question"
-      ],
-      "elements" : [ {
-          "id" : "U20-g0",
-          "type" : "EmbeddedStart",
-          "visual" : {
-            "at" : { "x" : 51, "y" : 224 }
-          },
-          "connect" : [
-            { "id" : "U20-f1", "to" : "U20-f0" }
-          ]
-        }, {
-          "id" : "U20-f0",
-          "type" : "TaskEnd",
-          "visual" : {
-            "at" : { "x" : 368, "y" : 224 }
-          }
-        }, {
-          "id" : "U20-f3",
-          "type" : "ProcessAnnotation",
-          "name" : "Dummy-Subprocess",
-          "visual" : {
-            "at" : { "x" : 104, "y" : 176 },
-            "size" : { "width" : 128, "height" : 30 }
-          }
-        } ],
-      "visual" : {
-        "at" : { "x" : 384, "y" : 448 },
-        "size" : { "width" : 128 }
-      }
     }, {
       "id" : "f4",
       "type" : "RequestStart",
@@ -313,49 +235,6 @@
       "visual" : {
         "at" : { "x" : 72, "y" : 400 },
         "size" : { "width" : 112, "height" : 30 }
-      }
-    }, {
-      "id" : "U12",
-      "type" : "UserBpmnElement",
-      "name" : [
-        "User",
-        "approve request"
-      ],
-      "elements" : [ {
-          "id" : "U12-f1",
-          "type" : "TaskEnd",
-          "visual" : {
-            "at" : { "x" : 584, "y" : 288 }
-          }
-        }, {
-          "id" : "U12-f0",
-          "type" : "RequestStart",
-          "name" : "",
-          "config" : {
-            "signature" : "dummy2",
-            "request" : {
-              "isHttpRequestable" : false,
-              "isVisibleOnStartList" : false
-            }
-          },
-          "visual" : {
-            "at" : { "x" : 40, "y" : 288 }
-          },
-          "connect" : [
-            { "id" : "U12-f2", "to" : "U12-f1" }
-          ]
-        }, {
-          "id" : "U12-f3",
-          "type" : "ProcessAnnotation",
-          "name" : "Dummy-Subprocess",
-          "visual" : {
-            "at" : { "x" : 88, "y" : 208 },
-            "size" : { "width" : 128, "height" : 30 }
-          }
-        } ],
-      "visual" : {
-        "at" : { "x" : 376, "y" : 328 },
-        "size" : { "width" : 128 }
       }
     }, {
       "id" : "U13",
