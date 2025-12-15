@@ -54,6 +54,11 @@
       "name" : "Verify Request",
       "config" : {
         "dialog" : "workflow.humantask.VerifyRequest:start(workflow.humantask.ProcurementRequest)",
+        "call" : {
+          "map" : {
+            "param.procurementRequest" : "in"
+          }
+        },
         "task" : {
           "name" : "<%= in.dynamicRole %>: <%=ivy.cms.co(\"/TaskDescriptions/verifyRequest\")%>: <%=in.amount%> <%=ivy.cms.co(\"/Dialogs/procurementRequest/piecesOf\")%> '<%=in.description%>' <%=ivy.cms.co(\"/Dialogs/procurementRequest/forTotal\")%> <%=in.totalPrice%><%=ivy.cms.co(\"/TaskDescriptions/currencySymbol\")%>",
           "responsible" : {
