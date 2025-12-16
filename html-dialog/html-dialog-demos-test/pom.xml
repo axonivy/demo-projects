@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>html-dialog-demos-test</artifactId>
-  <version>13.2.0-SNAPSHOT</version>
+  <version>14.0.0-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
   <dependencies>
     <dependency>
