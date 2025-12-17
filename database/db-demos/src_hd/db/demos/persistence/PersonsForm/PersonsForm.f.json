@@ -1,6 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/form/13.2.0/form.json",
-  "id" : "4f3c571f-0815-4360-a79d-d365a6a7a81c",
+  "$schema" : "https://json-schema.axonivy.com/form/13.2.3/form.json",
   "components" : [ {
     "cid" : "text19",
     "type" : "Text",
@@ -16,28 +15,28 @@
         "type" : "DataTableColumn",
         "config" : {
           "header" : "id",
-          "value" : "id"
+          "value" : "#{currentRow.id}"
         }
       }, {
         "cid" : "datatablecolumn8",
         "type" : "DataTableColumn",
         "config" : {
           "header" : "First name",
-          "value" : "firstName"
+          "value" : "#{currentRow.firstName}"
         }
       }, {
         "cid" : "datatablecolumn10",
         "type" : "DataTableColumn",
         "config" : {
           "header" : "Last name",
-          "value" : "lastName"
+          "value" : "#{currentRow.lastName}"
         }
       }, {
         "cid" : "datatablecolumn7",
         "type" : "DataTableColumn",
         "config" : {
           "header" : "Birth date",
-          "value" : "birthDate"
+          "value" : "#{currentRow.birthDate}"
         }
       }, {
         "cid" : "datatablecolumn3",
@@ -62,7 +61,7 @@
               "icon" : "pi pi-trash",
               "confirmDialog" : true,
               "confirmHeader" : "Delete Confirmation",
-              "confirmMessage" : "Are you sure you want to delete row: #{row}?",
+              "confirmMessage" : "Are you sure you want to delete row: #{currentRow}?",
               "confirmOkValue" : "Yes",
               "confirmCancelValue" : "No"
             }
