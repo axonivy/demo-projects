@@ -296,10 +296,18 @@
             "",
             "// send signal with json payload",
             "String jsonSerializedPayload = new Gson().toJson(in.user);",
-            "ivy.wf.signals().create().data(jsonSerializedPayload).send(\"user:created\");",
+            "ivy.wf.signals()",
+            "    .create()",
+            "    .makeCurrentTaskPersistent()",
+            "    .data(jsonSerializedPayload)",
+            "    .send(\"user:created\");",
             "",
             "// send signal with data class payload (only applicable within same project or dependent projects)",
-            "ivy.wf.signals().create().data(in.user).send(\"user:createdV2\");"
+            "ivy.wf.signals()",
+            "    .create()",
+            "    .makeCurrentTaskPersistent()",
+            "    .data(in.user)",
+            "    .send(\"user:createdV2\");"
           ]
         },
         "sudo" : true
