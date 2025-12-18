@@ -28,7 +28,7 @@
     }, {
       "id" : "f28",
       "type" : "SignalStartEvent",
-      "name" : "user:created",
+      "name" : "user:createdV2",
       "config" : {
         "signalCode" : "user:createdV2",
         "output" : {
