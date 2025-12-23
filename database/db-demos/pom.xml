@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>db-demos</artifactId>
-  <version>13.2.0-SNAPSHOT</version>
+  <version>13.2.1-SNAPSHOT</version>
   <packaging>iar</packaging>
   <dependencies>
     <dependency>
