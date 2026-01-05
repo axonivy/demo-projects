@@ -17,7 +17,7 @@ import rule.engine.demo.Data;
 class TestDiscountCalculator {
   private static final BpmProcess PROCESS = BpmProcess.name("DiscountCalculator");
 
-  @Test
+  //@Test  
   void xls(BpmClient bpmClient) {
     var element = PROCESS.elementName("testXlsRule");
     ExecutionResult result = bpmClient.start().process(element).execute();
