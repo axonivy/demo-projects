@@ -14,9 +14,10 @@ import ch.ivyteam.ivy.environment.AppFixture;
 
 @IvyProcessTest(enableWebServer = true)
 class TestFileUpload {
+
   @BeforeAll
   static void setUp(AppFixture fixture) {
-    fixture.config("RestClients.jsonPlaceholder.Url", "http://jsonplaceholder:3000/");
+    fixture.config("RestClients.jsonPlaceholder.Url", "http://jsonplaceholder:80/");
     fixture.config("RestClients.openApiService.Url", "http://test-webservices.ivyteam.io:8090/api/v3");
   }
 
