@@ -53,11 +53,6 @@
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <configuration>
-          <compilerOptions>
-            <compilerOption>-XprintProcessorInfo</compilerOption>
-          </compilerOptions>
-        </configuration>
       </plugin>
     </plugins>
   </build>
