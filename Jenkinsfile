@@ -26,9 +26,16 @@ pipeline {
           def ivyName = "ivy-" + random
           try {
             sh "docker network create ${networkName}"
-            docker.image("svenwal/jsonplaceholder:latest").withRun("--network ${networkName} --network-alias jsonplaceholder") {
-              docker.image("selenium/standalone-firefox:4.10").withRun("-e START_XVFB=false --shm-size=2g --name ${seleniumName} --network ${networkName}") {
+            //docker.build("jsonserver", '-f build/json/Dockerfile .')
+            var jsonServer = docker.image("codfish/json-server:latest")
+              .withRun('--rm -it --network '+networkName+' --network-alias jsonplaceholder -p 3000:80 -v ./build/json/db.json:/app/db.json', 'npm run dev') {
+                
+                docker.image("selenium/standalone-firefox:4.10").withRun("-e START_XVFB=false --shm-size=2g --name ${seleniumName} --network ${networkName}") {
                 docker.build('maven-selenium').inside("--name ${ivyName} --network ${networkName}") {
+                  // verify jsonplaceholder availability
+                  sh 'curl -v http://jsonplaceholder:3000/posts/1'
+                  sh 'curl -v http://jsonplaceholder:3000/users/1'
+
                   def workspace = pwd()
                   def phase = isReleasingBranch() ? 'deploy' : 'verify'
                   maven cmd: "clean ${phase} -Dmaven.test.failure.ignore=true  " +
