@@ -1,7 +1,7 @@
 RestClients:
   jsonPlaceholder:
     UUID: 449e7581-aa1e-4e3b-931a-903253491b50
-    Url: http://jsonplaceholder:3000/
+    Url: http://jsonplaceholder:80/
     Features:
     - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     Properties:
