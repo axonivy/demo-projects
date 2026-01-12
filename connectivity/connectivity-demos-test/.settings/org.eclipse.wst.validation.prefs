@@ -1,9 +1,0 @@
-DELEGATES_PREFERENCE=delegateValidatorList
-USER_BUILD_PREFERENCE=enabledBuildValidatorList
-USER_MANUAL_PREFERENCE=enabledManualValidatorList
-USER_PREFERENCE=overrideGlobalPreferencestruedisableAllValidationfalseversion1.2.801.v202007142017
-eclipse.preferences.version=1
-override=true
-suspend=false
-vals/ch.ivyteam.ivy.datawrapper.internal.validation.ProcessValidator/groups=0107include01111contentType127ch.ivyteam.ivy.process.typeT0107exclude0104file140processes/soap/service/policyGreeter.modF03
-vf.version=3
