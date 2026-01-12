@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import com.axonivy.connectivity.Person;
 import com.axonivy.connectivity.rest.client.PersonClient;
 
-import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.environment.IvyTest;
 
 /**
