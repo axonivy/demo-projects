@@ -7,15 +7,12 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.ext.Provider;
-
-import com.axonivy.connectivity.rest.json.BackendJsonMapperCustomization;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 /**
- * Demonstrates how to customize the JSON output for objects with a global {@link Provider}
- * It's defined in the {@link BackendJsonMapperCustomization}.
+ * Demonstrates how to customize the JSON output for objects with a global javax.ws.rs.ext.Provider
+ * It's defined in the BackendJsonMapperCustomization.
  */
 @Path("dates")
 @Tag(name = ApiConstants.DEMO_TAG)
@@ -31,5 +28,4 @@ public class DateResource {
     public String what = "Ferrari";
     public Date delivery = Calendar.getInstance().getTime();
   }
-
 }

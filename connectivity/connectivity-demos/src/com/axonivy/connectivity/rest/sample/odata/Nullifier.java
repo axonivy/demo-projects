@@ -7,12 +7,11 @@ import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.core.JsonTokenId;
 import com.fasterxml.jackson.databind.DeserializationConfig;
 import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.deser.std.NullifyingDeserializer;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.jsontype.TypeDeserializer;
 
 /**
- * Copied from {@link NullifyingDeserializer}, but enriched with generic type to comply with SimpleModule api.
+ * Copied from NullifyingDeserializer, but enriched with generic type to comply with SimpleModule api.
  */
 public class Nullifier<T> extends StdDeserializer<T> {
   private static final long serialVersionUID = 1L;
