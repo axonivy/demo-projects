@@ -1,25 +1,25 @@
 # yaml-language-server: $schema=https://json-schema.axonivy.com/app/14.0.0/roles.json
 Roles:
-- Id: Employee
-  Members:
-  - Manager
-  - Teamleader
-- Id: Teamleader
-- Id: Manager
-- Id: HR Manager
-  Parent: Manager
-- Id: Facility Manager
-  Parent: Manager
-- Id: IT Manager
-  Parent: Manager
-- Id: Office Manager
-  Parent: Manager
-- Id: Executive Manager
-  Parent: Manager
-- Id: Order
-- Id: Deliverer
-  Parent: Order
-- Id: Processor
-  Parent: Order
-- Id: Finance
-  Parent: Order
+  - Id: Employee
+    Members:
+      - Manager
+      - Teamleader
+  - Id: Teamleader
+  - Id: Manager
+  - Id: HR Manager
+    Parent: Manager
+  - Id: Facility Manager
+    Parent: Manager
+  - Id: IT Manager
+    Parent: Manager
+  - Id: Office Manager
+    Parent: Manager
+  - Id: Executive Manager
+    Parent: Manager
+  - Id: Order
+  - Id: Deliverer
+    Parent: Order
+  - Id: Processor
+    Parent: Order
+  - Id: Finance
+    Parent: Order
