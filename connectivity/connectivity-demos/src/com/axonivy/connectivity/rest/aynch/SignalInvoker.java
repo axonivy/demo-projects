@@ -34,8 +34,8 @@ public class SignalInvoker implements InvocationCallback<String>
 
   public SignalInvoker(String successSignal, String errorSignal)
   {
-    this.successSignal = new SignalCode(successSignal);
-    this.errorSignal = new SignalCode(errorSignal);
+    this.successSignal = SignalCode.of(successSignal);
+    this.errorSignal = SignalCode.of(errorSignal);
     this.asyncExecutor = IvyAsyncExecutor.create();
   }
 
