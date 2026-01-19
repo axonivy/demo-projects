@@ -15,5 +15,5 @@ jobs:
   build:
     uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v6
     with:
-      ivyPluginVersion: 13.2.0-SNAPSHOT
+      ivyPluginVersion: 14.0.0-SNAPSHOT
       mvnArgs: -Dmaven.test.skip=true # We run the tests on our Jenkins CI
