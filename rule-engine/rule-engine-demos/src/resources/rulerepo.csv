@@ -1,7 +1,0 @@
-no discount,0,500,Silver,0
-low discount,0,500,Gold,2
-low-medium discount,500,1000,Silver,5
-high-medium discount,500,1000,Gold,8
-high discount,1000,2000,Silver,10
-advanced discount,2000,5000,Silver,12
-max discount,1000,5000,Gold,15

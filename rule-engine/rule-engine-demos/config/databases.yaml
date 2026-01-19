@@ -1,5 +1,0 @@
-Databases:
-  ruleDB:
-    Url: jdbc:hsqldb:mem:RuleDemoDB
-    Driver: org.hsqldb.jdbc.JDBCDriver
-    UserName: ''
