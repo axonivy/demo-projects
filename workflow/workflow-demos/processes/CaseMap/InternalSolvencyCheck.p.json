@@ -26,7 +26,7 @@
         "labelOffset" : { "x" : 12, "y" : 37 }
       },
       "connect" : [
-        { "id" : "f4", "to" : "f3" }
+        { "id" : "f4", "to" : "f5" }
       ]
     }, {
       "id" : "f1",
@@ -35,7 +35,7 @@
         "at" : { "x" : 352, "y" : 64 }
       }
     }, {
-      "id" : "f3",
+      "id" : "f5",
       "type" : "Script",
       "name" : [
         "Approvals",
@@ -49,10 +49,12 @@
             "// Load dossier for current business case",
             "CreditDossier dossier  = ivy.repo.get(CreditDossier.class) as CreditDossier;",
             "dossier.decision.granted = false;",
-            "",
-            "// Execute rules to evaluate if it needs approval Level 1 and / or Level 2",
-            "ivy.rules.create().namespace(\"workflow.credit\").executor().execute(dossier);",
-            "",
+            "if (dossier.request.amount / dossier.request.salary >= 0.2) {",
+            "  dossier.decision.needsLevel1Approval = true;",
+            "}",
+            "if (!\"Switzerland\".equals(dossier.customer.address.country)) {",
+            "  dossier.decision.needsLevel2Approval = true;",
+            "}",
             "// Save dossier",
             "ivy.repo.save(dossier);"
           ]
@@ -62,7 +64,7 @@
         "at" : { "x" : 224, "y" : 64 }
       },
       "connect" : [
-        { "id" : "f2", "to" : "f1" }
+        { "id" : "f6", "to" : "f1" }
       ]
     } ]
 }

@@ -44,9 +44,7 @@ pipeline {
                   archiveArtifacts artifacts: '**/target/selenide/reports/**/*', allowEmptyArchive: true
 
                   recordIssues tools: [eclipse()], qualityGates: [[threshold: 1, type: 'TOTAL']]
-                  recordIssues tools: [mavenConsole()], qualityGates: [[threshold: 1, type: 'TOTAL']], filters: [
-                    excludeMessage('.*An illegal reflective access operation has occurred.*'), // in rule engine test
-                  ]
+                  recordIssues tools: [mavenConsole()], qualityGates: [[threshold: 1, type: 'TOTAL']]
 
                   junit testDataPublishers: [[$class: 'StabilityTestDataPublisher']], testResults: '**/target/*-reports/**/*.xml'
                 }
