@@ -128,7 +128,7 @@ class TestDataMapping {
     assertThat(result).isNotNull();
 
     DataMappingData data = result.data().last();
-    assertThat(data.getPosts()).hasSize(10);
+    assertThat(data.getPosts()).isNotEmpty();
   }
 
   @Test

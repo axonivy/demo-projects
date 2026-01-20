@@ -279,7 +279,7 @@
           "code" : [
             "import java.util.Random;",
             "",
-            "out.userId = new Random().nextInt(1,10);"
+            "out.userId = new Random().nextInt(1,3);"
           ]
         }
       },
