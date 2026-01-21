@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/14.0.0/users.json
+Users:
+  - Name: demoUser1
+    Password: demoUser1
+    FullName: Demo User 1
+  - Name: demoUser2
+    Password: demoUser2
+    FullName: Demo User 2
+  - Name: demoUser3
+    Password: demoUser3
+    FullName: Demo User 3
