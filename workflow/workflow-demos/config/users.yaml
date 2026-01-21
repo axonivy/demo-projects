@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/14.0.0/users.json
+Users:
+  - Name: ldv
+    FullName: Leonardo Da Vinci
+    Mail: leonarda.davinci@axonivy.com
+    Roles:
+      - Employee
+  - Name: hb
+    Password: hb
+    FullName: Hugo Boss
+    Mail: hugo.boss@axonivy.com
+    Roles:
+      - Teamleader
+      - HR Manager
+      - Facility Manager
+      - IT Manager
+      - Office Manager
+      - Executive Manager
+      - Processor
+  - Name: wt
+    FullName: William Tell
+    Mail: william.tell@axonivy.com
+    Roles:
+      - Teamleader
+  - Name: mc
+    FullName: Marie Curie
+    Mail: marie.curie@axonivy.com
+    Roles:
+      - Facility Manager
+  - Name: md
+    FullName: Marlene Dietrich
+    Mail: marlene.dietrich@axonivy.com
+    Roles:
+      - HR Manager
+  - Name: jb
+    FullName: James Bond
+    Mail: james.bond@axonivy.com
+    Roles:
+      - Office Manager
+      - Deliverer
+  - Name: hf
+    FullName: Henry Ford
+    Mail: henry.ford@axonivy.com
+    Roles:
+      - IT Manager
+  - Name: bf
+    FullName: Benjamin Franklin
+    Mail: benjamin.franklin@axonivy.com
+    Roles:
+      - Executive Manager
+      - Finance
