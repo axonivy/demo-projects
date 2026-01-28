@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/config/14.0.0/webservice-clients.json
 WebServiceClients:
   createOrderService:
     Id: 1624D62D6426F325
@@ -6,17 +7,17 @@ WebServiceClients:
     WsCallLibrary: CXF
     Endpoints:
       CreateOrderPort:
-      - http://localhost:8081/designer/ws/connectivity-demos/162492A1649E72DF
+        - http://localhost:8081/designer/ws/connectivity-demos/162492A1649E72DF
   policyGreeter:
     Id: 162AF1AE2B935160
     ServiceClass: ch.ivyteam.testservice.policy.greeter.client.SecureGreetPolicyServiceService
     WsdlUrl: http://test-webservices.ivyteam.io:8080/country-service/webservices/greet-policy-wss?wsdl
     WsCallLibrary: CXF
     Features:
-    - ch.ivyteam.ivy.webservice.exec.cxf.feature.policy.IgnorePolicyFeature
+      - ch.ivyteam.ivy.webservice.exec.cxf.feature.policy.IgnorePolicyFeature
     Properties:
       policy.disabled: http://schemas.xmlsoap.org/ws/2005/07/securitypolicy:SupportingTokens
       endpoint.cache: 'false'
     Endpoints:
       SecureGreetPolicyServicePort:
-      - http://test-webservices.ivyteam.io:8080/country-service/webservices/greet-policy-wss
+        - http://test-webservices.ivyteam.io:8080/country-service/webservices/greet-policy-wss

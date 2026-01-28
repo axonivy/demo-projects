@@ -1,17 +1,17 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/app/13.2.1/webservice-clients.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/config/14.0.0/webservice-clients.json
 WebServiceClients:
   personService:
     Id: 16150E44A158D09C
     ServiceClass: com.axonivy.connectivity.soap.service.client.PersonServiceService
     WsCallLibrary: CXF
     Features:
-    - ch.ivyteam.ivy.webservice.exec.cxf.feature.HttpBasicAuthenticationFeature
+      - ch.ivyteam.ivy.webservice.exec.cxf.feature.HttpBasicAuthenticationFeature
     Properties:
       username: theBoss
       password: ${decrypt:\u007B\u0012\u0012\u0075\u002F\u0017\u00D1\u0083\u00C4\u009C\u0094\u00B0\u009A\u00B2\u00ED\u006B\u00AE\u000D\u005A\u0007\u0032\u009C\u0070\u00D6\u006F\u0027\u0008\u0080\u0085\u00CA\u005F\u00B5\u0094\u006C\u0091\u002D\u001A\u00F9\u0082\u0013\u004E\u00C4\u00C0\u0099\u00DA\u003B\u00C4\u0074}
     Endpoints:
       PersonServicePort:
-      - ${ivy.app.baseurl}/ws/connectivity-demos/16150E1D07E8CA18
+        - ${ivy.app.baseurl}/ws/connectivity-demos/16150E1D07E8CA18
     Codegen:
       WsdlUrl: http://127.0.0.1:8081/designer/ws/connectivity-demos/16150E1D07E8CA18?WSDL
   technicalBackend:
@@ -20,7 +20,7 @@ WebServiceClients:
     WsCallLibrary: CXF
     Endpoints:
       TechnicalBackendServicePort:
-      - ${ivy.app.baseurl}/ws/connectivity-demos/162B95BB70C3178E
+        - ${ivy.app.baseurl}/ws/connectivity-demos/162B95BB70C3178E
     Codegen:
       WsdlUrl: http://localhost:8081/designer/ws/connectivity-demos/162B95BB70C3178E?WSDL
   smartbearTests:
@@ -29,9 +29,9 @@ WebServiceClients:
     WsCallLibrary: CXF
     Endpoints:
       SampleWebServiceSoap:
-      - http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx
+        - http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx
       SampleWebServiceSoap12:
-      - http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx
+        - http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx
     Codegen:
       WsdlUrl: http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx?WSDL
   #the backend defines a custom interceptor
@@ -41,7 +41,7 @@ WebServiceClients:
     WsCallLibrary: CXF
     Endpoints:
       ServiceWithExceptionPort:
-      - ${ivy.app.baseurl}/ws/connectivity-demos/16D29AE50A7A6E34
+        - ${ivy.app.baseurl}/ws/connectivity-demos/16D29AE50A7A6E34
     Codegen:
       WsdlUrl: http://localhost:8081/designer/ws/connectivity-demos/16D29AE50A7A6E34?WSDL
   #client with a custom interceptor feature
@@ -50,13 +50,13 @@ WebServiceClients:
     ServiceClass: soap.intercepted.client.person.ivyteam.ch.client.PersonServiceService
     WsCallLibrary: CXF
     Features:
-    - ch.ivyteam.ivy.webservice.exec.cxf.feature.HttpBasicAuthenticationFeature
-    - com.axonivy.connectivity.soap.client.CustomLogFeature
+      - ch.ivyteam.ivy.webservice.exec.cxf.feature.HttpBasicAuthenticationFeature
+      - com.axonivy.connectivity.soap.client.CustomLogFeature
     Properties:
       username: theBoss
       password: ${decrypt:\u007B\u0012\u0012\u0075\u002F\u0017\u00D1\u0083\u00C4\u009C\u0094\u00B0\u009A\u00B2\u00ED\u006B\u00AE\u000D\u005A\u0007\u0032\u009C\u0070\u00D6\u006F\u0027\u0008\u0080\u0085\u00CA\u005F\u00B5\u0094\u006C\u0091\u002D\u001A\u00F9\u0082\u0013\u004E\u00C4\u00C0\u0099\u00DA\u003B\u00C4\u0074}
     Endpoints:
       PersonServicePort:
-      - ${ivy.app.baseurl}/ws/connectivity-demos/16150E1D07E8CA18
+        - ${ivy.app.baseurl}/ws/connectivity-demos/16150E1D07E8CA18
     Codegen:
       WsdlUrl: http://127.0.0.1:8081/designer/ws/connectivity-demos/16150E1D07E8CA18?WSDL

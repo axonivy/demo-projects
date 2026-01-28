@@ -1,11 +1,11 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/app/13.2.1/rest-clients.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/config/14.0.0/rest-clients.json
 RestClients:
   personService:
     UUID: e00c9735-7733-4da8-85c8-6413c6fb2cd3
     Url: ${ivy.app.baseurl}/api/persons
     Features:
-    - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
-    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+      - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
+      - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     Properties:
       username: theWorker
       password: ${decrypt:\u007B\u0012\u0012\u0075\u002F\u0017\u00D1\u0083\u00C4\u009C\u0094\u00B0\u009A\u00B2\u00ED\u006B\u0067\u0094\u00D2\u003B\u00BF\u0022\u00F3\u00EC\u00C1\u0014\u00A8\u00D8\u00CB\u009C\u0028\u00F3\u00CB\u0030\u00A7\u0038\u00F0\u0067\u0022\u00C3\u0076\u0016\u0088\u00BC\u0096\u00C9\u00EC\u00BB\u002C\u006E\u005E\u008B\u004A\u00AA\u0082\u0057\u00EF\u000A\u0089\u00E1\u0080\u004E\u0072\u0065}
@@ -13,7 +13,7 @@ RestClients:
     UUID: b0a5f371-e479-444d-b71c-af1fff4c084d
     Url: ${ivy.app.baseurl}/api/batch
     Features:
-    - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
+      - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
     Properties:
       jersey.config.client.readTimeout: '35000'
       jersey.config.client.connectTimeout: '1000'
@@ -29,7 +29,7 @@ RestClients:
     UUID: 449e7581-aa1e-4e3b-931a-903253491b50
     Url: https://jsonplaceholder.typicode.com/
     Features:
-    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+      - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     Properties:
       JSON.Deserialization.FAIL_ON_UNKNOWN_PROPERTIES: 'false'
   #The OData demo service
@@ -37,7 +37,7 @@ RestClients:
     UUID: 65f8e5a4-768d-4a68-813a-e6d569cda522
     Url: https://services.odata.org/V4/(S(cnbm44wtbc1v5bgrlek5lpcc))/TripPinServiceRW
     Features:
-    - com.axonivy.connectivity.rest.sample.odata.TripPinJsonFeature
+      - com.axonivy.connectivity.rest.sample.odata.TripPinJsonFeature
     Properties:
       JSON.Deserialization.FAIL_ON_UNKNOWN_PROPERTIES: 'false'
   #A client using the REST endpoints defined by the serving ivy.engine. 
@@ -47,8 +47,8 @@ RestClients:
     UUID: 4d9a8b09-9968-4476-a8ac-b71a94d25e94
     Url: ${ivy.app.baseurl}/api
     Features:
-    - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
-    - org.glassfish.jersey.media.multipart.MultiPartFeature
+      - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
+      - org.glassfish.jersey.media.multipart.MultiPartFeature
     Properties:
       username: theWorker
       password: ${decrypt:\u007B\u0012\u0012\u0075\u002F\u0017\u00D1\u0083\u00C4\u009C\u0094\u00B0\u009A\u00B2\u00ED\u006B\u0067\u0094\u00D2\u003B\u00BF\u0022\u00F3\u00EC\u00C1\u0014\u00A8\u00D8\u00CB\u009C\u0028\u00F3\u00CB\u0030\u00A7\u0038\u00F0\u0067\u0022\u00C3\u0076\u0016\u0088\u00BC\u0096\u00C9\u00EC\u00BB\u002C\u006E\u005E\u008B\u004A\u00AA\u0082\u0057\u00EF\u000A\u0089\u00E1\u0080\u004E\u0072\u0065}
@@ -56,7 +56,7 @@ RestClients:
     UUID: ae69ba01-79b7-4dce-9049-900f8f420907
     Url: https://petstore3.swagger.io/api/v3
     Features:
-    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+      - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     Properties:
       JSON.Deserialization.FAIL_ON_UNKNOWN_PROPERTIES: 'false'
     OpenAPI:
@@ -66,9 +66,9 @@ RestClients:
     UUID: bf0e4baf-96e6-470c-a61c-a2f4dbfe4c8f
     Url: ${ivy.app.baseurl}/api/persons
     Features:
-    - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
-    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
-    - com.axonivy.connectivity.rest.client.connect.KeepAliveFeature
+      - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
+      - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+      - com.axonivy.connectivity.rest.client.connect.KeepAliveFeature
     Properties:
       username: theWorker
       password: ${decrypt:\u007B\u0012\u0012\u0075\u002F\u0017\u00D1\u0083\u00C4\u009C\u0094\u00B0\u009A\u00B2\u00ED\u006B\u0067\u0094\u00D2\u003B\u00BF\u0022\u00F3\u00EC\u00C1\u0014\u00A8\u00D8\u00CB\u009C\u0028\u00F3\u00CB\u0030\u00A7\u0038\u00F0\u0067\u0022\u00C3\u0076\u0016\u0088\u00BC\u0096\u00C9\u00EC\u00BB\u002C\u006E\u005E\u008B\u004A\u00AA\u0082\u0057\u00EF\u000A\u0089\u00E1\u0080\u004E\u0072\u0065}
