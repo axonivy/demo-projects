@@ -10,6 +10,7 @@ import rule.engine.demo.Member;
 import rule.engine.demo.enums.MemberType;
 
 @IvyTest
+@SuppressWarnings({"deprecation", "removal"})
 class RuleDrlTest
 {
   @ParameterizedTest
