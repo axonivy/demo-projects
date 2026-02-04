@@ -46,6 +46,7 @@ pipeline {
                   recordIssues tools: [eclipse()], qualityGates: [[threshold: 1, type: 'TOTAL']]
                   recordIssues tools: [mavenConsole()], qualityGates: [[threshold: 1, type: 'TOTAL']], filters: [
                     excludeMessage('.*An illegal reflective access operation has occurred.*'), // in rule engine test
+                    excludeMessage('.*Rule.* is deprecated'), // no warning for deprecated Rules
                   ]
 
                   junit testDataPublishers: [[$class: 'StabilityTestDataPublisher']], testResults: '**/target/*-reports/**/*.xml'
