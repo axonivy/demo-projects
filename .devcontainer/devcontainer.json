@@ -2,7 +2,7 @@
   "name": "Axon Ivy",
   "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   "forwardPorts": [8080],
-  "onCreateCommand": "mvn clean package --batch-mode -Dmaven.test.skip=true -Divy.engine.directory=/usr/lib/axonivy-engine",
+  "onCreateCommand": "mvn clean package --batch-mode -Dmaven.test.skip=true -Divy.script.validation.skip=true -Divy.engine.directory=/usr/lib/axonivy-engine",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "21",
