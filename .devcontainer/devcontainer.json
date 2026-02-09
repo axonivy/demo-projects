@@ -21,7 +21,7 @@
         "vscjava.vscode-java-pack"
       ],
       "settings": {
-        "engine.directory": "/usr/lib/axonivy-engine"
+        "axonivy.engine.releaseTrain": "/usr/lib/axonivy-engine"
       }
     }
   }
