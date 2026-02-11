@@ -17,7 +17,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "axonivy.vscode-designer-13@prerelease",
+        "axonivy.vscode-designer-14",
         "vscjava.vscode-java-pack"
       ],
       "settings": {
