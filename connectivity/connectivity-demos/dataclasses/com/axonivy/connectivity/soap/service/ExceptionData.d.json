@@ -1,15 +1,11 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ExceptionData",
   "namespace" : "com.axonivy.connectivity.soap.service",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "throwException",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
-    "name" : "exceptionMessage",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "exceptionMessage"
   } ]
 }

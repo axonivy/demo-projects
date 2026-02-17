@@ -1,50 +1,44 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "define_WFData",
   "namespace" : "workflow.agileBPM.define_WF",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "definedTasks",
-    "type" : "List<workflow.agileBPM.TaskDef>"
+    "type" : "List<workflow.agileBPM.TaskDef>",
+    "modifiers" : [ ]
   }, {
     "name" : "caseInfo",
-    "type" : "workflow.agileBPM.CaseDef"
+    "type" : "workflow.agileBPM.CaseDef",
+    "modifiers" : [ ]
   }, {
     "name" : "newTask",
-    "type" : "workflow.agileBPM.TaskDef",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.agileBPM.TaskDef"
   }, {
     "name" : "wfusers",
-    "type" : "List<String>"
+    "type" : "List<String>",
+    "modifiers" : [ ]
   }, {
     "name" : "started",
-    "type" : "DateTime",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "DateTime"
   }, {
     "name" : "additionalTasks",
-    "type" : "List<workflow.agileBPM.TaskDef>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<workflow.agileBPM.TaskDef>"
   }, {
-    "name" : "errormsg",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "errormsg"
   }, {
-    "name" : "user",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "user"
   }, {
     "name" : "editTask",
-    "type" : "workflow.agileBPM.TaskDef",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.agileBPM.TaskDef"
   }, {
     "name" : "userList",
-    "type" : "List<ch.ivyteam.ivy.security.IUser>"
+    "type" : "List<ch.ivyteam.ivy.security.IUser>",
+    "modifiers" : [ ]
   }, {
     "name" : "userSelection",
-    "type" : "List<ch.ivyteam.ivy.security.IUser>"
+    "type" : "List<ch.ivyteam.ivy.security.IUser>",
+    "modifiers" : [ ]
   }, {
-    "name" : "taskDescription",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "taskDescription"
   } ]
 }

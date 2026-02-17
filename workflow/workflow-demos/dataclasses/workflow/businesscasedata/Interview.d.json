@@ -1,23 +1,16 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Interview",
   "namespace" : "workflow.businesscasedata",
   "isBusinessCaseData" : true,
   "fields" : [ {
-    "name" : "firstName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "firstName"
   }, {
-    "name" : "lastName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "lastName"
   }, {
     "name" : "date",
-    "type" : "Date",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Date"
   }, {
-    "name" : "conversation",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "conversation"
   } ]
 }

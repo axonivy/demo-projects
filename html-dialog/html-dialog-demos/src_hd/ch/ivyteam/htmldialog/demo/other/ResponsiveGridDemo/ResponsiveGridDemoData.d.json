@@ -1,35 +1,22 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ResponsiveGridDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.other.ResponsiveGridDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "lastName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "lastName"
   }, {
-    "name" : "firstName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "firstName"
   }, {
-    "name" : "email",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "email"
   }, {
-    "name" : "address",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "address"
   }, {
     "name" : "zipCode",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
-    "name" : "city",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "city"
   }, {
     "name" : "birthday",
-    "type" : "Date",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Date"
   } ]
 }

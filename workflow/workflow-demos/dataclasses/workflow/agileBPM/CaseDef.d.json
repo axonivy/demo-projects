@@ -1,23 +1,15 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "CaseDef",
   "namespace" : "workflow.agileBPM",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "subject",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "subject"
   }, {
-    "name" : "description",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "description"
   }, {
-    "name" : "kind",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "kind"
   }, {
     "name" : "attachment",
-    "type" : "File",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "File"
   } ]
 }

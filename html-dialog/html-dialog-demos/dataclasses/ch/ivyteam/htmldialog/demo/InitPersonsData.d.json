@@ -1,11 +1,9 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "InitPersonsData",
   "namespace" : "ch.ivyteam.htmldialog.demo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "persons",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Person>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<ch.ivyteam.htmldialog.demo.Person>"
   } ]
 }

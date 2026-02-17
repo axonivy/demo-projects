@@ -1,14 +1,12 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "GreeterPolicyData",
   "namespace" : "com.axonivy.connectivity.test",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "error",
-    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
   }, {
-    "name" : "greetResponse",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "greetResponse"
   } ]
 }

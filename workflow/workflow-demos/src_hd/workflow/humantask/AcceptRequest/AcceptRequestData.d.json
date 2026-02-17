@@ -1,17 +1,17 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "AcceptRequestData",
   "namespace" : "workflow.humantask.AcceptRequest",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "ok",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "procurementRequest",
-    "type" : "workflow.humantask.ProcurementRequest"
+    "type" : "workflow.humantask.ProcurementRequest",
+    "modifiers" : [ ]
   }, {
     "name" : "logEntry",
-    "type" : "workflow.humantask.LogEntry",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.humantask.LogEntry"
   } ]
 }

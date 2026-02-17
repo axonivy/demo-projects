@@ -1,13 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "CreateApprovalData",
   "namespace" : "com.axonivy.connectivity.rest",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "approval",
-    "type" : "com.axonivy.connectivity.rest.Approval"
+    "type" : "com.axonivy.connectivity.rest.Approval",
+    "modifiers" : [ ]
   }, {
     "name" : "approvalTask",
-    "type" : "ch.ivyteam.ivy.workflow.ITask"
+    "type" : "ch.ivyteam.ivy.workflow.ITask",
+    "modifiers" : [ ]
   } ]
 }

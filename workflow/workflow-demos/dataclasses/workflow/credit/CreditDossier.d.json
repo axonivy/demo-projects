@@ -1,19 +1,16 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "CreditDossier",
   "namespace" : "workflow.credit",
   "isBusinessCaseData" : true,
   "fields" : [ {
     "name" : "customer",
-    "type" : "workflow.credit.Person",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.credit.Person"
   }, {
     "name" : "request",
-    "type" : "workflow.credit.CreditRequest",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.credit.CreditRequest"
   }, {
     "name" : "decision",
-    "type" : "workflow.credit.Decision",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.credit.Decision"
   } ]
 }

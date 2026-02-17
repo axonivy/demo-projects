@@ -1,11 +1,8 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "AsyncInvocationData",
   "namespace" : "com.axonivy.connectivity.rest",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "result",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "result"
   } ]
 }

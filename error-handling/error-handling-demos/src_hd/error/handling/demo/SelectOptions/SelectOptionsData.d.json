@@ -1,19 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "SelectOptionsData",
   "namespace" : "error.handling.demo.SelectOptions",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "customer",
-    "type" : "booking.Customer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "booking.Customer"
   }, {
     "name" : "flight",
-    "type" : "booking.Flight",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "booking.Flight"
   }, {
-    "name" : "carSize",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "carSize"
   } ]
 }

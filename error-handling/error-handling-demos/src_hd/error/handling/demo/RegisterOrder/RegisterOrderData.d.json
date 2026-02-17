@@ -1,14 +1,13 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "RegisterOrderData",
   "namespace" : "error.handling.demo.RegisterOrder",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "order",
-    "type" : "error.handling.demo.Order"
+    "type" : "error.handling.demo.Order",
+    "modifiers" : [ ]
   }, {
     "name" : "productsInStock",
-    "type" : "List<error.handling.demo.StockItem>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<error.handling.demo.StockItem>"
   } ]
 }

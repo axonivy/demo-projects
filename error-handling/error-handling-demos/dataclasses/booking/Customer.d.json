@@ -1,25 +1,24 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Customer",
   "namespace" : "booking",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "firstname",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "lastname",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "street",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "zip",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "city",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "email",
-    "type" : "String"
+    "modifiers" : [ ]
   } ]
 }

@@ -1,11 +1,9 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "AcceptOrderData",
   "namespace" : "com.axonivy.connectivity.soap.AcceptOrder",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "order",
-    "type" : "com.axonivy.connectivity.soap.service.Order",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.connectivity.soap.service.Order"
   } ]
 }

@@ -1,19 +1,13 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Approval",
   "namespace" : "error.handling.demo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "description",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "description"
   }, {
     "name" : "cost",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
-    "name" : "declineReason",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "declineReason"
   } ]
 }

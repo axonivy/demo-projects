@@ -1,27 +1,25 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "FileUploadSimpleModeDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.input.FileUploadSimpleModeDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "ivyFile",
-    "type" : "File"
+    "type" : "File",
+    "modifiers" : [ ]
   }, {
     "name" : "textContent",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
-    "name" : "filePath",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "filePath"
   }, {
     "name" : "fileName",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "fileDownload",
-    "type" : "org.primefaces.model.StreamedContent"
+    "type" : "org.primefaces.model.StreamedContent",
+    "modifiers" : [ ]
   }, {
     "name" : "showContent",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   } ]
 }

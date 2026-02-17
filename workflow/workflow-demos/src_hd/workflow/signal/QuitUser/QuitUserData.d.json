@@ -1,14 +1,13 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "QuitUserData",
   "namespace" : "workflow.signal.QuitUser",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "quitUserEvent",
-    "type" : "workflow.signal.QuitUserEvent",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.signal.QuitUserEvent"
   }, {
     "name" : "cases",
-    "type" : "List<ch.ivyteam.ivy.workflow.ICase>"
+    "type" : "List<ch.ivyteam.ivy.workflow.ICase>",
+    "modifiers" : [ ]
   } ]
 }

@@ -1,70 +1,48 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "TaskDef",
   "namespace" : "workflow.agileBPM",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "actor",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "actor"
   }, {
-    "name" : "subject",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "subject"
   }, {
     "name" : "until",
-    "type" : "DateTime",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "DateTime"
   }, {
     "name" : "assigned",
-    "type" : "DateTime",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "DateTime"
   }, {
     "name" : "prio",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
-    "name" : "kind",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "kind"
   }, {
-    "name" : "description",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "description"
   }, {
     "name" : "done",
-    "type" : "DateTime",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "DateTime"
   }, {
     "name" : "n",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
     "name" : "count",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
-    "name" : "actoruser",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "actoruser"
   }, {
     "name" : "actorusers",
-    "type" : "List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<String>"
   }, {
-    "name" : "note",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "note"
   }, {
-    "name" : "subtype",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "subtype"
   }, {
     "name" : "taskNotes",
-    "type" : "List<ch.ivyteam.ivy.workflow.INote>"
+    "type" : "List<ch.ivyteam.ivy.workflow.INote>",
+    "modifiers" : [ ]
   }, {
     "name" : "adhoc",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   } ]
 }

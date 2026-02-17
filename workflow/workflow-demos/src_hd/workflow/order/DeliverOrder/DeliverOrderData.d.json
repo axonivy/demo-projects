@@ -1,15 +1,12 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "DeliverOrderData",
   "namespace" : "workflow.order.DeliverOrder",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "customer",
-    "type" : "workflow.order.Person",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.order.Person"
   }, {
     "name" : "order",
-    "type" : "workflow.order.Order",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.order.Order"
   } ]
 }
