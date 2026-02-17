@@ -47,7 +47,7 @@ class TestProcurementRequestUserTask {
     var result = createProcurrementRequest(bpmClient);
 
     bpmClient.mock().uiOf(HtmlDialog.VERIFY_REQUEST)
-        .with((params, results) -> results.set("dataOk", false));
+        .with((_, results) -> results.set("dataOk", false));
     var verifyResult = verifyRequest(bpmClient, result, Role.MANAGER);
 
     assertThat(verifyResult.workflow().activeCase().getState()).isEqualTo(CaseState.DONE);
@@ -61,11 +61,11 @@ class TestProcurementRequestUserTask {
     var result = createProcurrementRequest(bpmClient);
 
     bpmClient.mock().uiOf(HtmlDialog.VERIFY_REQUEST)
-        .with((params, results) -> results.set("dataOk", true));
+        .with((_, results) -> results.set("dataOk", true));
     var verifyResult = verifyRequest(bpmClient, result, Role.MANAGER);
 
     bpmClient.mock().uiOf(HtmlDialog.ACCEPT_REQUEST)
-        .with((params, results) -> results.set("accepted", false));
+        .with((_, results) -> results.set("accepted", false));
     ProcurementRequest request = acceptRequest(bpmClient, verifyResult);
 
     assertThat(request.getAccepted()).isFalse();
@@ -80,11 +80,11 @@ class TestProcurementRequestUserTask {
     var result = createProcurrementRequest(bpmClient);
 
     bpmClient.mock().uiOf(HtmlDialog.VERIFY_REQUEST)
-        .with((params, results) -> results.set("dataOk", true));
+        .with((_, results) -> results.set("dataOk", true));
     var verifyResult = verifyRequest(bpmClient, result, Role.MANAGER);
 
     bpmClient.mock().uiOf(HtmlDialog.ACCEPT_REQUEST)
-        .with((params, results) -> results.set("accepted", true));
+        .with((_, results) -> results.set("accepted", true));
     ProcurementRequest request = acceptRequest(bpmClient, verifyResult);
 
     assertThat(request.getAccepted()).isTrue();
@@ -92,7 +92,7 @@ class TestProcurementRequestUserTask {
   }
 
   private static ExecutionResult createProcurrementRequest(BpmClient bpmClient) {
-    bpmClient.mock().uiOf(HtmlDialog.ENTER_REQUEST).with((params, results) -> results.set("procurementRequestData", newComputer()));
+    bpmClient.mock().uiOf(HtmlDialog.ENTER_REQUEST).with((_, results) -> results.set("procurementRequestData", newComputer()));
     ExecutionResult result = bpmClient
         .start().process(PROCUREMENT_PROCESS)
         .as().user("ldv")
