@@ -1,38 +1,28 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "BusinessDataDossierBrowserData",
   "namespace" : "workflow.businessdata.BusinessDataDossierBrowser",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "dossiers",
-    "type" : "java.util.List<workflow.businessdata.Dossier>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<workflow.businessdata.Dossier>"
   }, {
-    "name" : "searchText",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "searchText"
   }, {
     "name" : "searchFromDate",
-    "type" : "Date",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Date"
   }, {
     "name" : "searchToDate",
-    "type" : "Date",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Date"
   }, {
-    "name" : "searchType",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "searchType"
   }, {
-    "name" : "lastEditedId",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "lastEditedId"
   }, {
     "name" : "searchResult",
-    "type" : "ch.ivyteam.ivy.business.data.store.search.Result"
+    "type" : "ch.ivyteam.ivy.business.data.store.search.Result",
+    "modifiers" : [ ]
   }, {
     "name" : "limit",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   } ]
 }

@@ -1,15 +1,11 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ViewAddressData",
   "namespace" : "workflow.businessdata.ViewAddress",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "address",
-    "type" : "workflow.businessdata.Address",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.businessdata.Address"
   }, {
-    "name" : "addressId",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "addressId"
   } ]
 }

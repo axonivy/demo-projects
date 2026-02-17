@@ -1,10 +1,10 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "OpenApiData",
   "namespace" : "com.axonivy.connectivity.rest",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "pets",
-    "type" : "java.util.List<io.swagger.petstore3.client.Pet>"
+    "type" : "java.util.List<io.swagger.petstore3.client.Pet>",
+    "modifiers" : [ ]
   } ]
 }

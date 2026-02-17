@@ -1,22 +1,26 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "DataMappingData",
   "namespace" : "com.axonivy.connectivity.rest",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "myPost",
-    "type" : "com.axonivy.connectivity.rest.Post"
+    "type" : "com.axonivy.connectivity.rest.Post",
+    "modifiers" : [ ]
   }, {
     "name" : "userId",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   }, {
     "name" : "posts",
-    "type" : "java.util.List<com.axonivy.connectivity.rest.Post>"
+    "type" : "java.util.List<com.axonivy.connectivity.rest.Post>",
+    "modifiers" : [ ]
   }, {
     "name" : "user",
-    "type" : "com.axonivy.connectivity.rest.User"
+    "type" : "com.axonivy.connectivity.rest.User",
+    "modifiers" : [ ]
   }, {
     "name" : "userGenerated",
-    "type" : "com.typicode.jsonplaceholder.User"
+    "type" : "com.typicode.jsonplaceholder.User",
+    "modifiers" : [ ]
   } ]
 }

@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "151CA0D8CBDD2DEC",
   "config" : {
     "data" : "workflow.signal.CreateUserProcess"

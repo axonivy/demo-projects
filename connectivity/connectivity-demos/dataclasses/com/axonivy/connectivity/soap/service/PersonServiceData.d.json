@@ -1,13 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "PersonServiceData",
   "namespace" : "com.axonivy.connectivity.soap.service",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "persons",
-    "type" : "List<com.axonivy.connectivity.Person>"
+    "type" : "List<com.axonivy.connectivity.Person>",
+    "modifiers" : [ ]
   }, {
     "name" : "person",
-    "type" : "com.axonivy.connectivity.Person"
+    "type" : "com.axonivy.connectivity.Person",
+    "modifiers" : [ ]
   } ]
 }

@@ -1,23 +1,15 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "BusinessDataDossierModifierData",
   "namespace" : "workflow.businessdata.BusinessDataDossierModifier",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "dossier",
-    "type" : "workflow.businessdata.Dossier",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.businessdata.Dossier"
   }, {
-    "name" : "id",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "id"
   }, {
-    "name" : "title",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "title"
   }, {
-    "name" : "dossierInfo",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "dossierInfo"
   } ]
 }

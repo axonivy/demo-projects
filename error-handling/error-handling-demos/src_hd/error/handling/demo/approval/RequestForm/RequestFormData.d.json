@@ -1,11 +1,9 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "RequestFormData",
   "namespace" : "error.handling.demo.approval.RequestForm",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "approval",
-    "type" : "error.handling.demo.Approval",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "error.handling.demo.Approval"
   } ]
 }

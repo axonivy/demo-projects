@@ -1,56 +1,51 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "task_FormData",
   "namespace" : "workflow.agileBPM.task_Form",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "caseInfo",
-    "type" : "workflow.agileBPM.CaseDef"
+    "type" : "workflow.agileBPM.CaseDef",
+    "modifiers" : [ ]
   }, {
     "name" : "nextTask",
-    "type" : "workflow.agileBPM.TaskDef"
+    "type" : "workflow.agileBPM.TaskDef",
+    "modifiers" : [ ]
   }, {
     "name" : "ok",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "answer",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "done",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "definedTasks",
-    "type" : "List<workflow.agileBPM.TaskDef>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<workflow.agileBPM.TaskDef>"
   }, {
     "name" : "taskHistory",
-    "type" : "List<workflow.agileBPM.TaskDef>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<workflow.agileBPM.TaskDef>"
   }, {
     "name" : "caseNotes",
-    "type" : "List<ch.ivyteam.ivy.workflow.INote>"
+    "type" : "List<ch.ivyteam.ivy.workflow.INote>",
+    "modifiers" : [ ]
   }, {
     "name" : "addTask",
-    "type" : "workflow.agileBPM.TaskDef",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.agileBPM.TaskDef"
   }, {
     "name" : "wfusers",
-    "type" : "List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<String>"
   }, {
-    "name" : "remark",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "remark"
   }, {
     "name" : "userSelection",
-    "type" : "List<ch.ivyteam.ivy.security.IUser>"
+    "type" : "List<ch.ivyteam.ivy.security.IUser>",
+    "modifiers" : [ ]
   }, {
     "name" : "userList",
-    "type" : "List<ch.ivyteam.ivy.security.IUser>"
+    "type" : "List<ch.ivyteam.ivy.security.IUser>",
+    "modifiers" : [ ]
   }, {
-    "name" : "msg",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "msg"
   } ]
 }

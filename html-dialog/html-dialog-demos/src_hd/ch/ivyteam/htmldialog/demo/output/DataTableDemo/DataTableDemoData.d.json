@@ -1,23 +1,18 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "DataTableDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.output.DataTableDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "scores",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Score>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<ch.ivyteam.htmldialog.demo.Score>"
   }, {
     "name" : "selectedScore",
-    "type" : "ch.ivyteam.htmldialog.demo.Score",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "ch.ivyteam.htmldialog.demo.Score"
   }, {
     "name" : "names",
-    "type" : "List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<String>"
   }, {
     "name" : "showDialog",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   } ]
 }

@@ -1,39 +1,25 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ClientSideValidationData",
   "namespace" : "ch.ivyteam.htmldialog.demo.offline.ClientSideValidation",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "firstName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "firstName"
   }, {
-    "name" : "lastName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "lastName"
   }, {
     "name" : "dateOfBirth",
-    "type" : "Date",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Date"
   }, {
     "name" : "addressZip",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
-    "name" : "addressCity",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "addressCity"
   }, {
-    "name" : "addressCountry",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "addressCountry"
   }, {
-    "name" : "email",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "email"
   }, {
     "name" : "timeOfArrival",
-    "type" : "Time",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Time"
   } ]
 }

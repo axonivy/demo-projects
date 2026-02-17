@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "1508AE543CAEEEC1",
   "config" : {
     "data" : "misc.CancelStartData"
@@ -79,7 +79,6 @@
       "elements" : [ {
           "id" : "S10-g0",
           "type" : "EmbeddedStart",
-          "name" : "",
           "visual" : {
             "at" : { "x" : 64, "y" : 256 }
           },
@@ -90,7 +89,6 @@
         }, {
           "id" : "S10-g1",
           "type" : "EmbeddedEnd",
-          "name" : "",
           "visual" : {
             "at" : { "x" : 576, "y" : 256 }
           },
