@@ -1,31 +1,22 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Player",
   "namespace" : "db.demos.activity",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "birthday",
-    "type" : "Date",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Date"
   }, {
-    "name" : "favoritecolor",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "favoritecolor"
   }, {
     "name" : "id",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
-    "name" : "name",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "name"
   }, {
     "name" : "pid",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
     "name" : "team",
-    "type" : "db.demos.activity.Team",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "db.demos.activity.Team"
   } ]
 }

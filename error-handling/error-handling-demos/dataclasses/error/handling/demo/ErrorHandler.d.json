@@ -1,15 +1,10 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ErrorHandler",
   "namespace" : "error.handling.demo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "errorCode",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "errorCode"
   }, {
-    "name" : "errorText",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "errorText"
   } ]
 }

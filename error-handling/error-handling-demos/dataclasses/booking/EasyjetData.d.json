@@ -1,13 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "EasyjetData",
   "namespace" : "booking",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "wsError",
-    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
   }, {
     "name" : "flight",
-    "type" : "booking.Flight"
+    "type" : "booking.Flight",
+    "modifiers" : [ ]
   } ]
 }

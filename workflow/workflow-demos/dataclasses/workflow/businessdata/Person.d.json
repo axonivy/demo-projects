@@ -1,23 +1,16 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Person",
   "namespace" : "workflow.businessdata",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "address",
-    "type" : "workflow.businessdata.Address",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "workflow.businessdata.Address"
   }, {
-    "name" : "lastName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "lastName"
   }, {
-    "name" : "firstName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "firstName"
   }, {
     "name" : "birthDate",
-    "type" : "Date",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Date"
   } ]
 }

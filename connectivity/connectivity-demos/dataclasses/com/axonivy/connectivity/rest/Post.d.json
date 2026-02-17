@@ -1,26 +1,27 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Post",
   "namespace" : "com.axonivy.connectivity.rest",
   "comment" : "forum post ",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "id",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   }, {
     "name" : "userId",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   }, {
     "name" : "name",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "email",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "body",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "title",
-    "type" : "String"
+    "modifiers" : [ ]
   } ]
 }

@@ -1,19 +1,12 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Approval",
   "namespace" : "com.axonivy.connectivity.rest",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "title",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "title"
   }, {
-    "name" : "description",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "description"
   }, {
-    "name" : "requestedBy",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "requestedBy"
   } ]
 }

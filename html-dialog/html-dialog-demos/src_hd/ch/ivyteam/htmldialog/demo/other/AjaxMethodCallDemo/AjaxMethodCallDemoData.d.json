@@ -1,15 +1,10 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "AjaxMethodCallDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.other.AjaxMethodCallDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "welcomeMessage",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "welcomeMessage"
   }, {
-    "name" : "name",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "name"
   } ]
 }

@@ -1,14 +1,13 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "FileUploadAdvancedModeDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.input.FileUploadAdvancedModeDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "fileUploadEvent",
-    "type" : "org.primefaces.event.FileUploadEvent"
+    "type" : "org.primefaces.event.FileUploadEvent",
+    "modifiers" : [ ]
   }, {
     "name" : "images",
-    "type" : "List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<String>"
   } ]
 }

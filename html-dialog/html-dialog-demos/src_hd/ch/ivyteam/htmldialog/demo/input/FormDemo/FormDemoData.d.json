@@ -1,46 +1,30 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "FormDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.input.FormDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "name",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "name"
   }, {
-    "name" : "firstname",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "firstname"
   }, {
     "name" : "birthday",
-    "type" : "Date",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Date"
   }, {
-    "name" : "address",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "address"
   }, {
     "name" : "zipCode",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
-    "name" : "city",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "city"
   }, {
-    "name" : "country",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "country"
   }, {
-    "name" : "phone",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "phone"
   }, {
     "name" : "matchingCountries",
-    "type" : "List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<String>"
   }, {
     "name" : "email",
-    "type" : "String"
+    "modifiers" : [ ]
   } ]
 }

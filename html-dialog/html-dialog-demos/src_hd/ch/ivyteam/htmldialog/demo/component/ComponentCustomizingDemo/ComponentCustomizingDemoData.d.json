@@ -1,22 +1,23 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ComponentCustomizingDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.component.ComponentCustomizingDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "homeAddress",
-    "type" : "ch.ivyteam.htmldialog.demo.Address"
+    "type" : "ch.ivyteam.htmldialog.demo.Address",
+    "modifiers" : [ ]
   }, {
     "name" : "corporateAddress",
-    "type" : "ch.ivyteam.htmldialog.demo.Address"
+    "type" : "ch.ivyteam.htmldialog.demo.Address",
+    "modifiers" : [ ]
   }, {
     "name" : "name",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "company",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "title",
-    "type" : "String"
+    "modifiers" : [ ]
   } ]
 }

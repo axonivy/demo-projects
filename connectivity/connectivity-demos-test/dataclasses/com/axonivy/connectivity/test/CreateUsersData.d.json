@@ -1,15 +1,11 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "CreateUsersData",
   "namespace" : "com.axonivy.connectivity.test",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "prefix",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "prefix"
   }, {
     "name" : "amount",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   } ]
 }

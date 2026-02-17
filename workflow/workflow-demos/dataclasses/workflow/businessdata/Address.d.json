@@ -1,19 +1,12 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Address",
   "namespace" : "workflow.businessdata",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "zip",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "zip"
   }, {
-    "name" : "city",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "city"
   }, {
-    "name" : "country",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "country"
   } ]
 }

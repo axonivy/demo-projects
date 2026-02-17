@@ -1,38 +1,24 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "MultiViewDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.input.MultiViewDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "paymentKind",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "paymentKind"
   }, {
-    "name" : "creditCardNumber",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "creditCardNumber"
   }, {
-    "name" : "name",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "name"
   }, {
-    "name" : "firstName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "firstName"
   }, {
-    "name" : "address",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "address"
   }, {
-    "name" : "currentView",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "currentView"
   }, {
-    "name" : "nextView",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "nextView"
   }, {
     "name" : "processing",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   } ]
 }

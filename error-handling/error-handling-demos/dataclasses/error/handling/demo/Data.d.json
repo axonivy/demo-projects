@@ -1,15 +1,12 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Data",
   "namespace" : "error.handling.demo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "order",
-    "type" : "error.handling.demo.Order",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "error.handling.demo.Order"
   }, {
     "name" : "availableItems",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   } ]
 }

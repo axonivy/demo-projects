@@ -1,13 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ChartDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.output.ChartDemo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "comboChartModel",
-    "type" : "org.primefaces.model.charts.bar.BarChartModel"
+    "type" : "org.primefaces.model.charts.bar.BarChartModel",
+    "modifiers" : [ ]
   }, {
     "name" : "pieChartModel",
-    "type" : "org.primefaces.model.charts.pie.PieChartModel"
+    "type" : "org.primefaces.model.charts.pie.PieChartModel",
+    "modifiers" : [ ]
   } ]
 }
