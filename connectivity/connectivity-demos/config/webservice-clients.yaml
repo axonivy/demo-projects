@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/config/14.0.0/webservice-clients.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/webservice-clients.json
 WebServiceClients:
   personService:
     Id: 16150E44A158D09C
