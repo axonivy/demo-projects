@@ -17,8 +17,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "axonivy.vscode-designer-14",
-        "vscjava.vscode-java-pack"
+        "axonivy.vscode-designer-14"
       ],
       "settings": {
         "axonivy.engine.releaseTrain": "/usr/lib/axonivy-engine",
