@@ -1,6 +1,6 @@
 {
   "name": "Axon Ivy",
-  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "image": "mcr.microsoft.com/devcontainers/base:trixie",
   "forwardPorts": [8080],
   "onCreateCommand": "mvn clean package --batch-mode -Dmaven.test.skip=true -Divy.script.validation.skip=true -Divy.engine.directory=/usr/lib/axonivy-engine",
   "features": {
@@ -21,7 +21,8 @@
         "vscjava.vscode-java-pack"
       ],
       "settings": {
-        "axonivy.engine.releaseTrain": "/usr/lib/axonivy-engine"
+        "axonivy.engine.releaseTrain": "/usr/lib/axonivy-engine",
+        "java.jdt.ls.java.home": "/usr/local/sdkman/candidates/java/current/"
       }
     }
   }
