@@ -4,7 +4,7 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.LazyLoadingDemo",
   "fields" : [ {
     "name" : "lazyModel",
-    "type" : "org.primefaces.model.LazyDataModel",
+    "type" : "org.primefaces.model.LazyDataModel<ch.ivyteam.htmldialog.demo.Person>",
     "comment" : "Model is lazy loaded",
     "modifiers" : [ ]
   } ]

@@ -4,7 +4,7 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.PickListDemo",
   "fields" : [ {
     "name" : "persons",
-    "type" : "org.primefaces.model.DualListModel",
+    "type" : "org.primefaces.model.DualListModel<ch.ivyteam.htmldialog.demo.Person>",
     "modifiers" : [ ]
   } ]
 }
