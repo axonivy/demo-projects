@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/persistence.json
+Persistence:
+  league:
+    DataSource: FootballDB
+    Properties:
+      hibernate.hbm2ddl.auto: update
