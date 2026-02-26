@@ -13,7 +13,7 @@
       
       <p>With the themes you have several possibilities to insert an icon into your page.</p>
       <ul>
-        <li><a href="https://tabler.io/icons">Tabler Icons</a> 3.36.1</li>
+        <li><a href="https://tabler.io/icons">Tabler Icons</a></li>
         <li><a href="https://www.primefaces.org/showcase/icons.xhtml">PrimeIcons</a></li>
         <li><a href="https://streamlineicons.com/">Streamline Icons</a> Collection (Deprecated)</li>
         <li><a href="https://fontawesome.com/v6/icons/">FontAwesome</a> 6.1.0 (Deprecated)</li>
@@ -22,43 +22,44 @@
       <p>You can use them for example as follows:</p>
       
       <div class="grid">
-        <div class="col icon-usage-block">
+        <div class="col icon-usage-block flex flex-column gap-1">
           <h4>Tabler Icons</h4>
-          <code>
-            <i class="ti ti-home"></i><br />
-            &lt;i class="ti ti-home">&lt;/i><br />
-            <br />
-            <p:commandButton icon="ti ti-settings" value="Settings" /><br />
-            &lt;p:commandButton icon="ti ti-settings" value="Settings" />
-          </code>
+          <i class="ti ti-book"></i>
+          <code>&lt;i class="ti ti-book">&lt;/i></code>
+          <p:commandButton icon="ti ti-settings" value="Settings" />
+          <code>&lt;p:commandButton icon="ti ti-settings" value="Settings" /></code>
         </div>
-        <div class="col icon-usage-block">
+
+        <div class="col icon-usage-block flex flex-column gap-1">
+          <h4>Tabler Icons Filled</h4>
+          <i class="tif tif-book"></i>
+          <code>&lt;i class="tif tif-book">&lt;/i></code>
+          <p:commandButton icon="tif tif-settings" value="Settings" />
+          <code>&lt;p:commandButton icon="tif tif-settings" value="Settings" /></code>
+        </div>
+
+        <div class="col icon-usage-block flex flex-column gap-1">
           <h4>PrimeIcons</h4>
-          <code>
-            <i class="pi pi-home"></i><br />
-            &lt;i class="pi pi-home">&lt;/i><br />
-            <br />
-            <p:commandButton icon="pi pi-cog" value="Settings" /><br />
-            &lt;p:commandButton icon="pi pi-cog" value="Settings" />
-          </code>
+          <i class="pi pi-home"></i>
+          <code>&lt;i class="pi pi-home">&lt;/i></code>
+          <p:commandButton icon="pi pi-cog" value="Settings" />
+          <code>&lt;p:commandButton icon="pi pi-cog" value="Settings" /></code>
         </div>
-        <div class="col icon-usage-block">
+        
+        <div class="col icon-usage-block flex flex-column gap-1">
           <h4>Streamline Icons (Deprecated)</h4>
-          <code><i class="si si-house-1"></i><br />
-          &lt;i class="si si-house-1">&lt;/i><br />
-          <br />
-          <p:commandButton icon="si si-cog" value="Settings" /><br />
-          &lt;p:commandButton icon="si si-cog" value="Settings" /></code>
+          <i class="si si-house-1"></i>
+          <code>&lt;i class="si si-house-1">&lt;/i></code>
+          <p:commandButton icon="si si-cog" value="Settings" />
+          <code>&lt;p:commandButton icon="si si-cog" value="Settings" /></code>
         </div>
-        <div class="col icon-usage-block">
+        
+        <div class="col icon-usage-block flex flex-column gap-1">
           <h4>FontAwesome (Deprecated)</h4>
-          <code>
-            <i class="fa-solid fa-house"></i><br />
-            &lt;i class="fa-solid fa-house">&lt;/i><br />
-            <br />
-            <p:commandButton icon="fa-solid fa-gear" value="Settings" /><br />
-            &lt;p:commandButton icon="fa-solid fa-gear" value="Settings" />
-          </code>
+          <i class="fa-solid fa-house"></i>
+          <code>&lt;i class="fa-solid fa-house">&lt;/i></code>
+          <p:commandButton icon="fa-solid fa-gear" value="Settings" />
+          <code>&lt;p:commandButton icon="fa-solid fa-gear" value="Settings" /></code>
         </div>
       </div>
 

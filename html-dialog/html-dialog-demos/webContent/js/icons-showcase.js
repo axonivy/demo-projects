@@ -3,15 +3,23 @@ let icons = [];
 // Tabler Icons
 const iconsCssTi = Object.values(document.styleSheets).filter(sheet => sheet.href?.toLowerCase()?.includes("tabler-icons.min.css"))[0];
 if(iconsCssTi){ 
-  const iconsTI = Object.values(iconsCssTi.rules).filter(rule => rule.selectorText?.startsWith(".ti-"));
+  const iconsTI = Object.values(iconsCssTi.cssRules).filter(rule => rule.selectorText?.startsWith(".ti-"));
   iconsTI.sort((a, b) => (a.selectorText > b.selectorText) ? 1 : -1);
   icons = icons.concat(iconsTI);
+}
+
+// Tabler Icons Filled
+const iconsCssTiFilled = Object.values(document.styleSheets).filter(sheet => sheet.href?.toLowerCase()?.includes("tabler-icons-filled.min.css"))[0];
+if(iconsCssTiFilled){ 
+  const iconsTIFilled = Object.values(iconsCssTiFilled.cssRules).filter(rule => rule.selectorText?.startsWith(".ti-"));
+  iconsTIFilled.sort((a, b) => (a.selectorText > b.selectorText) ? 1 : -1);
+  icons = icons.concat(iconsTIFilled);
 }
 
 // PrimeIcons
 const iconsCssPI = Object.values(document.styleSheets).filter(sheet => sheet.href?.toLowerCase()?.includes("primeicons.css"))[0];
 if(iconsCssPI){ 
-  const iconsPI = Object.values(iconsCssPI.rules).filter(rule => rule.selectorText?.startsWith(".pi-"));
+  const iconsPI = Object.values(iconsCssPI.cssRules).filter(rule => rule.selectorText?.startsWith(".pi-"));
   iconsPI.sort((a, b) => (a.selectorText > b.selectorText) ? 1 : -1);
   icons = icons.concat(iconsPI);
 }
@@ -19,7 +27,7 @@ if(iconsCssPI){
 // Streamline Icons
 const iconsCssSI = Object.values(document.styleSheets).filter(sheet => sheet.href?.toLowerCase()?.includes("streamlineicons.css"))[0];
 if(iconsCssSI){ 
-  const iconsSI = Object.values(iconsCssSI.rules).filter(rule => rule.selectorText?.startsWith(".si-"));
+  const iconsSI = Object.values(iconsCssSI.cssRules).filter(rule => rule.selectorText?.startsWith(".si-"));
   iconsSI.sort((a, b) => (a.selectorText > b.selectorText) ? 1 : -1);
   icons = icons.concat(iconsSI);
 }
@@ -27,7 +35,7 @@ if(iconsCssSI){
 // FontAwesome
 const iconsCssFA = Object.values(document.styleSheets).filter(sheet => sheet.href?.toLowerCase()?.includes("font-awesome")).filter(sheet=>!sheet.href?.includes("shim"))[0];
 if(iconsCssFA){ 
-  const iconsFA = Object.values(iconsCssFA.rules).filter(rule => rule.selectorText?.startsWith(".fa-"));
+  const iconsFA = Object.values(iconsCssFA.cssRules).filter(rule => rule.selectorText?.startsWith(".fa-"));
   iconsFA.sort((a, b) => (a.selectorText > b.selectorText) ? 1 : -1);
   icons = icons.concat(iconsFA);
 }
