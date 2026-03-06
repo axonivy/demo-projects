@@ -1,10 +1,9 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/webservice-clients.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/webservice-clients-1.json
 WebServiceClients:
   createOrderService:
     Id: 1624D62D6426F325
     ServiceClass: com.axonivy.connectivity.createorder.client.CreateOrderService
     WsdlUrl: http://localhost:8081/designer/ws/connectivity-demos/162492A1649E72DF?WSDL
-    WsCallLibrary: CXF
     Endpoints:
       CreateOrderPort:
         - http://localhost:8081/designer/ws/connectivity-demos/162492A1649E72DF
@@ -12,7 +11,6 @@ WebServiceClients:
     Id: 162AF1AE2B935160
     ServiceClass: ch.ivyteam.testservice.policy.greeter.client.SecureGreetPolicyServiceService
     WsdlUrl: http://test-webservices.ivyteam.io:8080/country-service/webservices/greet-policy-wss?wsdl
-    WsCallLibrary: CXF
     Features:
       - ch.ivyteam.ivy.webservice.exec.cxf.feature.policy.IgnorePolicyFeature
     Properties:

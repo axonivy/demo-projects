@@ -1,9 +1,8 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/webservice-clients.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/webservice-clients-1.json
 WebServiceClients:
   personService:
     Id: 16150E44A158D09C
     ServiceClass: com.axonivy.connectivity.soap.service.client.PersonServiceService
-    WsCallLibrary: CXF
     Features:
       - ch.ivyteam.ivy.webservice.exec.cxf.feature.HttpBasicAuthenticationFeature
     Properties:
@@ -17,7 +16,6 @@ WebServiceClients:
   technicalBackend:
     Id: 162B962523BAAB85
     ServiceClass: com.axonivy.connectivity.client.TechnicalBackendServiceService
-    WsCallLibrary: CXF
     Endpoints:
       TechnicalBackendServicePort:
         - '{ivy.app.baseurl}/ws/connectivity-demos/162B95BB70C3178E'
@@ -26,7 +24,6 @@ WebServiceClients:
   smartbearTests:
     Id: 162B97C859B22CA3
     ServiceClass: com.smartbear.sample.test.client.SampleWebService
-    WsCallLibrary: CXF
     Endpoints:
       SampleWebServiceSoap:
         - http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx
@@ -38,7 +35,6 @@ WebServiceClients:
   interceptedService:
     Id: 16D2A643A3A25C52
     ServiceClass: com.axonivy.connectivity.soap.interceptor.client.ServiceWithExceptionService
-    WsCallLibrary: CXF
     Endpoints:
       ServiceWithExceptionPort:
         - '{ivy.app.baseurl}/ws/connectivity-demos/16D29AE50A7A6E34'
@@ -48,7 +44,6 @@ WebServiceClients:
   interceptedPersonService:
     Id: 16330E44A158D09C
     ServiceClass: soap.intercepted.client.person.ivyteam.ch.client.PersonServiceService
-    WsCallLibrary: CXF
     Features:
       - ch.ivyteam.ivy.webservice.exec.cxf.feature.HttpBasicAuthenticationFeature
       - com.axonivy.connectivity.soap.client.CustomLogFeature
