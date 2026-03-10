@@ -79,11 +79,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.axonivy.ivy.api</groupId>
       <artifactId>ivy-api</artifactId>
     </dependency>
@@ -151,6 +146,25 @@
                 <additionalVmArg>-Divy.Errors.ShowDetailsToEndUser=true</additionalVmArg>
                 <additionalVmArg>-Divy.REST.Servlet.MobileWorkflow.API=true</additionalVmArg>
               </additionalVmArgs>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-generated-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/src_generated/ws/policyGreeter</source>
+                <source>${project.basedir}/src_generated/ws/createOrderService</source>
+              </sources>
             </configuration>
           </execution>
         </executions>

@@ -1,0 +1,96 @@
+<wsdl:definitions xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://interceptor.soap.connectivity.axonivy.com/" xmlns:tns="http://interceptor.soap.connectivity.axonivy.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="serviceWithExceptionService" targetNamespace="http://interceptor.soap.connectivity.axonivy.com/">
+  <wsdl:types>
+<xs:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://interceptor.soap.connectivity.axonivy.com/" xmlns:tns="http://interceptor.soap.connectivity.axonivy.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://interceptor.soap.connectivity.axonivy.com/" version="1.0">
+
+  
+  <xs:element name="call" type="tns:call"/>
+
+  
+  <xs:element name="callResponse" type="tns:callResponse"/>
+
+  
+  <xs:complexType name="call">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="throwException" type="xs:boolean"/>
+      
+      <xs:element minOccurs="0" name="exceptionMessage" type="xs:string"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="callResponse">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="exceptionMessage" type="xs:string"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+
+</xs:schema>
+<xsd:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://interceptor.soap.connectivity.axonivy.com/" xmlns:tns="ch.ivyteam.ivy.webservice.process" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="ch.ivyteam.ivy.webservice.process">
+  
+  <xsd:element name="TechnicalException" nillable="true" type="xsd:string"/>
+  
+  <xsd:element name="BusinessException" nillable="true" type="xsd:string"/>
+
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="call">
+    <wsdl:part element="targetNamespace:call" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WebServiceProcessTechnicalException">
+    <wsdl:part element="ns1:TechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="callResponse">
+    <wsdl:part element="targetNamespace:callResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WebServiceProcessBusinessException">
+    <wsdl:part element="ns1:BusinessException" name="WebServiceProcessBusinessException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="serviceWithException">
+    <wsdl:operation name="call">
+      <wsdl:input message="targetNamespace:call" name="call">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:callResponse" name="callResponse">
+    </wsdl:output>
+      <wsdl:fault message="targetNamespace:WebServiceProcessTechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:fault>
+      <wsdl:fault message="targetNamespace:WebServiceProcessBusinessException" name="WebServiceProcessBusinessException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviceWithExceptionServiceSoapBinding" type="targetNamespace:serviceWithException">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="call">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="call">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="callResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebServiceProcessTechnicalException">
+        <soap:fault name="WebServiceProcessTechnicalException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WebServiceProcessBusinessException">
+        <soap:fault name="WebServiceProcessBusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="serviceWithExceptionService">
+    <wsdl:port binding="targetNamespace:serviceWithExceptionServiceSoapBinding" name="serviceWithExceptionPort">
+      <soap:address location="http://zugpcohe:8081/ivy/ws/designer/ConnectivityDemos/16D29AE50A7A6E34"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

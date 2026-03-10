@@ -1,0 +1,47 @@
+<xsd:schema xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://connectivity.axonivy.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://connectivity.axonivy.com/">
+  <xsd:element name="call" type="tns:call"/>
+  <xsd:element name="callResponse" type="tns:callResponse"/>
+  <xsd:complexType name="call">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="order" type="tns:order"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="order">
+    <xsd:complexContent>
+      <xsd:extension base="tns:compositeObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="amount" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="product" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="requester" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="unitPrice" type="xsd:double"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="compositeObject">
+    <xsd:complexContent>
+      <xsd:extension base="tns:nestedObject">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="nestedObject">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:complexType name="callResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="task" type="tns:task"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="task">
+    <xsd:complexContent>
+      <xsd:extension base="tns:compositeObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activator" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="id" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="name" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

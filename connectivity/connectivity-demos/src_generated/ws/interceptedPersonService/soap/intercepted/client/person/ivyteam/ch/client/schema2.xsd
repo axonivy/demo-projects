@@ -1,0 +1,44 @@
+<xsd:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://service.soap.connectivity.axonivy.com/" xmlns:tns="http://service.soap.connectivity.axonivy.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.soap.connectivity.axonivy.com/" version="1.0">
+  <xsd:element name="addPerson" type="targetNamespace:addPerson"/>
+  <xsd:element name="addPersonResponse" type="targetNamespace:addPersonResponse"/>
+  <xsd:element name="deletePerson" type="targetNamespace:deletePerson"/>
+  <xsd:element name="deletePersonResponse" type="targetNamespace:deletePersonResponse"/>
+  <xsd:element name="getPersons" type="targetNamespace:getPersons"/>
+  <xsd:element name="getPersonsResponse" type="targetNamespace:getPersonsResponse"/>
+  <xsd:element name="person" type="targetNamespace:person"/>
+  <xsd:complexType name="addPerson">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="person" type="targetNamespace:person"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="person">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="firstname" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="id" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="lastname" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="addPersonResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="created" type="targetNamespace:person"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="getPersons">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:complexType name="getPersonsResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="persons" type="targetNamespace:person"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="deletePerson">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="person" type="targetNamespace:person"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="deletePersonResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="deleted" type="targetNamespace:person"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

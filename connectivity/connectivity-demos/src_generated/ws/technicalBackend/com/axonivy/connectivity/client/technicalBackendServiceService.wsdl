@@ -1,0 +1,83 @@
+<wsdl:definitions xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://connectivity.axonivy.com/" xmlns:tns="http://connectivity.axonivy.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="technicalBackendServiceService" targetNamespace="http://connectivity.axonivy.com/">
+  <wsdl:types>
+<xs:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://connectivity.axonivy.com/" xmlns:tns="http://connectivity.axonivy.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://connectivity.axonivy.com/" version="1.0">
+
+  
+  <xs:element name="longRunningBatchOperation" type="tns:longRunningBatchOperation"/>
+
+  
+  <xs:element name="longRunningBatchOperationResponse" type="tns:longRunningBatchOperationResponse"/>
+
+  
+  <xs:complexType name="longRunningBatchOperation">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="blockSeconds" type="xs:int"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="longRunningBatchOperationResponse">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+
+</xs:schema>
+<xsd:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://connectivity.axonivy.com/" xmlns:tns="ch.ivyteam.ivy.webservice.process" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="ch.ivyteam.ivy.webservice.process">
+  
+  <xsd:element name="TechnicalException" nillable="true" type="xsd:string"/>
+
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="longRunningBatchOperationResponse">
+    <wsdl:part element="targetNamespace:longRunningBatchOperationResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="longRunningBatchOperation">
+    <wsdl:part element="targetNamespace:longRunningBatchOperation" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WebServiceProcessTechnicalException">
+    <wsdl:part element="ns1:TechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="technicalBackendService">
+    <wsdl:operation name="longRunningBatchOperation">
+      <wsdl:input message="targetNamespace:longRunningBatchOperation" name="longRunningBatchOperation">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:longRunningBatchOperationResponse" name="longRunningBatchOperationResponse">
+    </wsdl:output>
+      <wsdl:fault message="targetNamespace:WebServiceProcessTechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="technicalBackendServiceServiceSoapBinding" type="targetNamespace:technicalBackendService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="longRunningBatchOperation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="longRunningBatchOperation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="longRunningBatchOperationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebServiceProcessTechnicalException">
+        <soap:fault name="WebServiceProcessTechnicalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="technicalBackendServiceService">
+    <wsdl:port binding="targetNamespace:technicalBackendServiceServiceSoapBinding" name="technicalBackendServicePort">
+      <soap:address location="http://localhost:8081/designer/ws/connectivity-demos/162B95BB70C3178E"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
