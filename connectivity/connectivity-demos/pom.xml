@@ -90,6 +90,48 @@
           <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-generated-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/src_generated/ws/smartbearTests</source>
+                <source>${project.basedir}/src_generated/ws/personService</source>
+                <source>${project.basedir}/src_generated/ws/interceptedService</source>
+                <source>${project.basedir}/src_generated/ws/interceptedPersonService</source>
+                <source>${project.basedir}/src_generated/ws/technicalBackend</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-generated-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/src_generated/rest/ivyengine-localbackend</source>
+                <source>${project.basedir}/src_generated/rest/odataService</source>
+                <source>${project.basedir}/src_generated/rest/openApiService</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
