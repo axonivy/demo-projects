@@ -1,0 +1,14 @@
+<xsd:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://policy.testservice.ivyteam.ch/" xmlns:tns="http://policy.testservice.ivyteam.ch/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://policy.testservice.ivyteam.ch/">
+  <xsd:element name="greet" type="targetNamespace:greet"></xsd:element>
+  <xsd:element name="greetResponse" type="targetNamespace:greetResponse"></xsd:element>
+  <xsd:complexType name="greet">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="greet" type="xsd:string"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="greetResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:string"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

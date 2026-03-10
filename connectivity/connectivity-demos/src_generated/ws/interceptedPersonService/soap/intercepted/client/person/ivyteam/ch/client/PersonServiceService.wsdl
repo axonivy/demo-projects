@@ -1,0 +1,209 @@
+<wsdl:definitions xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://service.soap.connectivity.axonivy.com/" xmlns:tns="http://service.soap.connectivity.axonivy.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PersonServiceService" targetNamespace="http://service.soap.connectivity.axonivy.com/">
+  <wsdl:types>
+<xs:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://service.soap.connectivity.axonivy.com/" xmlns:tns="http://service.soap.connectivity.axonivy.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://service.soap.connectivity.axonivy.com/" version="1.0">
+
+  
+  <xs:element name="addPerson" type="tns:addPerson"/>
+
+  
+  <xs:element name="addPersonResponse" type="tns:addPersonResponse"/>
+
+  
+  <xs:element name="deletePerson" type="tns:deletePerson"/>
+
+  
+  <xs:element name="deletePersonResponse" type="tns:deletePersonResponse"/>
+
+  
+  <xs:element name="getPersons" type="tns:getPersons"/>
+
+  
+  <xs:element name="getPersonsResponse" type="tns:getPersonsResponse"/>
+
+  
+  <xs:element name="person" type="tns:person"/>
+
+  
+  <xs:complexType name="addPerson">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="person" type="tns:person"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="person">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="firstname" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="lastname" type="xs:string"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="addPersonResponse">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="created" type="tns:person"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="getPersons">
+    
+    <xs:sequence/>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="getPersonsResponse">
+    
+    <xs:sequence>
+      
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="persons" type="tns:person"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="deletePerson">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="person" type="tns:person"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="deletePersonResponse">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="deleted" type="tns:person"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+
+</xs:schema>
+<xsd:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://service.soap.connectivity.axonivy.com/" xmlns:tns="ch.ivyteam.ivy.webservice.process" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="ch.ivyteam.ivy.webservice.process">
+  
+  <xsd:element name="TechnicalException" nillable="true" type="xsd:string"/>
+
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="addPerson">
+    <wsdl:part element="targetNamespace:addPerson" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WebServiceProcessTechnicalException">
+    <wsdl:part element="ns1:TechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersons">
+    <wsdl:part element="targetNamespace:getPersons" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonsResponse">
+    <wsdl:part element="targetNamespace:getPersonsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPersonResponse">
+    <wsdl:part element="targetNamespace:addPersonResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletePerson">
+    <wsdl:part element="targetNamespace:deletePerson" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletePersonResponse">
+    <wsdl:part element="targetNamespace:deletePersonResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PersonService">
+    <wsdl:operation name="addPerson">
+      <wsdl:input message="targetNamespace:addPerson" name="addPerson">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:addPersonResponse" name="addPersonResponse">
+    </wsdl:output>
+      <wsdl:fault message="targetNamespace:WebServiceProcessTechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersons">
+      <wsdl:input message="targetNamespace:getPersons" name="getPersons">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:getPersonsResponse" name="getPersonsResponse">
+    </wsdl:output>
+      <wsdl:fault message="targetNamespace:WebServiceProcessTechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <wsdl:input message="targetNamespace:deletePerson" name="deletePerson">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:deletePersonResponse" name="deletePersonResponse">
+    </wsdl:output>
+      <wsdl:fault message="targetNamespace:WebServiceProcessTechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PersonServiceServiceSoapBinding" type="targetNamespace:PersonService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addPerson">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addPerson">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPersonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebServiceProcessTechnicalException">
+        <soap:fault name="WebServiceProcessTechnicalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersons">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPersons">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPersonsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebServiceProcessTechnicalException">
+        <soap:fault name="WebServiceProcessTechnicalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deletePerson">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deletePersonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebServiceProcessTechnicalException">
+        <soap:fault name="WebServiceProcessTechnicalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersonServiceService">
+    <wsdl:port binding="targetNamespace:PersonServiceServiceSoapBinding" name="PersonServicePort">
+      <soap:address location="http://127.0.0.1:8081/designer/ws/connectivity-demos/16150E1D07E8CA18"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

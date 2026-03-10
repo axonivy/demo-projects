@@ -1,0 +1,141 @@
+<wsdl:definitions xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://project.nike/" xmlns:tns="http://project.nike/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NikeFactoryService" targetNamespace="http://project.nike/">
+  <wsdl:types>
+<xs:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://project.nike/" xmlns:tns="http://project.nike/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://project.nike/" version="1.0">
+
+  
+  <xs:element name="produce" type="tns:produce"/>
+
+  
+  <xs:element name="produceResponse" type="tns:produceResponse"/>
+
+  
+  <xs:complexType name="produce">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="model" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="amount" type="xs:int"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="produceResponse">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="production" type="tns:production"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="production">
+    
+    <xs:complexContent>
+      
+      <xs:extension base="tns:compositeObject">
+        
+        <xs:sequence>
+          
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="shoes" nillable="true" type="xs:string"/>
+        
+        </xs:sequence>
+      
+      </xs:extension>
+    
+    </xs:complexContent>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType abstract="true" name="compositeObject">
+    
+    <xs:complexContent>
+      
+      <xs:extension base="tns:nestedObject">
+        
+        <xs:sequence/>
+      
+      </xs:extension>
+    
+    </xs:complexContent>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType abstract="true" name="nestedObject">
+    
+    <xs:sequence/>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType final="extension restriction" name="list">
+    
+    <xs:complexContent>
+      
+      <xs:extension base="tns:nestedObject">
+        
+        <xs:sequence/>
+      
+      </xs:extension>
+    
+    </xs:complexContent>
+  
+  </xs:complexType>
+
+
+</xs:schema>
+<xsd:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://project.nike/" xmlns:tns="ch.ivyteam.ivy.webservice.process" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="ch.ivyteam.ivy.webservice.process">
+  
+  <xsd:element name="TechnicalException" nillable="true" type="xsd:string"/>
+
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="produceResponse">
+    <wsdl:part element="targetNamespace:produceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WebServiceProcessTechnicalException">
+    <wsdl:part element="ns1:TechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="produce">
+    <wsdl:part element="targetNamespace:produce" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="NikeFactory">
+    <wsdl:operation name="produce">
+      <wsdl:input message="targetNamespace:produce" name="produce">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:produceResponse" name="produceResponse">
+    </wsdl:output>
+      <wsdl:fault message="targetNamespace:WebServiceProcessTechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NikeFactoryServiceSoapBinding" type="targetNamespace:NikeFactory">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="produce">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="produce">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="produceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebServiceProcessTechnicalException">
+        <soap:fault name="WebServiceProcessTechnicalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NikeFactoryService">
+    <wsdl:port binding="targetNamespace:NikeFactoryServiceSoapBinding" name="NikeFactoryPort">
+      <soap:address location="http://zugpcohe:8081/ivy/ws/designer/NikeProject/16FEAF30FCA53A53"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

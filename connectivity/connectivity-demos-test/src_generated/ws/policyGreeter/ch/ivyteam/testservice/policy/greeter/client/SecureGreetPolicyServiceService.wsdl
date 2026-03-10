@@ -1,0 +1,86 @@
+<wsdl:definitions xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://policy.testservice.ivyteam.ch/" xmlns:tns="http://policy.testservice.ivyteam.ch/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SecureGreetPolicyServiceService" targetNamespace="http://policy.testservice.ivyteam.ch/">
+<wsdl:documentation>Policies declare that this service will not run without ws-security UsernameToken headers</wsdl:documentation>
+  <wsdl:types>
+<xs:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://policy.testservice.ivyteam.ch/" xmlns:tns="http://policy.testservice.ivyteam.ch/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://policy.testservice.ivyteam.ch/" version="1.0">
+
+  
+  <xs:element name="greet" type="tns:greet"></xs:element>
+
+  
+  <xs:element name="greetResponse" type="tns:greetResponse"></xs:element>
+
+  
+  <xs:complexType name="greet">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="greet" type="xs:string"></xs:element>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+  
+  <xs:complexType name="greetResponse">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="return" type="xs:string"></xs:element>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="greet">
+    <wsdl:part element="targetNamespace:greet" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="greetResponse">
+    <wsdl:part element="targetNamespace:greetResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SecureGreetPolicyService">
+    <wsdl:operation name="greet">
+      <wsdl:input message="targetNamespace:greet" name="greet">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:greetResponse" name="greetResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecureGreetPolicyServiceServiceSoapBinding" type="targetNamespace:SecureGreetPolicyService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsp:PolicyReference URI="#axonSecurePolicyUsernameToken"></wsp:PolicyReference>
+    <wsdl:operation name="greet">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="greet">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="greetResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecureGreetPolicyServiceService">
+    <wsdl:port binding="targetNamespace:SecureGreetPolicyServiceServiceSoapBinding" name="SecureGreetPolicyServicePort">
+      <soap:address location="http://zugtstweb:8080/country-service/webservices/greet-policy-wss"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:Policy xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="axonSecurePolicyUsernameToken">
+    <wsp:ExactlyOne>
+        <wsp:All>
+            <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                <wsp:Policy>
+                    <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                        <wsp:Policy>
+                            <sp:WssUsernameToken10></sp:WssUsernameToken10>
+                        </wsp:Policy>
+                    </sp:UsernameToken>
+                </wsp:Policy>
+            </sp:SupportingTokens>
+        </wsp:All>
+    </wsp:ExactlyOne>
+</wsp:Policy>
+</wsdl:definitions>

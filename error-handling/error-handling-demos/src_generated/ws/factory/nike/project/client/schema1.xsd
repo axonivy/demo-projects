@@ -1,0 +1,41 @@
+<xsd:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:targetNamespace="http://project.nike/" xmlns:tns="http://project.nike/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://project.nike/">
+  <xsd:element name="produce" type="targetNamespace:produce"/>
+  <xsd:element name="produceResponse" type="targetNamespace:produceResponse"/>
+  <xsd:complexType name="produce">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="model" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="amount" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="produceResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="production" type="targetNamespace:production"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="production">
+    <xsd:complexContent>
+      <xsd:extension base="targetNamespace:compositeObject">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="shoes" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="compositeObject">
+    <xsd:complexContent>
+      <xsd:extension base="targetNamespace:nestedObject">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="nestedObject">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:complexType final="extension restriction" name="list">
+    <xsd:complexContent>
+      <xsd:extension base="targetNamespace:nestedObject">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

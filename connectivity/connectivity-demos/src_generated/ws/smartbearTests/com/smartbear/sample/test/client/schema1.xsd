@@ -1,0 +1,89 @@
+<xsd:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:targetNamespace="http://smartbear.com" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://smartbear.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://smartbear.com">
+  <xsd:element name="HelloWorld">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="HelloWorldResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="HelloWorldResult" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetArray">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="GetArrayResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetArrayResult" type="targetNamespace:ArrayOfInt"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="ArrayOfInt">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="int" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetCurrentTime">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="GetCurrentTimeResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="GetCurrentTimeResult" type="xsd:dateTime"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetSampleObject">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="no" type="xsd:int"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetSampleObjectResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetSampleObjectResult" type="targetNamespace:SampleTestClass"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="SampleTestClass">
+    <xsd:sequence>
+      <xsd:element name="X" type="xsd:double"/>
+      <xsd:element name="Y" type="xsd:double"/>
+      <xsd:element minOccurs="0" name="Name" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="IntArray" type="targetNamespace:ArrayOfInt"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SetSampleObject">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="obj" type="targetNamespace:SampleTestClass"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SetSampleObjectResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="SetSampleObjectResult" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetXmlData">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="GetXmlDataResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetXmlDataResult">
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

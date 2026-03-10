@@ -1,0 +1,397 @@
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:targetNamespace="http://smartbear.com" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://smartbear.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://smartbear.com">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This sample web service is used to demonstrate how to test web services with SmartBear's TestComplete.</wsdl:documentation>
+  <wsdl:types>
+<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:targetNamespace="http://smartbear.com" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://smartbear.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://smartbear.com">
+      
+  <s:element name="HelloWorld">
+        
+    <s:complexType/>
+      
+  </s:element>
+      
+  <s:element name="HelloWorldResponse">
+        
+    <s:complexType>
+          
+      <s:sequence>
+            
+        <s:element maxOccurs="1" minOccurs="0" name="HelloWorldResult" type="s:string"/>
+          
+      </s:sequence>
+        
+    </s:complexType>
+      
+  </s:element>
+      
+  <s:element name="GetArray">
+        
+    <s:complexType/>
+      
+  </s:element>
+      
+  <s:element name="GetArrayResponse">
+        
+    <s:complexType>
+          
+      <s:sequence>
+            
+        <s:element maxOccurs="1" minOccurs="0" name="GetArrayResult" type="tns:ArrayOfInt"/>
+          
+      </s:sequence>
+        
+    </s:complexType>
+      
+  </s:element>
+      
+  <s:complexType name="ArrayOfInt">
+        
+    <s:sequence>
+          
+      <s:element maxOccurs="unbounded" minOccurs="0" name="int" type="s:int"/>
+        
+    </s:sequence>
+      
+  </s:complexType>
+      
+  <s:element name="GetCurrentTime">
+        
+    <s:complexType/>
+      
+  </s:element>
+      
+  <s:element name="GetCurrentTimeResponse">
+        
+    <s:complexType>
+          
+      <s:sequence>
+            
+        <s:element maxOccurs="1" minOccurs="1" name="GetCurrentTimeResult" type="s:dateTime"/>
+          
+      </s:sequence>
+        
+    </s:complexType>
+      
+  </s:element>
+      
+  <s:element name="GetSampleObject">
+        
+    <s:complexType>
+          
+      <s:sequence>
+            
+        <s:element maxOccurs="1" minOccurs="1" name="no" type="s:int"/>
+          
+      </s:sequence>
+        
+    </s:complexType>
+      
+  </s:element>
+      
+  <s:element name="GetSampleObjectResponse">
+        
+    <s:complexType>
+          
+      <s:sequence>
+            
+        <s:element maxOccurs="1" minOccurs="0" name="GetSampleObjectResult" type="tns:SampleTestClass"/>
+          
+      </s:sequence>
+        
+    </s:complexType>
+      
+  </s:element>
+      
+  <s:complexType name="SampleTestClass">
+        
+    <s:sequence>
+          
+      <s:element maxOccurs="1" minOccurs="1" name="X" type="s:double"/>
+          
+      <s:element maxOccurs="1" minOccurs="1" name="Y" type="s:double"/>
+          
+      <s:element maxOccurs="1" minOccurs="0" name="Name" type="s:string"/>
+          
+      <s:element maxOccurs="1" minOccurs="0" name="IntArray" type="tns:ArrayOfInt"/>
+        
+    </s:sequence>
+      
+  </s:complexType>
+      
+  <s:element name="SetSampleObject">
+        
+    <s:complexType>
+          
+      <s:sequence>
+            
+        <s:element maxOccurs="1" minOccurs="0" name="obj" type="tns:SampleTestClass"/>
+          
+      </s:sequence>
+        
+    </s:complexType>
+      
+  </s:element>
+      
+  <s:element name="SetSampleObjectResponse">
+        
+    <s:complexType>
+          
+      <s:sequence>
+            
+        <s:element maxOccurs="1" minOccurs="0" name="SetSampleObjectResult" type="s:string"/>
+          
+      </s:sequence>
+        
+    </s:complexType>
+      
+  </s:element>
+      
+  <s:element name="GetXmlData">
+        
+    <s:complexType/>
+      
+  </s:element>
+      
+  <s:element name="GetXmlDataResponse">
+        
+    <s:complexType>
+          
+      <s:sequence>
+            
+        <s:element maxOccurs="1" minOccurs="0" name="GetXmlDataResult">
+              
+          <s:complexType mixed="true">
+                
+            <s:sequence>
+                  
+              <s:any/>
+                
+            </s:sequence>
+              
+          </s:complexType>
+            
+        </s:element>
+          
+      </s:sequence>
+        
+    </s:complexType>
+      
+  </s:element>
+    
+</s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part element="targetNamespace:HelloWorld" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetSampleObjectSoapIn">
+    <wsdl:part element="targetNamespace:SetSampleObject" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeSoapOut">
+    <wsdl:part element="targetNamespace:GetCurrentTimeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part element="targetNamespace:HelloWorldResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeSoapIn">
+    <wsdl:part element="targetNamespace:GetCurrentTime" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetArraySoapIn">
+    <wsdl:part element="targetNamespace:GetArray" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetSampleObjectSoapOut">
+    <wsdl:part element="targetNamespace:SetSampleObjectResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetSampleObjectSoapOut">
+    <wsdl:part element="targetNamespace:GetSampleObjectResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetArraySoapOut">
+    <wsdl:part element="targetNamespace:GetArrayResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetXmlDataSoapOut">
+    <wsdl:part element="targetNamespace:GetXmlDataResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetSampleObjectSoapIn">
+    <wsdl:part element="targetNamespace:GetSampleObject" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetXmlDataSoapIn">
+    <wsdl:part element="targetNamespace:GetXmlData" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SampleWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns a string value.</wsdl:documentation>
+      <wsdl:input message="targetNamespace:HelloWorldSoapIn">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:HelloWorldSoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArray">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns an array of integer values.</wsdl:documentation>
+      <wsdl:input message="targetNamespace:GetArraySoapIn">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:GetArraySoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTime">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns the current system time.</wsdl:documentation>
+      <wsdl:input message="targetNamespace:GetCurrentTimeSoapIn">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:GetCurrentTimeSoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleObject">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns an object.</wsdl:documentation>
+      <wsdl:input message="targetNamespace:GetSampleObjectSoapIn">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:GetSampleObjectSoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSampleObject">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method uses an object as a parameter.</wsdl:documentation>
+      <wsdl:input message="targetNamespace:SetSampleObjectSoapIn">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:SetSampleObjectSoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlData">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns an object that is an XML node.</wsdl:documentation>
+      <wsdl:input message="targetNamespace:GetXmlDataSoapIn">
+    </wsdl:input>
+      <wsdl:output message="targetNamespace:GetXmlDataSoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SampleWebServiceSoap12" type="targetNamespace:SampleWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://smartbear.com/HelloWorld" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArray">
+      <soap12:operation soapAction="http://smartbear.com/GetArray" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTime">
+      <soap12:operation soapAction="http://smartbear.com/GetCurrentTime" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleObject">
+      <soap12:operation soapAction="http://smartbear.com/GetSampleObject" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSampleObject">
+      <soap12:operation soapAction="http://smartbear.com/SetSampleObject" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlData">
+      <soap12:operation soapAction="http://smartbear.com/GetXmlData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SampleWebServiceSoap" type="targetNamespace:SampleWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://smartbear.com/HelloWorld" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArray">
+      <soap:operation soapAction="http://smartbear.com/GetArray" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTime">
+      <soap:operation soapAction="http://smartbear.com/GetCurrentTime" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleObject">
+      <soap:operation soapAction="http://smartbear.com/GetSampleObject" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSampleObject">
+      <soap:operation soapAction="http://smartbear.com/SetSampleObject" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlData">
+      <soap:operation soapAction="http://smartbear.com/GetXmlData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SampleWebService">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This sample web service is used to demonstrate how to test web services with SmartBear's TestComplete.</wsdl:documentation>
+    <wsdl:port binding="targetNamespace:SampleWebServiceSoap" name="SampleWebServiceSoap">
+      <soap:address location="http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx"/>
+    </wsdl:port>
+    <wsdl:port binding="targetNamespace:SampleWebServiceSoap12" name="SampleWebServiceSoap12">
+      <soap12:address location="http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
