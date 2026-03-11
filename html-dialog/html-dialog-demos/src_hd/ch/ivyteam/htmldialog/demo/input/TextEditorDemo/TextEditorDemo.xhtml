@@ -13,6 +13,7 @@
         <p:textEditor id="text" height="100" value="#{data.text}" ></p:textEditor>
 
         <hr />
+        <!-- This `escape="false"` usage is safe as `p:textEditor` sanitizes HTML content -->
         <h:outputText id="output" value="#{data.text}" escape="false"></h:outputText>
         
         <div class="command-btns">

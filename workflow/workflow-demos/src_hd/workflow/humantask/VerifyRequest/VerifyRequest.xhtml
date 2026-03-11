@@ -8,11 +8,10 @@
     <ui:define name="title">VerifyProcurementRequest</ui:define>
     <ui:define name="content">
       <h3>
-        <h:outputText escape="false"
-          value="#{ivy.cms.co('/Dialogs/procurementRequest/verifyTitle')} (#{ivy.task.activator.getMemberName()})" />
+        <h:outputText value="#{ivy.cms.co('/Dialogs/procurementRequest/verifyTitle')} (#{ivy.task.activator.getMemberName()})" />
       </h3>
 
-      <h:outputText escape="false" value="#{ivy.cms.co('/Dialogs/procurementRequest/verifyDescription')}" />
+      <h:outputText value="#{ivy.cms.co('/Dialogs/procurementRequest/verifyDescription')}" />
       <br />
       <br />
 
