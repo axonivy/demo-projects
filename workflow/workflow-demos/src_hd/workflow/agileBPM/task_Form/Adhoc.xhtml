@@ -14,6 +14,7 @@
         <p:inputTextarea id="comments" value="#{data.answer}" style="width:500px; margin-left:0px;" required="true">
         </p:inputTextarea>
       </h:panelGrid>
+      <!-- This `escape="false"` usage is safe as the content is a static CMS entry -->
       <p:outputLabel escape="false" value="#{ivy.cms.co('/Texts/Adhoc-Explain')}"></p:outputLabel>
       <br></br>
       <p:commandButton actionListener="#{logic.close}" value="Send" update="form2" icon="fa-solid fa-check" />

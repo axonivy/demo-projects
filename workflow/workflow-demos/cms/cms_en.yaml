@@ -118,7 +118,7 @@ Dialogs:
     verifyDescription: 'The following procurement request needs to be verified:'
     verifyTitle: Verify Procurement Request
   signal:
-    CreateUserDescription: Please insert the new employees data
+    CreateUserDescription: Please insert the new employees data.
     CreateUserTitle: New Employee
     Finish: Finish
     QuitSignalSent: Employee successfully quit.
@@ -246,21 +246,9 @@ TaskDescriptions:
   setupWorkstationDesc: 'Please set up the workstation for '
   verifyRequest: Verify Request
 Texts:
-  Adhoc-Explain: |
-    <P>
-    <B>Enter your comment </B>and press <B>Send</B> to proceed the workflow.
-    </P>
-  AdhocWF-Explain: "<P>\nDefine and launch a Workflow at your fingertip: Select a flow pattern, add some tasks and start the Workflow. \n</P>\n<P>\n\n</P>\n"
-  Approval-Explain: |
-    <P>
-    <B>Enter your decision</B> and press <B>Send </B>to proceed the workflow.
-    </P>
-  QA-Explain: "<P>\nAnswer the question and <B>Send </B>your answer back to the caller. \n</P>\n"
-  QAresponse-Explain: |
-    <P>
-    You can <B>Send</B> back a follow-up question or <B>Finish</B> the Workflow.
-    </P>
-  ToDo-Explain: |
-    <P>
-    Confirm that the<B> TODO </B>is <B>Done</B> or decline it.
-    </P>
+  Adhoc-Explain: <b>Enter your comment</b> and press <b>Send</b> to proceed the workflow.
+  AdhocWF-Explain: 'Define and launch a Workflow at your fingertip: Select a flow pattern, add some tasks and start the Workflow.'
+  Approval-Explain: <b>Enter your decision</b> and press <b>Send</b> to proceed the workflow.
+  QA-Explain: Answer the question and <b>Send</b> your answer back to the caller.
+  QAresponse-Explain: You can <b>Send</b> back a follow-up question or <b>Finish</b> the Workflow.
+  ToDo-Explain: Confirm that the <b>TODO</b> is <b>Done</b> or decline it.

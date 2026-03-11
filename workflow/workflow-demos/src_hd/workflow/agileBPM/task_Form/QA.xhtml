@@ -12,12 +12,13 @@
           <p:outputLabel value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/FollowUpQuestion'):}"></p:outputLabel>
           <p:inputTextarea value="#{data.nextTask.description}" style="width:500px; margin-left:0px;" readonly="true" />
         </c:if>
-        <p:outputLabel escape="false" for="answertext" value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/MyAnswer')}:"
+        <p:outputLabel for="answertext" value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/MyAnswer')}:"
           style="font-weight:bold;" />
         <p:inputTextarea id="answertext" value="#{data.answer}" required="true" style="width:600px; margin-left:0px;">
         </p:inputTextarea>
       </h:panelGrid>
       <p:focus context="answertext" />
+      <!-- This `escape="false"` usage is safe as the content is a static CMS entry -->
       <p:outputLabel escape="false" value="#{ivy.cms.co('/Texts/QA-Explain')}"></p:outputLabel>
       <br></br>
       <p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Send')}"

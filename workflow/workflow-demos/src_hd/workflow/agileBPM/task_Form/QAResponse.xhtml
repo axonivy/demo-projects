@@ -11,6 +11,7 @@
         <p:inputTextarea id="newquestion" value="#{data.remark}" required="true" style="width:500px; margin-left:0px;">
         </p:inputTextarea>
       </h:panelGrid>
+      <!-- This `escape="false"` usage is safe as the content is a static CMS entry -->
       <p:outputLabel value="#{ivy.cms.co('/Texts/QAresponse-Explain')}" escape="false"></p:outputLabel>
       <br></br>
       <p:commandButton actionListener="#{logic.followupQ}" value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Send')}"

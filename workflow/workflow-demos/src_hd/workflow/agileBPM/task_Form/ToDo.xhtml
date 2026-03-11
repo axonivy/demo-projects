@@ -6,6 +6,7 @@
   <h:form id="form2">
     <br></br>
     <p:fieldset legend="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Done')}" styleClass="panel">
+      <!-- This `escape="false"` usage is safe as the content is a static CMS entry -->
       <h:outputText escape="false" value="#{ivy.cms.co('/Texts/ToDo-Explain')}" />
       <p:commandButton actionListener="#{logic.done(true)}" value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Done')}"
         title="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/ConfirmTodo')}" update="form2" icon="fa-solid fa-check">
