@@ -7,10 +7,10 @@
     <ui:define name="title">ITDepartment</ui:define>
     <ui:define name="content">
       <h3>
-        <h:outputText escape="false" value="#{ivy.task.getName()}" />
+        <h:outputText value="#{ivy.task.getName()}" />
       </h3>
 
-      <h:outputText escape="false" value="#{ivy.task.getDescription()}" />
+      <h:outputText value="#{ivy.task.getDescription()}" />
 
       <h:form id="form">
         <h:panelGrid columns="2">

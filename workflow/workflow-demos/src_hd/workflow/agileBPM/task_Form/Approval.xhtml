@@ -8,7 +8,7 @@
     <p:fieldset id="answer" legend="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Decision')}" styleClass="panel">
       <h:panelGrid columns="2">
 
-        <p:outputLabel escape="false" value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/YourDecision')}:" for="dataOk"
+        <p:outputLabel value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/YourDecision')}:" for="dataOk"
           style="font-weight:bold;"></p:outputLabel>
         <p:selectOneRadio id="dataOk" value="#{data.ok}" required="true">
           <f:selectItem itemLabel="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/YesOK')} " itemValue="yes" />
@@ -19,6 +19,7 @@
         <p:inputTextarea value="#{data.answer}" style="width:500px; margin-left:0px;">
         </p:inputTextarea>
       </h:panelGrid>
+      <!-- This `escape="false"` usage is safe as the content is a static CMS entry -->
       <p:outputLabel escape="false" value="#{ivy.cms.co('/Texts/Approval-Explain')}"></p:outputLabel>
       <br></br>
       <p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Send')}"

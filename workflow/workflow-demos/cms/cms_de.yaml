@@ -153,12 +153,9 @@ TaskDescriptions:
   setupWorkstationDesc: Bitte richten Sie den Arbeitsplatz ein für
   verifyRequest: Prüfe Antrag
 Texts:
-  Adhoc-Explain: '<P>  <B>Geben Sie Ihren Kommentar ein </B>und drücken Sie <B>Senden</B> um weiterzufahren.  </P>  '
-  AdhocWF-Explain: "<P>\nDefinieren und starten Sie einen Workflow auf Knopfdruck. \n</P>\n"
-  Approval-Explain: "<P>\n<B>Treffen Sie Ihre Entscheidung</B> und klicken Sie auf <B>Senden </B>um weiterzufahren. \n</P>\n"
-  QA-Explain: |
-    <P>
-    Beantworten Sie die Frage und <B>Senden </B>Sie Ihre Antwort an den Fragesteller zurück.
-    </P>
-  QAresponse-Explain: '<P>  Sie können eine Anschlussfrage <B>Zurücksenden</B> oder den Workflow <B>Beenden</B>.</P>  '
-  ToDo-Explain: '<P>  Bestätigen Sie, dass das <B> TODO Erledigt</B> wurde oder lehnen Sie es ab.</P>  '
+  Adhoc-Explain: <b>Geben Sie Ihren Kommentar ein</b> und drücken Sie <b>Senden</b> um weiterzufahren.
+  AdhocWF-Explain: Definieren und starten Sie einen Workflow auf Knopfdruck.
+  Approval-Explain: <b>Treffen Sie Ihre Entscheidung</b> und klicken Sie auf <b>Senden</b> um weiterzufahren.
+  QA-Explain: Beantworten Sie die Frage und <b>Senden</b> Sie Ihre Antwort an den Fragesteller zurück.
+  QAresponse-Explain: Sie können eine Anschlussfrage <b>Zurücksenden</b> oder den Workflow <b>Beenden</b>.
+  ToDo-Explain: Bestätigen Sie, dass das <b>TODO Erledigt</b> wurde oder lehnen Sie es ab.
