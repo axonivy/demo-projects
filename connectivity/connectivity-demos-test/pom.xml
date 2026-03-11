@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.axonivy.ivy.api</groupId>
@@ -165,6 +167,32 @@
                 <source>${project.basedir}/src_generated/ws/policyGreeter</source>
                 <source>${project.basedir}/src_generated/ws/createOrderService</source>
               </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <copy todir="${project.build.outputDirectory}">
+                  <fileset dir="src_generated">
+                    <include name="**/*" />
+                    <exclude name="**/*.java" />
+                  </fileset>
+                  <!-- remove first two directory segments -->
+                  <mapper type="regexp" from="[^/]+/[^/]+/(.*)" to="\1" />
+                </copy>
+              </target>
             </configuration>
           </execution>
         </executions>
