@@ -1,0 +1,141 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "id" : "19CE137AACE3F99B",
+  "config" : {
+    "data" : "SystemEvent.SystemEventListenersData"
+  },
+  "elements" : [ {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 256 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "ProgramStart",
+      "name" : "ivy.systemevent.workflow.task.created",
+      "config" : {
+        "javaClass" : "ch.ivyteam.ivy.system.event.WorkflowSystemEventListenerBean",
+        "userConfig" : {
+          "workflowSystemEventKey" : "ivy.systemevent.workflow.task.created"
+        },
+        "link" : "eventLink.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 256 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      },
+      "connect" : [
+        { "id" : "f0", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f2",
+      "type" : "Script",
+      "name" : "1. Has task activator",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.workflow.ITask;",
+            "import ch.ivyteam.ivy.workflow.task.IActivator;",
+            "",
+            "for (Long id : in.eventParameters.getIds()) {",
+            "  ITask task = ivy.wf.findTask(id);",
+            "  IActivator activator = task.activator();",
+            "  if (activator.get() == null || activator.isSystemUser()) {",
+            "    continue;",
+            "  }",
+            "  ",
+            "  //ivy.log.debug(\"Task '\" + task.getName() + \" (id=\" + task.getId() + \")' created with activator '\" + activator + \"'\");",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 256 },
+        "description" : "This script element executes code for created tasks that have an activator"
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1", "color" : "default" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "ProgramStart",
+      "name" : "ivy.systemevent.workflow.task.changed",
+      "config" : {
+        "javaClass" : "ch.ivyteam.ivy.system.event.WorkflowSystemEventListenerBean",
+        "userConfig" : {
+          "workflowSystemEventKey" : "ivy.systemevent.workflow.task.changed"
+        },
+        "link" : "eventLink2.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 368 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "name" : "2. Task activator has changed",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.workflow.WorkflowEventKind;",
+            "import ch.ivyteam.ivy.workflow.IWorkflowEvent;",
+            "import ch.ivyteam.ivy.workflow.ITask;",
+            "import ch.ivyteam.ivy.workflow.task.IActivator;",
+            "",
+            "for (Long id : in.eventParameters.getIds()) {",
+            "  ITask task = ivy.wf.findTask(id);",
+            "  IActivator activator = task.activator();",
+            "  if (activator.get() == null || activator.isSystemUser()) {",
+            "    continue;",
+            "  }",
+            "  ",
+            "  List<IWorkflowEvent> workflowEvents = task.getWorkflowEvents();",
+            "  WorkflowEventKind latestWorkflowEventKind = workflowEvents.get(workflowEvents.size() - 1).getEventKind();",
+            "  if (latestWorkflowEventKind != WorkflowEventKind.EVENT_CHANGE_TASK_ACTIVATOR",
+            "    && latestWorkflowEventKind != WorkflowEventKind.EVENT_CHANGE_TASK_ACTIVATOR_BY_TIMEOUT ) {",
+            "      continue;",
+            "  }",
+            "  ",
+            "  //ivy.log.debug(\"Task activator of task '\" + task.getName() + \" (id=\" + task.getId() + \")' changed to '\" + activator + \"'\");",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 368 },
+        "description" : "This script element executes code for changed tasks where the reason for the change event is a changed activator"
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f8" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 368 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f10",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "This demo shows how workflow system events can trigger processes. For that, a `ProcessStartEventBean` has been implemented that can be used with a program start element. The bean triggers the process whenever the configured event is detected.",
+        "",
+        "In this example, the script elements execute code when",
+        "1. a new task has been assigned (has an activator)",
+        "2. a task has been delegated (task activator has changed)",
+        "",
+        "Of course, any custom logic can be implemented to react to workflow system events. "
+      ],
+      "visual" : {
+        "at" : { "x" : 281, "y" : 113 },
+        "size" : { "width" : 398, "height" : 158 }
+      }
+    } ]
+}
