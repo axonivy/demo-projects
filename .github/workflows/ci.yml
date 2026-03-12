@@ -10,4 +10,4 @@ jobs:
   build:
     uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v5
     with:
-      mvnArgs: -Dmaven.test.skip=true # We run the tests on our Jenkins CI
+      mvnArgs: -Divy.engine.version.latest.minor=true -Dmaven.test.skip=true # We run the tests on our Jenkins CI
