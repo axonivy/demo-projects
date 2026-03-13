@@ -81,7 +81,8 @@
             <configuration>
               <openApiSpec>file://${basedir}/src/io/swagger/petstore3/client/openapi.json</openApiSpec>
               <outputDir>${basedir}/src_generated/rest/openApiService</outputDir>
-              <clientPackage>io.swagger.petstore3.client</clientPackage>
+              <namespace>io.swagger.petstore3.client</namespace>
+              <resolveFully>false</resolveFully>
             </configuration>
           </execution>
         </executions>
