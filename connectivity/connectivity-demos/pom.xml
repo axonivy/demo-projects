@@ -70,6 +70,7 @@
       <plugin>
         <groupId>com.axonivy.ivy.tool.rest</groupId>
         <artifactId>openapi-codegen</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
         <executions>
           <execution>
             <id>petstore.codegen</id>
@@ -78,7 +79,7 @@
               <goal>generate-openapi-client</goal>
             </goals>
             <configuration>
-              <openApiSpec>https://petstore3.swagger.io/api/v3/openapi.json</openApiSpec>
+              <openApiSpec>file://${basedir}/src/io/swagger/petstore3/client/openapi.json</openApiSpec>
               <outputDir>${basedir}/src_generated/rest/openApiService</outputDir>
               <clientPackage>io.swagger.petstore3.client</clientPackage>
             </configuration>
