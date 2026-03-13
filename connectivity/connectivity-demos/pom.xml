@@ -68,6 +68,24 @@
         <artifactId>project-build-plugin</artifactId>
       </plugin>
       <plugin>
+        <groupId>com.axonivy.ivy.tool.rest</groupId>
+        <artifactId>openapi-codegen</artifactId>
+        <executions>
+          <execution>
+            <id>petstore.codegen</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>generate-openapi-client</goal>
+            </goals>
+            <configuration>
+              <openApiSpec>https://petstore3.swagger.io/api/v3/openapi.json</openApiSpec>
+              <outputDir>${basedir}/src_generated/rest/openApiService</outputDir>
+              <clientPackage>io.swagger.petstore3.client</clientPackage>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.jsonschema2pojo</groupId>
         <artifactId>jsonschema2pojo-maven-plugin</artifactId>
         <version>1.3.3</version>
