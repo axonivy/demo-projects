@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Vendor: Axon.ivy
-Specification-Title: OpenAPIv3 Client
-GENERATED_AT: Fri Oct 16 14:11:36 CEST 2020
-SERVICE_SPEC: file:/home/rew/Desktop/openapi-2020.json
-NAMESPACE: ivy.local.client
-

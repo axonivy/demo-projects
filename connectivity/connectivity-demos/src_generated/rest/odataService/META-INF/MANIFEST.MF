@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Vendor: Axon.ivy
-Specification-Title: OpenAPIv3 Client
-GENERATED_AT: Thu Sep 03 16:45:50 CEST 2020
-SERVICE_SPEC: https://raw.githubusercontent.com/oasis-tcs/odata-openapi/
- master/examples/TripPin.openapi3.json
-NAMESPACE: org.odata.trippin.client
-
