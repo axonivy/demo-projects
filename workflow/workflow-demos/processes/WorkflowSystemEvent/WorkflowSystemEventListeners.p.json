@@ -83,8 +83,6 @@
         "output" : {
           "code" : [
             "import ch.ivyteam.ivy.workflow.custom.field.ICustomStringField;",
-            "import ch.ivyteam.ivy.workflow.WorkflowEventKind;",
-            "import ch.ivyteam.ivy.workflow.IWorkflowEvent;",
             "import ch.ivyteam.ivy.workflow.ITask;",
             "import ch.ivyteam.ivy.workflow.task.IActivator;",
             "",
@@ -97,8 +95,8 @@
             "  ",
             "  String activatorId = activator.get().getSecurityMemberId();",
             "  ICustomStringField lastActivatorHandledField = task.customFields().stringField(\"lastActivatorHandled\");",
-            "  String lastActivatorHandled = lastActivatorHandledField.get().get().toString();",
-            "  if (lastActivatorHandled != activatorId) {",
+            "  String lastActivatorHandled = lastActivatorHandledField.getOrNull();",
+            "  if (lastActivatorHandled == null || !lastActivatorHandled.equals(activatorId)) {",
             "    in.taskIds.add(id);",
             "    lastActivatorHandledField.set(activatorId);",
             "  }",
