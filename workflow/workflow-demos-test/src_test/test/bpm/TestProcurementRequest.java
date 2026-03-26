@@ -11,11 +11,13 @@ import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmProcess;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.workflow.CaseState;
+import ch.ivyteam.ivy.workflow.ITask;
 import ch.ivyteam.ivy.workflow.TaskState;
 import workflow.humantask.ProcurementRequest;
 
 /**
- * Tests the ProcurementRequest using the {@link BpmClient} testing API and mocking elements:
+ * Tests the ProcurementRequest using the {@link BpmClient} testing API and
+ * mocking elements:
  * <code>workflow-demos/processes/Humantask/ProcurementRequestParallel.mod</code>
  *
  * @author rew
@@ -140,7 +142,8 @@ class TestProcurementRequest {
 
     executeSystemTask(bpmClient, verifyResult);
 
-    bpmClient.mock().element(HtmlDialog.ACCEPT_REQUEST).with(ProcurementRequest.class, (_, out) -> out.setAccepted(true));
+    bpmClient.mock().element(HtmlDialog.ACCEPT_REQUEST).with(ProcurementRequest.class,
+        (_, out) -> out.setAccepted(true));
     ProcurementRequest request = acceptRequest(bpmClient, verifyResult);
 
     assertThat(request.getAccepted()).isTrue();
@@ -187,8 +190,9 @@ class TestProcurementRequest {
     ExecutionResult result = bpmClient.start()
         .task(previousResult.workflow().activeTask().name().contains("Accept Request:"))
         .as().role(Role.EXECUTIVE_MANAGER).execute();
-    assertThat(result.workflow().executedTask().getState()).isIn(TaskState.DONE);
-    return result.data().last();
+    ITask task = result.workflow().executedTask();
+    assertThat(task.getState()).isIn(TaskState.DONE);
+    return (ProcurementRequest) task.getEndProcessData();
   }
 
   private static void executeSystemTask(BpmClient client, ExecutionResult previousResult) {
