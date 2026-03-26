@@ -10,12 +10,12 @@ import javax.inject.Named;
 
 import org.junit.jupiter.api.Test;
 
-import WorkflowSystemEvent.WorkflowSystemEventListenersData;
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmProcess;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.security.IUser;
+import workflow.workflowsystemevent.WorkflowSystemEventListenersData;
 
 @IvyProcessTest
 public class TestWorkflowSystemEventListeners {

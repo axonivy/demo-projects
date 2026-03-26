@@ -1,4 +1,4 @@
-package ch.ivyteam.ivy.system.event;
+package ch.ivyteam.ivy.wfdemo.workflowsystemevent;
 
 import java.util.EnumSet;
 
