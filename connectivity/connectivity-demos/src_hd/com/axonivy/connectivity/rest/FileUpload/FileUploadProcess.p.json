@@ -93,7 +93,7 @@
       "config" : {
         "method" : "JAX_RS",
         "target" : {
-          "clientId" : "4d9a8b09-9968-4476-a8ac-b71a94d25e94",
+          "clientId" : "ivyengine-localbackend",
           "path" : "file"
         },
         "body" : {
@@ -152,7 +152,7 @@
       "config" : {
         "method" : "JAX_RS",
         "target" : {
-          "clientId" : "4d9a8b09-9968-4476-a8ac-b71a94d25e94",
+          "clientId" : "ivyengine-localbackend",
           "path" : "file"
         },
         "body" : {
@@ -200,7 +200,7 @@
       "name" : "GET File",
       "config" : {
         "target" : {
-          "clientId" : "4d9a8b09-9968-4476-a8ac-b71a94d25e94",
+          "clientId" : "ivyengine-localbackend",
           "path" : "/file/{fileName}",
           "templateParams" : {
             "fileName" : "in.downloadName"

@@ -56,7 +56,7 @@
       "name" : "call batch",
       "config" : {
         "target" : {
-          "clientId" : "b0a5f371-e479-444d-b71c-af1fff4c084d"
+          "clientId" : "batchService"
         },
         "response" : {
           "entity" : {

@@ -176,7 +176,7 @@
       "config" : {
         "method" : "PUT",
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "headers" : {
             "X-Requested-By" : "\"ivy\""
           }
@@ -209,7 +209,7 @@
       "name" : "PersonService.GET",
       "config" : {
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3"
+          "clientId" : "personService"
         },
         "response" : {
           "entity" : {
@@ -234,7 +234,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "path" : "{person.id}",
           "templateParams" : {
             "person.id" : "in.editPerson.id"
@@ -273,7 +273,7 @@
       "config" : {
         "method" : "DELETE",
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "path" : "{person.id}",
           "templateParams" : {
             "person.id" : "in.editPerson.id"

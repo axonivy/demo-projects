@@ -39,7 +39,7 @@
       "name" : "get persons",
       "config" : {
         "target" : {
-          "clientId" : "65f8e5a4-768d-4a68-813a-e6d569cda522",
+          "clientId" : "odataService",
           "path" : "/People"
         },
         "response" : {
@@ -93,7 +93,7 @@
       "name" : "get russel",
       "config" : {
         "target" : {
-          "clientId" : "65f8e5a4-768d-4a68-813a-e6d569cda522",
+          "clientId" : "odataService",
           "path" : "/People('{UserName}')",
           "templateParams" : {
             "UserName" : "\"russellwhyte\""

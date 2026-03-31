@@ -19,7 +19,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "ae69ba01-79b7-4dce-9049-900f8f420907",
+          "clientId" : "openApiService",
           "path" : "/pet/findByStatus",
           "queryParams" : {
             "status" : "\"available\""
@@ -62,7 +62,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "ae69ba01-79b7-4dce-9049-900f8f420907",
+          "clientId" : "openApiService",
           "path" : "/user/login",
           "queryParams" : {
             "username" : "\"IvyPowerUser\"",
@@ -150,7 +150,7 @@
       "config" : {
         "method" : "JAX_RS",
         "target" : {
-          "clientId" : "ae69ba01-79b7-4dce-9049-900f8f420907",
+          "clientId" : "openApiService",
           "path" : "/pet/{petId}/uploadImage",
           "templateParams" : {
             "petId" : "in.pets.get(0).getId()"
@@ -199,7 +199,7 @@
       "name" : "read Pets",
       "config" : {
         "target" : {
-          "clientId" : "ae69ba01-79b7-4dce-9049-900f8f420907",
+          "clientId" : "openApiService",
           "path" : "/pet/findByStatus",
           "queryParams" : {
             "status" : "\"available\""

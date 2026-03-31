@@ -115,7 +115,7 @@
       "name" : "Call PersonService",
       "config" : {
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "headers" : {
             "Accept" : "application/json"
           }
@@ -172,7 +172,7 @@
       "config" : {
         "method" : "OPTIONS",
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "headers" : {
             "Accept" : "application/vnd.sun.wadl+xml"
           }

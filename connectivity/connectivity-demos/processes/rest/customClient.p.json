@@ -33,7 +33,7 @@
       "type" : "RestClientCall",
       "config" : {
         "target" : {
-          "clientId" : "bf0e4baf-96e6-470c-a61c-a2f4dbfe4c8f"
+          "clientId" : "customClient"
         },
         "code" : "client."
       },
