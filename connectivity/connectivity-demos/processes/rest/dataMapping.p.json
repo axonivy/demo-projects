@@ -40,7 +40,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "449e7581-aa1e-4e3b-931a-903253491b50",
+          "clientId" : "jsonPlaceholder",
           "path" : "posts"
         },
         "body" : {
@@ -156,7 +156,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "449e7581-aa1e-4e3b-931a-903253491b50",
+          "clientId" : "jsonPlaceholder",
           "path" : "posts"
         },
         "body" : {
@@ -203,7 +203,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "449e7581-aa1e-4e3b-931a-903253491b50",
+          "clientId" : "jsonPlaceholder",
           "path" : "posts",
           "queryParams" : {
             "userId" : "in.userId"
@@ -298,7 +298,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "path" : "1",
           "headers" : {
             "Accept" : "application/json"
@@ -369,7 +369,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "path" : "1",
           "headers" : {
             "Accept" : "application/xml"
@@ -430,7 +430,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "449e7581-aa1e-4e3b-931a-903253491b50",
+          "clientId" : "jsonPlaceholder",
           "path" : "posts"
         },
         "body" : {
@@ -522,7 +522,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "449e7581-aa1e-4e3b-931a-903253491b50",
+          "clientId" : "jsonPlaceholder",
           "path" : "users/1"
         },
         "body" : {
@@ -625,7 +625,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "path" : "{in.userId}",
           "templateParams" : {
             "in.userId" : "in.userId"
@@ -730,7 +730,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "449e7581-aa1e-4e3b-931a-903253491b50",
+          "clientId" : "jsonPlaceholder",
           "path" : "users/1"
         },
         "body" : {
@@ -801,7 +801,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "449e7581-aa1e-4e3b-931a-903253491b50",
+          "clientId" : "jsonPlaceholder",
           "path" : "users/1"
         },
         "body" : {
@@ -899,7 +899,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "e00c9735-7733-4da8-85c8-6413c6fb2cd3",
+          "clientId" : "personService",
           "path" : "1",
           "headers" : {
             "Accept" : "application/xml"

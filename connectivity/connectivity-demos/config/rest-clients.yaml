@@ -1,7 +1,7 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/rest-clients.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/rest-clients-1.json
 RestClients:
   personService:
-    UUID: e00c9735-7733-4da8-85c8-6413c6fb2cd3
+    Name: personService
     Url: "{ivy.app.baseurl}/api/persons"
     Features:
       - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
@@ -9,8 +9,9 @@ RestClients:
     Properties:
       username: theWorker
       password: ${decrypt:\u007B\u0012\u0012\u0075\u002F\u0017\u00D1\u0083\u00C4\u009C\u0094\u00B0\u009A\u00B2\u00ED\u006B\u0067\u0094\u00D2\u003B\u00BF\u0022\u00F3\u00EC\u00C1\u0014\u00A8\u00D8\u00CB\u009C\u0028\u00F3\u00CB\u0030\u00A7\u0038\u00F0\u0067\u0022\u00C3\u0076\u0016\u0088\u00BC\u0096\u00C9\u00EC\u00BB\u002C\u006E\u005E\u008B\u004A\u00AA\u0082\u0057\u00EF\u000A\u0089\u00E1\u0080\u004E\u0072\u0065}
+    LegacyUUID: e00c9735-7733-4da8-85c8-6413c6fb2cd3
   batchService:
-    UUID: b0a5f371-e479-444d-b71c-af1fff4c084d
+    Name: batchService
     Url: "{ivy.app.baseurl}/api/batch"
     Features:
       - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
@@ -19,6 +20,7 @@ RestClients:
       jersey.config.client.connectTimeout: '1000'
       username: theWorker
       password: ${decrypt:\u007B\u0012\u0012\u0075\u002F\u0017\u00D1\u0083\u00C4\u009C\u0094\u00B0\u009A\u00B2\u00ED\u006B\u0067\u0094\u00D2\u003B\u00BF\u0022\u00F3\u00EC\u00C1\u0014\u00A8\u00D8\u00CB\u009C\u0028\u00F3\u00CB\u0030\u00A7\u0038\u00F0\u0067\u0022\u00C3\u0076\u0016\u0088\u00BC\u0096\u00C9\u00EC\u00BB\u002C\u006E\u005E\u008B\u004A\u00AA\u0082\u0057\u00EF\u000A\u0089\u00E1\u0080\u004E\u0072\u0065}
+    LegacyUUID: b0a5f371-e479-444d-b71c-af1fff4c084d
   #A free to use test service with fixed data. 
   #
   #To run this service locally:
@@ -26,15 +28,16 @@ RestClients:
   #2. download 'https://raw.githubusercontent.com/typicode/jsonplaceholder/master/data.json'
   #3. start in cmd 'gson-server data.json'
   jsonPlaceholder:
-    UUID: 449e7581-aa1e-4e3b-931a-903253491b50
+    Name: jsonPlaceholder
     Url: https://jsonplaceholder.typicode.com/
     Features:
       - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     Properties:
       JSON.Deserialization.FAIL_ON_UNKNOWN_PROPERTIES: 'false'
+    LegacyUUID: 449e7581-aa1e-4e3b-931a-903253491b50
   #The OData demo service
   odataService:
-    UUID: 65f8e5a4-768d-4a68-813a-e6d569cda522
+    Name: odataService
     Url: https://services.odata.org/V4/(S(cnbm44wtbc1v5bgrlek5lpcc))/TripPinServiceRW
     Features:
       - com.axonivy.connectivity.rest.sample.odata.TripPinJsonFeature
@@ -43,11 +46,12 @@ RestClients:
     OpenAPI:
       SpecUrl: https://raw.githubusercontent.com/oasis-tcs/odata-openapi/master/examples/TripPin.openapi3.json
       Namespace: org.odata.trippin.client
+    LegacyUUID: 65f8e5a4-768d-4a68-813a-e6d569cda522
   #A client using the REST endpoints defined by the serving ivy.engine. 
   #These endpoints either derive from application/projects or
   #static engine resources.
-  ivy.engine (local.backend):
-    UUID: 4d9a8b09-9968-4476-a8ac-b71a94d25e94
+  ivyengine-localbackend:
+    Name: ivy.engine (local.backend)
     Url: "{ivy.app.baseurl}/api"
     Features:
       - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
@@ -58,8 +62,9 @@ RestClients:
     OpenAPI:
       SpecUrl: file:/home/rew/Desktop/openapi-2020.json
       Namespace: ivy.local.client
+    LegacyUUID: 4d9a8b09-9968-4476-a8ac-b71a94d25e94
   openApiService:
-    UUID: ae69ba01-79b7-4dce-9049-900f8f420907
+    Name: openApiService
     Url: https://petstore3.swagger.io/api/v3
     Features:
       - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
@@ -68,8 +73,9 @@ RestClients:
     OpenAPI:
       SpecUrl: https://petstore3.swagger.io/api/v3/openapi.json
       Namespace: io.swagger.petstore.client
+    LegacyUUID: ae69ba01-79b7-4dce-9049-900f8f420907
   customClient:
-    UUID: bf0e4baf-96e6-470c-a61c-a2f4dbfe4c8f
+    Name: customClient
     Url: "{ivy.app.baseurl}/api/persons"
     Features:
       - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
@@ -78,3 +84,4 @@ RestClients:
     Properties:
       username: theWorker
       password: ${decrypt:\u007B\u0012\u0012\u0075\u002F\u0017\u00D1\u0083\u00C4\u009C\u0094\u00B0\u009A\u00B2\u00ED\u006B\u0067\u0094\u00D2\u003B\u00BF\u0022\u00F3\u00EC\u00C1\u0014\u00A8\u00D8\u00CB\u009C\u0028\u00F3\u00CB\u0030\u00A7\u0038\u00F0\u0067\u0022\u00C3\u0076\u0016\u0088\u00BC\u0096\u00C9\u00EC\u00BB\u002C\u006E\u005E\u008B\u004A\u00AA\u0082\u0057\u00EF\u000A\u0089\u00E1\u0080\u004E\u0072\u0065}
+    LegacyUUID: bf0e4baf-96e6-470c-a61c-a2f4dbfe4c8f
