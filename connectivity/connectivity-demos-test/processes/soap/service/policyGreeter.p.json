@@ -22,7 +22,7 @@
       "id" : "f2",
       "type" : "WebServiceCall",
       "config" : {
-        "clientId" : "162AF1AE2B935160",
+        "clientId" : "policyGreeter",
         "operation" : {
           "name" : "greet",
           "port" : "SecureGreetPolicyServicePort",

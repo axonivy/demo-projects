@@ -47,7 +47,7 @@
       "type" : "WebServiceCall",
       "name" : "call batch",
       "config" : {
-        "clientId" : "162B962523BAAB85",
+        "clientId" : "technicalBackend",
         "operation" : {
           "name" : "longRunningBatchOperation",
           "port" : "TechnicalBackendServicePort",
