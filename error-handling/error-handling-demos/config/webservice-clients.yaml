@@ -7,4 +7,3 @@ WebServiceClients:
     Endpoints:
       NikeFactoryPort:
         - http://localhost:8082/designer/ws/NikeProject/16FEAF30FCA53A53
-    LegacyId: 16FEC3EAEC5333CC

@@ -7,7 +7,6 @@ WebServiceClients:
     Endpoints:
       CreateOrderPort:
         - http://localhost:8081/designer/ws/connectivity-demos/162492A1649E72DF
-    LegacyId: 1624D62D6426F325
   policyGreeter:
     Name: policyGreeter
     ServiceClass: ch.ivyteam.testservice.policy.greeter.client.SecureGreetPolicyServiceService
@@ -20,4 +19,3 @@ WebServiceClients:
     Endpoints:
       SecureGreetPolicyServicePort:
         - http://test-webservices.ivyteam.io:8080/country-service/webservices/greet-policy-wss
-    LegacyId: 162AF1AE2B935160
