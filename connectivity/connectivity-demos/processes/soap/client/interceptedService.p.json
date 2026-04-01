@@ -39,7 +39,7 @@
         "backend"
       ],
       "config" : {
-        "clientId" : "16D2A643A3A25C52",
+        "clientId" : "interceptedService",
         "operation" : {
           "name" : "call",
           "port" : "ServiceWithExceptionPort",
@@ -95,7 +95,7 @@
         "interceptor"
       ],
       "config" : {
-        "clientId" : "16330E44A158D09C",
+        "clientId" : "interceptedPersonService",
         "operation" : {
           "name" : "getPersons",
           "port" : "PersonServicePort"

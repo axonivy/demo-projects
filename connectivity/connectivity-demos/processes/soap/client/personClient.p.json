@@ -36,7 +36,7 @@
       "type" : "WebServiceCall",
       "name" : "getPersons",
       "config" : {
-        "clientId" : "16150E44A158D09C",
+        "clientId" : "personService",
         "operation" : {
           "name" : "getPersons",
           "port" : "PersonServicePort"
@@ -100,7 +100,7 @@
       "type" : "WebServiceCall",
       "name" : "deletePerson Mr. Bloch",
       "config" : {
-        "clientId" : "16150E44A158D09C",
+        "clientId" : "personService",
         "operation" : {
           "name" : "deletePerson",
           "port" : "PersonServicePort",
@@ -146,7 +146,7 @@
       "type" : "WebServiceCall",
       "name" : "addPerson Mr. Bloch",
       "config" : {
-        "clientId" : "16150E44A158D09C",
+        "clientId" : "personService",
         "operation" : {
           "name" : "addPerson",
           "port" : "PersonServicePort",

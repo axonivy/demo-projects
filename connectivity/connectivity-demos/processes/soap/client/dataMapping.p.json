@@ -41,7 +41,7 @@
         "remote time"
       ],
       "config" : {
-        "clientId" : "162B97C859B22CA3",
+        "clientId" : "smartbearTests",
         "operation" : {
           "name" : "GetCurrentTime",
           "port" : "SampleWebServiceSoap12"
@@ -116,7 +116,7 @@
         "to own service"
       ],
       "config" : {
-        "clientId" : "16150E44A158D09C",
+        "clientId" : "personService",
         "operation" : {
           "name" : "addPerson",
           "port" : "PersonServicePort",

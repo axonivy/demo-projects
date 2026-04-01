@@ -76,7 +76,7 @@
         "factory"
       ],
       "config" : {
-        "clientId" : "16FEC3EAEC5333CC",
+        "clientId" : "factory",
         "operation" : {
           "name" : "produce",
           "port" : "NikeFactoryPort",
