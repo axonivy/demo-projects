@@ -13,7 +13,6 @@ WebServiceClients:
         - '{ivy.app.baseurl}/ws/connectivity-demos/16150E1D07E8CA18'
     Codegen:
       WsdlUrl: http://127.0.0.1:8081/designer/ws/connectivity-demos/16150E1D07E8CA18?WSDL
-    LegacyId: 16150E44A158D09C
   technicalBackend:
     Name: technicalBackend
     ServiceClass: com.axonivy.connectivity.client.TechnicalBackendServiceService
@@ -22,7 +21,6 @@ WebServiceClients:
         - '{ivy.app.baseurl}/ws/connectivity-demos/162B95BB70C3178E'
     Codegen:
       WsdlUrl: http://localhost:8081/designer/ws/connectivity-demos/162B95BB70C3178E?WSDL
-    LegacyId: 162B962523BAAB85
   smartbearTests:
     Name: smartbearTests
     ServiceClass: com.smartbear.sample.test.client.SampleWebService
@@ -33,7 +31,6 @@ WebServiceClients:
         - http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx
     Codegen:
       WsdlUrl: http://secure.smartbearsoftware.com/samples/testcomplete12/webservices/Service.asmx?WSDL
-    LegacyId: 162B97C859B22CA3
   #the backend defines a custom interceptor
   interceptedService:
     Name: interceptedService
@@ -43,7 +40,6 @@ WebServiceClients:
         - '{ivy.app.baseurl}/ws/connectivity-demos/16D29AE50A7A6E34'
     Codegen:
       WsdlUrl: http://localhost:8081/designer/ws/connectivity-demos/16D29AE50A7A6E34?WSDL
-    LegacyId: 16D2A643A3A25C52
   #client with a custom interceptor feature
   interceptedPersonService:
     Name: interceptedPersonService
@@ -59,4 +55,3 @@ WebServiceClients:
         - '{ivy.app.baseurl}/ws/connectivity-demos/16150E1D07E8CA18'
     Codegen:
       WsdlUrl: http://127.0.0.1:8081/designer/ws/connectivity-demos/16150E1D07E8CA18?WSDL
-    LegacyId: 16330E44A158D09C

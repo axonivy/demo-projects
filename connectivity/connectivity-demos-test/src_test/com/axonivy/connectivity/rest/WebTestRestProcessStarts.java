@@ -5,14 +5,10 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
 
-import java.net.MalformedURLException;
-import java.net.URI;
-
-import javax.ws.rs.core.UriBuilder;
-
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.ivy.webtest.IvyWebTest;
+import com.axonivy.ivy.webtest.engine.WebAppFixture;
 
 import soap.bpm.TestDataMapping.Smartbear;
 
@@ -28,23 +24,13 @@ public class WebTestRestProcessStarts {
   }
 
   @Test
-  void checkAllSimpleSoapCalls() throws Exception {
-    enableSmartbearMock();
+  void checkAllSimpleSoapCalls(WebAppFixture fixture) throws Exception {
+    fixture.config(Smartbear.ENDPOINT_URI_KEY, Smartbear.MOCK_SERVICE);
     checkProcess("1605A38503199ADB/resolveToCache.ivp");
     checkProcess("1605A38503199ADB/mapComplexData.ivp");
     checkProcess("16150E26E34D4339/read.ivp");
     checkProcess("16150E26E34D4339/add.ivp");
     checkProcess("16150E26E34D4339/delete.ivp");
-  }
-
-  private void enableSmartbearMock() throws MalformedURLException {
-    var procUrl = createProcessUrl("connectivity-demos-test/180D6E5562D69BF0/configure.ivp");
-    var engineProcUri = URI.create(procUrl.replaceAll("localhost", System.getProperty("test.host.name", "localhost")));
-    URI configure = UriBuilder
-        .fromUri(engineProcUri)
-        .queryParam("key", Smartbear.ENDPOINT_URI_KEY)
-        .queryParam("value", Smartbear.MOCK_SERVICE).build();
-    open(configure.toURL());
   }
 
   private void checkProcess(String process) {
