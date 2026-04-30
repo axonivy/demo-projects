@@ -69,6 +69,13 @@
         <artifactId>project-build-plugin</artifactId>
         <extensions>true</extensions>
       </plugin>
+      <plugin>
+        <groupId>io.smallrye</groupId>
+        <artifactId>jandex-maven-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
