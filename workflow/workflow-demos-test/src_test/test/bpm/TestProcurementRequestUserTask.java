@@ -11,11 +11,13 @@ import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmProcess;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.workflow.CaseState;
+import ch.ivyteam.ivy.workflow.ITask;
 import ch.ivyteam.ivy.workflow.TaskState;
 import workflow.humantask.ProcurementRequest;
 
 /**
- * Tests the ProcurementRequest using the {@link BpmClient} testing API and mocking ui:
+ * Tests the ProcurementRequest using the {@link BpmClient} testing API and
+ * mocking ui:
  * <code>workflow-demos/processes/Humantask/ProcurementRequestUserTask.mod</code>
  *
  * @author rew
@@ -92,7 +94,8 @@ class TestProcurementRequestUserTask {
   }
 
   private static ExecutionResult createProcurrementRequest(BpmClient bpmClient) {
-    bpmClient.mock().uiOf(HtmlDialog.ENTER_REQUEST).with((_, results) -> results.set("procurementRequestData", newComputer()));
+    bpmClient.mock().uiOf(HtmlDialog.ENTER_REQUEST)
+        .with((_, results) -> results.set("procurementRequestData", newComputer()));
     ExecutionResult result = bpmClient
         .start().process(PROCUREMENT_PROCESS)
         .as().user("ldv")
@@ -130,7 +133,8 @@ class TestProcurementRequestUserTask {
     ExecutionResult result = bpmClient.start()
         .task(previousResult.workflow().activeTask().name().contains("Accept Request:"))
         .as().role(Role.EXECUTIVE_MANAGER).execute();
-    assertThat(result.workflow().executedTask().getState()).isIn(TaskState.DONE);
-    return result.data().last();
+    ITask task = result.workflow().executedTask();
+    assertThat(task.getState()).isIn(TaskState.DONE);
+    return (ProcurementRequest) task.getEndProcessData();
   }
 }

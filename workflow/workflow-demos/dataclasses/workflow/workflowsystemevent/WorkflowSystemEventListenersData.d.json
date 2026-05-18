@@ -1,0 +1,13 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
+  "simpleName" : "WorkflowSystemEventListenersData",
+  "namespace" : "workflow.workflowsystemevent",
+  "fields" : [ {
+    "name" : "eventParameters",
+    "type" : "ch.ivyteam.ivy.workflow.WorkflowSystemEventParameter",
+    "modifiers" : [ ]
+  }, {
+    "name" : "taskIds",
+    "type" : "List<java.lang.Long>"
+  } ]
+}
