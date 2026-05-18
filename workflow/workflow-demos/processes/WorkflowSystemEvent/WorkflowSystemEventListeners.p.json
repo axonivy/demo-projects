@@ -1,0 +1,236 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "id" : "19CE137AACE3F99B",
+  "config" : {
+    "data" : "workflow.workflowsystemevent.WorkflowSystemEventListenersData"
+  },
+  "elements" : [ {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 640, "y" : 256 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "ProgramStart",
+      "name" : "Task created",
+      "config" : {
+        "javaClass" : "ch.ivyteam.ivy.wfdemo.workflowsystemevent.WorkflowSystemEventListenerBean",
+        "userConfig" : {
+          "workflowSystemEventKey" : "ivy.systemevent.workflow.task.created"
+        },
+        "link" : "eventLink.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 256 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      },
+      "connect" : [
+        { "id" : "f0", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f2",
+      "type" : "Script",
+      "name" : "Has activator",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.workflow.ITask;",
+            "import ch.ivyteam.ivy.workflow.task.IActivator;",
+            "",
+            "for (Long id : in.eventParameters.getIds()) {",
+            "  ITask task = ivy.wf.findTask(id);",
+            "  IActivator activator = task.activator();",
+            "  if (activator.get() != null && !activator.isSystemUser()) {",
+            "    in.taskIds.add(id);",
+            "    task.customFields().stringField(\"lastActivatorHandled\").set(activator.get().getSecurityMemberId());",
+            "  }",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 256 },
+        "description" : "Filters tasks that triggered the event by whether they have an activator"
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f11", "color" : "default" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "ProgramStart",
+      "name" : "Task changed",
+      "config" : {
+        "javaClass" : "ch.ivyteam.ivy.wfdemo.workflowsystemevent.WorkflowSystemEventListenerBean",
+        "userConfig" : {
+          "workflowSystemEventKey" : "ivy.systemevent.workflow.task.changed"
+        },
+        "link" : "eventLink2.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 416 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "name" : "Activator has changed",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.workflow.custom.field.ICustomStringField;",
+            "import ch.ivyteam.ivy.workflow.ITask;",
+            "import ch.ivyteam.ivy.workflow.task.IActivator;",
+            "",
+            "for (Long id : in.eventParameters.getIds()) {",
+            "  ITask task = ivy.wf.findTask(id);",
+            "  IActivator activator = task.activator();",
+            "  if (activator.get() == null || activator.isSystemUser()) {",
+            "    continue;",
+            "  }",
+            "  ",
+            "  String activatorId = activator.get().getSecurityMemberId();",
+            "  ICustomStringField lastActivatorHandledField = task.customFields().stringField(\"lastActivatorHandled\");",
+            "  String lastActivatorHandled = lastActivatorHandledField.getOrNull();",
+            "  if (lastActivatorHandled != null && lastActivatorHandled.equals(activatorId)) {",
+            "    continue;",
+            "  }",
+            "",
+            "  Boolean updatedLastActivatorHandled = lastActivatorHandledField.compareAndSet(lastActivatorHandled, activatorId);",
+            "  if (updatedLastActivatorHandled) {",
+            "    in.taskIds.add(id);",
+            "  }",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 416 },
+        "description" : "Filters tasks that triggered the event by whether their activator has changed"
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f17" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 640, "y" : 416 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f10",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "This demo shows how workflow system events can trigger processes. For that, a `ProcessStartEventBean` has been implemented that can be used with a program start element (see `WorkflowSystemEventListenerBean`). The bean triggers the process whenever the configured event is detected.",
+        "",
+        "In this example, the processes execute logic when",
+        "- a new task has been assigned (has activator)",
+        "- a task has been delegated (activator has changed)",
+        "",
+        "Of course, any custom logic can be implemented to react to workflow system events. "
+      ],
+      "visual" : {
+        "at" : { "x" : 281, "y" : 113 },
+        "size" : { "width" : 398, "height" : 158 }
+      }
+    }, {
+      "id" : "f11",
+      "type" : "Alternative",
+      "config" : {
+        "conditions" : {
+          "f14" : "in.taskIds.isEmpty()"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 368, "y" : 256 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f14", "to" : "f13" },
+        { "id" : "f12", "to" : "f15", "color" : "default" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "TaskEnd",
+      "name" : "No tasks to handle",
+      "visual" : {
+        "at" : { "x" : 368, "y" : 320 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f15",
+      "type" : "Script",
+      "name" : "Execute for new task assignments",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.workflow.ITask;",
+            "",
+            "for (Long id : in.taskIds) {",
+            "  ITask task = ivy.wf.findTask(id);",
+            "  //ivy.log.debug(\"Task '\" + task.getName() + \" (id=\" + task.getId() + \")' created and assigned to '\" + task.activator() + \"'\");",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 504, "y" : 256 },
+        "description" : "Code to execute when a new task has been assigned"
+      },
+      "connect" : [
+        { "id" : "f16", "to" : "f1", "color" : "default" }
+      ]
+    }, {
+      "id" : "f17",
+      "type" : "Alternative",
+      "config" : {
+        "conditions" : {
+          "f20" : "in.taskIds.isEmpty()"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 368, "y" : 416 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f19" },
+        { "id" : "f18", "to" : "f21", "color" : "default" }
+      ]
+    }, {
+      "id" : "f19",
+      "type" : "TaskEnd",
+      "name" : "No tasks to handle",
+      "visual" : {
+        "at" : { "x" : 368, "y" : 480 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f21",
+      "type" : "Script",
+      "name" : "Execute for task delegations",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.workflow.ITask;",
+            "",
+            "for (Long id : in.taskIds) {",
+            "  ITask task = ivy.wf.findTask(id);",
+            "  //ivy.log.debug(\"Task '\" + task.getName() + \" (id=\" + task.getId() + \")' delegated to '\" + task.activator() + \"'\");",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 504, "y" : 416 },
+        "description" : "Code to execute when a task has been delegated"
+      },
+      "connect" : [
+        { "id" : "f22", "to" : "f8", "color" : "default" }
+      ]
+    } ]
+}
