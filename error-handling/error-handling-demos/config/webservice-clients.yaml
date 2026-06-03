@@ -1,9 +1,10 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/webservice-clients-2.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/webservice-clients-3.json
 WebServiceClients:
   factory:
     Name: factory
-    WsdlUrl: http://localhost:9999/designer/ws/NikeProject/16FEAF30FCA53A53?WSDL
     ServiceClass: nike.project.client.NikeFactoryService
     Endpoints:
       NikeFactoryPort:
         - http://localhost:8082/designer/ws/NikeProject/16FEAF30FCA53A53
+    Codegen:
+      WsdlUrl: http://localhost:9999/designer/ws/NikeProject/16FEAF30FCA53A53?WSDL
