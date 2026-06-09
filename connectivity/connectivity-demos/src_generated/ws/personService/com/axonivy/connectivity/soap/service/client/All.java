@@ -13,16 +13,34 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * <p>Java class for getPersons complex type.
+ * 
+ *    Only elements allowed inside
+ * 
+ * <p>Java class for all complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getPersons"&gt;
+ * &lt;complexType name="all"&gt;
  *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *       &lt;/sequence&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}explicitGroup"&gt;
+ *       &lt;group ref="{http://www.w3.org/2001/XMLSchema}allModel"/&gt;
+ *       &lt;attribute name="minOccurs" default="1"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"&gt;
+ *             &lt;enumeration value="0"/&gt;
+ *             &lt;enumeration value="1"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *       &lt;attribute name="maxOccurs" default="1"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}allNNI"&gt;
+ *             &lt;enumeration value="1"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -31,9 +49,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getPersons", namespace = "http://service.soap.connectivity.axonivy.com/")
+@XmlType(name = "all")
 @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-public class GetPersons
+public class All
+    extends ExplicitGroup
     implements Serializable
 {
 

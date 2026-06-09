@@ -5,7 +5,8 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -14,20 +15,21 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * <p>Java class for person complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="person"&gt;
+ * &lt;complexType&gt;
  *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
+ *     &lt;extension base="{http://www.w3.org/2001/XMLSchema}annotated"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="restriction" type="{http://www.w3.org/2001/XMLSchema}complexRestrictionType"/&gt;
+ *         &lt;element name="extension" type="{http://www.w3.org/2001/XMLSchema}extensionType"/&gt;
+ *       &lt;/choice&gt;
+ *       &lt;attribute name="mixed" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
@@ -35,104 +37,103 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "person", namespace = "http://service.soap.connectivity.axonivy.com/", propOrder = {
-    "firstname",
-    "id",
-    "lastname"
+@XmlType(name = "", propOrder = {
+    "restriction",
+    "extension"
 })
+@XmlRootElement(name = "complexContent")
 @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-public class Person
+public class ComplexContent
+    extends Annotated
     implements Serializable
 {
 
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
     private final static long serialVersionUID = 1L;
-    @XmlElement(namespace = "")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String firstname;
-    @XmlElement(namespace = "")
+    protected ComplexRestrictionType restriction;
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String id;
-    @XmlElement(namespace = "")
+    protected ExtensionType extension;
+    @XmlAttribute(name = "mixed")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String lastname;
+    protected Boolean mixed;
 
     /**
-     * Gets the value of the firstname property.
+     * Gets the value of the restriction property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ComplexRestrictionType }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getFirstname() {
-        return firstname;
+    public ComplexRestrictionType getRestriction() {
+        return restriction;
     }
 
     /**
-     * Sets the value of the firstname property.
+     * Sets the value of the restriction property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ComplexRestrictionType }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setFirstname(String value) {
-        this.firstname = value;
+    public void setRestriction(ComplexRestrictionType value) {
+        this.restriction = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ExtensionType }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getId() {
-        return id;
+    public ExtensionType getExtension() {
+        return extension;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ExtensionType }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setId(String value) {
-        this.id = value;
+    public void setExtension(ExtensionType value) {
+        this.extension = value;
     }
 
     /**
-     * Gets the value of the lastname property.
+     * Gets the value of the mixed property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Boolean }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getLastname() {
-        return lastname;
+    public Boolean isMixed() {
+        return mixed;
     }
 
     /**
-     * Sets the value of the lastname property.
+     * Sets the value of the mixed property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Boolean }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setLastname(String value) {
-        this.lastname = value;
+    public void setMixed(Boolean value) {
+        this.mixed = value;
     }
 
     @Override
