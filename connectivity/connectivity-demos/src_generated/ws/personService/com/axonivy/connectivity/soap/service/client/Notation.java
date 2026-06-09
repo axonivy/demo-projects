@@ -5,8 +5,12 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,20 +18,19 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * <p>Java class for person complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="person"&gt;
+ * &lt;complexType&gt;
  *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
+ *     &lt;extension base="{http://www.w3.org/2001/XMLSchema}annotated"&gt;
+ *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" /&gt;
+ *       &lt;attribute name="public" type="{http://www.w3.org/2001/XMLSchema}public" /&gt;
+ *       &lt;attribute name="system" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
@@ -35,30 +38,33 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "person", namespace = "http://service.soap.connectivity.axonivy.com/", propOrder = {
-    "firstname",
-    "id",
-    "lastname"
-})
+@XmlType(name = "")
+@XmlRootElement(name = "notation")
 @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-public class Person
+public class Notation
+    extends Annotated
     implements Serializable
 {
 
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
     private final static long serialVersionUID = 1L;
-    @XmlElement(namespace = "")
+    @XmlAttribute(name = "name", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NCName")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String firstname;
-    @XmlElement(namespace = "")
+    protected String name;
+    @XmlAttribute(name = "public")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "public")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String id;
-    @XmlElement(namespace = "")
+    protected String _public;
+    @XmlAttribute(name = "system")
+    @XmlSchemaType(name = "anyURI")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String lastname;
+    protected String system;
 
     /**
-     * Gets the value of the firstname property.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -66,12 +72,12 @@ public class Person
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getFirstname() {
-        return firstname;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Sets the value of the firstname property.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -79,12 +85,12 @@ public class Person
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setFirstname(String value) {
-        this.firstname = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the public property.
      * 
      * @return
      *     possible object is
@@ -92,12 +98,12 @@ public class Person
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getId() {
-        return id;
+    public String getPublic() {
+        return _public;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the public property.
      * 
      * @param value
      *     allowed object is
@@ -105,12 +111,12 @@ public class Person
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setId(String value) {
-        this.id = value;
+    public void setPublic(String value) {
+        this._public = value;
     }
 
     /**
-     * Gets the value of the lastname property.
+     * Gets the value of the system property.
      * 
      * @return
      *     possible object is
@@ -118,12 +124,12 @@ public class Person
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getLastname() {
-        return lastname;
+    public String getSystem() {
+        return system;
     }
 
     /**
-     * Sets the value of the lastname property.
+     * Sets the value of the system property.
      * 
      * @param value
      *     allowed object is
@@ -131,8 +137,8 @@ public class Person
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setLastname(String value) {
-        this.lastname = value;
+    public void setSystem(String value) {
+        this.system = value;
     }
 
     @Override

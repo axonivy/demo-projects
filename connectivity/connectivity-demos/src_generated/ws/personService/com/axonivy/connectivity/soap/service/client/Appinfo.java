@@ -2,31 +2,42 @@
 package com.axonivy.connectivity.soap.service.client;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAnyAttribute;
+import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlMixed;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.namespace.QName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for person complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="person"&gt;
+ * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+ *         &lt;any processContents='lax'/&gt;
  *       &lt;/sequence&gt;
+ *       &lt;attribute name="source" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -35,30 +46,62 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "person", namespace = "http://service.soap.connectivity.axonivy.com/", propOrder = {
-    "firstname",
-    "id",
-    "lastname"
+@XmlType(name = "", propOrder = {
+    "content"
 })
+@XmlRootElement(name = "appinfo")
 @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-public class Person
-    implements Serializable
+public class Appinfo implements Serializable
 {
 
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
     private final static long serialVersionUID = 1L;
-    @XmlElement(namespace = "")
+    @XmlMixed
+    @XmlAnyElement(lax = true)
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String firstname;
-    @XmlElement(namespace = "")
+    protected List<Object> content;
+    @XmlAttribute(name = "source")
+    @XmlSchemaType(name = "anyURI")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String id;
-    @XmlElement(namespace = "")
+    protected String source;
+    @XmlAnyAttribute
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String lastname;
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Gets the value of the firstname property.
+     * Gets the value of the content property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the content property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getContent().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Object }
+     * {@link String }
+     * {@link Element }
+     * 
+     * 
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    public List<Object> getContent() {
+        if (content == null) {
+            content = new ArrayList<Object>();
+        }
+        return this.content;
+    }
+
+    /**
+     * Gets the value of the source property.
      * 
      * @return
      *     possible object is
@@ -66,12 +109,12 @@ public class Person
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getFirstname() {
-        return firstname;
+    public String getSource() {
+        return source;
     }
 
     /**
-     * Sets the value of the firstname property.
+     * Sets the value of the source property.
      * 
      * @param value
      *     allowed object is
@@ -79,60 +122,36 @@ public class Person
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setFirstname(String value) {
-        this.firstname = value;
+    public void setSource(String value) {
+        this.source = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     * 
+     * <p>
+     * the map is keyed by the name of the attribute and 
+     * the value is the string value of the attribute.
+     * 
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     * 
      * 
      * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *     always non-null
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getId() {
-        return id;
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
     }
 
-    /**
-     * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setId(String value) {
-        this.id = value;
-    }
-
-    /**
-     * Gets the value of the lastname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getLastname() {
-        return lastname;
-    }
-
-    /**
-     * Sets the value of the lastname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setLastname(String value) {
-        this.lastname = value;
+    public void setContent(List<Object> value) {
+        this.content = null;
+        if (value!= null) {
+            List<Object> draftl = this.getContent();
+            draftl.addAll(value);
+        }
     }
 
     @Override

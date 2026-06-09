@@ -5,8 +5,13 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,20 +19,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * <p>Java class for person complex type.
+ * 
+ *        This type is extended by all types which allow annotation
+ *        other than <schema> itself
+ *      
+ * 
+ * <p>Java class for annotated complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="person"&gt;
+ * &lt;complexType name="annotated"&gt;
  *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *     &lt;extension base="{http://www.w3.org/2001/XMLSchema}openAttrs"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2001/XMLSchema}annotation" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
+ *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}ID" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
@@ -35,52 +45,73 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "person", namespace = "http://service.soap.connectivity.axonivy.com/", propOrder = {
-    "firstname",
-    "id",
-    "lastname"
+@XmlType(name = "annotated", propOrder = {
+    "annotation"
+})
+@XmlSeeAlso({
+    ExtensionType.class,
+    Attribute.class,
+    ComplexType.class,
+    RestrictionType.class,
+    Element.class,
+    Group.class,
+    AttributeGroup.class,
+    SimpleType.class,
+    Union.class,
+    List.class,
+    Facet.class,
+    Restriction.class,
+    Keybase.class,
+    Field.class,
+    Selector.class,
+    Wildcard.class,
+    SimpleContent.class,
+    ComplexContent.class,
+    Notation.class,
+    Import.class,
+    Include.class
 })
 @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-public class Person
+public class Annotated
+    extends OpenAttrs
     implements Serializable
 {
 
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
     private final static long serialVersionUID = 1L;
-    @XmlElement(namespace = "")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String firstname;
-    @XmlElement(namespace = "")
+    protected Annotation annotation;
+    @XmlAttribute(name = "id")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlID
+    @XmlSchemaType(name = "ID")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
     protected String id;
-    @XmlElement(namespace = "")
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected String lastname;
 
     /**
-     * Gets the value of the firstname property.
+     * Gets the value of the annotation property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Annotation }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getFirstname() {
-        return firstname;
+    public Annotation getAnnotation() {
+        return annotation;
     }
 
     /**
-     * Sets the value of the firstname property.
+     * Sets the value of the annotation property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Annotation }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setFirstname(String value) {
-        this.firstname = value;
+    public void setAnnotation(Annotation value) {
+        this.annotation = value;
     }
 
     /**
@@ -107,32 +138,6 @@ public class Person
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
     public void setId(String value) {
         this.id = value;
-    }
-
-    /**
-     * Gets the value of the lastname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public String getLastname() {
-        return lastname;
-    }
-
-    /**
-     * Sets the value of the lastname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setLastname(String value) {
-        this.lastname = value;
     }
 
     @Override

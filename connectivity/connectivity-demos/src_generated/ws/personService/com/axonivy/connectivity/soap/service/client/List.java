@@ -5,8 +5,10 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.namespace.QName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,18 +16,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * <p>Java class for deletePerson complex type.
+ * 
+ *           itemType attribute and simpleType child are mutually
+ *           exclusive, but one or other is required
+ *         
+ * 
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="deletePerson"&gt;
+ * &lt;complexType&gt;
  *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *     &lt;extension base="{http://www.w3.org/2001/XMLSchema}annotated"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="person" type="{http://service.soap.connectivity.axonivy.com/}person" minOccurs="0"/&gt;
+ *         &lt;element name="simpleType" type="{http://www.w3.org/2001/XMLSchema}localSimpleType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
+ *       &lt;attribute name="itemType" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
@@ -33,44 +42,74 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "deletePerson", namespace = "http://service.soap.connectivity.axonivy.com/", propOrder = {
-    "person"
+@XmlType(name = "", propOrder = {
+    "simpleType"
 })
+@XmlRootElement(name = "list")
 @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-public class DeletePerson
+public class List
+    extends Annotated
     implements Serializable
 {
 
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
     private final static long serialVersionUID = 1L;
-    @XmlElement(namespace = "")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected Person person;
+    protected LocalSimpleType simpleType;
+    @XmlAttribute(name = "itemType")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    protected QName itemType;
 
     /**
-     * Gets the value of the person property.
+     * Gets the value of the simpleType property.
      * 
      * @return
      *     possible object is
-     *     {@link Person }
+     *     {@link LocalSimpleType }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public Person getPerson() {
-        return person;
+    public LocalSimpleType getSimpleType() {
+        return simpleType;
     }
 
     /**
-     * Sets the value of the person property.
+     * Sets the value of the simpleType property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Person }
+     *     {@link LocalSimpleType }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setPerson(Person value) {
-        this.person = value;
+    public void setSimpleType(LocalSimpleType value) {
+        this.simpleType = value;
+    }
+
+    /**
+     * Gets the value of the itemType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link QName }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    public QName getItemType() {
+        return itemType;
+    }
+
+    /**
+     * Sets the value of the itemType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link QName }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    public void setItemType(QName value) {
+        this.itemType = value;
     }
 
     @Override

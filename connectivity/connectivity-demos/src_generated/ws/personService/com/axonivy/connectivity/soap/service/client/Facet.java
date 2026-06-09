@@ -5,7 +5,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -14,18 +16,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * <p>Java class for deletePerson complex type.
+ * <p>Java class for facet complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="deletePerson"&gt;
+ * &lt;complexType name="facet"&gt;
  *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="person" type="{http://service.soap.connectivity.axonivy.com/}person" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
+ *     &lt;extension base="{http://www.w3.org/2001/XMLSchema}annotated"&gt;
+ *       &lt;attribute name="value" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
+ *       &lt;attribute name="fixed" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
@@ -33,44 +35,82 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "deletePerson", namespace = "http://service.soap.connectivity.axonivy.com/", propOrder = {
-    "person"
+@XmlType(name = "facet")
+@XmlSeeAlso({
+    NoFixedFacet.class,
+    WhiteSpace.class,
+    NumFacet.class
 })
 @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-public class DeletePerson
+public class Facet
+    extends Annotated
     implements Serializable
 {
 
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
     private final static long serialVersionUID = 1L;
-    @XmlElement(namespace = "")
+    @XmlAttribute(name = "value", required = true)
+    @XmlSchemaType(name = "anySimpleType")
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    protected Person person;
+    protected String value;
+    @XmlAttribute(name = "fixed")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    protected Boolean fixed;
 
     /**
-     * Gets the value of the person property.
+     * Gets the value of the value property.
      * 
      * @return
      *     possible object is
-     *     {@link Person }
+     *     {@link String }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public Person getPerson() {
-        return person;
+    public String getValue() {
+        return value;
     }
 
     /**
-     * Sets the value of the person property.
+     * Sets the value of the value property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Person }
+     *     {@link String }
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
-    public void setPerson(Person value) {
-        this.person = value;
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * Gets the value of the fixed property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    public boolean isFixed() {
+        if (fixed == null) {
+            return false;
+        } else {
+            return fixed;
+        }
+    }
+
+    /**
+     * Sets the value of the fixed property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    public void setFixed(Boolean value) {
+        this.fixed = value;
     }
 
     @Override

@@ -203,7 +203,7 @@
   </wsdl:binding>
   <wsdl:service name="PersonServiceService">
     <wsdl:port binding="targetNamespace:PersonServiceServiceSoapBinding" name="PersonServicePort">
-      <soap:address location="http://127.0.0.1:8081/ivy/ws/designer/ConnectivityDemos/16150E1D07E8CA18"/>
+      <soap:address location="http://localhost:8080/~Developer-demo-projects/Developer-demo-projects/1/ws/connectivity-demos/16150E1D07E8CA18"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
