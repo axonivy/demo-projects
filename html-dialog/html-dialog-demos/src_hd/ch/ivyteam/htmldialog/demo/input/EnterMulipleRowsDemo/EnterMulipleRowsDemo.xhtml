@@ -53,7 +53,7 @@
                     actionListener="#{logic.delRow(row.index)}"
                     update="form:score" rendered="#{row.index > 0}"
                     process="@this">
-                    <i class="fa-solid ti-trash" style="margin: 5px" />
+                    <i class="ti-trash" style="margin: 5px" />
                   </p:commandLink>
                 </h:panelGroup>
               </p:panelGrid>
@@ -62,7 +62,7 @@
             <p:commandLink id="addRowButton" title="Add a score"
               actionListener="#{logic.addRow}" update="form:score"
               process="form:score">
-              <i class="fa-solid ti-circle-plus"> </i>
+              <i class="ti-circle-plus"> </i>
             </p:commandLink>
           </p:fieldset>
           <br />

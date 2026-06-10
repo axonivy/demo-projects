@@ -70,7 +70,7 @@
                 title="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/ShowDetails')}"
                 onclick="PF('detailsDialog').show(); return false;"
                 value="#">
-                <span class="fa-solid ti-info-circle" />
+                <span class="ti-info-circle" />
                 #{ivy.cms.co('/Dialogs/agileBPM/define_WF/Details')}</h:outputLink>
               <p:dialog
                 header="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/Details')}"
@@ -151,7 +151,7 @@
                             update="taskDesription"
                             oncomplete="PF('taskDesription').show();" />
                         </p:inputText>
-                        <p:commandButton icon="fa-solid ti-circle-minus"
+                        <p:commandButton icon="ti-circle-minus"
                           title="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/DeleteStep')}"
                           actionListener="#{logic.deleteTask(defineTask)}"
                           update=":form:taskDef :form:submit"
@@ -184,7 +184,7 @@
               styleClass="panel">
               <h:panelGrid columns="1"
                 style="margin-top:24px; margin-right:0px; margin-left:0px;">
-                <p:commandButton icon="fa-solid ti-circle-plus" value="Task"
+                <p:commandButton icon="ti-circle-plus" value="Task"
                   styleClass="iconButton"
                   title="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/AddTask')}"
                   actionListener="#{logic.addTaskDef}"
@@ -234,7 +234,7 @@
         <p:spacer width="10px"></p:spacer>
         <p:commandButton id="submit" actionListener="#{logic.go}"
           value="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/StartWF')}"
-          icon="fa-solid ti-check" update="form" ajax="false"
+          icon="ti-check" update="form" ajax="false"
           disabled="#{data.definedTasks.isEmpty()}" />
       </h:form>
       <p:dialog id="userList"
