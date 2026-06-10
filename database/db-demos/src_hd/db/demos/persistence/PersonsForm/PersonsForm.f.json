@@ -128,7 +128,7 @@
           "name" : "Save",
           "action" : "saveEdit",
           "type" : "DIALOGSAVE",
-          "icon" : "si si-check-1"
+          "icon" : "ti ti-check"
         }
       } ]
     }

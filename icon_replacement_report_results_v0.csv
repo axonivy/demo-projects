@@ -1,0 +1,122 @@
+file_path,line_number,old_icon_class,new_icon_class,action,MANUAL DONE
+html-dialog/html-dialog-demos/processes/Output.p.json,537,fa fa-barcode,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Input.p.json,246,fa fa-bars,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Output.p.json,294,fa fa-bars,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Component.p.json,76,fa fa-bolt,,no_mapping,x
+workflow/workflow-demos/processes/Trigger/NewEmployee.p.json,18,fa fa-bolt,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/dataMapping.p.json,597,fa fa-book,,no_mapping,x
+workflow/workflow-demos/processes/Expiry/Expiry.p.json,75,fa fa-calendar,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Input.p.json,41,fa fa-check,,no_mapping,x
+workflow/workflow-demos/processes/CaseMap/Lending.m.json,41,fa fa-check,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/dataMapping.p.json,17,fa fa-code,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Other.p.json,87,fa fa-code,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Primefaces.p.json,17,fa fa-code,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/dataMapping.p.json,669,fa fa-code-fork,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Component.p.json,51,fa fa-cube,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Component.p.json,201,fa fa-cube,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Component.p.json,173,fa fa-cubes,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Demo.p.json,17,fa fa-desktop,,no_mapping,x
+workflow/workflow-demos/processes/BusinessData/MigrateData.p.json,21,fa fa-exchange,,no_mapping,x
+connectivity/connectivity-demos/processes/soap/client/interceptedService.p.json,17,fa fa-exclamation-triangle,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Other.p.json,149,fa fa-exclamation-triangle,,no_mapping,x
+connectivity/connectivity-demos/processes/soap/client/personClient.p.json,17,fa fa-eye,,no_mapping,x
+workflow/workflow-demos/processes/Humantask/ProcurementRequestUserTask.p.json,18,fa fa-female,,no_mapping,x
+workflow/workflow-demos/processes/CaseMap/Lending.m.json,23,fa fa-file,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Primefaces.p.json,66,fa fa-font-awesome,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/asyncInvocation.p.json,181,fa fa-hourglass-end,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Other.p.json,65,fa fa-html5,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/openapi_odata.p.json,71,fa fa-id-badge,,no_mapping,x
+workflow/workflow-demos/processes/BusinessCaseData/Workflow.p.json,31,fa fa-id-badge,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Other.p.json,230,fa fa-id-card,,no_mapping,x
+workflow/workflow-demos/processes/CaseMap/Lending.m.json,10,fa fa-info-circle,ti ti-info-circle,replaced,
+html-dialog/html-dialog-demos/processes/Output.p.json,273,fa fa-line-chart,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/openapi_odata.p.json,17,fa fa-list,,no_mapping,x
+workflow/workflow-demos/processes/BusinessData/BusinessData.p.json,269,fa fa-list,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Input.p.json,287,fa fa-list-alt,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Output.p.json,39,fa fa-list-alt,,no_mapping,x
+html-dialog/html-dialog-demos/src_hd/ch/ivyteam/htmldialog/demo/component/LazyLoadedModalDialog/LazyLoadedModalDialog.xhtml,31,fa fa-list-alt,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Output.p.json,160,fa fa-list-ol,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Output.p.json,78,fa fa-list-ul,,no_mapping,x
+workflow/workflow-demos/processes/Humantask/ProcurementRequestParallel.p.json,46,fa fa-male,,no_mapping,x
+workflow/workflow-demos/processes/AgileBPM/AgileBPM.p.json,508,fa fa-map-signs,,no_mapping,x
+connectivity/connectivity-demos/processes/soap/client/personClient.p.json,87,fa fa-minus,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/dataMapping.p.json,133,fa fa-object-group,,no_mapping,x
+connectivity/connectivity-demos/processes/soap/client/dataMapping.p.json,96,fa fa-object-group,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Component.p.json,23,fa fa-object-group,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Input.p.json,104,fa fa-object-group,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/openapi.p.json,233,fa fa-paw,,no_mapping,x
+connectivity/connectivity-demos/processes/soap/client/personClient.p.json,133,fa fa-plus,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/dataMapping.p.json,708,fa fa-plus-circle,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/dataMapping.p.json,252,fa fa-question,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/asyncInvocation.p.json,214,fa fa-reply,,no_mapping,x
+workflow/workflow-demos/processes/Humantask/ProcurementRequestDynamic.p.json,18,fa fa-restroom,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/callOwnPersonRestService.p.json,149,fa fa-rss,,no_mapping,x
+html-dialog/html-dialog-demos/src_hd/ch/ivyteam/htmldialog/demo/output/DataTableDemo/DataTableDemo.xhtml,84,fa fa-search,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/openapi.p.json,99,fa fa-sign-in,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/dataMapping.p.json,877,fa fa-sitemap,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Component.p.json,223,fa fa-spinner,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Output.p.json,377,fa fa-spinner,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Output.p.json,234,fa fa-table,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Output.p.json,352,fa fa-table,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Other.p.json,190,fa fa-th,,no_mapping,x
+workflow/workflow-demos/processes/BusinessData/BusinessData.p.json,119,fa fa-th-list,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/fileUpload.p.json,17,fa fa-upload,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/fileUpload.p.json,72,fa fa-upload,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/fileUpload.p.json,150,fa fa-upload,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/fileUpload.p.json,312,fa fa-upload,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/openapi.p.json,126,fa fa-upload,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Input.p.json,138,fa fa-upload,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Input.p.json,206,fa fa-upload,,no_mapping,x
+workflow/workflow-demos/processes/Signal/NewEmployee.p.json,342,fa fa-user-plus,,no_mapping,x
+workflow/workflow-demos/processes/Signal/QuitEmployee.p.json,18,fa fa-user-times,,no_mapping,x
+connectivity/connectivity-demos/processes/rest/callOwnPersonRestService.p.json,17,fa fa-users,,no_mapping,x
+html-dialog/html-dialog-demos/processes/Offline.p.json,34,fa fa-wifi,,no_mapping,x
+html-dialog/html-dialog-demos/cms/cms_en.yaml,20,si si-add-small,ti ti-plus,replaced,
+html-dialog/html-dialog-demos/webContent/layouts/includes/sidebar.xhtml,80,si si-add-small,ti ti-plus,replaced,
+workflow/workflow-demos/cms/cms_en.yaml,16,si si-alarm-bell-timer,ti ti-bell-plus,replaced,
+workflow/workflow-demos/src_hd/workflow/agileBPM/define_WF/define_WF.xhtml,122,si si-arrow-button-right-3,,no_mapping,x
+workflow/workflow-demos/src_hd/workflow/agileBPM/define_WF/define_WF.xhtml,204,si si-arrow-button-right-3,,no_mapping,x
+workflow/workflow-demos/src_hd/workflow/agileBPM/task_Form/case_info.xhtml,99,si si-arrow-button-right-3,,no_mapping,x
+workflow/workflow-demos/src_hd/workflow/agileBPM/task_Form/case_info.xhtml,180,si si-arrow-button-right-3,,no_mapping,x
+workflow/workflow-demos/src_hd/workflow/agileBPM/task_Form/case_info.xhtml,215,si si-arrow-button-right-3,,no_mapping,x
+workflow/workflow-demos/src_hd/workflow/agileBPM/task_Form/case_info.xhtml,216,si si-arrow-button-right-3,,no_mapping,x
+html-dialog/html-dialog-demos/cms/cms_en.yaml,16,si si-button-refresh-arrows,ti ti-refresh,replaced,
+html-dialog/html-dialog-demos/webContent/layouts/includes/sidebar.xhtml,76,si si-button-refresh-arrows,ti ti-refresh,replaced,
+database/db-demos/src_hd/db/demos/persistence/PersonsForm/PersonsForm.f.json,131,si si-check-1,ti ti-check,replaced,
+html-dialog/html-dialog-demos/src_hd/ch/ivyteam/htmldialog/demo/other/JsfAgnosticFormDemo/JsfAgnosticFormDemo.f.json,68,si si-check-1,ti ti-check,replaced,
+connectivity/connectivity-demos/processes/rest/approval.p.json,73,si si-check-2,,no_mapping,x
+html-dialog/html-dialog-demos/webContent/view/icons.xhtml,53,si si-cog,ti ti-settings,replaced,
+html-dialog/html-dialog-demos/webContent/view/icons.xhtml,54,si si-cog,ti ti-settings,replaced,
+workflow/workflow-demos/cms/cms_en.yaml,31,si si-controls-play,ti ti-player-play,replaced,
+html-dialog/html-dialog-demos/cms/cms_en.yaml,31,si si-folder-empty,ti ti-folder-open,replaced,
+html-dialog/html-dialog-demos/webContent/layouts/includes/sidebar.xhtml,98,si si-folder-empty,ti ti-folder-open,replaced,
+html-dialog/html-dialog-demos/cms/cms_en.yaml,12,si si-graphic-tablet-drawing-pen,ti ti-pencil,replaced,
+html-dialog/html-dialog-demos/webContent/layouts/includes/sidebar.xhtml,47,si si-graphic-tablet-drawing-pen,ti ti-pencil,replaced,
+html-dialog/html-dialog-demos/webContent/view/icons.xhtml,51,si si-house-1,ti ti-home,replaced,
+html-dialog/html-dialog-demos/webContent/view/icons.xhtml,52,si si-house-1,ti ti-home,replaced,
+html-dialog/html-dialog-demos/cms/cms_en.yaml,27,si si-image-file-landscape,ti ti-photo,replaced,
+html-dialog/html-dialog-demos/webContent/layouts/includes/sidebar.xhtml,93,si si-image-file-landscape,ti ti-photo,replaced,
+workflow/workflow-demos/cms/cms_de.yaml,3,si si-messages-bubble,ti ti-message-circle-2,replaced,
+workflow/workflow-demos/cms/cms_en.yaml,24,si si-messages-bubble,ti ti-message-circle-2,replaced,
+workflow/workflow-demos/processes/BusinessNotification/OrderProcess.p.json,17,si si-messages-bubble,ti ti-message-circle-2,replaced,
+html-dialog/html-dialog-demos/cms/cms_en.yaml,3,si si-module-three-1,ti ti-packages,replaced,
+html-dialog/html-dialog-demos/webContent/layouts/includes/sidebar.xhtml,62,si si-module-three-1,ti ti-packages,replaced,
+workflow/workflow-demos/cms/cms_en.yaml,9,si si-monitor-heart-beat-search,ti ti-device-desktop-search,replaced,
+workflow/workflow-demos/cms/cms_en.yaml,12,si si-monitor-heart-beat-search,ti ti-device-desktop-search,replaced,
+workflow/workflow-demos/cms/cms_en.yaml,20,si si-multiple-neutral-1,ti ti-users,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,36,si si-network-arrow,ti ti-world-up,replaced,
+html-dialog/html-dialog-demos/cms/cms_en.yaml,8,si si-network-browser,ti ti-world-check,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,4,si si-network-share,ti ti-world-share,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,8,si si-network-share,ti ti-world-share,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,12,si si-network-share,ti ti-world-share,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,14,si si-network-share,ti ti-world-share,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,20,si si-network-share,ti ti-world-share,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,23,si si-network-share,ti ti-world-share,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,28,si si-network-share,ti ti-world-share,replaced,
+connectivity/connectivity-demos/cms/cms_en.yaml,32,si si-network-share,ti ti-world-share,replaced,
+workflow/workflow-demos/cms/cms_en.yaml,27,si si-network-signal,ti ti-building-broadcast-tower,replaced,
+html-dialog/html-dialog-demos/cms/cms_en.yaml,23,si si-pie-line-graph-desktop,ti ti-device-analytics,replaced,
+html-dialog/html-dialog-demos/webContent/layouts/includes/sidebar.xhtml,18,si si-pie-line-graph-desktop,ti ti-device-analytics,replaced,
+html-dialog/html-dialog-demos/src_hd/ch/ivyteam/htmldialog/demo/other/JsfAgnosticFormDemo/JsfAgnosticFormDemo.f.json,56,si si-remove,ti ti-x,replaced,
+html-dialog/html-dialog-demos/src_hd/ch/ivyteam/htmldialog/demo/output/DocumentViewer/DocumentViewer.xhtml,30,si si-send-email,ti ti-send,replaced,
+workflow/workflow-demos/cms/cms_en.yaml,3,si si-single-neutral-actions-process,,no_mapping,x

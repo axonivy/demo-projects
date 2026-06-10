@@ -7,7 +7,7 @@
   "stages" : [ {
     "id" : "identification",
     "name" : "Identification",
-    "icon" : "css:fa fa-info-circle",
+    "icon" : "css:ti ti-info-circle",
     "processes" : [ {
       "id" : "collect_personal_data",
       "name" : "Collect personal data",

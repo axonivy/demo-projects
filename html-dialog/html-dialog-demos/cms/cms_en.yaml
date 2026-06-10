@@ -1,34 +1,34 @@
 Categories:
   component:
-    cssIcon: si si-module-three-1
+    cssIcon: ti ti-packages
     name: 6. Components
     tooltip: |
       Shows how to split your dialogs into components
   demo:
-    cssIcon: si si-network-browser
+    cssIcon: ti ti-world-check
     name: 1. Demo
     tooltip: All Demos in one HTML Dialog
   input:
-    cssIcon: si si-graphic-tablet-drawing-pen
+    cssIcon: ti ti-pencil
     name: 2. Data Input
     tooltip: How to input data in forms
   offline:
-    cssIcon: si si-button-refresh-arrows
+    cssIcon: ti ti-refresh
     name: 5. Offline HTML Dialogs
     tooltip: HTML Dialog that works even offline
   other:
-    cssIcon: si si-add-small
+    cssIcon: ti ti-plus
     name: 8. Others
   output:
-    cssIcon: si si-pie-line-graph-desktop
+    cssIcon: ti ti-device-analytics
     name: 3. Data Output
     tooltip: How to output data on HTML Dialogs
   primefaces:
-    cssIcon: si si-image-file-landscape
+    cssIcon: ti ti-photo
     name: 7. Primefaces
     tooltip: Primefaces specific Demos
   static:
-    cssIcon: si si-folder-empty
+    cssIcon: ti ti-folder-open
     name: 4. Static HTML Dialogs
     tooltip: HTML Dialogs that run without processes
 ch.ivyteam.htmldialog.demo:
