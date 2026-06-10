@@ -8,13 +8,12 @@ The agent should replace icon CSS classes in the codebase using the provided ico
   - Contains all known old icon CSS classes, one per line.
 - `mapping_si.csv`, `mapping_fa.csv`
   - Contain the mapping from old icon classes to new icon classes.
-  - The agent should combine them into a full list of all available mappings.
   - Each key should be an old icon CSS class and each value should be the corresponding new icon CSS class.
 - `ROOT_FOLDERS`
   - The agent should only search and modify files inside these folders:
     - connectivity/
     - database/
-    - demos-apps/
+    - demos-app/
     - error-handling/
     - html-dialog/
     - quick-start-tutorial/
@@ -29,8 +28,18 @@ The agent should attempt to use helpful command-line tools and local utilities s
 
 ## Execution Steps
 
-### 1. Search for old icon classes
-The agent should find all exact matches of the old icon classes listed in `all_old_icons.csv` within files under `ROOT_FOLDERS`.
+### 0. Create a feature branch (optional)
+The agent should check whether the root folder is a git project by checking for the existence of a `.git` folder. If the root folder is a git project, the agent should try to create a dedicated branch for this work before making any changes.
+If the agent fails for any reason, it should report the failure and skip this step.
+
+### 1. Prepare the old icon classes and the mapppings
+The agent should read the `all_old_icons.csv` file to create a list of old icon CSS classes. Each entry starts either with 'fa ' or 'si '. For each entry, strip the leading three character prefix (for example: 'si si-add-circle' becomes 'si-add-circle'). Add this stripped version to the list of old icon classes. This will allow the agent to find matches in the codebase regardless of whether they are prefixed with 'fa ' or 'si '.
+Save this combined list to a new file `all_old_icons_stripped.csv`.
+
+Do the same for the mapping files `mapping_si.csv` and `mapping_fa.csv`. Each entry consists of an old icon class and a new icon class. Each new icon class starts with the prefix 'ti '. For each entry old_icon,new_icon strip the prefixes (for example: 'fa fa-anchor,ti ti-anchor' becomes 'fa-anchor,ti-anchor'). Add this stripped version to the mapping dictionary where the key is the stripped old icon class and the value is the stripped new icon class. This will allow the agent to apply the mapping to matches found in the codebase regardless of their prefix. Combine the mappings from both files into a single mapping dictionary and save it to a new file `mapping_stripped.csv` with the format old_icon,new_icon.
+
+### 2. Search for old icon classes
+The agent should find all exact matches of the old icon classes listed in `all_old_icons_stripped.csv` within files under `ROOT_FOLDERS`.
 
 The agent should include relevant file types such as:
 - source files
@@ -42,16 +51,16 @@ The agent should include relevant file types such as:
 
 The agent should not search or modify anything under `EXCLUDED_FOLDERS`.
 
-### 2. Collect and group matches
+### 3. Collect and group matches
 The agent should group all matches by file and record every occurrence of each old icon class.
 
-### 3. Resolve replacements
+### 4. Resolve replacements
 For each found old icon class, the agent should:
-- check whether a replacement exists in `mapping_si.csv` or `mapping_fa.csv`
+- check whether a replacement exists in `mapping_stripped.csv`
 - if a mapping exists, record the old → new replacement pair
 - if no mapping exists, record that no replacement is available
 
-### 4. Report findings and replacements
+### 5. Report findings and replacements
 Before replacing anything, the agent should create a CSV report covering all found old icon classes, including:
 - file path
 - line number of found old icon within file
@@ -59,7 +68,7 @@ Before replacing anything, the agent should create a CSV report covering all fou
 - if mapping was found the new icon, empty otherwise
 The report should not contain old icons that were not found in the project in order to keep the report readable.
 
-### 5. Execute replacements
+### 6. Execute replacements
 The agent should replace each found old icon class with its mapped new icon class where a mapping exists.
 
 The agent should preserve:
@@ -69,7 +78,7 @@ The agent should preserve:
 
 The agent should not alter unrelated or similar strings.
 
-### 6. Verify the result
+### 7. Verify the result
 The agent should re-scan the workspace to confirm:
 - all mapped old icon classes have been removed
 - the new icon classes appear in the expected locations
