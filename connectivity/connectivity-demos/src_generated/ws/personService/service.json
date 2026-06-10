@@ -1,6 +1,0 @@
-{
-  "service" : "com.axonivy.connectivity.soap.service.client.PersonServiceService",
-  "ports" : {
-    "PersonServicePort" : "http://localhost:8080/~Developer-demo-projects/Developer-demo-projects/1/ws/connectivity-demos/16150E1D07E8CA18"
-  }
-}
