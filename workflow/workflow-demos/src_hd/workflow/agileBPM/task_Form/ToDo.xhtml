@@ -9,12 +9,12 @@
       <!-- This `escape="false"` usage is safe as the content is a static CMS entry -->
       <h:outputText escape="false" value="#{ivy.cms.co('/Texts/ToDo-Explain')}" />
       <p:commandButton actionListener="#{logic.done(true)}" value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Done')}"
-        title="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/ConfirmTodo')}" update="form2" icon="fa-solid fa-check">
+        title="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/ConfirmTodo')}" update="form2" icon="fa-solid ti-check">
       </p:commandButton>
       <p:spacer width="10"></p:spacer>
       <p:commandButton actionListener="#{logic.done(false)}"
         value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Decline')}"
-        title="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/DeclineTodo')}" update="form2" icon="fa-solid fa-remove">
+        title="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/DeclineTodo')}" update="form2" icon="fa-solid ti-x">
       </p:commandButton>
     </p:fieldset>
   </h:form>

@@ -55,14 +55,14 @@
               style="display:block; height:200px; padding:5px; background-color: #CEE5CE; overflow-y: auto;" />
           </div>
 
-          <p:commandButton onclick="send(); return false;" value="Send" update="form" icon="fa-solid fa-paper-plane"
+          <p:commandButton onclick="send(); return false;" value="Send" update="form" icon="fa-solid ti-send"
             style="float:right;" />
           write:
           <h:inputText id="sendMsg"></h:inputText>
         </div>
         <br />
         <p:commandButton onclick="chat.aborter.abort()" actionListener="#{logic.close}" style="margin-top:100px;" value="Leave" update="form"
-          icon="fa-solid fa-close" />
+          icon="fa-solid ti-x" />
       </h:form>
 
     </ui:define>

@@ -124,7 +124,7 @@
           "name" : "Method call with Ajax",
           "category" : "other",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa  fa-spinner" },
+            { "name" : "cssIcon", "value" : "fa  ti-refresh" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }

@@ -25,13 +25,13 @@
             <p:commandLink actionListener="#{logic.edit(person)}"
               style="display:inline" oncomplete="PF('editDlg').show();"
               update=":form:editor">
-              <span class="fa-solid fa-pencil" />
+              <span class="fa-solid ti-pencil" />
             </p:commandLink>
             <p:commandLink actionListener="#{logic.delete(person.id)}"
               style="display:inline"
               update=":form:persons, :form:notify"
               oncomplete="PF('status').show();">
-              <span class="fa-solid fa-trash" />
+              <span class="fa-solid ti-trash" />
             </p:commandLink>
           </p:column>
         </p:dataTable>
@@ -43,7 +43,7 @@
             <p:commandButton actionListener="#{logic.save}"
               value="Save" update=":form:persons, :form:notify"
               oncomplete="PF('editDlg').hide(); PF('status').show();"
-              icon="fa-solid fa-check" />
+              icon="fa-solid ti-check" />
           </h:panelGrid>
         </p:dialog>
 
@@ -67,14 +67,14 @@
             required="true" />
           <p:commandButton actionListener="#{logic.add}" value="Add"
             update="addform, :form:persons, :form:notify"
-            onsuccess="PF('status').show();" icon="fa-solid fa-plus" />
+            onsuccess="PF('status').show();" icon="fa-solid ti-circle-plus" />
         </h:panelGrid>
       </h:form>
 
       <br />
       <br />
       <p:commandButton actionListener="#{logic.close}" value="Exit"
-        process="@this" icon="fa-solid fa-close" />
+        process="@this" icon="fa-solid ti-x" />
 
 
 
