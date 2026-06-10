@@ -14,7 +14,7 @@
           "name" : "7.1 OData read collection",
           "category" : "rest/openapi/odata",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-list" }
+            { "name" : "cssIcon", "value" : "ti ti-list" }
           ]
         }
       },
@@ -68,7 +68,7 @@
           "name" : "7.2 OData read single object",
           "category" : "rest/openapi/odata",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-id-badge" }
+            { "name" : "cssIcon", "value" : "ti ti-id-badge" }
           ]
         }
       },

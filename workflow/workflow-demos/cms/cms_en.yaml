@@ -1,6 +1,6 @@
 Categories:
   agile:
-    cssIcon: si si-single-neutral-actions-process
+    cssIcon: ti ti-list-check
     name: 1. Agile BPM
     tooltip: Agile Business Process Management
   business:

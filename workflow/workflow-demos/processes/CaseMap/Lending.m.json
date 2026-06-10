@@ -20,7 +20,7 @@
   }, {
     "id" : "credit_rating",
     "name" : "Credit rating",
-    "icon" : "css:fa fa-file",
+    "icon" : "css:ti ti-file",
     "processes" : [ {
       "id" : "check_company_register",
       "name" : "Check company register",
@@ -38,7 +38,7 @@
   }, {
     "id" : "approval",
     "name" : "Approval",
-    "icon" : "css:fa fa-check",
+    "icon" : "css:ti ti-check",
     "isTerminating" : true,
     "processes" : [ {
       "id" : "approve_level_1",

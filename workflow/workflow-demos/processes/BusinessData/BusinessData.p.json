@@ -116,7 +116,7 @@
           "description" : "Business Data Store Demo. Manage dossier objects in the Business Data Repository",
           "category" : "business/data",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-th-list" }
+            { "name" : "cssIcon", "value" : "ti ti-table" }
           ]
         },
         "task" : {
@@ -266,7 +266,7 @@
           "description" : "Business Data Store Demo. Manage dossier objects in the Business Data Repository",
           "category" : "business/data",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-list" }
+            { "name" : "cssIcon", "value" : "ti ti-list" }
           ]
         },
         "task" : {

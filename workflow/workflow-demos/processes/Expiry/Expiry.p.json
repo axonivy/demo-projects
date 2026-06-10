@@ -72,7 +72,7 @@
           "name" : "7.2 Assign task to another role on expiry",
           "category" : "expiry",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-calendar" }
+            { "name" : "cssIcon", "value" : "ti ti-calendar-event" }
           ]
         }
       },

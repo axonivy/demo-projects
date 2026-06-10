@@ -28,7 +28,7 @@
       <h:form id="form">
         <p:outputPanel id="address">
           <h:panelGrid>
-            <p:commandButton value="Add Address" icon="fa fa-list-alt" actionListener="#{logic.showAddress(true)}"
+            <p:commandButton value="Add Address" icon="ti ti-list" actionListener="#{logic.showAddress(true)}"
               oncomplete="PF('addressDialog').show()" update="form:address" />
           </h:panelGrid>
           <p:dialog id="dialog" widgetVar="addressDialog" header="Large sample component" modal="true" visible="true"

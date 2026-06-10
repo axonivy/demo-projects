@@ -178,7 +178,7 @@
           "name" : "5.1 call long running operation async",
           "category" : "rest/async",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-hourglass-end" }
+            { "name" : "cssIcon", "value" : "ti ti-hourglass-low" }
           ]
         }
       },
@@ -211,7 +211,7 @@
           "name" : "5.2 invoke async with JS callback",
           "category" : "rest/async",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-reply" }
+            { "name" : "cssIcon", "value" : "ti ti-arrow-back-up" }
           ]
         }
       },

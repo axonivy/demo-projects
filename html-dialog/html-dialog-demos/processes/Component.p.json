@@ -20,7 +20,7 @@
           "name" : "Partial Update Demo",
           "category" : "component",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-object-group" },
+            { "name" : "cssIcon", "value" : "ti ti-chart-treemap" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -48,7 +48,7 @@
           "name" : "Component Demo",
           "category" : "component",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-cube" },
+            { "name" : "cssIcon", "value" : "ti ti-cube" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -73,7 +73,7 @@
           "name" : "Component Callback Demo",
           "category" : "component",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-bolt" },
+            { "name" : "cssIcon", "value" : "ti ti-bolt" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -170,7 +170,7 @@
           "name" : "Component Customizing Demo",
           "category" : "component",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-cubes" },
+            { "name" : "cssIcon", "value" : "ti ti-packages" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -198,7 +198,7 @@
           "name" : "Jsf Composite Component Demo",
           "category" : "component",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-cube" },
+            { "name" : "cssIcon", "value" : "ti ti-cube" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -220,7 +220,7 @@
           "name" : "Lazy loaded UI parts",
           "category" : "component",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-spinner" },
+            { "name" : "cssIcon", "value" : "ti ti-refresh" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }

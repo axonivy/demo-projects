@@ -28,7 +28,7 @@
           "description" : "BusinessCaseData Worlflow Demo. Use BusinessCaseData in workflow with save and park task.",
           "category" : "business/data/case",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-id-badge" }
+            { "name" : "cssIcon", "value" : "ti ti-id-badge" }
           ]
         },
         "permission" : {

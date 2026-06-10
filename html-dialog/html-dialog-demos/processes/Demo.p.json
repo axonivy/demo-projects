@@ -14,7 +14,7 @@
           "name" : "All HtmlDialog Demos",
           "category" : "demo",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-desktop" },
+            { "name" : "cssIcon", "value" : "ti ti-device-desktop" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }

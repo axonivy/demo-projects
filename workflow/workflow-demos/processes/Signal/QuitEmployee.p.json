@@ -15,7 +15,7 @@
           "description" : "<%=ivy.cms.co(\"/ProcessDescriptions/SignalQuitUserDescription\")%>",
           "category" : "signal",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-user-times" }
+            { "name" : "cssIcon", "value" : "ti ti-user-x" }
           ]
         },
         "permission" : {

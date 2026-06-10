@@ -15,7 +15,7 @@
           "description" : "This example shows the usage of dynamic created tasks.",
           "category" : "human",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-restroom" }
+            { "name" : "cssIcon", "value" : "ti ti-toilet-paper" }
           ]
         }
       },

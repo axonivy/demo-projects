@@ -38,7 +38,7 @@
           "name" : "Bean Validation Demo",
           "category" : "input",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-check" },
+            { "name" : "cssIcon", "value" : "ti ti-check" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -101,7 +101,7 @@
           "name" : "Multi View Demo",
           "category" : "input",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-object-group" },
+            { "name" : "cssIcon", "value" : "ti ti-chart-treemap" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -135,7 +135,7 @@
           "name" : "File upload demo",
           "category" : "input",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-upload" },
+            { "name" : "cssIcon", "value" : "ti ti-upload" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -203,7 +203,7 @@
           "name" : "File upload demo",
           "category" : "input",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-upload" },
+            { "name" : "cssIcon", "value" : "ti ti-upload" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -243,7 +243,7 @@
           "name" : "Text Editor Demo",
           "category" : "input",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-bars" },
+            { "name" : "cssIcon", "value" : "ti ti-align-justified" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -284,7 +284,7 @@
           "name" : "Enter Multiple Rows Demo",
           "category" : "input",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-list-alt" },
+            { "name" : "cssIcon", "value" : "ti ti-list" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }

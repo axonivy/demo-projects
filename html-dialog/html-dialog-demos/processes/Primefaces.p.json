@@ -14,7 +14,7 @@
           "name" : "Primefaces",
           "category" : "primefaces",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-code" },
+            { "name" : "cssIcon", "value" : "ti ti-code" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -63,7 +63,7 @@
           "name" : "Icons Showcase",
           "category" : "primefaces",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-font-awesome" },
+            { "name" : "cssIcon", "value" : "ti ti-flag-2" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }

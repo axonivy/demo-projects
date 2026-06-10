@@ -14,7 +14,7 @@
           "name" : "6.1.1 send raw JSON",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-code" }
+            { "name" : "cssIcon", "value" : "ti ti-code" }
           ]
         }
       },
@@ -130,7 +130,7 @@
           "name" : "6.1.3 send complex Object",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-object-group" }
+            { "name" : "cssIcon", "value" : "ti ti-chart-treemap" }
           ]
         }
       },
@@ -249,7 +249,7 @@
           "name" : "6.3.1 query parameters",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-question" }
+            { "name" : "cssIcon", "value" : "ti ti-question-mark" }
           ]
         }
       },
@@ -594,7 +594,7 @@
           "name" : "6.2.1 read complex object partially to DataClass",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-book" }
+            { "name" : "cssIcon", "value" : "ti ti-book-2" }
           ]
         }
       },
@@ -666,7 +666,7 @@
           "name" : "6.3.2 path parameters",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-code-fork" }
+            { "name" : "cssIcon", "value" : "ti ti-git-fork" }
           ]
         }
       },
@@ -705,7 +705,7 @@
           "name" : "6.2.2 read complex object to GeneratedClass",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-plus-circle" }
+            { "name" : "cssIcon", "value" : "ti ti-circle-plus" }
           ]
         }
       },
@@ -874,7 +874,7 @@
           "name" : "6.2.3 read complex object partially as JsonNode",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-sitemap" }
+            { "name" : "cssIcon", "value" : "ti ti-sitemap" }
           ]
         }
       },
