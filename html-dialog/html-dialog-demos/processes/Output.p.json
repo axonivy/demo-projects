@@ -414,7 +414,7 @@
           "name" : "Export Excel Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "ti ti-file-excel" },
+            { "name" : "cssIcon", "value" : "ti ti-file-type-xls" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }

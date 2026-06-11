@@ -57,10 +57,10 @@
                 <f:convertDateTime pattern="dd.MM.yyyy" />
               </p:calendar>
             </p:panelGrid>
-            <p:commandButton icon="ti-search" value="Search"
+            <p:commandButton icon="ti ti-search" value="Search"
               actionListener="#{logic.search}"
               update=":dossierTable :resultCount" />
-            <p:commandButton icon="ti-help-circle" value="Help"
+            <p:commandButton icon="ti ti-help-circle" value="Help"
               onclick="PF('help#{data.searchType}').show();" />
           </p:panelGrid>
         </p:panelGrid>
