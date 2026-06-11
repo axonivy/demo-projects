@@ -89,7 +89,7 @@
           "description" : "BusinessCaseData Worlflow Demo. Browse Interviews created by BusinessCaseData/Workflow/create.ivp",
           "category" : "business/data/case",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-newspaper-o" }
+            { "name" : "cssIcon", "value" : "ti ti-news" }
           ]
         }
       },

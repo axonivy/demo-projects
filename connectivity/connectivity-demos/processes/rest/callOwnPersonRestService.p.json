@@ -44,7 +44,7 @@
           "name" : "1.2 Accesses own REST service",
           "category" : "rest/person",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-address-book-o" }
+            { "name" : "cssIcon", "value" : "ti ti-address-book" }
           ]
         },
         "case" : {

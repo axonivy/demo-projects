@@ -344,7 +344,7 @@
           "name" : "6.3.3 accept type header",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-file-code-o" }
+            { "name" : "cssIcon", "value" : "ti ti-file-code" }
           ]
         }
       },
@@ -410,7 +410,7 @@
           "name" : "6.1.2 send form data",
           "category" : "rest/mapping",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-id-card-o" }
+            { "name" : "cssIcon", "value" : "ti ti-id-badge" }
           ]
         }
       },

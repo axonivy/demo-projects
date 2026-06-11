@@ -18,7 +18,7 @@
           ],
           "category" : "business/data",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-pencil-square-o" }
+            { "name" : "cssIcon", "value" : "ti ti-edit" }
           ]
         },
         "task" : {

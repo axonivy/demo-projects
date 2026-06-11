@@ -157,7 +157,7 @@
           "name" : "FormDemo",
           "category" : "input",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-id-card-o" },
+            { "name" : "cssIcon", "value" : "ti ti-id-badge" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
