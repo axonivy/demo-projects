@@ -96,11 +96,11 @@
               </p:avatar>
               <p:outputLabel value="#{histTask.actor}"></p:outputLabel>
             </h:panelGrid>
-            <i class="si si-arrow-button-right-3"
+            <i class="ti ti-arrow-badge-right"
               style="font-size: 24px" />
           </c:forEach>
           <p:panel style="border:0px;" styleClass="panel">
-            <p:commandButton icon="fa-solid fa-plus"
+            <p:commandButton icon="ti ti-circle-plus"
               value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Task')}"
               title="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/InsertATaskBefore')}"
               oncomplete="PF('addTask').show();"
@@ -164,7 +164,7 @@
               style="font-weight:bold;" />
           </h:panelGrid>
           <p:panel style="border:0px" styleClass="panel">
-            <p:commandButton icon="fa-solid fa-plus"
+            <p:commandButton icon="ti ti-circle-plus"
               value="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/Task')}"
               title="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/AppendATaskAfter')}"
               oncomplete="PF('addTask').show();"
@@ -177,7 +177,7 @@
           </p:panel>
           <c:forEach items="#{data.definedTasks}" var="defTask"
             varStatus="row">
-            <i class="si si-arrow-button-right-3"
+            <i class="ti ti-arrow-badge-right"
               style="font-size: 24px" />
             <h:panelGrid columns="1"
               style="text-align: center; margin:0px"
@@ -185,7 +185,7 @@
               <h:panelGroup>
                 <p:outputLabel value="#{defTask.kind}"></p:outputLabel>
                 <p:spacer width="10" height="1"></p:spacer>
-                <p:commandButton icon="fa-solid fa-close"
+                <p:commandButton icon="ti ti-x"
                   title="#{ivy.cms.co('/Dialogs/agileBPM/task_Form/DeleteTask')}"
                   actionListener="#{logic.deleteTask(defTask)}"
                   update=":caseform:workflow"
@@ -212,8 +212,8 @@
               <p:outputLabel value="#{defTask.actor}"></p:outputLabel>
             </h:panelGrid>
           </c:forEach>
-          <i class="si si-arrow-button-right-3" style="font-size: 24px" />
-          <i class="si si-arrow-button-right-3" style="font-size: 24px" />
+          <i class="ti ti-arrow-badge-right" style="font-size: 24px" />
+          <i class="ti ti-arrow-badge-right" style="font-size: 24px" />
         </h:panelGrid>
       </p:panel>
       <hr></hr>

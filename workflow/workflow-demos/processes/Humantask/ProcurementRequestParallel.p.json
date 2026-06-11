@@ -43,7 +43,7 @@
           "description" : "<%=ivy.cms.co(\"/ProcessDescriptions/procurementRequestParallelDescription\")%>",
           "category" : "human",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-male" }
+            { "name" : "cssIcon", "value" : "ti ti-gender-male" }
           ]
         },
         "permission" : {

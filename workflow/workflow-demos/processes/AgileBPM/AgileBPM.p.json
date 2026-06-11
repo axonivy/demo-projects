@@ -505,7 +505,7 @@
           "description" : "<%=ivy.cms.co(\"/ProcessDescriptions/AdHocDescription\")%>",
           "category" : "agile",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-map-signs" }
+            { "name" : "cssIcon", "value" : "ti ti-map" }
           ]
         },
         "permission" : {

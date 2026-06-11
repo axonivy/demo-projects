@@ -1,6 +1,6 @@
 Categories:
   notification:
-    cssIcon: si si-messages-bubble
+    cssIcon: ti ti-message-circle-2
     name: 8. Notification
 Dialogs:
   agileBPM:

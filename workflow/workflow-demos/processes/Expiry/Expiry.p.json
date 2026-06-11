@@ -14,7 +14,7 @@
           "name" : "7.3 Create an exception task on expiry",
           "category" : "expiry",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-calendar-times-o" }
+            { "name" : "cssIcon", "value" : "ti ti-calendar-event" }
           ]
         }
       },
@@ -72,7 +72,7 @@
           "name" : "7.2 Assign task to another role on expiry",
           "category" : "expiry",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-calendar" }
+            { "name" : "cssIcon", "value" : "ti ti-calendar-event" }
           ]
         }
       },
@@ -145,7 +145,7 @@
           "name" : "7.1 Set higher task priority on expiry",
           "category" : "expiry",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-clock-o" }
+            { "name" : "cssIcon", "value" : "ti ti-clock" }
           ]
         }
       },

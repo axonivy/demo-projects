@@ -339,7 +339,7 @@
           "description" : "<%=ivy.cms.co(\"/ProcessDescriptions/signalCreateUserDescription\")%>",
           "category" : "signal",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-user-plus" }
+            { "name" : "cssIcon", "value" : "ti ti-user-plus" }
           ]
         },
         "permission" : {

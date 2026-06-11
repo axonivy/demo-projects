@@ -29,10 +29,10 @@
           <p:outputLabel id="cost" value="#{data.approval.cost} CHF" />
 
           <p:commandButton actionListener="#{logic.approve}"
-            value="Approve" update="form" icon="fa-solid fa-check" />
+            value="Approve" update="form" icon="ti ti-check" />
 
           <p:commandButton onclick="PF('declineDialog').show();"
-            value="Decline" icon="fa-solid fa-close" />
+            value="Decline" icon="ti ti-x" />
         </h:panelGrid>
 
         <p:dialog header="Decline Reason" widgetVar="declineDialog"
@@ -46,7 +46,7 @@
           <br />
           <div align="right">
             <p:commandButton actionListener="#{logic.decline}"
-              value="Decline" update="form" icon="fa-solid fa-close" />
+              value="Decline" update="form" icon="ti ti-x" />
           </div>
         </p:dialog>
       </h:form>

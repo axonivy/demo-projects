@@ -35,9 +35,9 @@
           </f:facet>
           <p:outputLabel for="reason" value="Reject Reason" />
           <p:inputTextarea id="reason" value="#{data.dossier.decision.rejectReason}" />
-          <p:commandButton actionListener="#{logic.approved}" value="Approve" update="form" icon="fa-solid fa-check" />
+          <p:commandButton actionListener="#{logic.approved}" value="Approve" update="form" icon="ti ti-check" />
           <p:commandButton actionListener="#{logic.rejected}" value="Reject" update="form"
-            icon="fa-solid fa-remove" />
+            icon="ti ti-x" />
         </h:panelGrid>
       </h:form>
 

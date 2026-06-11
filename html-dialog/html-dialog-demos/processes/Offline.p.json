@@ -31,7 +31,7 @@
           "name" : "ClientSideValidationDemo",
           "category" : "offline",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-wifi" },
+            { "name" : "cssIcon", "value" : "ti ti-wifi" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
