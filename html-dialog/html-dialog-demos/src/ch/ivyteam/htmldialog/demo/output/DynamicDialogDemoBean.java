@@ -1,5 +1,6 @@
 package ch.ivyteam.htmldialog.demo.output;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +13,7 @@ import ch.ivyteam.ivy.jsf.primefaces.dialog.IvyDynamicDialog;
 
 @Named
 @ViewScoped
-public class DynamicDialogDemoBean {
+public class DynamicDialogDemoBean implements Serializable {
 
   public void setupAndOpen(String view) {
     DialogFrameworkOptions options = DialogFrameworkOptions
