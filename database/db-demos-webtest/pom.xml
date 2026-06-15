@@ -60,6 +60,10 @@
       <id>sonatype</id>
       <url>https://central.sonatype.com/repository/maven-snapshots</url>
     </pluginRepository>
+    <pluginRepository>
+      <id>nexus.ivyteam.io</id>
+      <url>https://nexus.ivyteam.io/repository/maven-snapshots/</url>
+    </pluginRepository>
   </pluginRepositories>
   <build>
     <testSourceDirectory>src_test</testSourceDirectory>
