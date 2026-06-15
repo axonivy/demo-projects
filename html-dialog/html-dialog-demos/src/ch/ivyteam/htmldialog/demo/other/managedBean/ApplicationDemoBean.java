@@ -1,7 +1,7 @@
 package ch.ivyteam.htmldialog.demo.other.managedBean;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
 
 /**
  * This simple bean is accessible in all views of the project.
@@ -31,7 +31,7 @@ import javax.faces.bean.ManagedBean;
  * The instance here will be shared over the whole ivy application as the bean
  * is annotated with @ApplicationScoped.
  */
-@ManagedBean
+@Named
 @ApplicationScoped
 public class ApplicationDemoBean {
 

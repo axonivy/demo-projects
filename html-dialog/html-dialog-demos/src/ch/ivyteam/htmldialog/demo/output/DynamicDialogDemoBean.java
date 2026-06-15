@@ -3,14 +3,14 @@ package ch.ivyteam.htmldialog.demo.output;
 import java.util.List;
 import java.util.Map;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import jakarta.inject.Named;
+import jakarta.faces.view.ViewScoped;
 
 import org.primefaces.model.DialogFrameworkOptions;
 
 import ch.ivyteam.ivy.jsf.primefaces.dialog.IvyDynamicDialog;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class DynamicDialogDemoBean {
 

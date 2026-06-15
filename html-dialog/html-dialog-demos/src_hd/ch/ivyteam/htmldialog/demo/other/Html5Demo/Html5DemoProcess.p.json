@@ -72,8 +72,8 @@
       "config" : {
         "output" : {
           "code" : [
-            "import javax.faces.application.FacesMessage;",
-            "import javax.faces.context.FacesContext;",
+            "import jakarta.faces.application.FacesMessage;",
+            "import jakarta.faces.context.FacesContext;",
             "",
             "FacesContext context = FacesContext.getCurrentInstance();  ",
             "context.addMessage(null, new FacesMessage(\"Hello \" + in.userName, \"Greetings from the server\"));  "

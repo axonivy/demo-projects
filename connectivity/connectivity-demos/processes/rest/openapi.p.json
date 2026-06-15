@@ -171,8 +171,8 @@
         "code" : [
           "import com.axonivy.connectivity.rest.client.file.FileUpload;",
           "import io.swagger.petstore3.client.Pet;",
-          "import javax.ws.rs.core.MediaType;",
-          "import javax.ws.rs.client.Entity;",
+          "import jakarta.ws.rs.core.MediaType;",
+          "import jakarta.ws.rs.client.Entity;",
           "",
           "java.io.File logo = FileUpload.getIvyLogo();",
           "Pet pet = client.request()",

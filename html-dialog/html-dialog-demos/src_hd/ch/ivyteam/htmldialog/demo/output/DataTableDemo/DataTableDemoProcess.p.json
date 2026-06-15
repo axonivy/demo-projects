@@ -97,8 +97,8 @@
       "config" : {
         "output" : {
           "code" : [
-            "import javax.faces.context.FacesContext;",
-            "import javax.faces.application.FacesMessage;",
+            "import jakarta.faces.context.FacesContext;",
+            "import jakarta.faces.application.FacesMessage;",
             "",
             "Boolean errmessage = FacesContext.getCurrentInstance().getMessageList().size() >= 1 ? true : false;",
             "",

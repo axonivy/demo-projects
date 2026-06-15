@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.axonivy.ivy.api</groupId>
     <artifactId>ivy-project-parent</artifactId>
-    <version>14.0.0-SNAPSHOT</version>
+    <version>14.9.0-SNAPSHOT</version>
     <relativePath></relativePath>
   </parent>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>connectivity-demos-test</artifactId>
-  <version>14.0.0-SNAPSHOT</version>
+  <version>14.9.0-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
   <properties>
     <wss4j.version>2.4.3</wss4j.version>
@@ -35,7 +35,7 @@
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.connectors</groupId>
-      <artifactId>jersey-apache-connector</artifactId>
+      <artifactId>jersey-apache5-connector</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

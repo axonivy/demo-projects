@@ -2,15 +2,15 @@ package com.axonivy.connectivity.rest.client.connect;
 
 import java.util.Optional;
 
-import javax.ws.rs.core.Feature;
-import javax.ws.rs.core.FeatureContext;
+import jakarta.ws.rs.core.Feature;
+import jakarta.ws.rs.core.FeatureContext;
 
-import org.apache.http.HeaderElement;
-import org.apache.http.HeaderElementIterator;
-import org.apache.http.HttpHost;
+import org.apache.hc.core5.http.HeaderElement;
+import org.apache.hc.core5.http.HeaderElementIterator;
+import org.apache.hc.core5.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.conn.ConnectionKeepAliveStrategy;
-import org.apache.http.message.BasicHeaderElementIterator;
+import org.apache.hc.core5.http.message.BasicHeaderElementIterator;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.HttpCoreContext;
@@ -22,13 +22,13 @@ import org.apache.http.protocol.HttpCoreContext;
  * <p>This is useful to enable, if the remote service doesn't specify a keep-alive time,
  * but nevertheless finishes connections after a certain amount of time.</p>
  *
- * <b>WARNING: this only works in combination with the default ApacheConnectorProvider</b>
+ * <b>WARNING: this only works in combination with the default Apache5ConnectorProvider</b>
  */
 public class KeepAliveFeature implements Feature {
 
   @Override
   public boolean configure(FeatureContext context) {
-    // see ApacheClientProperties.KEEPALIVE_STRATEGY
+    // see Apache5ClientProperties.KEEPALIVE_STRATEGY
     String keepAlive = "jersey.config.apache.client.keepAliveStrategy";
     context.property(keepAlive, new CustomKeepAlive());
     return true;

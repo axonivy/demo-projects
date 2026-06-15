@@ -10,7 +10,7 @@
   <ui:composition>
     <!-- Exception Handler for ViewExpiredExceptions -->
     <p:ajaxExceptionHandler
-      type="javax.faces.application.ViewExpiredException"
+      type="jakarta.faces.application.ViewExpiredException"
       update="viewExpiredExceptionDialog"
       onexception="PF('viewExpiredExceptionDialog').show();" />
 
