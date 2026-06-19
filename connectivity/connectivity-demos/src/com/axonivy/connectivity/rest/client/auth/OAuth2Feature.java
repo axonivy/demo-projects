@@ -2,11 +2,11 @@ package com.axonivy.connectivity.rest.client.auth;
 
 import java.io.IOException;
 
-import javax.ws.rs.Priorities;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.core.Feature;
-import javax.ws.rs.core.FeatureContext;
-import javax.ws.rs.ext.Provider;
+import jakarta.ws.rs.Priorities;
+import jakarta.ws.rs.client.ClientRequestContext;
+import jakarta.ws.rs.core.Feature;
+import jakarta.ws.rs.core.FeatureContext;
+import jakarta.ws.rs.ext.Provider;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -28,7 +28,7 @@ public class OAuth2Feature implements Feature {
   }
 
   @Provider
-  private static class AuthorizationFilter implements javax.ws.rs.client.ClientRequestFilter {
+  private static class AuthorizationFilter implements jakarta.ws.rs.client.ClientRequestFilter {
     private final ISession session;
     private final Logger logger;
 

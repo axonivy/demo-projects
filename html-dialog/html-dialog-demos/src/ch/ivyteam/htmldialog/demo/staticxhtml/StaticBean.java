@@ -1,12 +1,12 @@
 package ch.ivyteam.htmldialog.demo.staticxhtml;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
 
 import ch.ivyteam.ivy.application.IApplication;
 import ch.ivyteam.ivy.environment.Ivy;
 
-@ManagedBean
+@Named
 @RequestScoped
 public class StaticBean {
 

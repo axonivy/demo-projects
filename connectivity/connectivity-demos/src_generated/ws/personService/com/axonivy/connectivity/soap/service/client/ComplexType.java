@@ -4,17 +4,17 @@ package com.axonivy.connectivity.soap.service.client;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Generated;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.annotation.Generated;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElements;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlSeeAlso;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -59,52 +59,52 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     TopLevelComplexType.class,
     LocalComplexType.class
 })
-@Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+@Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
 public abstract class ComplexType
     extends Annotated
     implements Serializable
 {
 
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     private final static long serialVersionUID = 1L;
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected SimpleContent simpleContent;
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected ComplexContent complexContent;
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected GroupRef group;
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected All all;
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected ExplicitGroup choice;
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected ExplicitGroup sequence;
     @XmlElements({
         @XmlElement(name = "attribute", type = Attribute.class),
         @XmlElement(name = "attributeGroup", type = AttributeGroupRef.class)
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected List<Annotated> attributeOrAttributeGroup;
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected Wildcard anyAttribute;
     @XmlAttribute(name = "name")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NCName")
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected String name;
     @XmlAttribute(name = "mixed")
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected Boolean mixed;
     @XmlAttribute(name = "abstract")
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected Boolean _abstract;
     @XmlAttribute(name = "final")
     @XmlSchemaType(name = "derivationSet")
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected List<String> _final;
     @XmlAttribute(name = "block")
     @XmlSchemaType(name = "derivationSet")
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     protected List<String> block;
 
     /**
@@ -115,7 +115,7 @@ public abstract class ComplexType
      *     {@link SimpleContent }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public SimpleContent getSimpleContent() {
         return simpleContent;
     }
@@ -128,7 +128,7 @@ public abstract class ComplexType
      *     {@link SimpleContent }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setSimpleContent(SimpleContent value) {
         this.simpleContent = value;
     }
@@ -141,7 +141,7 @@ public abstract class ComplexType
      *     {@link ComplexContent }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public ComplexContent getComplexContent() {
         return complexContent;
     }
@@ -154,7 +154,7 @@ public abstract class ComplexType
      *     {@link ComplexContent }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setComplexContent(ComplexContent value) {
         this.complexContent = value;
     }
@@ -167,7 +167,7 @@ public abstract class ComplexType
      *     {@link GroupRef }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public GroupRef getGroup() {
         return group;
     }
@@ -180,7 +180,7 @@ public abstract class ComplexType
      *     {@link GroupRef }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setGroup(GroupRef value) {
         this.group = value;
     }
@@ -193,7 +193,7 @@ public abstract class ComplexType
      *     {@link All }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public All getAll() {
         return all;
     }
@@ -206,7 +206,7 @@ public abstract class ComplexType
      *     {@link All }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setAll(All value) {
         this.all = value;
     }
@@ -219,7 +219,7 @@ public abstract class ComplexType
      *     {@link ExplicitGroup }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public ExplicitGroup getChoice() {
         return choice;
     }
@@ -232,7 +232,7 @@ public abstract class ComplexType
      *     {@link ExplicitGroup }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setChoice(ExplicitGroup value) {
         this.choice = value;
     }
@@ -245,7 +245,7 @@ public abstract class ComplexType
      *     {@link ExplicitGroup }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public ExplicitGroup getSequence() {
         return sequence;
     }
@@ -258,7 +258,7 @@ public abstract class ComplexType
      *     {@link ExplicitGroup }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setSequence(ExplicitGroup value) {
         this.sequence = value;
     }
@@ -286,7 +286,7 @@ public abstract class ComplexType
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public List<Annotated> getAttributeOrAttributeGroup() {
         if (attributeOrAttributeGroup == null) {
             attributeOrAttributeGroup = new ArrayList<Annotated>();
@@ -302,7 +302,7 @@ public abstract class ComplexType
      *     {@link Wildcard }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public Wildcard getAnyAttribute() {
         return anyAttribute;
     }
@@ -315,7 +315,7 @@ public abstract class ComplexType
      *     {@link Wildcard }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setAnyAttribute(Wildcard value) {
         this.anyAttribute = value;
     }
@@ -328,7 +328,7 @@ public abstract class ComplexType
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public String getName() {
         return name;
     }
@@ -341,7 +341,7 @@ public abstract class ComplexType
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setName(String value) {
         this.name = value;
     }
@@ -354,7 +354,7 @@ public abstract class ComplexType
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public boolean isMixed() {
         if (mixed == null) {
             return false;
@@ -371,7 +371,7 @@ public abstract class ComplexType
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setMixed(Boolean value) {
         this.mixed = value;
     }
@@ -384,7 +384,7 @@ public abstract class ComplexType
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public boolean isAbstract() {
         if (_abstract == null) {
             return false;
@@ -401,7 +401,7 @@ public abstract class ComplexType
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setAbstract(Boolean value) {
         this._abstract = value;
     }
@@ -428,7 +428,7 @@ public abstract class ComplexType
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public List<String> getFinal() {
         if (_final == null) {
             _final = new ArrayList<String>();
@@ -458,7 +458,7 @@ public abstract class ComplexType
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public List<String> getBlock() {
         if (block == null) {
             block = new ArrayList<String>();
@@ -466,7 +466,7 @@ public abstract class ComplexType
         return this.block;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setAttributeOrAttributeGroup(List<Annotated> value) {
         this.attributeOrAttributeGroup = null;
         if (value!= null) {
@@ -475,7 +475,7 @@ public abstract class ComplexType
         }
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setFinal(List<String> value) {
         this._final = null;
         if (value!= null) {
@@ -484,7 +484,7 @@ public abstract class ComplexType
         }
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public void setBlock(List<String> value) {
         this.block = null;
         if (value!= null) {
@@ -494,19 +494,19 @@ public abstract class ComplexType
     }
 
     @Override
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
     @Override
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public boolean equals(Object that) {
         return EqualsBuilder.reflectionEquals(this, that);
     }
 
     @Override
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }

@@ -2,9 +2,9 @@ package com.axonivy.connectivity.rest.sample.odata;
 
 import java.io.IOException;
 
-import javax.ws.rs.Priorities;
-import javax.ws.rs.core.FeatureContext;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.Priorities;
+import jakarta.ws.rs.core.FeatureContext;
+import jakarta.ws.rs.core.MediaType;
 
 import org.odata.trippin.client.AnyOfMicrosoftODataSampleServiceModelsTripPinPersonConcurrency;
 import org.odata.trippin.client.AnyOfMicrosoftODataSampleServiceModelsTripPinPersonGender;
@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
 
 /**
  * Some values in the converted TripPin ODATA spec are generated as empty interfaces without a matching impl.

@@ -6,7 +6,7 @@
 <body>
   <ui:composition>
     <!-- Exception Handler for ViewExpiredExceptions -->
-    <p:ajaxExceptionHandler type="javax.faces.application.ViewExpiredException" update="viewExpiredExceptionDialog"
+    <p:ajaxExceptionHandler type="jakarta.faces.application.ViewExpiredException" update="viewExpiredExceptionDialog"
       onexception="PF('viewExpiredExceptionDialog').show();" />
 
     <!-- Error Dialog shown if a view or session has expired -->

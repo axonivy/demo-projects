@@ -1,10 +1,10 @@
 
 package com.axonivy.connectivity.soap.service.client;
 
-import javax.annotation.Generated;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.annotation.Generated;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "reducedDerivationControl")
 @XmlEnum(DerivationControl.class)
-@Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-09T08:14:40+02:00")
+@Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v2.3.5", date = "2026-06-17T07:38:27+02:00")
 public enum ReducedDerivationControl {
 
     @XmlEnumValue("extension")

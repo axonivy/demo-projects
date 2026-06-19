@@ -1,7 +1,7 @@
 
 package com.smartbear.sample.test.client;
 
-import javax.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.annotation.XmlRegistry;
 
 
 /**

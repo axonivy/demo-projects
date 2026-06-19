@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * ProcessStartBean
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-10-16T14:11:32.936281+02:00[Europe/Zurich]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-10-16T14:11:32.936281+02:00[Europe/Zurich]")
 public class ProcessStartBean {
   @JsonProperty("id")
   private Long id = null;

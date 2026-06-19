@@ -126,7 +126,7 @@
       "config" : {
         "output" : {
           "code" : [
-            "import javax.faces.context.FacesContext;",
+            "import jakarta.faces.context.FacesContext;",
             "//save businessdata object to ivy.repo",
             "ivy.repo.save(in.interview);",
             "//park task",

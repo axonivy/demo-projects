@@ -1,7 +1,7 @@
 package ch.ivyteam.htmldialog.demo.input.beanValidation;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class UpperCaseValidator implements ConstraintValidator<UpperCase, String> {
 

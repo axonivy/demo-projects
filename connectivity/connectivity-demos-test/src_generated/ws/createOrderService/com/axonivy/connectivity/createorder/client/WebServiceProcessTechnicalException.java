@@ -1,7 +1,7 @@
 
 package com.axonivy.connectivity.createorder.client;
 
-import javax.xml.ws.WebFault;
+import jakarta.xml.ws.WebFault;
 
 
 /**

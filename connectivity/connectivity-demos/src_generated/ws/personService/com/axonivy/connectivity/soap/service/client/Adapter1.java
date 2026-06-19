@@ -1,7 +1,7 @@
 
 package com.axonivy.connectivity.soap.service.client;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import ch.ivyteam.ivy.scripting.objects.DateTime;
 
 public class Adapter1

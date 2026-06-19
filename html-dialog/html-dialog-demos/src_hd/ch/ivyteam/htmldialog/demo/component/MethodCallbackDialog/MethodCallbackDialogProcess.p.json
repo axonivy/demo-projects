@@ -81,14 +81,14 @@
         "guid" : "13EFAD0DB9C9F626",
         "output" : {
           "code" : [
-            "import javax.faces.component.UICommand;",
+            "import jakarta.faces.component.UICommand;",
             "",
             "UICommand commandButton = event.getSource() as UICommand;",
             "ivy.log.info(\"Received click event from component button [{0}]\", commandButton.value);",
             "",
             "// create message for pop-up (p:growl)",
-            "javax.faces.context.FacesContext.getCurrentInstance().addMessage(null,",
-            "  new javax.faces.application.FacesMessage(",
+            "jakarta.faces.context.FacesContext.getCurrentInstance().addMessage(null,",
+            "  new jakarta.faces.application.FacesMessage(",
             "  \"Button clicked [\"+commandButton.value+\"]\", ",
             "  \"Received click event from component \"+commandButton",
             "));"
@@ -117,7 +117,7 @@
         "output" : {
           "code" : [
             "import org.primefaces.event.SelectEvent;",
-            "import javax.faces.context.FacesContext;",
+            "import jakarta.faces.context.FacesContext;",
             "import ch.ivyteam.htmldialog.demo.Person;",
             "",
             "SelectEvent selectEvent = event as SelectEvent;",
@@ -126,7 +126,7 @@
             "",
             "// create message for pop-up (p:growl)",
             "FacesContext.getCurrentInstance().addMessage(null,",
-            "  new javax.faces.application.FacesMessage(",
+            "  new jakarta.faces.application.FacesMessage(",
             "  \"Person selected\", ",
             "  \"Selection: \"+selectedPerson + \" \\n\" +",
             "  \"Component:\" +selectEvent.getComponent()",

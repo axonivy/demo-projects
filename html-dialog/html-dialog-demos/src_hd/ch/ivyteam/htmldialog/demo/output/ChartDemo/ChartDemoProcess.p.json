@@ -140,8 +140,8 @@
           ],
           "map" : { },
           "code" : [
-            "import javax.faces.context.FacesContext;",
-            "import javax.faces.application.FacesMessage;",
+            "import jakarta.faces.context.FacesContext;",
+            "import jakarta.faces.application.FacesMessage;",
             "",
             "FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,",
             "\"Item selected\", \"Item Index: \" + param.event.getItemIndex() +",
@@ -252,8 +252,8 @@
           ],
           "map" : { },
           "code" : [
-            "import javax.faces.context.FacesContext;",
-            "import javax.faces.application.FacesMessage;",
+            "import jakarta.faces.context.FacesContext;",
+            "import jakarta.faces.application.FacesMessage;",
             "",
             "FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,",
             "\"Slice selected\", \"Index: \" + param.event.getItemIndex());",
