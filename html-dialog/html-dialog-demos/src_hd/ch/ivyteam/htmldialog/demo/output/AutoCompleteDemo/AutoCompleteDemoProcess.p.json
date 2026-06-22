@@ -121,8 +121,8 @@
       "config" : {
         "output" : {
           "code" : [
-            "import javax.faces.context.FacesContext;",
-            "import javax.faces.application.FacesMessage;",
+            "import jakarta.faces.context.FacesContext;",
+            "import jakarta.faces.application.FacesMessage;",
             "",
             "String userViaAjax = \"<not selected>\";",
             "String userViaFacesConverter = \"<not selected>\";",

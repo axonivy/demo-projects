@@ -214,13 +214,13 @@
         "output" : {
           "code" : [
             "import org.primefaces.event.SelectEvent;",
-            "import javax.faces.context.FacesContext;",
+            "import jakarta.faces.context.FacesContext;",
             "",
             "if (!in.lastEditedId.isEmpty())",
             "{",
             "  // create message for pop-up (p:growl)",
             "  FacesContext.getCurrentInstance().addMessage(null,",
-            "    new javax.faces.application.FacesMessage(",
+            "    new jakarta.faces.application.FacesMessage(",
             "    \"Search index might not be immediately up-to-date\", ",
             "    \"If your newly created dossier does not show up in the list yet, then press search to refresh the list.\"",
             "  ));",

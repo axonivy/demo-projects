@@ -64,7 +64,7 @@
           }
         },
         "code" : [
-          "import javax.ws.rs.client.InvocationCallback;",
+          "import jakarta.ws.rs.client.InvocationCallback;",
           "import com.axonivy.connectivity.rest.aynch.SignalInvoker;",
           "",
           "InvocationCallback callback = new SignalInvoker(\"rest:batch:result:ok\");",

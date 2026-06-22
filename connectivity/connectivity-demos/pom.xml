@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.axonivy.ivy.api</groupId>
     <artifactId>ivy-project-parent</artifactId>
-    <version>14.0.0-SNAPSHOT</version>
+    <version>14.0.0-jakarta-SNAPSHOT</version>
     <relativePath></relativePath>
   </parent>
   <groupId>com.axonivy.demo</groupId>
@@ -28,6 +28,16 @@
     <dependency>
       <groupId>com.axonivy.ivy.spi</groupId>
       <artifactId>ivy-webservice-cxf-spi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents.client5</groupId>
+      <artifactId>httpclient5</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents.core5</groupId>
+      <artifactId>httpcore5</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
@@ -89,6 +99,7 @@
       <plugin>
         <groupId>com.axonivy.ivy.tool.soap</groupId>
         <artifactId>cxf-client-codegen</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
         <executions>
           <execution>
             <id>personService.codegen</id>
