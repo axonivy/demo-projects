@@ -57,7 +57,7 @@ public class KeepAliveFeature implements Feature {
     }
 
     private TimeValue customTimeout(HttpContext context) {
-      HttpHost target = HttpClientContext.adapt(context).getHttpRoute().getTargetHost();
+      HttpHost target = HttpClientContext.cast(context).getHttpRoute().getTargetHost();
       if ("www.naughty-server.com".equalsIgnoreCase(target.getHostName())) {
         // Keep alive for 5 seconds only
         return TimeValue.ofSeconds(5);
