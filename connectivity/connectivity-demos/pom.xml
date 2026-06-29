@@ -88,7 +88,7 @@
               <goal>generate-openapi-client</goal>
             </goals>
             <configuration>
-              <openApiSpec>file://${basedir}/src/io/swagger/petstore3/client/openapi.json</openApiSpec>
+              <openApiSpec>${basedir}/src/io/swagger/petstore3/client/openapi.json</openApiSpec>
               <outputDir>${basedir}/src_generated/rest/openApiService</outputDir>
               <namespace>io.swagger.petstore3.client</namespace>
               <resolveFully>false</resolveFully>
@@ -108,7 +108,7 @@
               <goal>generate-cxf-client</goal>
             </goals>
             <configuration>
-              <wsdl>file://${basedir}/src/com/axonivy/connectivity/soap/wsdl/personService.wsdl</wsdl>
+              <wsdl>${basedir}/src/com/axonivy/connectivity/soap/wsdl/personService.wsdl</wsdl>
               <outputDir>${basedir}/src_generated/ws/personService</outputDir>
               <namespace>com.axonivy.connectivity.soap.service.client</namespace>
             </configuration>
