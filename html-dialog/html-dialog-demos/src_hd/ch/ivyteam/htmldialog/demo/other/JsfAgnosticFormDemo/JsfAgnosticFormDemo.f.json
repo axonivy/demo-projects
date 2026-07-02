@@ -22,14 +22,16 @@
         "type" : "Input",
         "config" : {
           "required" : "false",
-          "label" : "Name"
+          "label" : "Name",
+          "value" : "Name"
         }
       }, {
         "cid" : "input3",
         "type" : "Input",
         "config" : {
           "required" : "false",
-          "label" : "Lastname"
+          "label" : "Lastname",
+          "value" : "Lastname"
         }
       } ]
     }
@@ -39,6 +41,7 @@
     "config" : {
       "required" : "true",
       "label" : "EMail",
+      "value" : "email",
       "type" : "EMAIL"
     }
   }, {
