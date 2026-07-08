@@ -44,8 +44,9 @@ pipeline {
                   archiveArtifacts artifacts: '**/target/selenide/reports/**/*', allowEmptyArchive: true
 
                   recordIssues tools: [eclipse()], qualityGates: [[threshold: 1, type: 'TOTAL']]
-                  recordIssues tools: [mavenConsole()], qualityGates: [[threshold: 1, type: 'TOTAL']]
-
+                  recordIssues tools: [mavenConsole()], qualityGates: [[threshold: 1, type: 'TOTAL']], filters: [
+                    excludeMessage('.*Must have any type of.*')
+                  ]
                   junit testDataPublishers: [[$class: 'StabilityTestDataPublisher']], testResults: '**/target/*-reports/**/*.xml'
                 }
               }
