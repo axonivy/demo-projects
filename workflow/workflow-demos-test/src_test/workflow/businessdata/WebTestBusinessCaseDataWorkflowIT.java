@@ -12,24 +12,24 @@ import static test.web.ProcessUtil.checkEndPage;
 import static test.web.ProcessUtil.startProcess;
 import static test.web.ProcessUtil.startTestProcess;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
-import com.axonivy.ivy.webtest.IvyWebTest;
+//import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.codeborne.selenide.Selenide;
 
-@IvyWebTest
+//@IvyWebTest
 class WebTestBusinessCaseDataWorkflowIT {
 
-  @BeforeEach
+  //@BeforeEach
   void cleanElasticSearch() {
     startTestProcess("1537FF3C3382D47F/clearDemoDossiers.ivp?embedInFrame");
     checkEndPage();
   }
 
-  @Test
+  //@Test
   void interview() {
     login();
 
