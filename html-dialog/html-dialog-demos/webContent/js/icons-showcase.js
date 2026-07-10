@@ -11,7 +11,7 @@ if(iconsCssTi){
 // Tabler Icons Filled
 const iconsCssTiFilled = Object.values(document.styleSheets).filter(sheet => sheet.href?.toLowerCase()?.includes("tabler-icons-filled.min.css"))[0];
 if(iconsCssTiFilled){ 
-  const iconsTIFilled = Object.values(iconsCssTiFilled.cssRules).filter(rule => rule.selectorText?.startsWith(".ti-"));
+  const iconsTIFilled = Object.values(iconsCssTiFilled.cssRules).filter(rule => rule.selectorText?.startsWith(".tif-"));
   iconsTIFilled.sort((a, b) => (a.selectorText > b.selectorText) ? 1 : -1);
   icons = icons.concat(iconsTIFilled);
 }
@@ -45,7 +45,6 @@ element.innerHTML = '';
 
 icons.forEach(icon => {
   let iconClass = icon.selectorText.substring(1, icon.selectorText.length - 8);
-  const iconPrefix = iconClass.substring(0,2) + " ";
   const iconClasses = iconClass.split(", ");//comma separated list of icons 
   iconClass = iconClasses[iconClasses.length - 1];//use last found css class in comma separated list
   iconClass = iconClass.split("::")[0];//use everything before ::
@@ -53,6 +52,7 @@ icons.forEach(icon => {
   if(iconClass.length < 4){//some non-valid icon classes
     return;
   }
+  const iconPrefix = iconClass.includes("-") ? iconClass.split("-")[0] + " " : "";
   const iconImage = document.createElement("i");
   iconImage.className = iconPrefix  + iconClass;
 

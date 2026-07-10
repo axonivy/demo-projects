@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:f="http://xmlns.jcp.org/jsf/core"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:f="jakarta.faces.core"
+  xmlns:h="jakarta.faces.html"
+  xmlns:ui="jakarta.faces.facelets"
   xmlns:ic="http://ivyteam.ch/jsf/component"
   xmlns:p="http://primefaces.org/ui"
   xmlns:pe="http://primefaces.org/ui/extensions">
@@ -25,13 +25,13 @@
             <p:commandLink actionListener="#{logic.edit(person)}"
               style="display:inline" oncomplete="PF('editDlg').show();"
               update=":form:editor">
-              <span class="fa-solid fa-pencil" />
+              <span class="ti ti-pencil" />
             </p:commandLink>
             <p:commandLink actionListener="#{logic.delete(person.id)}"
               style="display:inline"
               update=":form:persons, :form:notify"
               oncomplete="PF('status').show();">
-              <span class="fa-solid fa-trash" />
+              <span class="ti ti-trash" />
             </p:commandLink>
           </p:column>
         </p:dataTable>
@@ -43,7 +43,7 @@
             <p:commandButton actionListener="#{logic.save}"
               value="Save" update=":form:persons, :form:notify"
               oncomplete="PF('editDlg').hide(); PF('status').show();"
-              icon="fa-solid fa-check" />
+              icon="ti ti-check" />
           </h:panelGrid>
         </p:dialog>
 
@@ -67,14 +67,14 @@
             required="true" />
           <p:commandButton actionListener="#{logic.add}" value="Add"
             update="addform, :form:persons, :form:notify"
-            onsuccess="PF('status').show();" icon="fa-solid fa-plus" />
+            onsuccess="PF('status').show();" icon="ti ti-circle-plus" />
         </h:panelGrid>
       </h:form>
 
       <br />
       <br />
       <p:commandButton actionListener="#{logic.close}" value="Exit"
-        process="@this" icon="fa-solid fa-close" />
+        process="@this" icon="ti ti-x" />
 
 
 

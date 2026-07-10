@@ -1,27 +1,24 @@
 package ch.ivyteam.htmldialog.demo.component;
 
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.convert.Converter;
-import javax.faces.convert.ConverterException;
-import javax.faces.convert.FacesConverter;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.convert.Converter;
+import jakarta.faces.convert.ConverterException;
+import jakarta.faces.convert.FacesConverter;
 
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.security.IUser;
 
 @FacesConverter(value = "userConverter")
-public class UserConverter implements Converter {
+public class UserConverter implements Converter<IUser> {
 
   @Override
-  public Object getAsObject(FacesContext arg0, UIComponent arg1, String arg2) throws ConverterException {
-    return Ivy.security().users().findById(arg2);
+  public IUser getAsObject(FacesContext context, UIComponent component, String value) throws ConverterException {
+    return Ivy.security().users().findById(value);
   }
 
   @Override
-  public String getAsString(FacesContext arg0, UIComponent arg1, Object arg2) throws ConverterException {
-    if (arg2 instanceof IUser) {
-      return ((IUser) arg2).getSecurityMemberId();
-    }
-    return null;
+  public String getAsString(FacesContext context, UIComponent component, IUser value) throws ConverterException {
+    return value.getSecurityMemberId();
   }
 }

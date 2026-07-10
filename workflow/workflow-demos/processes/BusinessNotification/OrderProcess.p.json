@@ -14,7 +14,7 @@
           "name" : "8.1 Business Notification",
           "category" : "notification",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "si si-messages-bubble" }
+            { "name" : "cssIcon", "value" : "ti ti-message-circle-2" }
           ]
         },
         "permission" : {

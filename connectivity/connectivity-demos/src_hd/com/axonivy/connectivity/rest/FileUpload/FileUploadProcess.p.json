@@ -102,9 +102,9 @@
         },
         "code" : [
           "import com.axonivy.connectivity.rest.client.file.FileUpload;",
-          "import javax.ws.rs.client.Entity;",
-          "import javax.ws.rs.core.MediaType;",
-          "import javax.ws.rs.core.Response;",
+          "import jakarta.ws.rs.client.Entity;",
+          "import jakarta.ws.rs.core.MediaType;",
+          "import jakarta.ws.rs.core.Response;",
           "import org.glassfish.jersey.media.multipart.Boundary;",
           "import org.glassfish.jersey.media.multipart.FormDataMultiPart;",
           "import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;",
@@ -161,7 +161,7 @@
         },
         "code" : [
           "import com.axonivy.connectivity.rest.client.file.FileUpload;",
-          "import javax.ws.rs.core.Response;",
+          "import jakarta.ws.rs.core.Response;",
           "",
           "java.io.File resource = FileUpload.getResource(in.resourceName);",
           "Response response = FileUpload.upload(client, resource);",

@@ -96,7 +96,7 @@
           "name" : "8.1.2 open api query",
           "category" : "rest/openapi",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-sign-in" }
+            { "name" : "cssIcon", "value" : "ti ti-login-2" }
           ]
         }
       },
@@ -123,7 +123,7 @@
           "description" : "Use any undocummented feature",
           "category" : "rest/openapi",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-upload" }
+            { "name" : "cssIcon", "value" : "ti ti-upload" }
           ]
         }
       },
@@ -171,8 +171,8 @@
         "code" : [
           "import com.axonivy.connectivity.rest.client.file.FileUpload;",
           "import io.swagger.petstore3.client.Pet;",
-          "import javax.ws.rs.core.MediaType;",
-          "import javax.ws.rs.client.Entity;",
+          "import jakarta.ws.rs.core.MediaType;",
+          "import jakarta.ws.rs.client.Entity;",
           "",
           "java.io.File logo = FileUpload.getIvyLogo();",
           "Pet pet = client.request()",
@@ -230,7 +230,7 @@
           "name" : "8.1.1 open api read collection",
           "category" : "rest/openapi",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-paw" }
+            { "name" : "cssIcon", "value" : "ti ti-paw" }
           ]
         }
       },

@@ -22,14 +22,16 @@
         "type" : "Input",
         "config" : {
           "required" : "false",
-          "label" : "Name"
+          "label" : "Name",
+          "value" : "Name"
         }
       }, {
         "cid" : "input3",
         "type" : "Input",
         "config" : {
           "required" : "false",
-          "label" : "Lastname"
+          "label" : "Lastname",
+          "value" : "Lastname"
         }
       } ]
     }
@@ -39,6 +41,7 @@
     "config" : {
       "required" : "true",
       "label" : "EMail",
+      "value" : "email",
       "type" : "EMAIL"
     }
   }, {
@@ -53,7 +56,7 @@
           "action" : "#{ivyWorkflowView.cancel()}",
           "variant" : "SECONDARY",
           "style" : "FLAT",
-          "icon" : "si si-remove",
+          "icon" : "ti ti-x",
           "processOnlySelf" : true,
           "confirmHeader" : "Delete Confirmation",
           "confirmMessage" : "Are you sure you want to delete this row?"
@@ -65,7 +68,7 @@
           "name" : "Proceed",
           "action" : "#{logic.close}",
           "type" : "SUBMIT",
-          "icon" : "si si-check-1",
+          "icon" : "ti ti-check",
           "confirmHeader" : "Delete Confirmation",
           "confirmMessage" : "Are you sure you want to delete this row?"
         }

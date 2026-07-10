@@ -8,13 +8,13 @@ import ch.ivyteam.ivy.event.SystemEventCategory;
 import ch.ivyteam.ivy.process.eventstart.AbstractProcessStartEventBean;
 import ch.ivyteam.ivy.process.eventstart.IProcessStartEventBeanRuntime;
 import ch.ivyteam.ivy.process.extension.ProgramConfig;
-import ch.ivyteam.ivy.process.extension.ui.ExtensionUiBuilder;
-import ch.ivyteam.ivy.process.extension.ui.UiEditorExtension;
+import ch.ivyteam.ivy.process.program.ui.ProgramEditorUi;
+import ch.ivyteam.ivy.process.program.ui.ProgramUiBuilder;
 import ch.ivyteam.ivy.request.RequestException;
 import ch.ivyteam.ivy.service.ServiceException;
 import ch.ivyteam.ivy.workflow.WorkflowSystemEvent;
 
-public class WorkflowSystemEventListenerBean extends AbstractProcessStartEventBean {
+public class WorkflowSystemEventListenerBean extends AbstractProcessStartEventBean implements ProgramEditorUi {
 
   private static final String WORKFLOW_SYSTEM_EVENT_KEY = "workflowSystemEventKey";
 
@@ -70,18 +70,15 @@ public class WorkflowSystemEventListenerBean extends AbstractProcessStartEventBe
     }
   }
 
-  public static class Editor extends UiEditorExtension {
-
-    @Override
-    public void initUiFields(ExtensionUiBuilder ui) {
-      ui.label("System event to listen for").create();
-      ui.textField(WORKFLOW_SYSTEM_EVENT_KEY).create();
-      ui.label("Must be one of"
-          + "\n- " + WorkflowSystemEvent.TASK_CREATED
-          + "\n- " + WorkflowSystemEvent.TASK_CHANGED
-          + "\n- " + WorkflowSystemEvent.CASE_CREATED
-          + "\n- " + WorkflowSystemEvent.CASE_CHANGED)
-          .multiline().create();
-    }
+  @Override
+  public void editor(ProgramUiBuilder ui) {
+    ui.label("System event to listen for").create();
+    ui.textField(WORKFLOW_SYSTEM_EVENT_KEY).create();
+    ui.label("Must be one of"
+        + "\n- " + WorkflowSystemEvent.TASK_CREATED
+        + "\n- " + WorkflowSystemEvent.TASK_CHANGED
+        + "\n- " + WorkflowSystemEvent.CASE_CREATED
+        + "\n- " + WorkflowSystemEvent.CASE_CHANGED)
+        .multiline().create();
   }
 }

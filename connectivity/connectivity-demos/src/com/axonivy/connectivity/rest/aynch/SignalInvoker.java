@@ -1,6 +1,6 @@
 package com.axonivy.connectivity.rest.aynch;
 
-import javax.ws.rs.client.InvocationCallback;
+import jakarta.ws.rs.client.InvocationCallback;
 
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.process.model.value.SignalCode;

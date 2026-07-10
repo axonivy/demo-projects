@@ -1,5 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:ic="http://ivyteam.ch/jsf/component"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="jakarta.faces.core" xmlns:h="jakarta.faces.html"
+  xmlns:ui="jakarta.faces.facelets" xmlns:ic="http://ivyteam.ch/jsf/component"
   xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions"
   xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:body>
@@ -10,7 +10,7 @@
         </p:inputTextarea>
         <p:spacer height="10"></p:spacer>
         <p:commandButton value="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/Ok')}" update=":form:taskDef"
-          actionListener="#{logic.setTaskDescription}" icon="fa-solid fa-check" oncomplete="PF('taskDesription').hide();">
+          actionListener="#{logic.setTaskDescription}" icon="ti ti-check" oncomplete="PF('taskDesription').hide();">
         </p:commandButton>
       </h:panelGrid>
     </h:form>

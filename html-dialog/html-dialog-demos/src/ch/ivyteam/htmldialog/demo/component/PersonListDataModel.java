@@ -2,7 +2,7 @@ package ch.ivyteam.htmldialog.demo.component;
 
 import java.util.List;
 
-import javax.faces.model.ListDataModel;
+import jakarta.faces.model.ListDataModel;
 
 import org.primefaces.model.SelectableDataModel;
 

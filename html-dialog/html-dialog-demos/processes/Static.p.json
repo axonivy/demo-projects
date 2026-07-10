@@ -14,7 +14,7 @@
           "name" : "StaticEndPage",
           "category" : "static",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-file-o" },
+            { "name" : "cssIcon", "value" : "ti ti-file" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }

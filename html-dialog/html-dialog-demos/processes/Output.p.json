@@ -14,7 +14,7 @@
           "name" : "Select Many Checkbox Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-check-square-o" },
+            { "name" : "cssIcon", "value" : "ti ti-square-check" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -36,7 +36,7 @@
           "name" : "Select One Menu Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-list-alt" },
+            { "name" : "cssIcon", "value" : "ti ti-list" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -75,7 +75,7 @@
           "name" : "PickList Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-list-ul" },
+            { "name" : "cssIcon", "value" : "ti ti-list" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -157,7 +157,7 @@
           "name" : "OrderListDemo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-list-ol" },
+            { "name" : "cssIcon", "value" : "ti ti-list-numbers" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -185,7 +185,7 @@
           "name" : "Resource Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-picture-o" },
+            { "name" : "cssIcon", "value" : "ti ti-photo" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -231,7 +231,7 @@
           "name" : "Editable Table Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-table" },
+            { "name" : "cssIcon", "value" : "ti ti-table" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -270,7 +270,7 @@
           "name" : "Chart Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-line-chart" },
+            { "name" : "cssIcon", "value" : "ti ti-chart-histogram" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -291,7 +291,7 @@
           "name" : "Auto Complete Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-bars" },
+            { "name" : "cssIcon", "value" : "ti ti-align-justified" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -349,7 +349,7 @@
           "name" : "DataTable Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-table" },
+            { "name" : "cssIcon", "value" : "ti ti-table" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         },
@@ -374,7 +374,7 @@
           "name" : "Lazy Table-Loading Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-spinner" },
+            { "name" : "cssIcon", "value" : "ti ti-refresh" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -414,7 +414,7 @@
           "name" : "Export Excel Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-file-excel-o" },
+            { "name" : "cssIcon", "value" : "ti ti-file-type-xls" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -454,7 +454,7 @@
           "name" : "Pretty Time Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-clock-o" },
+            { "name" : "cssIcon", "value" : "ti ti-clock" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -512,7 +512,7 @@
           "name" : "Document Viewer Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-file-pdf-o" },
+            { "name" : "cssIcon", "value" : "ti ti-file-type-pdf" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }
@@ -534,7 +534,7 @@
           "name" : "Barcode Demo",
           "category" : "output",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-barcode" },
+            { "name" : "cssIcon", "value" : "ti ti-barcode" },
             { "name" : "embedInFrame", "value" : "false" }
           ]
         }

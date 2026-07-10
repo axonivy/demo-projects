@@ -1,34 +1,34 @@
 Categories:
   agile:
-    cssIcon: si si-single-neutral-actions-process
+    cssIcon: ti ti-list-check
     name: 1. Agile BPM
     tooltip: Agile Business Process Management
   business:
     data:
       case:
-        cssIcon: si si-monitor-heart-beat-search
+        cssIcon: ti ti-device-desktop-search
         name: 6 Business Case Data
         tooltip: Stores business data associated with case
-      cssIcon: si si-monitor-heart-beat-search
+      cssIcon: ti ti-device-desktop-search
       name: 5. Business Data
       tooltip: Store business data and query them
   expiry:
-    cssIcon: si si-alarm-bell-timer
+    cssIcon: ti ti-bell-plus
     name: 7. Expiry
     tooltip: How to handle deadllines
   human:
-    cssIcon: si si-multiple-neutral-1
+    cssIcon: ti ti-users
     name: 2. Human Tasks
     tooltip: How to integrate humans into workflows
   notification:
-    cssIcon: si si-messages-bubble
+    cssIcon: ti ti-message-circle-2
     name: 8. Notification
   signal:
-    cssIcon: si si-network-signal
+    cssIcon: ti ti-building-broadcast-tower
     name: 3. Signals
     tooltip: Sends and receives signals to control the process
   trigger:
-    cssIcon: si si-controls-play
+    cssIcon: ti ti-player-play
     name: 4. Triggers
     tooltip: |
       Trigger other processes

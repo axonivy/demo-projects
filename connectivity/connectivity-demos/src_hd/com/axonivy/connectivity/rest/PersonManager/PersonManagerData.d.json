@@ -12,7 +12,7 @@
     "name" : "lastName"
   }, {
     "name" : "response",
-    "type" : "javax.ws.rs.core.Response",
+    "type" : "jakarta.ws.rs.core.Response",
     "modifiers" : [ ]
   }, {
     "name" : "persons",

@@ -14,7 +14,7 @@
           "name" : "9.2.1 read data",
           "category" : "soap",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-eye" }
+            { "name" : "cssIcon", "value" : "ti ti-eye" }
           ]
         }
       },
@@ -84,7 +84,7 @@
           "name" : "9.2.3 delete data",
           "category" : "soap",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-minus" }
+            { "name" : "cssIcon", "value" : "ti ti-circle-minus" }
           ]
         }
       },
@@ -130,7 +130,7 @@
           "name" : "9.2.2 add data",
           "category" : "soap",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-plus" }
+            { "name" : "cssIcon", "value" : "ti ti-circle-plus" }
           ]
         }
       },

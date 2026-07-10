@@ -1,5 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core"
-  xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="jakarta.faces.core"
+  xmlns:h="jakarta.faces.html" xmlns:ui="jakarta.faces.facelets"
   xmlns:ic="http://ivyteam.ch/jsf/component" xmlns:p="http://primefaces.org/ui"
   xmlns:pe="http://primefaces.org/ui/extensions">
 <h:body>
@@ -27,10 +27,10 @@
             <f:selectItem itemLabel="test.txt" itemValue="test.txt" />
           </p:selectOneMenu>
           <p:spacer width="10px" />
-          <p:commandButton value="Upload Ivy Script" icon="fa-solid fa-upload"
+          <p:commandButton value="Upload Ivy Script" icon="ti ti-upload"
             actionListener="#{logic.uploadIvyScript}" ajax="false" update="@all" />
           or
-          <p:commandButton value="Upload Java" icon="fa-solid fa-upload" actionListener="#{logic.uploadJava}"
+          <p:commandButton value="Upload Java" icon="ti ti-upload" actionListener="#{logic.uploadJava}"
             ajax="false" update="@all" />
         </h:panelGrid>
         <br />
@@ -42,7 +42,7 @@
           </p:column>
           <p:column headerText="Download" style="width: 120px">
             <p:commandButton id="dl" value="Download" ajax="false" actionListener="#{logic.download(file)}"
-              icon="fa-solid fa-download">
+              icon="ti ti-download">
               <p:fileDownload value="#{data.fileDownload}" />
             </p:commandButton>
           </p:column>

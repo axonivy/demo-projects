@@ -70,7 +70,7 @@
           "name" : "3. Calls a BPM process from REST service",
           "category" : "rest/approval",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "si si-check-2" }
+            { "name" : "cssIcon", "value" : "ti ti-checkbox" }
           ]
         }
       },

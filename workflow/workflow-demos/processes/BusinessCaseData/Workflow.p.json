@@ -28,7 +28,7 @@
           "description" : "BusinessCaseData Worlflow Demo. Use BusinessCaseData in workflow with save and park task.",
           "category" : "business/data/case",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-id-badge" }
+            { "name" : "cssIcon", "value" : "ti ti-id-badge" }
           ]
         },
         "permission" : {
@@ -89,7 +89,7 @@
           "description" : "BusinessCaseData Worlflow Demo. Browse Interviews created by BusinessCaseData/Workflow/create.ivp",
           "category" : "business/data/case",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-newspaper-o" }
+            { "name" : "cssIcon", "value" : "ti ti-news" }
           ]
         }
       },

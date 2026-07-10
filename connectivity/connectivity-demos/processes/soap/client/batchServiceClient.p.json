@@ -25,7 +25,7 @@
           "name" : "9.3 Increase timeout properties for long running requests",
           "category" : "soap",
           "customFields" : [
-            { "name" : "cssIcon", "value" : "fa fa-clock-o" }
+            { "name" : "cssIcon", "value" : "ti ti-clock" }
           ]
         }
       },
@@ -56,8 +56,8 @@
           }
         },
         "properties" : {
-          "javax.xml.ws.client.connectionTimeout" : "1000",
-          "javax.xml.ws.client.receiveTimeout" : "70000"
+          "jakarta.xml.ws.client.connectionTimeout" : "1000",
+          "jakarta.xml.ws.client.receiveTimeout" : "70000"
         },
         "output" : {
           "map" : {
@@ -83,9 +83,9 @@
         "This batch client overrides the default settings with properties:",
         "```",
         "// waits 70 seconds for a result ",
-        "javax.xml.ws.client.receiveTimeout=70'000",
+        "jakarta.xml.ws.client.receiveTimeout=70'000",
         "// wait 1 second for a connection time out",
-        "javax.xml.ws.client.connectionTimeout=1'000",
+        "jakarta.xml.ws.client.connectionTimeout=1'000",
         "```"
       ],
       "visual" : {

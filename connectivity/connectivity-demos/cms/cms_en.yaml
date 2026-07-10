@@ -1,38 +1,38 @@
 Categories:
   rest:
     approval:
-      cssIcon: si si-network-share
+      cssIcon: ti ti-world-share
       name: 3. REST Approval
       tooltip: Calls a REST service that starts an approval process
     async:
-      cssIcon: si si-network-share
+      cssIcon: ti ti-world-share
       name: 5. REST Async
       tooltip: Calls REST services asynchronous
     mapping:
-      cssIcon: si si-network-share
+      cssIcon: ti ti-world-share
       file:
-        cssIcon: si si-network-share card-title-icon
+        cssIcon: ti ti-world-share card-title-icon
         name: 6.4. REST File Upload
         tooltip: Sends files to REST services
       name: 6. REST Data Mapping
       tooltip: Data mapping from process to REST service and vice versa
     openapi:
-      cssIcon: si si-network-share
+      cssIcon: ti ti-world-share
       name: 8. REST OpenAPI
       odata:
-        cssIcon: si si-network-share
+        cssIcon: ti ti-world-share
         name: 7. REST OpenAPI OData
         tooltip: Calls OData basesd REST services
       tooltip: Calls OpenAPI based REST services
     person:
-      cssIcon: si si-network-share
+      cssIcon: ti ti-world-share
       name: 1. REST Person
       tooltip: REST service that manipulates persons
     twitter:
-      cssIcon: si si-network-share
+      cssIcon: ti ti-world-share
       name: 4. REST Twitter
       tooltip: Get tweets from twitter
   soap:
-    cssIcon: si si-network-arrow
+    cssIcon: ti ti-world-up
     name: 9. SOAP
     tooltip: SOAP Web Service Demos

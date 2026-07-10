@@ -24,7 +24,7 @@ import org.odata.trippin.client.MicrosoftODataSampleServiceModelsTripPinEventLoc
  * MicrosoftODataSampleServiceModelsTripPinEvent
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-09-03T16:45:47.437495+02:00[Europe/Zurich]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-09-03T16:45:47.437495+02:00[Europe/Zurich]")
 public class MicrosoftODataSampleServiceModelsTripPinEvent implements AnyOfMicrosoftODataSampleServiceModelsTripPinPlanItem {
   @JsonProperty("PlanItemId")
   private Integer planItemId = null;

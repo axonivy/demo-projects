@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-import javax.faces.context.FacesContext;
-import javax.faces.event.PhaseId;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.event.PhaseId;
 import javax.imageio.ImageIO;
 
 import org.primefaces.model.DefaultStreamedContent;

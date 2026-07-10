@@ -2,7 +2,7 @@ package com.axonivy.connectivity.soap;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import javax.xml.ws.BindingProvider;
+import jakarta.xml.ws.BindingProvider;
 
 import org.junit.jupiter.api.Test;
 
