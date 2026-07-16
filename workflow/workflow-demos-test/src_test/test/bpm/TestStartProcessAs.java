@@ -2,8 +2,6 @@ package test.bpm;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import jakarta.inject.Named;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +14,7 @@ import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.security.IRole;
 import ch.ivyteam.ivy.security.ISession;
 import ch.ivyteam.ivy.security.IUser;
+import jakarta.inject.Named;
 
 /**
  * This test shows how you can start a process in your test with different roles and users
@@ -126,7 +125,7 @@ class TestStartProcessAs {
 
     assertThat(result.workflow().activeCase().getCreatorUser())
         .isEqualTo(result.workflow().session().getSessionUser())
-        .isEqualTo(app.getSecurityContext().users().system());
+        .isEqualTo(app.securityContext().users().system());
   }
 
   @Test
