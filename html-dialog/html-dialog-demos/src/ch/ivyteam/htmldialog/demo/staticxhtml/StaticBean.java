@@ -1,10 +1,9 @@
 package ch.ivyteam.htmldialog.demo.staticxhtml;
 
-import jakarta.inject.Named;
-import jakarta.enterprise.context.RequestScoped;
-
 import ch.ivyteam.ivy.application.IApplication;
 import ch.ivyteam.ivy.environment.Ivy;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 @Named
 @RequestScoped
@@ -18,6 +17,6 @@ public class StaticBean {
 
   public void buttonAction() {
     text = Ivy.session().getSessionUserName() + " clicked the button in application '"
-        + IApplication.current().getName() + "'.";
+        + IApplication.current().name() + "'.";
   }
 }
