@@ -35,13 +35,13 @@ public class WorkflowSystemEventListenerBean extends AbstractProcessStartEventBe
   @Override
   public void start() throws ServiceException {
     super.start();
-    getEventBeanRuntime().getProcessModelVersion().getApplication()
+    getEventBeanRuntime().getProcessModelVersion().getApplication().systemEventDispatcher()
         .addSystemEventListener(EnumSet.of(SystemEventCategory.WORKFLOW), this.listener);
   }
 
   @Override
   public void stop() throws ServiceException {
-    getEventBeanRuntime().getProcessModelVersion().getApplication()
+    getEventBeanRuntime().getProcessModelVersion().getApplication().systemEventDispatcher()
         .removeSystemEventListener(EnumSet.of(SystemEventCategory.WORKFLOW), this.listener);
     super.stop();
   }
