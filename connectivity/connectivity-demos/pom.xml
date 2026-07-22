@@ -80,7 +80,6 @@
       <plugin>
         <groupId>com.axonivy.ivy.tool.rest</groupId>
         <artifactId>openapi-codegen</artifactId>
-        <version>2.0.0-SNAPSHOT</version>
         <executions>
           <execution>
             <id>petstore.codegen</id>
@@ -100,7 +99,6 @@
       <plugin>
         <groupId>com.axonivy.ivy.tool.soap</groupId>
         <artifactId>cxf-client-codegen</artifactId>
-        <version>2.0.0-SNAPSHOT</version>
         <executions>
           <execution>
             <id>personService.codegen</id>
