@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.axonivy.ivy.api</groupId>
     <artifactId>ivy-project-parent</artifactId>
-    <version>14.0.0-jakarta-SNAPSHOT</version>
+    <version>14.0.0-SNAPSHOT</version>
     <relativePath></relativePath>
   </parent>
   <groupId>com.axonivy.demo</groupId>
@@ -161,7 +161,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>      
+      </plugin>
     </plugins>
   </build>
 </project>
