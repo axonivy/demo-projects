@@ -84,7 +84,7 @@
             "UploadedFile uploadedFile = in.fileUploadEvent.getFile();",
             "String fileName = uploadedFile.getFileName();",
             "",
-            "ContentObject baseFolder = ContentManagement.cms(IApplication.current())",
+            "ContentObject baseFolder = ContentManagement.cms(Application.current())",
             "  .root().child().folder(\"ch.ivyteam.htmldialog.demo/fileUploadImages\");",
             "",
             "// create new Content Object name",
