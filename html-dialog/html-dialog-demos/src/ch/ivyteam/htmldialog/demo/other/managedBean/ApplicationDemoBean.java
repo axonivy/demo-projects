@@ -24,7 +24,7 @@ import jakarta.inject.Named;
  * are supported:
  * <ul>
  * <li>@ApplicationScoped: Lives as long as an ivy application. They are only
- * destroyed if the server shut's down or if the declaring project (PMV) is
+ * destroyed if the server shut's down or if the declaring project is
  * deleted.</li>
  * <li>@SessionScoped: Lives as long as the browser session.</li>
  * <li>@RequestScoped: Lives as long as the view request. This is the default
