@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ch.ivyteam.ivy.application.IApplication;
+import ch.ivyteam.ivy.application.app.Application;
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
@@ -117,7 +117,7 @@ class TestStartProcessAs {
   }
 
   @Test
-  void asSystemUser(BpmClient client, IApplication app) {
+  void asSystemUser(BpmClient client, Application app) {
     ExecutionResult result = client
         .start().process(START)
         .as().systemUser()
