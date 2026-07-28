@@ -59,12 +59,10 @@ class WebTestBusinessCaseDataWorkflowIT {
   }
 
   private void login() {
-    if (!EngineUrl.isDesigner()) {
-      open(EngineUrl.create().path("login").toUrl());
-      $(By.id("loginForm:userName")).shouldBe(visible).sendKeys("hb");
-      $(By.id("loginForm:password")).sendKeys("hb");
-      $(By.id("loginForm:login")).click();
-      $(By.id("sessionUserName")).shouldBe(text("hb"));
-    }
+    open(EngineUrl.create().path("login").toUrl());
+    $(By.id("loginForm:userName")).shouldBe(visible).sendKeys("hb");
+    $(By.id("loginForm:password")).sendKeys("hb");
+    $(By.id("loginForm:login")).click();
+    $(By.id("sessionUserName")).shouldBe(text("hb"));
   }
 }
