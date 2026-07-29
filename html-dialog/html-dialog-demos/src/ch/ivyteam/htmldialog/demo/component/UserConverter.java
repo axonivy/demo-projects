@@ -8,8 +8,10 @@ import jakarta.faces.convert.FacesConverter;
 
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.security.IUser;
+import jakarta.enterprise.context.ApplicationScoped;
 
-@FacesConverter(value = "userConverter")
+@FacesConverter(value = "userConverter", managed = true)
+@ApplicationScoped
 public class UserConverter implements Converter<IUser> {
 
   @Override

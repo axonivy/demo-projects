@@ -12,8 +12,10 @@ import jakarta.faces.validator.ValidatorException;
 
 import ch.ivyteam.ivy.cm.IContentManagementSystem;
 import ch.ivyteam.ivy.environment.Ivy;
+import jakarta.enterprise.context.ApplicationScoped;
 
-@FacesValidator("ch.ivyteam.CustomMailValidator")
+@FacesValidator(value = "ch.ivyteam.CustomMailValidator", managed = true)
+@ApplicationScoped
 public class CustomMailValidator implements Validator<String> {
 
   private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\." +
