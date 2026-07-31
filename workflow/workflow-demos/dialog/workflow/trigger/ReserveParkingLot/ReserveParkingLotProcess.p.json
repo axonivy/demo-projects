@@ -1,0 +1,85 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "15254CFDBF077CCB",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "workflow.trigger.ReserveParkingLot.ReserveParkingLotData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(ParkingLotReservationData)",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "employee", "type" : "workflow.trigger.NewEmployeeData", "desc" : "" }
+          ],
+          "map" : {
+            "out.newEmployeeData" : "param.employee"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "employee", "type" : "workflow.trigger.NewEmployeeData", "desc" : "" }
+          ],
+          "map" : {
+            "result.employee" : "in.newEmployeeData"
+          }
+        },
+        "guid" : "15089E383F0E1564"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 22 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "15089E383F818001"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 },
+        "labelOffset" : { "x" : 9, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "name" : "init",
+      "config" : {
+        "output" : {
+          "code" : [
+            "for (int i = 1; i <= 10; i++){",
+            "  in.newEmployeeData.availableParkingLots.add(i);",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}

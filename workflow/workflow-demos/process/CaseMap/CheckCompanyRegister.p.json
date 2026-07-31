@@ -1,0 +1,59 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "15A8492F526C14B3",
+  "config" : {
+    "data" : "workflow.humantask.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : [
+        "start()",
+        "start.ivp"
+      ],
+      "config" : {
+        "signature" : "start",
+        "request" : {
+          "name" : "Check company register",
+          "isVisibleOnStartList" : false
+        },
+        "triggerable" : true,
+        "task" : {
+          "name" : "Check Company Register",
+          "responsible" : {
+            "roles" : [
+              "SYSTEM"
+            ]
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : -13, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 448, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Script",
+      "name" : "log stage",
+      "config" : {
+        "output" : {
+          "code" : "ivy.log.info(\"Business Process is in Stage \" + ivy.case.getBusinessCase().getStage().getName());"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 273, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1" }
+      ]
+    } ]
+}

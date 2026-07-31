@@ -1,0 +1,253 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "145D1849FACF0EAA",
+  "config" : {
+    "data" : "htmlDialogDemos.Data"
+  },
+  "elements" : [ {
+      "id" : "f48",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 456, "y" : 64 }
+      }
+    }, {
+      "id" : "f20",
+      "type" : "RequestStart",
+      "name" : "PartialUpdateDemo.ivp",
+      "config" : {
+        "signature" : "PartialUpdateDemo",
+        "request" : {
+          "name" : "Partial Update Demo",
+          "category" : "component",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-chart-treemap" },
+            { "name" : "embedInFrame", "value" : "false" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 128, "y" : 448 },
+        "labelOffset" : { "x" : 16 }
+      },
+      "connect" : [
+        { "id" : "f23", "to" : "f21" }
+      ]
+    }, {
+      "id" : "f22",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 456, "y" : 448 }
+      }
+    }, {
+      "id" : "f47",
+      "type" : "RequestStart",
+      "name" : "ComponentDemo.ivp",
+      "config" : {
+        "signature" : "ComponentDemo",
+        "request" : {
+          "name" : "Component Demo",
+          "category" : "component",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-cube" },
+            { "name" : "embedInFrame", "value" : "false" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 128, "y" : 64 },
+        "labelOffset" : { "x" : 14 }
+      },
+      "connect" : [
+        { "id" : "f50", "to" : "f49" }
+      ]
+    }, {
+      "id" : "f82",
+      "type" : "RequestStart",
+      "name" : [
+        "Component:",
+        "EventListenerDemo.ivp"
+      ],
+      "config" : {
+        "signature" : "ComponentEventListenerDemo",
+        "request" : {
+          "name" : "Component Callback Demo",
+          "category" : "component",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-bolt" },
+            { "name" : "embedInFrame", "value" : "false" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 128, "y" : 352 },
+        "labelOffset" : { "x" : -55 }
+      },
+      "connect" : [
+        { "id" : "f85", "to" : "f84" }
+      ]
+    }, {
+      "id" : "f58",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "ch.ivyteam.htmldialog.demo.component.ComponentCustomizingDemo:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f61", "to" : "f59" }
+      ]
+    }, {
+      "id" : "f84",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "ch.ivyteam.htmldialog.demo.component.MethodCallbackDialog:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 352 }
+      },
+      "connect" : [
+        { "id" : "f86", "to" : "f83" }
+      ]
+    }, {
+      "id" : "f99",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "ch.ivyteam.htmldialog.demo.component.JsfCompositeComponentDemo:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 256 }
+      },
+      "connect" : [
+        { "id" : "f101", "to" : "f98" }
+      ]
+    }, {
+      "id" : "f59",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 456, "y" : 160 }
+      }
+    }, {
+      "id" : "f98",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 456, "y" : 256 }
+      }
+    }, {
+      "id" : "f21",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "ch.ivyteam.htmldialog.demo.component.PartialUpdateDemo:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 448 }
+      },
+      "connect" : [
+        { "id" : "f24", "to" : "f22" }
+      ]
+    }, {
+      "id" : "f49",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "ch.ivyteam.htmldialog.demo.component.ComponentDemo:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f51", "to" : "f48" }
+      ]
+    }, {
+      "id" : "f57",
+      "type" : "RequestStart",
+      "name" : [
+        "Component:",
+        "CustomizingDemo"
+      ],
+      "config" : {
+        "signature" : "ComponentCustomizingDemo",
+        "request" : {
+          "name" : "Component Customizing Demo",
+          "category" : "component",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-packages" },
+            { "name" : "embedInFrame", "value" : "false" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 128, "y" : 160 },
+        "labelOffset" : { "x" : -43 }
+      },
+      "connect" : [
+        { "id" : "f60", "to" : "f58" }
+      ]
+    }, {
+      "id" : "f83",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 456, "y" : 352 }
+      }
+    }, {
+      "id" : "f97",
+      "type" : "RequestStart",
+      "name" : "JsfCompositeComponent.ivp",
+      "config" : {
+        "signature" : "JsfCompositeComponent",
+        "request" : {
+          "name" : "Jsf Composite Component Demo",
+          "category" : "component",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-cube" },
+            { "name" : "embedInFrame", "value" : "false" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 128, "y" : 256 },
+        "labelOffset" : { "x" : 14 }
+      },
+      "connect" : [
+        { "id" : "f100", "to" : "f99" }
+      ]
+    }, {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "LazyLoadComponent.ivp",
+      "config" : {
+        "signature" : "lazyLoadComponent",
+        "request" : {
+          "name" : "Lazy loaded UI parts",
+          "category" : "component",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-refresh" },
+            { "name" : "embedInFrame", "value" : "false" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 128, "y" : 544 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 456, "y" : 544 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "ch.ivyteam.htmldialog.demo.component.LazyLoadedModalDialog:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 544 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}

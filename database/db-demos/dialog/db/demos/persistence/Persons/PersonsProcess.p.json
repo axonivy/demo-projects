@@ -1,0 +1,200 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "197F3260FF453EF3",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "db.demos.persistence.Persons.PersonsData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "guid" : "197F3260FF5FFC09"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "197F3260FF550093"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "name" : "Init Data Model",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import db.demos.persistence.Person;",
+            "import db.demos.persistence.PersonDataModel;",
+            "in.personsModel = new PersonDataModel();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f1", "color" : "default" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "HtmlDialogEventStart",
+      "name" : "add",
+      "config" : {
+        "guid" : "197F36E10A644F82"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 248 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f9",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 248 }
+      }
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "name" : "Add Person",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import db.demos.persistence.PersonFactory;",
+            "import db.demos.persistence.Person;",
+            "",
+            "Person person = PersonFactory.create();",
+            "Person.repository().insert(person);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 248 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f9", "color" : "default" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "delete(Person)",
+      "config" : {
+        "signature" : "delete",
+        "input" : {
+          "params" : [
+            { "name" : "person", "type" : "db.demos.persistence.Person", "desc" : "" }
+          ],
+          "map" : {
+            "out.person" : "param.person"
+          }
+        },
+        "guid" : "197F39B283AFEAF2"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 352 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f16" }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 352 }
+      }
+    }, {
+      "id" : "f16",
+      "type" : "Script",
+      "name" : "Delete Person",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import db.demos.persistence.Person;",
+            "",
+            "Person.repository().delete(in.person);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 352 }
+      },
+      "connect" : [
+        { "id" : "f17", "to" : "f14", "color" : "default" }
+      ]
+    }, {
+      "id" : "f19",
+      "type" : "Script",
+      "name" : "Save Person",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import db.demos.persistence.Person;",
+            "Person.repository().update(in.person);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 456 }
+      },
+      "connect" : [
+        { "id" : "f22", "to" : "f21" }
+      ]
+    }, {
+      "id" : "f21",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 456 }
+      }
+    }, {
+      "id" : "f23",
+      "type" : "HtmlDialogEventStart",
+      "name" : "save",
+      "config" : {
+        "guid" : "197F3C768309A9DA",
+        "output" : {
+          "code" : [
+            "import db.demos.persistence.Person;",
+            "import org.primefaces.event.RowEditEvent;",
+            "",
+            "RowEditEvent e = event as RowEditEvent;",
+            "in.person = e.getObject() as Person;"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 456 }
+      },
+      "connect" : [
+        { "id" : "f24", "to" : "f19" }
+      ]
+    } ]
+}

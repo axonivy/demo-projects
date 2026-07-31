@@ -1,0 +1,83 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "139D97A1E15DE439",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.InitPersonsData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "initPerson()",
+      "config" : {
+        "signature" : "initPerson",
+        "result" : {
+          "params" : [
+            { "name" : "persons", "type" : "List<ch.ivyteam.htmldialog.demo.Person>", "desc" : "" }
+          ],
+          "map" : {
+            "result.persons" : "in.persons"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 12 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 416, "y" : 64 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "Script",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.htmldialog.demo.Person;",
+            "",
+            "Person person = new Person();",
+            "person.name = \"Stalder\";",
+            "person.firstname = \"Renato\";",
+            "out.persons.add(person);",
+            "",
+            "person = new Person();",
+            "person.name = \"Bütler\";",
+            "person.firstname = \"Bruno\";",
+            "out.persons.add(person);",
+            "",
+            "person = new Person();",
+            "person.name = \"Weiss\";",
+            "person.firstname = \"Reto\";",
+            "out.persons.add(person);",
+            "",
+            "person = new Person();",
+            "person.name = \"Hürlimann\";",
+            "person.firstname = \"Caty\";",
+            "out.persons.add(person);",
+            "",
+            "person = new Person();",
+            "person.name = \"Kis\";",
+            "person.firstname = \"Tamas\";",
+            "out.persons.add(person);",
+            "",
+            "person = new Person();",
+            "person.name = \"Dänzer\";",
+            "person.firstname = \"Michael\";",
+            "out.persons.add(person);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 248, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1" }
+      ]
+    } ]
+}

@@ -1,0 +1,408 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "18F0EE10B46A554B",
+  "config" : {
+    "data" : "workflow.humantask.ProcurementRequest"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start",
+      "config" : {
+        "signature" : "start",
+        "request" : {
+          "name" : "2.3: Procurement Request (Dynamic Tasks)",
+          "description" : "This example shows the usage of dynamic created tasks.",
+          "category" : "human",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-toilet-paper" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 80 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f26" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 784, "y" : 648 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Alternative",
+      "config" : {
+        "conditions" : {
+          "f4" : "in.dynamicRoles.size() > 0"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 328, "y" : 272 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f7", "color" : "default", "var" : "in1" },
+        { "id" : "f11", "to" : "f10" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "UserTask",
+      "name" : "Verify Request",
+      "config" : {
+        "dialog" : "workflow.humantask.VerifyRequest:start(workflow.humantask.ProcurementRequest)",
+        "call" : {
+          "map" : {
+            "param.procurementRequest" : "in"
+          }
+        },
+        "task" : {
+          "name" : "<%= in.dynamicRole %>: <%=ivy.cms.co(\"/TaskDescriptions/verifyRequest\")%>: <%=in.amount%> <%=ivy.cms.co(\"/Dialogs/procurementRequest/piecesOf\")%> '<%=in.description%>' <%=ivy.cms.co(\"/Dialogs/procurementRequest/forTotal\")%> <%=in.totalPrice%><%=ivy.cms.co(\"/TaskDescriptions/currencySymbol\")%>",
+          "responsible" : {
+            "type" : "ROLE_FROM_ATTRIBUTE",
+            "script" : "in.dynamicRole"
+          }
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.activityLog" : "in.activityLog.add(result.logEntry)",
+            "out.dataOkManager" : "result.dataOk"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 496, "y" : 416 }
+      },
+      "boundaries" : [ {
+          "id" : "f16",
+          "type" : "SignalBoundaryEvent",
+          "name" : "dynamic:cancel",
+          "config" : {
+            "signalCode" : "dynamic:cancel"
+          },
+          "visual" : {
+            "at" : { "x" : 528, "y" : 456 },
+            "labelOffset" : { "x" : 13, "y" : 33 }
+          },
+          "connect" : [
+            { "id" : "f39", "to" : "f38" }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f6", "to" : "f25", "color" : "default" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "TaskSwitchGateway",
+      "config" : {
+        "tasks" : [ {
+            "id" : "TaskA",
+            "responsible" : {
+              "roles" : [
+                "SYSTEM"
+              ]
+            },
+            "skipTasklist" : true
+          }, {
+            "id" : "TaskB",
+            "responsible" : {
+              "roles" : [
+                "SYSTEM"
+              ]
+            }
+          } ],
+        "output" : {
+          "map" : {
+            "out" : "in1",
+            "out.dynamicRole" : "in1.dynamicRoles.get(0)"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 496, "y" : 272 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f5", "color" : "default", "condition" : "ivp==\"TaskA.ivp\"" },
+        { "id" : "f9", "to" : "f12", "via" : [ { "x" : 496, "y" : 208 } ], "condition" : "ivp==\"TaskB.ivp\"" }
+      ]
+    }, {
+      "id" : "f10",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 328, "y" : 328 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "Script",
+      "name" : [
+        "decrement ",
+        "counter"
+      ],
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.dynamicRoles" : "in.dynamicRoles.removeAt(0)"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 408, "y" : 208 }
+      },
+      "connect" : [
+        { "id" : "f13", "to" : "f3", "via" : [ { "x" : 328, "y" : 208 } ], "color" : "default" }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "Alternative",
+      "name" : "All approved?",
+      "config" : {
+        "conditions" : {
+          "f18" : "ivy.task.getCase().tasks().allActive().size() > 1"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 784, "y" : 416 },
+        "labelOffset" : { "x" : 14, "y" : -22 }
+      },
+      "connect" : [
+        { "id" : "f18", "to" : "f17" },
+        { "id" : "f15", "to" : "f19", "color" : "default" }
+      ]
+    }, {
+      "id" : "f17",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 864, "y" : 416 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f19",
+      "type" : "Script",
+      "name" : [
+        "Send signal ",
+        "'dynamic'"
+      ],
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.accepted" : "true"
+          },
+          "code" : "ivy.wf.signals().create().data(in).send(\"dynamic\");"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 784, "y" : 560 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f1", "color" : "default" }
+      ]
+    }, {
+      "id" : "f21",
+      "type" : "SignalStartEvent",
+      "name" : "dynamic",
+      "config" : {
+        "signalCode" : "dynamic",
+        "output" : {
+          "map" : {
+            "out" : "signal.getSignalData() as workflow.humantask.ProcurementRequest"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 584, "y" : 80 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      },
+      "connect" : [
+        { "id" : "f22", "to" : "f28" }
+      ]
+    }, {
+      "id" : "f24",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 864, "y" : 80 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f26",
+      "type" : "DialogCall",
+      "name" : "Enter Request",
+      "config" : {
+        "dialog" : "workflow.humantask.EnterRequest:start()",
+        "output" : {
+          "map" : {
+            "out" : "result.procurementRequestData",
+            "out.activityLog" : "in.activityLog.add(result.logEntry)",
+            "out.totalPrice" : "result.procurementRequestData.amount * result.procurementRequestData.pricePerUnit"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 216, "y" : 80 }
+      },
+      "connect" : [
+        { "id" : "f27", "to" : "f36", "color" : "default" }
+      ]
+    }, {
+      "id" : "f28",
+      "type" : "EMail",
+      "name" : "Notify Requester",
+      "config" : {
+        "headers" : {
+          "subject" : "<%=ivy.cms.co(\"/Emails/yourRequestHasBeen\")%> <%=(in.accepted ? ivy.cms.co(\"/Emails/accepted\") : ivy.cms.co(\"/Emails/declined\"))%>: <%=in.amount%> <%=ivy.cms.co(\"/Dialogs/procurementRequest/piecesOf\")%>  '<%=in.description%>' <%=ivy.cms.co(\"/Dialogs/procurementRequest/forTotal\")%> <%=in.totalPrice%> <%=ivy.cms.co(\"/Dialogs/procurementRequest/currencySymbol\")%>",
+          "from" : "<%=ivy.cms.co(\"/Emails/senderMail\")%>",
+          "to" : "<%=in.requester.email%>"
+        },
+        "message" : {
+          "body" : [
+            " <html> ",
+            "  <style type=\"text/css\">",
+            "         <%=ivy.cms.co(\"/Styles/Classic\")%>",
+            "  </style>",
+            "  ",
+            "  <%=ivy.cms.co(\"/Images/Logo\")%>",
+            "",
+            "  <%=ivy.cms.co(\"/Emails/procurementRequestNotification\")%>",
+            "</html>"
+          ],
+          "contentType" : "text/html"
+        },
+        "exceptionHandler" : ">> Ignore Exception"
+      },
+      "visual" : {
+        "at" : { "x" : 728, "y" : 80 }
+      },
+      "connect" : [
+        { "id" : "f23", "to" : "f24" }
+      ]
+    }, {
+      "id" : "f25",
+      "type" : "Alternative",
+      "name" : "Verified?",
+      "config" : {
+        "conditions" : {
+          "f29" : "in.dataOkManager"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 640, "y" : 416 },
+        "labelOffset" : { "x" : 14, "y" : -22 }
+      },
+      "connect" : [
+        { "id" : "f29", "to" : "f14", "color" : "default" },
+        { "id" : "f30", "to" : "f34" }
+      ]
+    }, {
+      "id" : "f31",
+      "type" : "Script",
+      "name" : [
+        "Send signal ",
+        "'dynamic:cancel'"
+      ],
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.accepted" : "false"
+          },
+          "code" : "ivy.wf.signals().create().data(in).send(\"dynamic:cancel\");"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 640, "y" : 560 }
+      },
+      "connect" : [
+        { "id" : "f33", "to" : "f32" }
+      ]
+    }, {
+      "id" : "f32",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 640, "y" : 648 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f34",
+      "type" : "TaskSwitchEvent",
+      "config" : {
+        "task" : {
+          "responsible" : {
+            "roles" : [
+              "SYSTEM"
+            ]
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 640, "y" : 472 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f35", "to" : "f31", "color" : "default" }
+      ]
+    }, {
+      "id" : "f36",
+      "type" : "Script",
+      "name" : "Accept Roles",
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.dynamicRoles" : "[\"Teamleader\", \"Manager\"]"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 216, "y" : 272 }
+      },
+      "connect" : [
+        { "id" : "f37", "to" : "f3", "color" : "default" }
+      ]
+    }, {
+      "id" : "f38",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 528, "y" : 648 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f40",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "Create dynamic Task for the defined Roles in the 'Accept Roles' Script Step.",
+        "",
+        "Maybe have a look at the AgileBPM example for other dynamic task process patterns."
+      ],
+      "visual" : {
+        "at" : { "x" : 724, "y" : 208 },
+        "size" : { "width" : 340, "height" : 76 }
+      }
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "ProcurementRequestDynamic",
+        "offset" : 16,
+        "size" : 664,
+        "lanes" : [ {
+            "name" : "Employee",
+            "size" : 136
+          }, {
+            "name" : "Dynamic Tasks",
+            "size" : 216
+          }, {
+            "name" : "Manager",
+            "size" : 144
+          }, {
+            "name" : "Singals",
+            "size" : 168
+          } ]
+      } ]
+  }
+}

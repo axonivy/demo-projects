@@ -1,0 +1,40 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "13EF084DCC4BDEAE",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.component.DetailListComponent.DetailListComponentData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(persons)",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "persons", "type" : "java.util.List<ch.ivyteam.htmldialog.demo.Person>", "desc" : "" }
+          ],
+          "map" : { },
+          "code" : [
+            "import ch.ivyteam.htmldialog.demo.component.PersonListDataModel;",
+            "out.persons = new PersonListDataModel(param.persons);"
+          ]
+        },
+        "guid" : "13EF084DCD4FB354"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 14, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      }
+    } ]
+}

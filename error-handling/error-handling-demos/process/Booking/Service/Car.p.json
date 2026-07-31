@@ -1,0 +1,53 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "1500483191BD4791",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "booking.HertzData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "bookCar(String)",
+      "config" : {
+        "signature" : "bookCar",
+        "input" : {
+          "params" : [
+            { "name" : "size", "type" : "String", "desc" : "" }
+          ],
+          "map" : { }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 14, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f5",
+      "type" : "Script",
+      "name" : "remote booking",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.bpm.error.BpmError;",
+            "BpmError.create(\"booking:car:failed:unavailable\").throwError();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "f1" }
+      ]
+    } ]
+}

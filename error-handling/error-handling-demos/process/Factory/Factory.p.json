@@ -1,0 +1,88 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "15066B87D449F453",
+  "config" : {
+    "data" : "error.handling.demo.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "signature" : "start",
+        "request" : {
+          "name" : "Catch default ivy error locally and propagate as custom error"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 80, "y" : 160 },
+        "labelOffset" : { "x" : 12, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 336, "y" : 160 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "SubProcessCall",
+      "name" : "Production",
+      "config" : {
+        "processCall" : "Factory/Production:produceShoes(String,Number)",
+        "call" : {
+          "map" : {
+            "param.model" : "\"Super Runner\"",
+            "param.amount" : "1000"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 160 }
+      },
+      "boundaries" : [ {
+          "id" : "Et0",
+          "type" : "ErrorBoundaryEvent",
+          "name" : "factory:unavailable",
+          "config" : {
+            "errorCode" : "factory:unavailable"
+          },
+          "visual" : {
+            "at" : { "x" : 240, "y" : 184 },
+            "labelOffset" : { "x" : 19, "y" : 6 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f5", "via" : [ { "x" : 240, "y" : 240 } ] }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f9",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "Demonstrates how default ivy errors can be catched locally and propagated as custom error",
+        "- the callable sub process throws  custom error `factory:unavailable`"
+      ],
+      "visual" : {
+        "at" : { "x" : 360, "y" : 56 },
+        "size" : { "width" : 592, "height" : 44 },
+        "color" : "NodeStyle3"
+      }
+    }, {
+      "id" : "f5",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 336, "y" : 240 }
+      }
+    } ],
+  "layout" : {
+    "colors" : {
+      "NodeStyle3" : "rgb(255, 0, 0)"
+    }
+  }
+}

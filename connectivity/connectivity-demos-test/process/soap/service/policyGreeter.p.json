@@ -1,0 +1,83 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "162AFFB8ACCCB74C",
+  "config" : {
+    "data" : "com.axonivy.connectivity.test.GreeterPolicyData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "greeterPoliciesDisabled.ivp",
+      "config" : {
+        "signature" : "greeterPoliciesDisabled"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 17, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f2",
+      "type" : "WebServiceCall",
+      "config" : {
+        "clientId" : "policyGreeter",
+        "operation" : {
+          "name" : "greet",
+          "port" : "SecureGreetPolicyServicePort",
+          "parameters" : {
+            "parameters.greet" : "\"Hello Greeter!\""
+          }
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.greetResponse" : "wsResponse"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 280, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f7",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 312, "y" : 96 }
+          },
+          "connect" : [
+            { "id" : "f4", "to" : "f11" }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f1", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "name" : "writer error response",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.environment.Ivy;",
+            "import com.axonivy.connectivity.soap.WSResponseWriter;",
+            "Throwable cause = in.error.getCause();",
+            "WSResponseWriter.sendAsResponse(cause.getClass().getName() + \": \" + cause.getMessage());"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 456, "y" : 64 },
+        "size" : { "width" : 128 }
+      }
+    } ]
+}

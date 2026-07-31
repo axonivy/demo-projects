@@ -1,0 +1,312 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "155BB4328F79B2D5",
+  "config" : {
+    "data" : "workflow.businessdata.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "create.ivp",
+      "config" : {
+        "signature" : "create",
+        "input" : {
+          "map" : {
+            "out.id" : "\"\""
+          }
+        },
+        "request" : {
+          "name" : "Create new Dossier",
+          "category" : "business/data",
+          "isVisibleOnStartList" : false
+        },
+        "task" : {
+          "category" : "Input/Dossier"
+        },
+        "case" : {
+          "category" : "Dossier/Create",
+          "attachToBusinessCase" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 256 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f5", "via" : [ { "x" : 160, "y" : 256 }, { "x" : 160, "y" : 288 } ] }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "DialogCall",
+      "name" : "modify",
+      "config" : {
+        "dialog" : "workflow.businessdata.BusinessDataDossierModifier:start(String,String)",
+        "call" : {
+          "map" : {
+            "param.businessDataId" : "in.id",
+            "param.title" : "\"Person Dossier\""
+          }
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.id" : "result.id"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 304, "y" : 288 }
+      },
+      "connect" : [
+        { "id" : "f16", "to" : "f11", "via" : [ { "x" : 416, "y" : 288 } ] }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "RequestStart",
+      "name" : "edit.ivp",
+      "config" : {
+        "signature" : "edit",
+        "input" : {
+          "params" : [
+            { "name" : "id", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.id" : "param.id"
+          }
+        },
+        "request" : {
+          "name" : "Edit Dossier",
+          "category" : "business/data",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-edit" }
+          ],
+          "isVisibleOnStartList" : false
+        },
+        "task" : {
+          "category" : "Modification/Dossier"
+        },
+        "case" : {
+          "category" : "Dossier/Edit",
+          "attachToBusinessCase" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 321 },
+        "labelOffset" : { "x" : -3, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f5", "via" : [ { "x" : 160, "y" : 321 }, { "x" : 160, "y" : 288 } ] }
+      ]
+    }, {
+      "id" : "f10",
+      "type" : "RequestStart",
+      "name" : "browse.ivp",
+      "config" : {
+        "signature" : "browse",
+        "input" : {
+          "params" : [
+            { "name" : "showAll", "type" : "Boolean", "desc" : "" }
+          ],
+          "map" : {
+            "out.id" : "\"\"",
+            "out.showAll" : "param.showAll"
+          }
+        },
+        "request" : {
+          "name" : "5.1: Browse Dossiers (Business Data)",
+          "description" : "Business Data Store Demo. Manage dossier objects in the Business Data Repository",
+          "category" : "business/data",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-table" }
+          ]
+        },
+        "task" : {
+          "category" : "View/Dossier"
+        },
+        "case" : {
+          "category" : "Dossier/Browse",
+          "attachToBusinessCase" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 97, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f26", "to" : "f25" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "DialogCall",
+      "name" : "browse",
+      "config" : {
+        "dialog" : "workflow.businessdata.BusinessDataDossierBrowser:start(String,Boolean)",
+        "call" : {
+          "map" : {
+            "param.lastId" : "in.id",
+            "param.showAll" : "in.showAll"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 416, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f14", "to" : "f12" }
+      ]
+    }, {
+      "id" : "f12",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 544, "y" : 160 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "**Business Data Store Demo**",
+        "- Manage dossier objects in the Business Data Repository (ivy.repo).",
+        "- New fields can be added to the Dossier type and it still works."
+      ],
+      "visual" : {
+        "at" : { "x" : 256, "y" : 48 },
+        "size" : { "width" : 384 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Script",
+      "name" : "delete",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import workflow.businessdata.Dossier;",
+            "",
+            "ivy.repo.delete(ivy.repo.find(in.id, Dossier.class));",
+            "out.id=\"\";"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 416 }
+      },
+      "connect" : [
+        { "id" : "f1", "to" : "f11", "via" : [ { "x" : 416, "y" : 416 } ] }
+      ]
+    }, {
+      "id" : "f25",
+      "type" : "Script",
+      "name" : "create test data",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.wfdemo.businessdata.DemoDataCreator;",
+            "",
+            "DemoDataCreator.createDemoDataIfNotExist();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f13", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "RequestStart",
+      "name" : "delete.ivp",
+      "config" : {
+        "signature" : "delete",
+        "input" : {
+          "params" : [
+            { "name" : "id", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.id" : "param.id"
+          }
+        },
+        "request" : {
+          "name" : "Delete Dossier",
+          "category" : "business/data",
+          "isVisibleOnStartList" : false
+        },
+        "task" : {
+          "category" : "Deletion/Dossier"
+        },
+        "case" : {
+          "category" : "Dossier/Delete",
+          "attachToBusinessCase" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 417 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "DialogCall",
+      "name" : "browse lazy",
+      "config" : {
+        "dialog" : "workflow.businessdata.BusinessDataDossierLazyBrowser:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 420, "y" : 512 }
+      },
+      "connect" : [
+        { "id" : "f22", "to" : "f18" }
+      ]
+    }, {
+      "id" : "f17",
+      "type" : "RequestStart",
+      "name" : "browseLazy.ivp",
+      "config" : {
+        "signature" : "browseLazy",
+        "request" : {
+          "name" : "5.1: Browse Dossiers (Business Data)",
+          "description" : "Business Data Store Demo. Manage dossier objects in the Business Data Repository",
+          "category" : "business/data",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-list" }
+          ]
+        },
+        "task" : {
+          "category" : "View/Dossier"
+        },
+        "case" : {
+          "category" : "Dossier/Browse",
+          "attachToBusinessCase" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 101, "y" : 512 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f19" }
+      ]
+    }, {
+      "id" : "f18",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 548, "y" : 512 }
+      }
+    }, {
+      "id" : "f19",
+      "type" : "Script",
+      "name" : "create test data",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.wfdemo.businessdata.DemoDataCreator;",
+            "",
+            "DemoDataCreator.createDemoDataIfNotExist();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 228, "y" : 512 }
+      },
+      "connect" : [
+        { "id" : "f21", "to" : "f8" }
+      ]
+    } ]
+}

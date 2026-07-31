@@ -1,0 +1,79 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "145D18869AFC8A9A",
+  "config" : {
+    "data" : "htmlDialogDemos.Data"
+  },
+  "elements" : [ {
+      "id" : "f72",
+      "type" : "RequestStart",
+      "name" : "primefaces.ivp",
+      "config" : {
+        "signature" : "Primefaces",
+        "request" : {
+          "name" : "Primefaces",
+          "category" : "primefaces",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-code" },
+            { "name" : "embedInFrame", "value" : "false" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 128, "y" : 64 },
+        "labelOffset" : { "x" : 13 }
+      },
+      "connect" : [
+        { "id" : "f75", "to" : "f73" }
+      ]
+    }, {
+      "id" : "f73",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "ch.ivyteam.htmldialog.primefaces.Primefaces:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 304, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f76", "to" : "f74" }
+      ]
+    }, {
+      "id" : "f74",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 480, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "TaskEndPage",
+      "config" : {
+        "page" : "view/icons.xhtml"
+      },
+      "visual" : {
+        "at" : { "x" : 384, "y" : 160 }
+      }
+    }, {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "IconsShowcase.ivp",
+      "config" : {
+        "signature" : "IconsShowcase",
+        "request" : {
+          "name" : "Icons Showcase",
+          "category" : "primefaces",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-flag-2" },
+            { "name" : "embedInFrame", "value" : "false" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 128, "y" : 160 },
+        "labelOffset" : { "x" : 10, "y" : 47 }
+      },
+      "connect" : [
+        { "id" : "f1", "to" : "f3" }
+      ]
+    } ]
+}

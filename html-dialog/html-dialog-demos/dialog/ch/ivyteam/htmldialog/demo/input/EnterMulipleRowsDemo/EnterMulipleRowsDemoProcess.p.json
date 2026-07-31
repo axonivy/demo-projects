@@ -1,0 +1,118 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "18C24BCF7C02BFE6",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.input.EnterMulipleRowsDemo.EnterMulipleRowsDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "guid" : "18C24BCF7C731527"
+      },
+      "visual" : {
+        "at" : { "x" : 120, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f18" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 376, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "18C24BCF7C94FED3"
+      },
+      "visual" : {
+        "at" : { "x" : 120, "y" : 288 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 248, "y" : 288 }
+      }
+    }, {
+      "id" : "f10",
+      "type" : "HtmlDialogEventStart",
+      "name" : "addRow",
+      "config" : {
+        "guid" : "18C24D01CACDF1BA",
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.htmldialog.demo.Score;",
+            "out.scores.add(new Score());"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 120, "y" : 144 }
+      },
+      "connect" : [
+        { "id" : "f16", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 248, "y" : 144 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "delRow(Number)",
+      "config" : {
+        "signature" : "delRow",
+        "input" : {
+          "params" : [
+            { "name" : "index", "type" : "Number", "desc" : "" }
+          ],
+          "map" : { },
+          "code" : "out.scores.removeAt(param.index);"
+        },
+        "guid" : "18C24D01CACEF5FA"
+      },
+      "visual" : {
+        "at" : { "x" : 120, "y" : 224 }
+      },
+      "connect" : [
+        { "id" : "f17", "to" : "f13" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 248, "y" : 224 }
+      }
+    }, {
+      "id" : "f18",
+      "type" : "Script",
+      "name" : "init",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.htmldialog.demo.Score;",
+            "out.scores.add(new Score());"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 248, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f19", "to" : "f1" }
+      ]
+    } ]
+}

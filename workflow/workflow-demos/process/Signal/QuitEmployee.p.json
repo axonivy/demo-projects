@@ -1,0 +1,137 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "151CA1EFC1542D87",
+  "config" : {
+    "data" : "workflow.signal.QuitUserProcess"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "signature" : "start",
+        "request" : {
+          "name" : "3.2: <%=ivy.cms.co(\"/ProcessDescriptions/quitUserProcess\")%> (<%=ivy.cms.co(\"/ProcessDescriptions/signalExample\")%>)",
+          "description" : "<%=ivy.cms.co(\"/ProcessDescriptions/SignalQuitUserDescription\")%>",
+          "category" : "signal",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-user-x" }
+          ]
+        },
+        "permission" : {
+          "anonymous" : false,
+          "roles" : [
+            "HR Manager"
+          ]
+        },
+        "task" : {
+          "category" : "Leave/Employee"
+        },
+        "case" : {
+          "category" : "HR/Employee/Leave",
+          "attachToBusinessCase" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 224 },
+        "labelOffset" : { "x" : 12, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 672, "y" : 224 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Script",
+      "name" : "Send Quit Signal",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.google.gson.Gson;",
+            "import ch.ivyteam.ivy.process.model.value.SignalCode;",
+            "",
+            "// create signal code",
+            "SignalCode signalCode = SignalCode.of(\"admin:quit:\" + in.quitUserEvent.userKey);",
+            "",
+            "// serialize payload",
+            "String jsonSerializedPayload = new Gson().toJson(in.quitUserEvent);",
+            "",
+            "// send signal",
+            "ivy.wf.signals().create().data(jsonSerializedPayload).send(signalCode);",
+            "",
+            "// send signal with data class payload (only applicable within same project or dependent projects)",
+            "ivy.wf.signals().create().data(in.quitUserEvent).send(SignalCode.of(\"admin:quitV2:\" + in.quitUserEvent.userKey));"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 384, "y" : 224 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "DialogCall",
+      "name" : "Select User",
+      "config" : {
+        "dialog" : "workflow.signal.QuitUser:start()",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.quitUserEvent" : "result.quitUserEvent"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 224 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "This process is part of the signal demo process. ",
+        "QuitUser sends a signal that will cancel User Tasks from a previously started CreateUser business case."
+      ],
+      "visual" : {
+        "at" : { "x" : 360, "y" : 48 },
+        "size" : { "width" : 592, "height" : 44 }
+      }
+    }, {
+      "id" : "f7",
+      "type" : "DialogCall",
+      "name" : [
+        "Information about",
+        "Signal Sent"
+      ],
+      "config" : {
+        "dialog" : "workflow.signal.QuitSignalSent:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 544, "y" : 224 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "Quit Employee",
+        "offset" : 96,
+        "size" : 192,
+        "lanes" : [ {
+            "name" : "HR Manager",
+            "size" : 192
+          } ]
+      } ]
+  }
+}

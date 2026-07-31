@@ -1,0 +1,279 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "146052EC6B2ADB68",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.output.ChartDemo.ChartDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "guid" : "146052EC6FEF2D5C"
+      },
+      "visual" : {
+        "at" : { "x" : 64, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 64 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "name" : [
+        "init combo",
+        "chart model"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "import org.primefaces.model.charts.bar.BarChartModel;",
+            "import org.primefaces.model.charts.bar.BarChartDataSet;",
+            "import org.primefaces.model.charts.bar.BarChartOptions;",
+            "import org.primefaces.model.charts.line.LineChartDataSet;",
+            "import org.primefaces.model.charts.ChartData;",
+            "import org.primefaces.model.charts.optionconfig.title.Title;",
+            "import org.primefaces.model.charts.axes.cartesian.CartesianScales;",
+            "import org.primefaces.model.charts.axes.cartesian.CartesianScaleTitle;",
+            "import org.primefaces.model.charts.axes.cartesian.linear.CartesianLinearAxes;",
+            "",
+            "BarChartModel model = new BarChartModel();",
+            "ChartData data = new ChartData();",
+            "",
+            "LineChartDataSet temperatureDataSet = new LineChartDataSet();",
+            "temperatureDataSet.setLabel(\"Temperature\");",
+            "temperatureDataSet.setFill(false);",
+            "temperatureDataSet.setBorderColor(\"#afca05\");",
+            "temperatureDataSet.setYaxisID(\"right-y-axis\");",
+            "List<Number> temperature;",
+            "temperature.add(21);",
+            "temperature.add(25);",
+            "temperature.add(27);",
+            "temperature.add(23);",
+            "temperature.add(18);",
+            "temperature.add(14);",
+            "temperature.add(11);",
+            "temperatureDataSet.setData(temperature);",
+            "data.addChartDataSet(temperatureDataSet);",
+            "",
+            "BarChartDataSet rainfallDataSet = new BarChartDataSet();",
+            "rainfallDataSet.setLabel(\"Rainfall\");",
+            "rainfallDataSet.setBackgroundColor(\"#7cb5ec\");",
+            "rainfallDataSet.setYaxisID(\"left-y-axis\");",
+            "List<Number> rainfall;",
+            "rainfall.add(176);",
+            "rainfall.add(135);",
+            "rainfall.add(150);",
+            "rainfall.add(216);",
+            "rainfall.add(194);",
+            "rainfall.add(95);",
+            "rainfall.add(75);",
+            "rainfallDataSet.setData(rainfall);",
+            "data.addChartDataSet(rainfallDataSet);",
+            "",
+            "List<String> labels;",
+            "labels.add(\"Jun\");",
+            "labels.add(\"Jul\");",
+            "labels.add(\"Aug\");",
+            "labels.add(\"Sep\");",
+            "labels.add(\"Oct\");",
+            "labels.add(\"Nov\");",
+            "labels.add(\"Dec\");",
+            "data.setLabels(labels);",
+            "",
+            "model.setData(data);",
+            "BarChartOptions options = new BarChartOptions();",
+            "",
+            "Title title = new Title();",
+            "title.setDisplay(true);",
+            "title.setText(\"Multi Axis Demo Chart\");",
+            "options.setTitle(title);",
+            "",
+            "CartesianScales scales = new CartesianScales();",
+            "CartesianLinearAxes linearAxes = new CartesianLinearAxes();",
+            "linearAxes.setId(\"left-y-axis\");",
+            "linearAxes.setPosition(\"left\");",
+            "CartesianScaleTitle scaleTitle = new CartesianScaleTitle();",
+            "scaleTitle.setText(\"Rainfall [mm]\");",
+            "scaleTitle.setDisplay(true);",
+            "linearAxes.setScaleTitle(scaleTitle);",
+            "scales.addYAxesData(linearAxes);",
+            "",
+            "linearAxes = new CartesianLinearAxes();",
+            "linearAxes.setId(\"right-y-axis\");",
+            "linearAxes.setPosition(\"right\");",
+            "scaleTitle = new CartesianScaleTitle();",
+            "scaleTitle.setText(\"Temperature [C°]\");",
+            "scaleTitle.setDisplay(true);",
+            "linearAxes.setScaleTitle(scaleTitle);",
+            "scales.addYAxesData(linearAxes);",
+            "options.setScales(scales);",
+            "",
+            "model.setOptions(options);",
+            "out.comboChartModel = model;"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 192, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "itemSelected(...)",
+      "config" : {
+        "signature" : "itemSelected",
+        "input" : {
+          "params" : [
+            { "name" : "event", "type" : "org.primefaces.event.ItemSelectEvent", "desc" : "" }
+          ],
+          "map" : { },
+          "code" : [
+            "import jakarta.faces.context.FacesContext;",
+            "import jakarta.faces.application.FacesMessage;",
+            "",
+            "FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,",
+            "\"Item selected\", \"Item Index: \" + param.event.getItemIndex() +",
+            "\", Series Index:\" + param.event.getSeriesIndex());",
+            "",
+            "FacesContext.getCurrentInstance().addMessage(null, msg);"
+          ]
+        },
+        "guid" : "1460568243F99D79"
+      },
+      "visual" : {
+        "at" : { "x" : 64, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f9" }
+      ]
+    }, {
+      "id" : "f9",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 192, "y" : 160 }
+      }
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "name" : [
+        "init pie",
+        "chart model"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "import org.primefaces.model.charts.pie.PieChartModel;",
+            "import org.primefaces.model.charts.pie.PieChartDataSet;",
+            "import org.primefaces.model.charts.pie.PieChartOptions;",
+            "import org.primefaces.model.charts.ChartData;",
+            "import org.primefaces.model.charts.optionconfig.title.Title;",
+            "",
+            "PieChartModel model = new PieChartModel();",
+            "ChartData data = new ChartData();",
+            "PieChartDataSet dataSet = new PieChartDataSet();",
+            "",
+            "List<Number> values;",
+            "values.add(540);",
+            "values.add(325);",
+            "values.add(702);",
+            "values.add(421);",
+            "",
+            "dataSet.setData(values);",
+            "",
+            "List<String> bgColors;",
+            "bgColors.add(\"#ddffaa\");",
+            "bgColors.add(\"#b7f17c\");",
+            "bgColors.add(\"#8ae82d\");",
+            "bgColors.add(\"#52c60d\");",
+            "dataSet.setBackgroundColor(bgColors);",
+            "",
+            "data.addChartDataSet(dataSet);",
+            "",
+            "List<String> labels;",
+            "labels.add(\"Brand 1\");",
+            "labels.add(\"Brand 2\");",
+            "labels.add(\"Brand 3\");",
+            "labels.add(\"Brand 4\");",
+            "data.setLabels(labels);",
+            "",
+            "model.setData(data);",
+            "PieChartOptions options = new PieChartOptions();",
+            "Title title = new Title();",
+            "title.setDisplay(true);",
+            "title.setText(\"Pie Demo Chart\");",
+            "options.setTitle(title);",
+            "model.setOptions(options);",
+            "",
+            "  ",
+            " /* ",
+            "model.setTitle(\"Pie Demo Chart\");",
+            "model.setLegendPosition(\"e\");",
+            "model.setShowDataLabels(true);",
+            "model.setSliceMargin(8);",
+            "model.setShadow(false);",
+            "model.setSeriesColors(\"\");",
+            "// Data format: label, value or percent (default)",
+            "model.setDataFormat(\"value\");",
+            "// see ext java script function in view",
+            "model.setExtender(\"ext\");",
+            "*/",
+            "",
+            "out.pieChartModel = model;"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "sliceSelected(...)",
+      "config" : {
+        "signature" : "sliceSelected",
+        "input" : {
+          "params" : [
+            { "name" : "event", "type" : "org.primefaces.event.ItemSelectEvent", "desc" : "" }
+          ],
+          "map" : { },
+          "code" : [
+            "import jakarta.faces.context.FacesContext;",
+            "import jakarta.faces.application.FacesMessage;",
+            "",
+            "FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,",
+            "\"Slice selected\", \"Index: \" + param.event.getItemIndex());",
+            "",
+            "FacesContext.getCurrentInstance().addMessage(null, msg);"
+          ]
+        },
+        "guid" : "14623C0E2748E74C"
+      },
+      "visual" : {
+        "at" : { "x" : 64, "y" : 224 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f14" }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 192, "y" : 224 }
+      }
+    } ]
+}

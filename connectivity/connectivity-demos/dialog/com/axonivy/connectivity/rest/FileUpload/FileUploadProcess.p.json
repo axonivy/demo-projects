@@ -1,0 +1,308 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "169B3B8EB21D10D8",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "com.axonivy.connectivity.rest.FileUpload.FileUploadData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(Data)",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "data", "type" : "com.axonivy.connectivity.Data", "desc" : "" }
+          ],
+          "map" : { }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "data", "type" : "com.axonivy.connectivity.Data", "desc" : "" }
+          ],
+          "map" : { }
+        },
+        "guid" : "169B3B8EB3CCFDE2"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 320, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "169B3B8EB4542063"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 392 },
+        "labelOffset" : { "x" : 8, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 320, "y" : 392 }
+      }
+    }, {
+      "id" : "f14",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 320, "y" : 328 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "HtmlDialogEventStart",
+      "name" : "uploadIvyScript",
+      "config" : {
+        "guid" : "169BA65449CB5C7A"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 128 },
+        "labelOffset" : { "x" : 11 }
+      },
+      "connect" : [
+        { "id" : "f24", "to" : "f20" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 320, "y" : 168 }
+      }
+    }, {
+      "id" : "f20",
+      "type" : "RestClientCall",
+      "name" : [
+        "    PUT File",
+        "with ivy Script"
+      ],
+      "config" : {
+        "method" : "JAX_RS",
+        "target" : {
+          "clientId" : "ivyengine-localbackend",
+          "path" : "file"
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "multipart/form-data"
+        },
+        "code" : [
+          "import com.axonivy.connectivity.rest.client.file.FileUpload;",
+          "import jakarta.ws.rs.client.Entity;",
+          "import jakarta.ws.rs.core.MediaType;",
+          "import jakarta.ws.rs.core.Response;",
+          "import org.glassfish.jersey.media.multipart.Boundary;",
+          "import org.glassfish.jersey.media.multipart.FormDataMultiPart;",
+          "import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;",
+          "",
+          "java.io.File file = FileUpload.getResource(in.resourceName);",
+          "",
+          "FormDataMultiPart formDataMultiPart = new FormDataMultiPart();",
+          "FileDataBodyPart filePart = new FileDataBodyPart(\"file\", file);",
+          "FormDataMultiPart multipart = formDataMultiPart.bodyPart(filePart) as FormDataMultiPart;",
+          "",
+          "MediaType contentType = Boundary.addBoundary(MediaType.MULTIPART_FORM_DATA_TYPE);",
+          "Response jaxrsresponse = client.request().header(\"X-Requested-By\", \"ivy\")",
+          " .header(\"MIME-Version\", \"1.0\")",
+          " .put(Entity.entity(multipart, contentType));",
+          "try {",
+          "  in.downloadName = jaxrsresponse.getHeaderString(\"uploadedFile\");",
+          "  in.listFile.add(jaxrsresponse.getHeaderString(\"uploadedFile\"));",
+          "} finally {",
+          "  jaxrsresponse.close();",
+          "}"
+        ]
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 128 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f13", "via" : [ { "x" : 320, "y" : 128 } ] }
+      ]
+    }, {
+      "id" : "f15",
+      "type" : "ProcessAnnotation",
+      "name" : "The files are transfered as MediaType.MULTIPART_FORM_DATA into Response.",
+      "visual" : {
+        "at" : { "x" : 592, "y" : 168 },
+        "size" : { "width" : 496, "height" : 30 }
+      }
+    }, {
+      "id" : "f23",
+      "type" : "RestClientCall",
+      "name" : [
+        "PUT File ",
+        "with Java"
+      ],
+      "config" : {
+        "method" : "JAX_RS",
+        "target" : {
+          "clientId" : "ivyengine-localbackend",
+          "path" : "file"
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "multipart/form-data"
+        },
+        "code" : [
+          "import com.axonivy.connectivity.rest.client.file.FileUpload;",
+          "import jakarta.ws.rs.core.Response;",
+          "",
+          "java.io.File resource = FileUpload.getResource(in.resourceName);",
+          "Response response = FileUpload.upload(client, resource);",
+          "try {",
+          "  in.downloadName = response.getHeaderString(\"uploadedFile\");",
+          "  in.listFile.add(in.downloadName);",
+          "} finally {",
+          "  response.close();",
+          "}"
+        ]
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 201 },
+        "size" : { "width" : 128, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f13", "via" : [ { "x" : 320, "y" : 200 } ] }
+      ]
+    }, {
+      "id" : "f26",
+      "type" : "HtmlDialogEventStart",
+      "name" : "uploadJava",
+      "config" : {
+        "guid" : "169DD5240BB13E40"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 200 },
+        "labelOffset" : { "x" : 7, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f23" }
+      ]
+    }, {
+      "id" : "f19",
+      "type" : "RestClientCall",
+      "name" : "GET File",
+      "config" : {
+        "target" : {
+          "clientId" : "ivyengine-localbackend",
+          "path" : "/file/{fileName}",
+          "templateParams" : {
+            "fileName" : "in.downloadName"
+          },
+          "headers" : {
+            "Accept" : "application/octet-stream"
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "[B",
+            "code" : [
+              "import ch.ivyteam.ivy.jsf.primefaces.stream.InputStreamSupplier;",
+              "import java.io.ByteArrayInputStream;",
+              "import org.primefaces.model.DefaultStreamedContent;",
+              "",
+              "out.fileDownload = DefaultStreamedContent.builder()",
+              "  .stream(InputStreamSupplier.stream(new ByteArrayInputStream(result)))",
+              "  .contentType(\"text/plain\")",
+              "  .name(in.downloadName)",
+              "  .build();"
+            ]
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 332 },
+        "size" : { "width" : 128, "height" : 56 }
+      },
+      "connect" : [
+        { "id" : "f21", "to" : "f14" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "download(String)",
+      "config" : {
+        "signature" : "download",
+        "input" : {
+          "params" : [
+            { "name" : "fileName", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.downloadName" : "param.fileName"
+          }
+        },
+        "guid" : "169FD080F277361F"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 328 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f19" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "addJsToList(String)",
+      "config" : {
+        "signature" : "addJsToList",
+        "input" : {
+          "params" : [
+            { "name" : "fileName", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.fileName" : "param.fileName"
+          },
+          "code" : [
+            "import com.axonivy.connectivity.rest.provider.FileService;",
+            "import java.util.Arrays;",
+            "import org.apache.commons.io.FilenameUtils;",
+            "String extension = FilenameUtils.getExtension(out.fileName);",
+            "List<String> allowed = FileService.whitelistedExtensions;",
+            "if(allowed.contains(extension))",
+            "{",
+            "out.listFile.add(out.fileName);",
+            "}"
+          ]
+        },
+        "result" : {
+          "params" : [
+            { "name" : "result", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "result.result" : "in.fileName"
+          }
+        },
+        "guid" : "16AD5002D41CB6BC"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 264 },
+        "size" : { "width" : 24, "height" : 24 },
+        "labelOffset" : { "x" : 32, "y" : 36 }
+      },
+      "connect" : [
+        { "id" : "f16", "to" : "f18" }
+      ]
+    }, {
+      "id" : "f18",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 320, "y" : 264 }
+      }
+    } ]
+}

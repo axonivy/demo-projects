@@ -1,0 +1,142 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "15254DF8F30D6949",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "workflow.humantask.VerifyRequest.VerifyRequestData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(ProcurementRequest)",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "procurementRequest", "type" : "workflow.humantask.ProcurementRequest", "desc" : "" }
+          ],
+          "map" : {
+            "out.procurementRequest" : "param.procurementRequest"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "dataOk", "type" : "Boolean", "desc" : "" },
+            { "name" : "logEntry", "type" : "workflow.humantask.LogEntry", "desc" : "" }
+          ],
+          "map" : {
+            "result.dataOk" : "in.ok",
+            "result.logEntry" : "in.logEntry"
+          }
+        },
+        "guid" : "14FAE07217F2117A"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 19 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 160 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "name" : "Init LogEntry",
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.logEntry.activity" : "ivy.cms.co(\"/Dialogs/procurementRequest/verifiedBy\")",
+            "out.logEntry.timestamp" : "new DateTime()",
+            "out.logEntry.user.fullName" : "ivy.session.getSessionUser().fullName",
+            "out.logEntry.user.role" : "ivy.task.responsibles().displayName()"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "HtmlDialogEventStart",
+      "name" : "decline",
+      "config" : {
+        "guid" : "152A1A71D5D17CAC",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.ok" : "false"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 72, "y" : 224 },
+        "labelOffset" : { "x" : 10 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f10" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "HtmlDialogEventStart",
+      "name" : "verify",
+      "config" : {
+        "guid" : "152A1A7AEA3D662F",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.ok" : "true"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 72, "y" : 160 },
+        "labelOffset" : { "x" : 11 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 224 }
+      }
+    }, {
+      "id" : "f10",
+      "type" : "Script",
+      "name" : "Init LogEntry",
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.logEntry.activity" : "ivy.cms.co(\"/Dialogs/procurementRequest/declinedBy\")",
+            "out.logEntry.timestamp" : "new DateTime()",
+            "out.logEntry.user.fullName" : "ivy.session.getSessionUser().fullName",
+            "out.logEntry.user.role" : "ivy.task.responsibles().displayName()"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 224 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f3" }
+      ]
+    } ]
+}

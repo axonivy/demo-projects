@@ -1,0 +1,181 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "16150E26E34D4339",
+  "config" : {
+    "data" : "com.axonivy.connectivity.soap.PersonClientData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "read.ivp",
+      "config" : {
+        "signature" : "read",
+        "request" : {
+          "name" : "9.2.1 read data",
+          "category" : "soap",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-eye" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 152 },
+        "labelOffset" : { "x" : 12, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 672, "y" : 152 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "WebServiceCall",
+      "name" : "getPersons",
+      "config" : {
+        "clientId" : "personService",
+        "operation" : {
+          "name" : "getPersons",
+          "port" : "PersonServicePort"
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.persons" : "wsResponse"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 384, "y" : 152 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "Script",
+      "name" : "log",
+      "config" : {
+        "output" : {
+          "code" : [
+            "for (int i = 0; i < in.persons.size(); i++)",
+            "{",
+            "  ivy.log.info(\"\"+ in.persons.get(i));",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 544, "y" : 152 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "RequestStart",
+      "name" : "delete.ivp",
+      "config" : {
+        "signature" : "delete",
+        "request" : {
+          "name" : "9.2.3 delete data",
+          "category" : "soap",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-circle-minus" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 118, "y" : 344 },
+        "labelOffset" : { "x" : 12, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f8" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "WebServiceCall",
+      "name" : "deletePerson Mr. Bloch",
+      "config" : {
+        "clientId" : "personService",
+        "operation" : {
+          "name" : "deletePerson",
+          "port" : "PersonServicePort",
+          "parameters" : {
+            "parameters.person.firstname" : "\"Joshua\"",
+            "parameters.person.lastname" : "\"Bloch\""
+          }
+        },
+        "output" : {
+          "code" : "ivy.log.info(\"deleted \"+wsResponse);"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 344 },
+        "size" : { "width" : 160 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f2", "via" : [ { "x" : 384, "y" : 344 } ] }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "RequestStart",
+      "name" : "add.ivp",
+      "config" : {
+        "signature" : "add",
+        "request" : {
+          "name" : "9.2.2 add data",
+          "category" : "soap",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-circle-plus" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 120, "y" : 256 },
+        "labelOffset" : { "x" : 11, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f13", "to" : "f12" }
+      ]
+    }, {
+      "id" : "f12",
+      "type" : "WebServiceCall",
+      "name" : "addPerson Mr. Bloch",
+      "config" : {
+        "clientId" : "personService",
+        "operation" : {
+          "name" : "addPerson",
+          "port" : "PersonServicePort",
+          "parameters" : {
+            "parameters.person.firstname" : "\"Joshua\"",
+            "parameters.person.lastname" : "\"Bloch\""
+          }
+        },
+        "output" : {
+          "code" : "ivy.log.info(\"person added\");"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 256 },
+        "size" : { "width" : 144 }
+      },
+      "connect" : [
+        { "id" : "f14", "to" : "f2", "via" : [ { "x" : 384, "y" : 256 } ] }
+      ]
+    }, {
+      "id" : "f15",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "This processes call the Web Service Process (personService) with the web service client.",
+        "The web service client is configured with HTTP_BASIC feature, because the personService is protected by HTTP_BASIC."
+      ],
+      "visual" : {
+        "at" : { "x" : 392, "y" : 72 },
+        "size" : { "width" : 672, "height" : 56 }
+      }
+    } ]
+}

@@ -1,0 +1,46 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "13B69F6D60FCC080",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.component.AddressComponent.AddressComponentData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(Address)",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "address", "type" : "ch.ivyteam.htmldialog.demo.Address", "desc" : "" }
+          ],
+          "map" : {
+            "out.address" : "param.address.clone()"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "address", "type" : "ch.ivyteam.htmldialog.demo.Address", "desc" : "" }
+          ],
+          "map" : {
+            "result.address" : "in.address"
+          }
+        },
+        "guid" : "13B69F6D63DF676C"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 14, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      }
+    } ]
+}

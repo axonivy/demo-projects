@@ -1,0 +1,145 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "16249376A44F1F8E",
+  "config" : {
+    "data" : "com.axonivy.connectivity.soap.service.CreateOrderServiceData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "approveOrder(Order,String)",
+      "config" : {
+        "signature" : "approveOrder",
+        "input" : {
+          "params" : [
+            { "name" : "order", "type" : "com.axonivy.connectivity.soap.service.Order", "desc" : "" },
+            { "name" : "responsibleRole", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.order" : "param.order"
+          }
+        },
+        "request" : {
+          "isHttpRequestable" : false,
+          "name" : "New Order",
+          "isVisibleOnStartList" : false
+        },
+        "permission" : {
+          "anonymous" : false,
+          "roles" : [
+            "Team"
+          ]
+        },
+        "triggerable" : true,
+        "task" : {
+          "name" : "Approve Order of <%=param.order.requester%>",
+          "responsible" : {
+            "type" : "ROLE_FROM_ATTRIBUTE",
+            "script" : "param.responsibleRole"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 56, "y" : 64 },
+        "labelOffset" : { "x" : 71, "y" : -16 },
+        "color" : "NodeStyle2"
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 744, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "name" : "Approve Order",
+      "config" : {
+        "dialog" : "com.axonivy.connectivity.soap.AcceptOrder:start(com.axonivy.connectivity.soap.service.Order)",
+        "call" : {
+          "map" : {
+            "param.order" : "in.order"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 448, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "name" : "order:declined",
+          "config" : {
+            "errorCode" : "order:declined"
+          },
+          "visual" : {
+            "at" : { "x" : 480, "y" : 96 },
+            "labelOffset" : { "x" : 2, "y" : 16 }
+          },
+          "connect" : [
+            { "id" : "f9", "to" : "f6", "via" : [ { "x" : 480, "y" : 192 } ] }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f11", "to" : "f10" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 744, "y" : 192 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "EMail",
+      "name" : "inform requester",
+      "visual" : {
+        "at" : { "x" : 624, "y" : 192 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f10",
+      "type" : "Script",
+      "name" : [
+        "Request Order",
+        "from Manufacturer"
+      ],
+      "config" : {
+        "output" : {
+          "code" : "// sample: no real code here!"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 624, "y" : 64 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f12",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "can not be started with a start link by a human user,",
+        "but will be triggered by WebService-Process via SOAP:",
+        "see 'createOrderService'"
+      ],
+      "visual" : {
+        "at" : { "x" : 256, "y" : 160 },
+        "size" : { "width" : 352 }
+      },
+      "connect" : [
+        { "id" : "f13", "to" : "f0", "via" : [ { "x" : 56, "y" : 160 } ] }
+      ]
+    } ],
+  "layout" : {
+    "colors" : {
+      "NodeStyle2" : "rgb(57, 99, 173)"
+    }
+  }
+}
