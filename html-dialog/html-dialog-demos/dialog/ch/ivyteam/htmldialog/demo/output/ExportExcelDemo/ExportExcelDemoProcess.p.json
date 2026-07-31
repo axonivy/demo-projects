@@ -1,0 +1,79 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "16ADE8E3AB9D5207",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.output.ExportExcelDemo.ExportExcelDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "guid" : "139D96A574FD8C6C"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 128 },
+        "labelOffset" : { "x" : 12, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 568, "y" : 128 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "SubProcessCall",
+      "name" : "initPerson()",
+      "config" : {
+        "processCall" : "Functional Processes/InitPersons:initPerson()",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.persons" : "result.persons"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 128 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.htmldialog.demo.Person;",
+            "",
+            "",
+            "in.recordset = new Recordset([\"Name\", \"Firstname\"]);",
+            "",
+            "for (Person person : in.persons)",
+            "{",
+            "  in.recordset.add([person.name, person.firstname]);",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 416, "y" : 128 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1" }
+      ]
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "Initialisation",
+        "size" : 255
+      } ]
+  }
+}

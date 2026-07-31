@@ -1,0 +1,206 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "139D96A5734DE195",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.output.EditableTableDemo.EditableTableDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "guid" : "139D96A574FD8C6C"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 128 },
+        "labelOffset" : { "x" : 12, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 568, "y" : 128 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "SubProcessCall",
+      "name" : "initPerson()",
+      "config" : {
+        "processCall" : "Functional Processes/InitPersons:initPerson()",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.persons" : "result.persons"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 128 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "HtmlDialogEventStart",
+      "name" : "send",
+      "config" : {
+        "guid" : "139D98B6A2951E27"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 320 },
+        "labelOffset" : { "x" : 9, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "139D98B7D2CE532C"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 416 },
+        "labelOffset" : { "x" : 9, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f8" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 320 }
+      }
+    }, {
+      "id" : "f8",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 416 }
+      }
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.htmldialog.demo.Person;",
+            "",
+            "",
+            "in.recordset = new Recordset([\"Name\", \"Firstname\"]);",
+            "",
+            "for (Person person : in.persons)",
+            "{",
+            "  in.recordset.add([person.name, person.firstname]);",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 416, "y" : 128 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "delete(Record)",
+      "config" : {
+        "signature" : "delete",
+        "input" : {
+          "params" : [
+            { "name" : "deletedRow", "type" : "Record", "desc" : "" }
+          ],
+          "map" : {
+            "out.selectedPerson" : "param.deletedRow"
+          }
+        },
+        "guid" : "139DEBA1CB42E47D"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 672 },
+        "labelOffset" : { "x" : 14, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f14" }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "Script",
+      "name" : "Delete record from recordset",
+      "config" : {
+        "output" : {
+          "code" : "in.recordset.remove(in.selectedPerson);"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 240, "y" : 672 },
+        "size" : { "width" : 176 }
+      },
+      "connect" : [
+        { "id" : "f17", "to" : "f16" }
+      ]
+    }, {
+      "id" : "f16",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 416, "y" : 672 }
+      }
+    }, {
+      "id" : "f18",
+      "type" : "HtmlDialogEventStart",
+      "name" : "add",
+      "config" : {
+        "guid" : "139E297CD5890C15"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 512 },
+        "labelOffset" : { "x" : 10, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f22", "to" : "f21" }
+      ]
+    }, {
+      "id" : "f19",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 416, "y" : 512 }
+      }
+    }, {
+      "id" : "f21",
+      "type" : "Script",
+      "name" : "Add new record to recordset",
+      "config" : {
+        "output" : {
+          "code" : "in.recordset.add(new Record(in.recordset.getKeys(), [\"\", \"\"]));"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 512 },
+        "size" : { "width" : 160 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f19" }
+      ]
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "Initialisation",
+        "size" : 255
+      }, {
+        "name" : "Events",
+        "size" : 321
+      }, {
+        "name" : "Methods",
+        "size" : 192
+      } ]
+  }
+}

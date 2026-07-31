@@ -1,0 +1,40 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "14377E60D299F34F",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.component.JsfCompositeComponentDemo.JsfCompositeComponentDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "map" : {
+            "out.person.billingAddress.country" : "\"Switzerland\"",
+            "out.person.billingAddress.street" : "\"Bahnhofstrasse\"",
+            "out.person.deliveryAddress.country" : "\"Germany\"",
+            "out.person.deliveryAddress.street" : "\"Landstrasse\"",
+            "out.person.firstname" : "\"Hans\"",
+            "out.person.name" : "\"Muster\""
+          }
+        },
+        "guid" : "139D96A574FD8C6C"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 12, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      }
+    } ]
+}

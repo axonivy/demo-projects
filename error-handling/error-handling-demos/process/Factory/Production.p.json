@@ -1,0 +1,145 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "1500417E1DADBB7C",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "error.handling.demo.FactoryData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : [
+        "produceShoes",
+        "(String,Number)"
+      ],
+      "config" : {
+        "signature" : "produceShoes",
+        "input" : {
+          "params" : [
+            { "name" : "model", "type" : "String", "desc" : "" },
+            { "name" : "amount", "type" : "Number", "desc" : "" }
+          ],
+          "map" : {
+            "out.amount" : "param.amount",
+            "out.model" : "param.model"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 224 },
+        "labelOffset" : { "x" : -36, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 592, "y" : 224 }
+      }
+    }, {
+      "id" : "f9",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "Demonstrates how default ivy errors can be wrapped into a custom error",
+        "- the remote factory can throw an `ivy:error:webservice:exception` if the host is not available",
+        "- the attached Error Boundary Event catches any ivy webservice error",
+        "- the Error End Event wraps the webservice error ",
+        "   and throws it as `factory:unavailable` which has a specific meaning for the business"
+      ],
+      "visual" : {
+        "at" : { "x" : 336, "y" : 64 },
+        "size" : { "width" : 592, "height" : 76 },
+        "color" : "NodeStyle3"
+      }
+    }, {
+      "id" : "f7",
+      "type" : "Database",
+      "name" : "store in erp",
+      "config" : {
+        "query" : {
+          "dbName" : "stock"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 432, "y" : 224 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f3",
+      "type" : "WebServiceCall",
+      "name" : [
+        "call remote",
+        "factory"
+      ],
+      "config" : {
+        "clientId" : "factory",
+        "operation" : {
+          "name" : "produce",
+          "port" : "NikeFactoryPort",
+          "parameters" : {
+            "parameters.amount" : "200",
+            "parameters.model" : "\"Super Runners\""
+          }
+        },
+        "properties" : {
+          "timeout.timeInSeconds" : "1"
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.newShoes" : "wsResponse.shoes"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 224 }
+      },
+      "boundaries" : [ {
+          "id" : "Et0",
+          "type" : "ErrorBoundaryEvent",
+          "name" : "catch ws error",
+          "config" : {
+            "errorCode" : "ivy:error",
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.wsError" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 256, "y" : 256 },
+            "labelOffset" : { "x" : 19, "y" : -6 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f5", "via" : [ { "x" : 256, "y" : 320 } ] }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "ErrorEnd",
+      "name" : "factory:unavailable",
+      "config" : {
+        "throws" : {
+          "error" : "factory:unavailable",
+          "cause" : "in.wsError"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 352, "y" : 320 },
+        "labelOffset" : { "x" : 17, "y" : 37 }
+      }
+    } ],
+  "layout" : {
+    "colors" : {
+      "NodeStyle3" : "rgb(255, 0, 0)"
+    }
+  }
+}

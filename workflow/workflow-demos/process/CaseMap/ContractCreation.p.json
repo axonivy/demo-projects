@@ -1,0 +1,38 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "15A89966729CE3FC",
+  "config" : {
+    "data" : "workflow.humantask.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "signature" : "start",
+        "request" : {
+          "name" : "Create Contract",
+          "isVisibleOnStartList" : false
+        },
+        "task" : {
+          "name" : "Create Contract",
+          "expiry" : {
+            "timeout" : "new Duration(\"4h\")"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 12, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    } ]
+}

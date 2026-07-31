@@ -1,0 +1,163 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "13D440F293AA05F8",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.input.FileUploadSimpleModeDemo.FileUploadSimpleModeDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "guid" : "13CF812673B64819"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 12, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 256, "y" : 64 }
+      }
+    }, {
+      "id" : "f11",
+      "type" : "HtmlDialogEventStart",
+      "name" : "showContent",
+      "config" : {
+        "guid" : "13D016515EC7C69A"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 256 },
+        "labelOffset" : { "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f8" }
+      ]
+    }, {
+      "id" : "f12",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 416, "y" : 256 }
+      }
+    }, {
+      "id" : "f8",
+      "type" : "Script",
+      "name" : "set show content",
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.showContent" : "true"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 256 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f12" }
+      ]
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "fileDownload",
+      "config" : {
+        "guid" : "1468FB4A3B3BAF3D"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 352 },
+        "labelOffset" : { "x" : 11, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 416, "y" : 352 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "name" : "set file path for download",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.jsf.primefaces.stream.InputStreamSupplier;",
+            "import java.io.FileInputStream;",
+            "import java.io.FileNotFoundException;",
+            "import java.io.InputStream;",
+            "import jakarta.inject.Named;",
+            "import org.primefaces.model.DefaultStreamedContent;",
+            "import org.primefaces.model.StreamedContent;",
+            "",
+            "InputStream stream = new FileInputStream(in.filePath);",
+            "in.fileDownload = DefaultStreamedContent.builder()",
+            "  .stream(InputStreamSupplier.stream(stream))",
+            "  .contentType(\"text/txt\")",
+            "  .name(in.fileName)",
+            "  .build();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 352 },
+        "size" : { "width" : 144 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "HtmlDialogEventStart",
+      "name" : "fileUpload",
+      "config" : {
+        "guid" : "1469001EB7423E79"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 },
+        "labelOffset" : { "x" : 11, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f17", "to" : "f16" }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 416, "y" : 160 }
+      }
+    }, {
+      "id" : "f16",
+      "type" : "Script",
+      "name" : "set file content and name",
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.showContent" : "false"
+          },
+          "code" : [
+            "in.textContent = in.ivyFile.read();",
+            "in.fileName = in.ivyFile.getName();",
+            "in.filePath = in.ivyFile.getAbsolutePath();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 160 },
+        "size" : { "width" : 144 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f14" }
+      ]
+    } ]
+}

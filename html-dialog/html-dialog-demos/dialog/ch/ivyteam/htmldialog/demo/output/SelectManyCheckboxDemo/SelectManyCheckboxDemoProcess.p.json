@@ -1,0 +1,98 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "13F613EA00B31DDD",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.output.SelectManyCheckboxDemo.SelectManyCheckboxDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "guid" : "13F3C7335762710A"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 128 },
+        "labelOffset" : { "x" : 12, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 432, "y" : 128 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "SubProcessCall",
+      "name" : "initPerson()",
+      "config" : {
+        "processCall" : "Functional Processes/InitPersons:initPerson()",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.persons" : "result.persons"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 128 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 320 }
+      }
+    }, {
+      "id" : "f7",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "13F3C7C4AAA7A1A5"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 416 },
+        "labelOffset" : { "x" : 9, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f8" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 416 }
+      }
+    }, {
+      "id" : "f5",
+      "type" : "HtmlDialogEventStart",
+      "name" : "send",
+      "config" : {
+        "guid" : "13F3C7C4AA97821B"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 320 },
+        "labelOffset" : { "x" : 9, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f6" }
+      ]
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "Initialisation",
+        "size" : 257
+      }, {
+        "name" : "Events",
+        "size" : 222
+      } ]
+  }
+}

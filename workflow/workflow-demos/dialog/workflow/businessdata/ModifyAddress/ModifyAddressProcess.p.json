@@ -1,0 +1,159 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "156DF5CB0BDE73A1",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "workflow.businessdata.ModifyAddress.ModifyAddressData"
+  },
+  "elements" : [ {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "156DF5CB0E771AB2"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 },
+        "labelOffset" : { "x" : 10, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f11", "to" : "f10" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 448, "y" : 160 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogStart",
+      "name" : "start(String)",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "id", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.addressId" : "param.id"
+          }
+        },
+        "guid" : "156DF5D8A2530110"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f0" }
+      ]
+    }, {
+      "id" : "f0",
+      "type" : "Script",
+      "name" : "Load Address",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import workflow.businessdata.Address;",
+            "",
+            "in.address = ivy.repo.find(in.addressId, Address.class) as Address;"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "Script",
+      "name" : "Save into Repo",
+      "config" : {
+        "output" : {
+          "code" : "ivy.repo.save(in.address);"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 320, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f10",
+      "type" : "Alternative",
+      "name" : "is up to date?",
+      "config" : {
+        "conditions" : {
+          "f9" : "ivy.repo.isUpToDate(in.address)"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 192, "y" : 160 },
+        "labelOffset" : { "x" : 15, "y" : -15 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f8" },
+        { "id" : "f14", "to" : "f13", "via" : [ { "x" : 192, "y" : 256 } ] }
+      ]
+    }, {
+      "id" : "f12",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 256 }
+      }
+    }, {
+      "id" : "f13",
+      "type" : "Script",
+      "name" : [
+        "Reload data",
+        " from Repo"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "import workflow.businessdata.Address;",
+            "",
+            "in.address = ivy.repo.reload(in.address) as Address;"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 320, "y" : 256 }
+      },
+      "connect" : [
+        { "id" : "f17", "to" : "f16" }
+      ]
+    }, {
+      "id" : "f16",
+      "type" : "Script",
+      "name" : "Display warning",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import jakarta.faces.application.FacesMessage;",
+            "import jakarta.faces.context.FacesContext;",
+            "",
+            "FacesContext.getCurrentInstance().addMessage(null,",
+            "  new FacesMessage(FacesMessage.SEVERITY_ERROR,",
+            "  \"The address data was modified by another user, while you were editing it. ",
+            "  The modified data was reloaded, please save your changes again.\", \"Business Data not up-to-date\"));"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 480, "y" : 256 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f12" }
+      ]
+    } ]
+}

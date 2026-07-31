@@ -1,0 +1,82 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "139E3EF5C6DBC97F",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.component.PartialUpdateDemo.PartialUpdateDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "map" : {
+            "out.counter" : "0"
+          }
+        },
+        "guid" : "0139E3EF5C8EF75C"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 96 },
+        "labelOffset" : { "x" : 12, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 96 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "increaseCounter",
+      "config" : {
+        "guid" : "139E3F86899BF38A"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 320 },
+        "labelOffset" : { "x" : 14, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 416, "y" : 320 }
+      }
+    }, {
+      "id" : "f5",
+      "type" : "Script",
+      "name" : "Increase Counter",
+      "config" : {
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.counter" : "in.counter+1"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 320 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f4" }
+      ]
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "Initialisation",
+        "size" : 192
+      }, {
+        "name" : "Events",
+        "size" : 272
+      } ]
+  }
+}

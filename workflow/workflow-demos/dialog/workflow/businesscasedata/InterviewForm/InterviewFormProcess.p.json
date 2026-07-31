@@ -1,0 +1,147 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "16EF56C29B4905A8",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "workflow.businesscasedata.InterviewForm.InterviewFormData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "result" : {
+          "params" : [
+            { "name" : "interview", "type" : "workflow.businesscasedata.Interview", "desc" : "" }
+          ],
+          "map" : {
+            "result.interview" : "in.interview"
+          }
+        },
+        "guid" : "16EF56C29B9C0D29"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f9" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "16EF56C29BFE1059"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 160 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogEventStart",
+      "name" : "saveAndPark",
+      "config" : {
+        "guid" : "16EF571B2C7EC641"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 256 }
+      },
+      "connect" : [
+        { "id" : "f14", "to" : "f13" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 256 }
+      }
+    }, {
+      "id" : "f9",
+      "type" : "Script",
+      "name" : [
+        "create / load",
+        "business data object"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "import workflow.businesscasedata.Interview;",
+            "//load businessdata object from ivy.repo",
+            "out.interview = ivy.repo.get(Interview.class) as Interview;"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 },
+        "size" : { "width" : 160 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "name" : [
+        "save",
+        "business data object"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "//save businessdata object to ivy.repo",
+            "ivy.repo.save(in.interview);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 },
+        "size" : { "width" : 160 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "Script",
+      "name" : [
+        "park task and",
+        "redirect to task list"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "import jakarta.faces.context.FacesContext;",
+            "//save businessdata object to ivy.repo",
+            "ivy.repo.save(in.interview);",
+            "//park task",
+            "ivy.session.parkTask(ivy.task);",
+            "//redirect to task list",
+            "FacesContext.getCurrentInstance().getExternalContext().redirect(ivy.html.taskListLink().getRelative());"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 256 },
+        "size" : { "width" : 144 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
+    } ]
+}

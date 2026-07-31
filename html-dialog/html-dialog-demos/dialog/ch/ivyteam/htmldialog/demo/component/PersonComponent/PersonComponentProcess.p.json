@@ -1,0 +1,46 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "13B69F6612D62493",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.component.PersonComponent.PersonComponentData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(Person)",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "person", "type" : "ch.ivyteam.htmldialog.demo.Person", "desc" : "" }
+          ],
+          "map" : {
+            "out.person" : "param.person"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "person", "type" : "ch.ivyteam.htmldialog.demo.Person", "desc" : "" }
+          ],
+          "map" : {
+            "result.person" : "in.person"
+          }
+        },
+        "guid" : "13B69F6613C66357"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 14, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      }
+    } ]
+}

@@ -1,0 +1,78 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "139E3427D3640FBC",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.output.PickListDemo.PickListDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "guid" : "139E3427D4C19817"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 96 },
+        "labelOffset" : { "x" : 12, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 416, "y" : 96 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "SubProcessCall",
+      "name" : "initPerson()",
+      "config" : {
+        "processCall" : "Functional Processes/InitPersons:initPerson()",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.persons.source" : "result.persons"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 96 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "HtmlDialogEventStart",
+      "name" : "send",
+      "config" : {
+        "guid" : "139E38F62BA66372"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 288 },
+        "labelOffset" : { "x" : 9, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f8" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 288 }
+      }
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "Initialisation",
+        "size" : 192
+      }, {
+        "name" : "Events",
+        "size" : 191
+      } ]
+  }
+}

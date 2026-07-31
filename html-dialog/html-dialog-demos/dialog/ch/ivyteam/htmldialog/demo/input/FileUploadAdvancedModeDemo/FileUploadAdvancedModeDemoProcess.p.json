@@ -1,0 +1,136 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "13D440EE6A78EF1E",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "ch.ivyteam.htmldialog.demo.input.FileUploadAdvancedModeDemo.FileUploadAdvancedModeDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "map" : { },
+          "code" : [
+            "import ch.ivyteam.ivy.cm.ContentObject;",
+            "",
+            "ContentObject co = ivy.cms.get(\"/ch.ivyteam.htmldialog.demo/fileUploadImages\").orElseThrow() as ContentObject;",
+            "for (ContentObject child : co.children()) {",
+            "  out.images.add(child.name());",
+            "}  "
+          ]
+        },
+        "guid" : "13CF812673B64819"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 12, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "uploadFile(FileUploadEvent)",
+      "config" : {
+        "signature" : "uploadFile",
+        "input" : {
+          "params" : [
+            { "name" : "event", "type" : "org.primefaces.event.FileUploadEvent", "desc" : "" }
+          ],
+          "map" : {
+            "out.fileUploadEvent" : "param.event"
+          }
+        },
+        "guid" : "13CF8146B1D3BB71"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 },
+        "labelOffset" : { "x" : 17, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 488, "y" : 160 }
+      }
+    }, {
+      "id" : "f5",
+      "type" : "Script",
+      "name" : "store uploaded image in CMS",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.application.app.Application;",
+            "import ch.ivyteam.ivy.cm.exec.ContentManagement;",
+            "import org.apache.commons.lang3.StringUtils;",
+            "import java.io.InputStream;",
+            "import org.primefaces.model.file.UploadedFile;",
+            "import ch.ivyteam.ivy.cm.ContentObject;",
+            "import ch.ivyteam.ivy.cm.ContentObjectValue;",
+            "",
+            "UploadedFile uploadedFile = in.fileUploadEvent.getFile();",
+            "String fileName = uploadedFile.getFileName();",
+            "",
+            "ContentObject baseFolder = ContentManagement.cms(Application.current())",
+            "  .root().child().folder(\"ch.ivyteam.htmldialog.demo/fileUploadImages\");",
+            "",
+            "// create new Content Object name",
+            "String coName = fileName.substring(0, fileName.lastIndexOf(\".\"));",
+            "if (coName.contains(\"\\\\\") || coName.contains(\"/\"))",
+            "{",
+            "  // On IE the the full file path is returned",
+            "  int fileNameStartIndex = coName.replace(\"\\\\\", \"/\").lastIndexOf(\"/\");",
+            "  coName = coName.substring(fileNameStartIndex+1);",
+            "}",
+            "String firstCoName = coName;",
+            "Number counter = 1;",
+            "while (baseFolder.child().exists(coName))",
+            "{",
+            "  coName = firstCoName + \"_\" + counter;",
+            "  counter++;",
+            "}",
+            "",
+            "String fileExtension = StringUtils.substringAfterLast(fileName, \".\");",
+            "",
+            "ContentObject newImgae = baseFolder.child().file(coName, fileExtension);",
+            "ContentObjectValue cov = newImgae.value().get();",
+            "",
+            "InputStream inputStream = null;",
+            "try ",
+            "{",
+            "  inputStream = uploadedFile.getInputStream();",
+            "  cov.write().inputStream(inputStream);",
+            "}",
+            "finally",
+            "{",
+            "  if (#inputStream != null)",
+            "  {",
+            "    inputStream.close();",
+            "  }",
+            "}",
+            "out.images.add(0, coName);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 288, "y" : 160 },
+        "size" : { "width" : 176 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f4" }
+      ]
+    } ]
+}

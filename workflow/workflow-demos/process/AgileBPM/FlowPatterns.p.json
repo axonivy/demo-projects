@@ -1,0 +1,374 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "152551002ABB8DFE",
+  "config" : {
+    "data" : "workflow.agileBPM.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "signature" : "start",
+        "request" : {
+          "isVisibleOnStartList" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 208 },
+        "labelOffset" : { "x" : 12, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 472, "y" : 208 }
+      }
+    }, {
+      "id" : "U10",
+      "type" : "UserBpmnElement",
+      "name" : [
+        "User",
+        "ToDo task"
+      ],
+      "elements" : [ {
+          "id" : "U10-g0",
+          "type" : "EmbeddedStart",
+          "visual" : {
+            "at" : { "x" : 64, "y" : 256 }
+          },
+          "parentConnector" : "f3",
+          "connect" : [
+            { "id" : "U10-f0", "to" : "U10-g1" }
+          ]
+        }, {
+          "id" : "U10-g1",
+          "type" : "EmbeddedEnd",
+          "visual" : {
+            "at" : { "x" : 576, "y" : 256 }
+          },
+          "parentConnector" : "f2"
+        }, {
+          "id" : "U10-f3",
+          "type" : "ProcessAnnotation",
+          "name" : "Dummy-Subprocess",
+          "visual" : {
+            "at" : { "x" : 96, "y" : 192 },
+            "size" : { "width" : 128, "height" : 30 }
+          }
+        } ],
+      "visual" : {
+        "at" : { "x" : 352, "y" : 208 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "DialogCall",
+      "name" : [
+        "Creator",
+        "Request Form"
+      ],
+      "config" : {
+        "dialog" : "workflow.agileBPM.test:start(String)"
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 208 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "U10" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "RequestStart",
+      "name" : "",
+      "config" : {
+        "signature" : "start2",
+        "request" : {
+          "isHttpRequestable" : false,
+          "isVisibleOnStartList" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 440 }
+      },
+      "connect" : [
+        { "id" : "f11", "to" : "f7" }
+      ]
+    }, {
+      "id" : "U11",
+      "type" : "UserBpmnElement",
+      "name" : [
+        "Creator",
+        "get response"
+      ],
+      "elements" : [ {
+          "id" : "U11-g0",
+          "type" : "EmbeddedStart",
+          "visual" : {
+            "at" : { "x" : 80, "y" : 248 }
+          },
+          "parentConnector" : "f9",
+          "connect" : [
+            { "id" : "U11-f0", "to" : "U11-g1" }
+          ]
+        }, {
+          "id" : "U11-g1",
+          "type" : "EmbeddedEnd",
+          "visual" : {
+            "at" : { "x" : 576, "y" : 248 }
+          },
+          "parentConnector" : "f25"
+        }, {
+          "id" : "U11-f3",
+          "type" : "ProcessAnnotation",
+          "name" : "Dummy-Subprocess",
+          "visual" : {
+            "at" : { "x" : 128, "y" : 208 },
+            "size" : { "width" : 128, "height" : 30 }
+          }
+        } ],
+      "visual" : {
+        "at" : { "x" : 552, "y" : 440 }
+      },
+      "connect" : [
+        { "id" : "f25", "to" : "f24" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "DialogCall",
+      "name" : [
+        "Creator",
+        "Question Form"
+      ],
+      "config" : {
+        "dialog" : "workflow.agileBPM.test:start(String)"
+      },
+      "visual" : {
+        "at" : { "x" : 216, "y" : 440 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "U21" }
+      ]
+    }, {
+      "id" : "U21",
+      "type" : "UserBpmnElement",
+      "name" : [
+        "User",
+        "answer question"
+      ],
+      "elements" : [ {
+          "id" : "U21-g0",
+          "type" : "EmbeddedStart",
+          "visual" : {
+            "at" : { "x" : 64, "y" : 256 }
+          },
+          "parentConnector" : "f12",
+          "connect" : [
+            { "id" : "U21-f2", "to" : "U21-f1" }
+          ]
+        }, {
+          "id" : "U21-g1",
+          "type" : "EmbeddedEnd",
+          "visual" : {
+            "at" : { "x" : 576, "y" : 256 }
+          },
+          "parentConnector" : "f9"
+        }, {
+          "id" : "U21-g2",
+          "type" : "EmbeddedStart",
+          "visual" : {
+            "at" : { "x" : 352, "y" : 160 }
+          },
+          "parentConnector" : "f26",
+          "connect" : [
+            { "id" : "U21-f3", "to" : "U21-f1" }
+          ]
+        }, {
+          "id" : "U21-f1",
+          "type" : "Alternative",
+          "visual" : {
+            "at" : { "x" : 352, "y" : 256 }
+          },
+          "connect" : [
+            { "id" : "U21-f0", "to" : "U21-g1" }
+          ]
+        }, {
+          "id" : "U21-f4",
+          "type" : "ProcessAnnotation",
+          "name" : "Dummy-Subprocess",
+          "visual" : {
+            "at" : { "x" : 120, "y" : 200 },
+            "size" : { "width" : 128, "height" : 30 }
+          }
+        } ],
+      "visual" : {
+        "at" : { "x" : 376, "y" : 440 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "U11" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 736, "y" : 440 }
+      }
+    }, {
+      "id" : "f13",
+      "type" : "ProcessAnnotation",
+      "name" : "**ToDo**",
+      "visual" : {
+        "at" : { "x" : 40, "y" : 168 },
+        "size" : { "width" : 48, "height" : 30 }
+      }
+    }, {
+      "id" : "f14",
+      "type" : "ProcessAnnotation",
+      "name" : "**Question-Answer**",
+      "visual" : {
+        "at" : { "x" : 72, "y" : 400 },
+        "size" : { "width" : 112, "height" : 30 }
+      }
+    }, {
+      "id" : "U13",
+      "type" : "UserBpmnElement",
+      "name" : [
+        "User",
+        "approve request"
+      ],
+      "elements" : [ {
+          "id" : "U13-g0",
+          "type" : "EmbeddedStart",
+          "visual" : {
+            "at" : { "x" : 64, "y" : 256 }
+          },
+          "parentConnector" : "f22",
+          "connect" : [
+            { "id" : "U13-f0", "to" : "U13-g1" }
+          ]
+        }, {
+          "id" : "U13-g1",
+          "type" : "EmbeddedEnd",
+          "visual" : {
+            "at" : { "x" : 576, "y" : 256 }
+          },
+          "parentConnector" : "f19"
+        }, {
+          "id" : "U13-f3",
+          "type" : "ProcessAnnotation",
+          "name" : "Dummy-Subprocess",
+          "visual" : {
+            "at" : { "x" : 104, "y" : 184 },
+            "size" : { "width" : 128, "height" : 30 }
+          }
+        } ],
+      "visual" : {
+        "at" : { "x" : 368, "y" : 320 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f19", "to" : "f18" }
+      ]
+    }, {
+      "id" : "f15",
+      "type" : "RequestStart",
+      "name" : "",
+      "config" : {
+        "signature" : "start22",
+        "request" : {
+          "isHttpRequestable" : false,
+          "isVisibleOnStartList" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 320 }
+      },
+      "connect" : [
+        { "id" : "f21", "to" : "f16" }
+      ]
+    }, {
+      "id" : "f16",
+      "type" : "DialogCall",
+      "name" : [
+        "Creator",
+        "Request Form"
+      ],
+      "config" : {
+        "dialog" : "workflow.agileBPM.test:start(String)"
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 320 }
+      },
+      "connect" : [
+        { "id" : "f22", "to" : "U13" }
+      ]
+    }, {
+      "id" : "f17",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 656, "y" : 320 }
+      }
+    }, {
+      "id" : "f18",
+      "type" : "EMail",
+      "name" : [
+        "Creator",
+        "Notification Mail"
+      ],
+      "visual" : {
+        "at" : { "x" : 536, "y" : 320 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f17" }
+      ]
+    }, {
+      "id" : "f23",
+      "type" : "ProcessAnnotation",
+      "name" : "**Approval**",
+      "visual" : {
+        "at" : { "x" : 48, "y" : 280 },
+        "size" : { "width" : 64, "height" : 30 }
+      }
+    }, {
+      "id" : "f24",
+      "type" : "Alternative",
+      "name" : "Follow-up question?",
+      "config" : {
+        "conditions" : {
+          "f10" : "true"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 656, "y" : 440 },
+        "labelOffset" : { "x" : 39, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f8" },
+        { "id" : "f26", "to" : "U21", "via" : [ { "x" : 656, "y" : 376 }, { "x" : 376, "y" : 376 } ] }
+      ]
+    }, {
+      "id" : "f27",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "These are the predefined Flow Patterns which can be selected in the Self Service Process.",
+        "In Addition you can also create an Ad-Hoc Workflow from scratch."
+      ],
+      "visual" : {
+        "at" : { "x" : 320, "y" : 48 },
+        "size" : { "width" : 512, "height" : 44 }
+      }
+    } ],
+  "layout" : {
+    "colors" : {
+      "NodeStyle2" : "rgb(57, 99, 173)"
+    }
+  }
+}

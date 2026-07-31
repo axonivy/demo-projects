@@ -1,0 +1,70 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "150149331438F9EA",
+  "config" : {
+    "data" : "error.handling.demo.technicalData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "throwSystemError.ivp",
+      "config" : {
+        "signature" : "throwSystemError",
+        "request" : {
+          "name" : "Use global Error Process"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 192 },
+        "labelOffset" : { "x" : 13, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 448, "y" : 192 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Database",
+      "name" : "Throws system error",
+      "config" : {
+        "query" : {
+          "dbName" : "invalidDB",
+          "sql" : {
+            "kind" : "ANY",
+            "quote" : true
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 272, "y" : 192 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "Usage of Global Error Process",
+        "This DB Step throws `ivy:error:database`  system error",
+        "The system errors `ivy:error:*` are handled in",
+        "a Global Error Process *(ErrorHandler)*"
+      ],
+      "visual" : {
+        "at" : { "x" : 216, "y" : 64 },
+        "size" : { "width" : 352 },
+        "color" : "NodeStyle3"
+      }
+    } ],
+  "layout" : {
+    "colors" : {
+      "NodeStyle3" : "rgb(255, 0, 0)"
+    }
+  }
+}

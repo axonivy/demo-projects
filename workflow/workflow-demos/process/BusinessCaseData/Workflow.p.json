@@ -1,0 +1,145 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "16EF567002B146F2",
+  "config" : {
+    "data" : "workflow.businesscasedata.Data"
+  },
+  "elements" : [ {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "name" : "InterviewForm",
+      "config" : {
+        "dialog" : "workflow.businesscasedata.InterviewForm:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 96 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "create.ivp",
+      "config" : {
+        "signature" : "create",
+        "request" : {
+          "name" : "6.1: Save BusinessCaseData When Park Task",
+          "description" : "BusinessCaseData Worlflow Demo. Use BusinessCaseData in workflow with save and park task.",
+          "category" : "business/data/case",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-id-badge" }
+          ]
+        },
+        "permission" : {
+          "anonymous" : false
+        },
+        "persistOnStart" : true
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 96 },
+        "labelOffset" : { "x" : 14, "y" : 37 },
+        "description" : "Creates an Interview"
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 96 }
+      }
+    }, {
+      "id" : "f7",
+      "type" : "DialogCall",
+      "name" : "InterviewForm",
+      "config" : {
+        "dialog" : "workflow.businesscasedata.InterviewForm:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 480, "y" : 96 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "TaskSwitchEvent",
+      "config" : {
+        "task" : {
+          "name" : "Review Interview",
+          "description" : "Review the data which was filled in by the first Html Dialog task."
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 352, "y" : 96 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f9",
+      "type" : "RequestStart",
+      "name" : "browse.ivp",
+      "config" : {
+        "signature" : "browse",
+        "request" : {
+          "name" : "6.2: Browse BusinessCaseData Created By 6.1",
+          "description" : "BusinessCaseData Worlflow Demo. Browse Interviews created by BusinessCaseData/Workflow/create.ivp",
+          "category" : "business/data/case",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-news" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 192 },
+        "labelOffset" : { "x" : 16, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f10",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 192 }
+      }
+    }, {
+      "id" : "f11",
+      "type" : "DialogCall",
+      "name" : "InterviewLazyBrowser",
+      "config" : {
+        "dialog" : "workflow.businesscasedata.InterviewLazyBrowser:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 352, "y" : 192 },
+        "size" : { "width" : 144 }
+      },
+      "connect" : [
+        { "id" : "f13", "to" : "f10" }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "BusinessCaseData Workflow Demo",
+        "This demo shows how to work with BusinessCaseData workflow.",
+        "You can create a new interview. If you want to stop your progress simply click on save and park.",
+        "This will save your input to the businessdata repository and reserves the task for you. Later you can pick it up and finish your work.",
+        "",
+        "Overall you have the benefits of businessdata:",
+        " - fast search",
+        " - modification of past data (can be done like in the business data demo)",
+        " - business data is saved automatically to your business case",
+        "",
+        "Hints:",
+        " - Your task needs to be persistent to store businessdata"
+      ],
+      "visual" : {
+        "at" : { "x" : 528, "y" : 344 },
+        "size" : { "width" : 832, "height" : 204 }
+      }
+    } ]
+}

@@ -1,0 +1,324 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "169B3B7F5EF38D8F",
+  "config" : {
+    "data" : "com.axonivy.connectivity.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "fileClient.ivp",
+      "config" : {
+        "signature" : "fileClient",
+        "request" : {
+          "name" : "6.4.0 Upload file UI",
+          "category" : "rest/mapping/file",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-upload" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 120 },
+        "labelOffset" : { "x" : 20, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 120 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "name" : "File Upload Form",
+      "config" : {
+        "dialog" : "com.axonivy.connectivity.rest.FileUpload:start(com.axonivy.connectivity.Data)"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 120 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "ProcessAnnotation",
+      "name" : "This Demo uses a Rest Service Call to upload a File",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 32 },
+        "size" : { "width" : 336, "height" : 30 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "RequestStart",
+      "name" : "fileMultipart.ivp",
+      "config" : {
+        "signature" : "fileMultipart",
+        "input" : {
+          "map" : { },
+          "code" : [
+            "import com.axonivy.connectivity.rest.client.file.FileUpload;",
+            "out.file = FileUpload.getIvyLogo();"
+          ]
+        },
+        "request" : {
+          "name" : "6.4.1 Upload file multipart",
+          "category" : "rest/mapping/file",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-upload" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 320 },
+        "labelOffset" : { "x" : 17, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f8" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 320 }
+      }
+    }, {
+      "id" : "f8",
+      "type" : "RestClientCall",
+      "name" : [
+        "Upload File",
+        "(multi/part)"
+      ],
+      "config" : {
+        "method" : "PUT",
+        "target" : {
+          "clientId" : "ivyengine-localbackend",
+          "path" : "/file",
+          "headers" : {
+            "X-Requested-By" : "\"ivy\""
+          }
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "multipart/form-data",
+          "form" : {
+            "file" : [ "in.file", "com.axonivy.connectivity.rest.client.file.FileUpload.getIvyLogo()" ],
+            "description" : [ "" ],
+            "ownerId" : [ "" ]
+          },
+          "entity" : {
+            "type" : "ivy.local.client.Body3"
+          }
+        },
+        "response" : {
+          "entity" : {
+            "code" : [
+              "String result = response.readEntity(String.class) as String;",
+              "ivy.log.info(result);",
+              "out.result = result;"
+            ]
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 320 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f16",
+      "type" : "RequestStart",
+      "name" : "upAndDown.ivp",
+      "config" : {
+        "signature" : "upAndDown",
+        "input" : {
+          "map" : { },
+          "code" : [
+            "import com.axonivy.connectivity.rest.client.file.FileUpload;",
+            "out.file = FileUpload.getIvyLogo();"
+          ]
+        },
+        "request" : {
+          "name" : "6.4.2 Upload and Download file octet-stream",
+          "category" : "rest/mapping/file",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-upload" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 224 },
+        "labelOffset" : { "x" : 13, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f19", "to" : "f17" }
+      ]
+    }, {
+      "id" : "f17",
+      "type" : "RestClientCall",
+      "name" : [
+        "  Upload File",
+        "(octet stream)"
+      ],
+      "config" : {
+        "method" : "POST",
+        "target" : {
+          "clientId" : "ivyengine-localbackend",
+          "path" : "/file/{fileName}",
+          "templateParams" : {
+            "fileName" : "in.file.getName()"
+          },
+          "headers" : {
+            "X-Requested-By" : "\"ivy\""
+          }
+        },
+        "body" : {
+          "mediaType" : "application/octet-stream",
+          "entity" : {
+            "type" : "java.io.File",
+            "map" : {
+              "param" : "in.file"
+            }
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "[B",
+            "map" : {
+              "out.result" : "response.getHeaderString(\"uploadedFile\")"
+            }
+          }
+        },
+        "code" : [
+          "import jakarta.ws.rs.core.Response;",
+          "import jakarta.ws.rs.core.MediaType;",
+          "import jakarta.ws.rs.client.Entity;",
+          "",
+          "Response response = client.request()",
+          "  .header(\"X-Requested-By\", \"ivy\")",
+          "  .post(Entity.entity(in.file, MediaType.APPLICATION_OCTET_STREAM_TYPE));",
+          "",
+          "String uploaded = response.getHeaderString(\"uploadedFile\");",
+          "ivy.session.setAttribute(\"lastUpload\", uploaded);",
+          "",
+          "ivy.log.info(\"Result: \"+response.readEntity(String.class));"
+        ]
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 224 },
+        "size" : { "height" : 48 }
+      },
+      "connect" : [
+        { "id" : "f23", "to" : "f21" }
+      ]
+    }, {
+      "id" : "f18",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 512, "y" : 224 }
+      }
+    }, {
+      "id" : "f21",
+      "type" : "RestClientCall",
+      "name" : [
+        "Download File",
+        "(octet stream)"
+      ],
+      "config" : {
+        "target" : {
+          "clientId" : "ivyengine-localbackend",
+          "path" : "/file/{fileName}",
+          "templateParams" : {
+            "fileName" : "in.result"
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "java.io.File",
+            "code" : "ivy.log.info(\"got file: \"+result);"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 384, "y" : 224 },
+        "size" : { "width" : 128 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f18" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 416 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "RestClientCall",
+      "name" : [
+        "Upload Files",
+        "(multi/part)"
+      ],
+      "config" : {
+        "method" : "PUT",
+        "target" : {
+          "clientId" : "ivyengine-localbackend",
+          "path" : "/file/multi",
+          "headers" : {
+            "X-Requested-By" : "\"ivy\""
+          }
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "multipart/form-data",
+          "form" : {
+            "files" : [ "[in.file, com.axonivy.connectivity.rest.client.file.FileUpload.getIvyLogo()]" ],
+            "description" : [ "\"some logos\"" ],
+            "ownerId" : [ "-1" ]
+          },
+          "entity" : {
+            "type" : "ivy.local.client.Body3"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 416 }
+      },
+      "connect" : [
+        { "id" : "f14", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "RequestStart",
+      "name" : "multipleFiles.ivp",
+      "config" : {
+        "signature" : "multipleFiles",
+        "input" : {
+          "map" : { },
+          "code" : [
+            "import com.axonivy.connectivity.rest.client.file.FileUpload;",
+            "out.file = FileUpload.getIvyLogo();"
+          ]
+        },
+        "request" : {
+          "name" : "6.4.2 Upload many files at once",
+          "category" : "rest/mapping/file",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-upload" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 416 },
+        "labelOffset" : { "x" : 19, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f12" }
+      ]
+    } ]
+}

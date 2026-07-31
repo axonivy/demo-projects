@@ -1,0 +1,105 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "161AE4E4EC67C8FD",
+  "config" : {
+    "data" : "com.axonivy.connectivity.soap.BatchServiceClientData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : [
+        "callLongRunning",
+        "BatchOperation.ivp"
+      ],
+      "config" : {
+        "signature" : "callLongRunningBatchOperation",
+        "input" : {
+          "params" : [
+            { "name" : "blockSeconds", "type" : "Integer", "desc" : "" }
+          ],
+          "map" : {
+            "out.blockSeconds" : "param.blockSeconds"
+          }
+        },
+        "request" : {
+          "name" : "9.3 Increase timeout properties for long running requests",
+          "category" : "soap",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "ti ti-clock" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 112, "y" : 80 },
+        "labelOffset" : { "x" : -50, "y" : -27 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 80 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "WebServiceCall",
+      "name" : "call batch",
+      "config" : {
+        "clientId" : "technicalBackend",
+        "operation" : {
+          "name" : "longRunningBatchOperation",
+          "port" : "TechnicalBackendServicePort",
+          "parameters" : {
+            "parameters.blockSeconds" : "in.blockSeconds"
+          }
+        },
+        "properties" : {
+          "jakarta.xml.ws.client.connectionTimeout" : "1000",
+          "jakarta.xml.ws.client.receiveTimeout" : "70000"
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.message" : "wsResponse"
+          },
+          "code" : "ivy.log.info(wsResponse);"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 304, "y" : 80 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "SOAP requests are aborted by default ",
+        "if the remote service does not answer within `60` seconds!",
+        "",
+        "This batch client overrides the default settings with properties:",
+        "```",
+        "// waits 70 seconds for a result ",
+        "jakarta.xml.ws.client.receiveTimeout=70'000",
+        "// wait 1 second for a connection time out",
+        "jakarta.xml.ws.client.connectionTimeout=1'000",
+        "```"
+      ],
+      "visual" : {
+        "at" : { "x" : 304, "y" : 232 },
+        "size" : { "width" : 400, "height" : 172 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f3" }
+      ]
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "Timeout Properties",
+        "size" : 344
+      } ]
+  }
+}

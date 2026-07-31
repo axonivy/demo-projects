@@ -1,0 +1,204 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "16AC5A6319BD9D86",
+  "config" : {
+    "data" : "workflow.humantask.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "signature" : "start",
+        "request" : {
+          "isVisibleOnStartList" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 472, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "SignalStartEvent",
+      "name" : "airport:passenger:boarding:3424",
+      "config" : {
+        "signalCode" : "airport:passenger:boarding:3424"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 },
+        "labelOffset" : { "x" : 99, "y" : 36 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "Script",
+      "name" : [
+        "send signal",
+        "`airport:passenger:boarding:3424`"
+      ],
+      "config" : {
+        "output" : {
+          "code" : "ivy.wf.signals().send(\"airport:passenger:boarding:3424\");"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 280, "y" : 64 },
+        "size" : { "width" : 240 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 480, "y" : 160 }
+      }
+    }, {
+      "id" : "f8",
+      "type" : "SignalStartEvent",
+      "name" : "airport:passenger:boarding",
+      "config" : {
+        "signalCode" : "airport:passenger:boarding"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 224 },
+        "labelOffset" : { "x" : 78, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f6", "via" : [ { "x" : 480, "y" : 224 } ] }
+      ]
+    }, {
+      "id" : "f10",
+      "type" : "SignalStartEvent",
+      "name" : "airport:passenger",
+      "config" : {
+        "signalCode" : "airport:passenger"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 288 },
+        "labelOffset" : { "x" : 48, "y" : 37 }
+      },
+      "connect" : [
+        { "id" : "f11", "to" : "f6", "via" : [ { "x" : 480, "y" : 288 } ] }
+      ]
+    }, {
+      "id" : "f12",
+      "type" : "SignalStartEvent",
+      "visual" : {
+        "at" : { "x" : 96, "y" : 352 }
+      },
+      "connect" : [
+        { "id" : "f13", "to" : "f6", "via" : [ { "x" : 480, "y" : 352 } ] }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "SignalStartEvent",
+      "name" : "airport:crew:boarding",
+      "config" : {
+        "signalCode" : "airport:crew:boarding"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 416 },
+        "labelOffset" : { "x" : 59, "y" : 37 },
+        "color" : "NodeStyle3"
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f6", "via" : [ { "x" : 480, "y" : 416 } ] }
+      ]
+    }, {
+      "id" : "f16",
+      "type" : "SignalStartEvent",
+      "name" : "airport:*:boarding",
+      "config" : {
+        "signalCode" : "airport:*:boarding"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 512 },
+        "labelOffset" : { "x" : 51, "y" : 36 }
+      },
+      "connect" : [
+        { "id" : "f19", "to" : "f18" }
+      ]
+    }, {
+      "id" : "f18",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 480, "y" : 512 }
+      }
+    }, {
+      "id" : "f17",
+      "type" : "SignalStartEvent",
+      "name" : "*:*:boarding",
+      "config" : {
+        "signalCode" : "*:*:boarding"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 576 },
+        "labelOffset" : { "x" : 33, "y" : 36 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f18", "via" : [ { "x" : 480, "y" : 576 } ] }
+      ]
+    }, {
+      "id" : "f21",
+      "type" : "SignalStartEvent",
+      "name" : "*:boarding",
+      "config" : {
+        "signalCode" : "*:boarding"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 640 },
+        "labelOffset" : { "x" : 28, "y" : 36 }
+      },
+      "connect" : [
+        { "id" : "f22", "to" : "f18", "via" : [ { "x" : 480, "y" : 640 } ] }
+      ]
+    }, {
+      "id" : "f23",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "Signals can be received ",
+        "by listening to a shared prefix"
+      ],
+      "visual" : {
+        "at" : { "x" : 632, "y" : 288 },
+        "size" : { "width" : 192, "height" : 44 }
+      }
+    }, {
+      "id" : "f24",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "Signals patterns can",
+        "contain wildcards (*)"
+      ],
+      "visual" : {
+        "at" : { "x" : 608, "y" : 576 },
+        "size" : { "width" : 144, "height" : 44 }
+      }
+    } ],
+  "layout" : {
+    "lanes" : [ {
+        "name" : "Prefix Matchers",
+        "offset" : 128,
+        "size" : 336
+      }, {
+        "name" : "Wildcard Matchers",
+        "size" : 224
+      } ],
+    "colors" : {
+      "NodeStyle3" : "rgb(255, 0, 0)"
+    }
+  }
+}

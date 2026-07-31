@@ -1,0 +1,55 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "1675F33D16FB90A4",
+  "config" : {
+    "data" : "com.axonivy.connectivity.test.CreateUsersData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "createTestUsers.ivp",
+      "config" : {
+        "signature" : "createTestUsers",
+        "input" : {
+          "params" : [
+            { "name" : "amount", "type" : "String", "desc" : "" },
+            { "name" : "prefix", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.amount" : "Integer.valueOf(param.amount)",
+            "out.prefix" : "param.prefix"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Script",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.axonivy.connectivity.rest.UserCreator;",
+            "UserCreator.createUsers(in.prefix, in.amount);"
+          ]
+        },
+        "sudo" : true
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}
