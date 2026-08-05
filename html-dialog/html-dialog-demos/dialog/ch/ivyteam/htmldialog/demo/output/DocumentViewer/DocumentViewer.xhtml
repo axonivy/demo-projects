@@ -20,11 +20,9 @@
           <p:outputLabel for="choose" value="PDF document" />
           <p:fileUpload id="choose" value="#{data.ivyFile}"
             mode="simple" auto="false" label="Choose" skinSimple="true"
-            update="form" sizeLimit="10000000"
-            invalidSizeMessage="Document exceeds the allowed size"
-            invalidFileMessage="Document is not a pdf"
-            allowTypes=" /(\.|\/)(pdf|PDF)$/"
-            onstart="PF('form').validate();" />
+            update="form" onstart="PF('form').validate();">
+            <p:validateFile sizeLimit="10000000" allowTypes="/(\.|\/)(pdf|PDF)$/" />
+          </p:fileUpload>
 
           <p:commandButton id="upload" value="Upload" ajax="false"
             icon="ti ti-send" actionListener="#{logic.upload}"

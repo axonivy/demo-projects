@@ -15,13 +15,13 @@
       <div class="card">
         <h:panelGrid columns="2" cellpadding="7">
           <h:outputText value="QR" />
-          <p:barcode id="qr" value="#{data.url}" type="qr" width="125" height="125" />
+          <p:barcode id="qr" value="#{data.url}" type="qr" width="125" />
           
           <h:outputText value="Interleaved 2 of 5" />
           <p:barcode value="#{data.code}" type="int2of5" />
           
           <h:outputText value="Codabar" />
-          <p:barcode value="#{data.code}" type="codabar" />
+          <p:barcode value="A123456B" type="codabar" />
           
           <h:outputText value="Code39" />
           <p:barcode value="#{data.code}" type="code39" />
@@ -35,11 +35,11 @@
           <h:outputText value="EAN-13" />
           <p:barcode value="9099999543217" type="ean13" />
           
-          <h:outputText value="UPC-A (PNG)" />
-          <p:barcode value="123601057072" type="upca" format="png" />
+          <!-- <h:outputText value="UPC-A (PNG)"/>
+          <p:barcode value="012345678958" type="upca" format="png"/> -->
           
           <h:outputText value="UPC-E (Vertical)" />
-          <p:barcode value="01234565" type="upce" orientation="90" />
+          <p:barcode value="0123456" type="upce" orientation="90" />
           
           <h:outputText value="PDF417" />
           <p:barcode value="#{data.code}" type="pdf417" />

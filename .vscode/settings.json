@@ -1,0 +1,10 @@
+{
+    "axonivy.process.animation.animate": false,
+    "java.test.config": {
+        "vmArgs": [
+            "-Dtest.engine.url=http://localhost:8080/~Developer-demo-projects",
+            "-Dtest.engine.app=Developer-demo-projects",
+            "-Divy.selenide.headless=false",
+        ]
+    }
+}
