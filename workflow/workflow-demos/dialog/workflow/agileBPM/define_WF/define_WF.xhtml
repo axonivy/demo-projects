@@ -39,10 +39,9 @@
             </p:inputTextarea>
             <p:outputLabel for="caseInfoAttachment"
               value="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/WFAttachment')}" />
-            <p:fileUpload id="caseInfoAttachment"
-              value="#{data.caseInfo.attachment}" mode="simple"
-              sizeLimit="1000000" style="width:630px" fileLimit="1"
-              skinSimple="true" />
+            <p:fileUpload id="caseInfoAttachment" value="#{data.caseInfo.attachment}" mode="simple" style="width:630px" skinSimple="true">
+              <p:validateFile fileLimit="1" sizeLimit="1000000" />
+            </p:fileUpload>
             <p:outputLabel for="dataCaseInfoKind"
               value="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/WFPattern')}" />
             <h:panelGrid columns="4">

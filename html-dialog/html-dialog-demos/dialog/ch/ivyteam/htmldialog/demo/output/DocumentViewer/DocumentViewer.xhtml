@@ -20,8 +20,7 @@
           <p:outputLabel for="choose" value="PDF document" />
           <p:fileUpload id="choose" value="#{data.ivyFile}"
             mode="simple" auto="false" label="Choose" skinSimple="true"
-            update="form" onstart="PF('form').validate();"
-            invalidSizeMessage="Document exceeds the allowed size">
+            update="form" onstart="PF('form').validate();">
             <p:validateFile sizeLimit="10000000" allowTypes="/(\.|\/)(pdf|PDF)$/" />
           </p:fileUpload>
 
