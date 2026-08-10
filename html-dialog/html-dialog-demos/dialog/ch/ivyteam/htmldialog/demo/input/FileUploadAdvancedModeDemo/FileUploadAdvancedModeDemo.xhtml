@@ -28,8 +28,9 @@
           <br />
           <h:outputText value="Add an image to the gallery. Allowed image types are gif, jpg or png." />
           <br />
-          <p:fileUpload id="fileUpload" listener="#{logic.uploadFile}" allowTypes="/(\.|\/)(gif|jpe?g|png)$/i"
-            auto="true" mode="advanced" label="Add Image" update="pictureGalleryForm" />
+          <p:fileUpload id="fileUpload" listener="#{logic.uploadFile}" auto="true" mode="advanced" label="Add Image" update="pictureGalleryForm">
+            <p:validateFile allowTypes="/(\.|\/)(gif|jpe?g|png)$/i" />
+          </p:fileUpload>
           <br />
         </h:form>
       </h:panelGroup>
