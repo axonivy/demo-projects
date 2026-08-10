@@ -25,18 +25,6 @@
       <groupId>com.axonivy.ivy.api.extension</groupId>
       <artifactId>ivy-process-extension-api</artifactId>
     </dependency>
-    <dependency> <!-- TODO: remove after core merge -->
-      <groupId>org.primefaces</groupId>
-      <artifactId>primefaces</artifactId>
-      <version>15.0.17</version>
-      <classifier>jakarta</classifier>
-    </dependency>
-    <dependency> <!-- TODO: remove after core merge -->
-      <groupId>org.primefaces.extensions</groupId>
-      <artifactId>primefaces-extensions</artifactId>
-      <version>15.0.17</version>
-      <classifier>jakarta</classifier>
-    </dependency>
   </dependencies>
   <repositories>
     <repository>
