@@ -4,11 +4,11 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.ChartDemo",
   "fields" : [ {
     "name" : "comboChartModel",
-    "type" : "org.primefaces.model.charts.bar.BarChartModel",
+    "type" : "software.xdev.chartjs.model.charts.Chart",
     "modifiers" : [ ]
   }, {
     "name" : "pieChartModel",
-    "type" : "org.primefaces.model.charts.pie.PieChartModel",
+    "type" : "software.xdev.chartjs.model.charts.Chart",
     "modifiers" : [ ]
   } ]
 }

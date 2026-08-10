@@ -138,11 +138,16 @@ class WebTestOutputIT {
   @Test
   void selectOneMenu() throws Exception {
     startProcess("145D180807C60B4B/SelectOneMenuDemo.ivp");
-    SelectOneMenu menu = PrimeUi.selectOne(By.id("demoForm:basic"));
-    menu.selectItemByLabel("Reguel Wermelinger");
+    PrimeUi.selectOne(By.id("demoForm:basic"))
+        .selectItemByLabel("Reguel Wermelinger");
     $(By.id("demoForm:advance_label")).click();
+    $(By.id("demoForm:advance_items")).shouldBe(visible).findAll("li")
+        .filter(visible).shouldHave(size(11));
     $(By.id("demoForm:advance_filter")).shouldBe(visible).sendKeys("Flav");
-    $(By.id("demoForm:advance_9")).shouldBe(visible, enabled).click();
+    $(By.id("demoForm:advance_items")).shouldBe(visible).findAll("li")
+        .filter(visible).shouldHave(size(1));
+    $(By.id("demoForm:advance_items")).findAll("li").find(text("Flavio")).click();
+    $(By.id("demoForm:advance_label")).shouldHave(text("Flavio"));
     $(By.id("demoForm:sendButton")).click();
     $(By.id("demoForm:outputBasicSelects")).shouldHave(text("Reguel"));
     $(By.id("demoForm:outputAdvancedSelects")).shouldHave(text("Flavio"));
@@ -206,7 +211,7 @@ class WebTestOutputIT {
     var element = $(By.id("qr")).shouldBe(visible);
     ProcessUtil.open(element.getAttribute("src"));
     $(By.tagName("svg")).shouldBe(visible);
-    $(By.tagName("path")).shouldBe(visible);
+    $(By.tagName("rect")).shouldBe(visible);
   }
 
   @Test

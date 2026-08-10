@@ -10,30 +10,17 @@
       <h:form id="form">
         <p:growl id="growl" showDetail="true" />
         <br />
-        <p:barChart model="#{data.comboChartModel}" style="width:450px;height:300px;" id="comboChart">
+        <p:chart value="#{data.comboChartModel.toJson()}" style="width:450px;height:300px;" id="comboChart">
 
           <p:ajax event="itemSelect" update="growl" listener="#{logic.itemSelected}" />
-        </p:barChart>
+        </p:chart>
         <br />
         <br />
-        <p:pieChart model="#{data.pieChartModel}" style="width:450px;height:300px" id="pieChart">
+        <p:chart value="#{data.pieChartModel.toJson()}" style="width:450px;height:300px" id="pieChart">
 
           <p:ajax event="itemSelect" update="growl" listener="#{logic.sliceSelected}" />
-        </p:pieChart>
+        </p:chart>
       </h:form>
-
-      <h:outputScript>
-        function ext() {
-        // this = chart widget instance
-        // this.cfg = options
-        // see http://www.jqplot.com/ for more details
-        this.cfg.grid = {
-        background: '#ffffff',
-        shadow:false,
-        borderWidth:0.4
-        };
-        }
-      </h:outputScript>
 
     </ui:define>
 
