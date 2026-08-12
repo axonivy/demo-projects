@@ -59,7 +59,7 @@ class WebTestBusinessCaseDataWorkflowIT {
   }
 
   private void login() {
-    open(EngineUrl.create().path("login").toUrl());
+    open(EngineUrl.create().app("").path("go/login").toUrl());
     $(By.id("loginForm:userName")).shouldBe(visible).sendKeys("hb");
     $(By.id("loginForm:password")).sendKeys("hb");
     $(By.id("loginForm:login")).click();
