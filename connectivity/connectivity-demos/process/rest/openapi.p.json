@@ -73,7 +73,7 @@
           "entity" : {
             "type" : "java.lang.String",
             "code" : [
-              "import org.apache.commons.lang.StringUtils;",
+              "import org.apache.commons.lang3.StringUtils;",
               "String id = StringUtils.substringAfterLast(result, \"session: \");",
               "ivy.session.setAttribute(\"pet.session.id\", id);"
             ]
