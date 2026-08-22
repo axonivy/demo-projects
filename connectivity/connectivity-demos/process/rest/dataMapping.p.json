@@ -55,7 +55,7 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "tools.jackson.databind.JsonNode",
             "code" : [
               "int newId = result.get(\"id\").asInt();",
               "",
@@ -453,7 +453,7 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "tools.jackson.databind.JsonNode",
             "code" : [
               "int newId = result.get(\"id\").asInt();",
               "",
@@ -818,7 +818,7 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "tools.jackson.databind.JsonNode",
             "code" : [
               "out.user.name = result.get(\"name\").asText();",
               "out.user.phone = result.get(\"phone\").asText();",

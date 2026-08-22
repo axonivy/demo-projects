@@ -1,6 +1,5 @@
 package com.axonivy.connectivity.rest.json;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
@@ -8,13 +7,14 @@ import java.nio.charset.Charset;
 
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.NoContentException;
 
 import org.apache.commons.io.IOUtils;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.jakarta.rs.json.JacksonJsonProvider;
 
 /**
  * JSON to POJO mapper designed to apply JSON structure changes before processing
@@ -31,16 +31,15 @@ public class JsonModifier extends JacksonJsonProvider {
   private static final ObjectMapper ROOT_MAPPER = new ObjectMapper();
 
   @Override
-  public Object readFrom(Class<Object> type, Type genericType,
-      Annotation[] annotations, MediaType mediaType,
-      MultivaluedMap<String, String> httpHeaders,
-      InputStream entityStream) throws IOException {
+    public Object readFrom(Class<Object> type, Type genericType, Annotation[] annotations,
+            MediaType mediaType, MultivaluedMap<String,String> httpHeaders,
+            InputStream entityStream) 
+        throws JacksonException, NoContentException {
     InputStream inputStream = unwrapValueRoot(entityStream);
     return super.readFrom(type, genericType, annotations, mediaType, httpHeaders, inputStream);
   }
 
-  protected InputStream unwrapValueRoot(InputStream entityStream)
-      throws IOException, JsonProcessingException {
+  protected InputStream unwrapValueRoot(InputStream entityStream) {
     JsonNode node = ROOT_MAPPER.readTree(entityStream);
     node = manipulateJson(node);
     String json = ROOT_MAPPER.writeValueAsString(node);

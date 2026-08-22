@@ -23,8 +23,8 @@ import org.junit.jupiter.api.Test;
 
 import com.axonivy.connectivity.Person;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.jakarta.rs.json.JacksonJsonProvider;
 
 /**
  * Tests the REST interface of the {@link com.axonivy.connectivity.rest.provider.PersonService}.
@@ -54,7 +54,7 @@ public class IntegrationTestRestfulPersonService {
     assertThat(response.getStatus()).isEqualTo(HttpStatus.SC_CREATED);
     assertThat(response.getLink("createdPerson")).isNotNull();
     JsonNode node = response.readEntity(JsonNode.class);
-    assertThat(node.get("id").asText()).containsPattern(UUID_PATTERN);
+    assertThat(node.get("id").asString()).containsPattern(UUID_PATTERN);
   }
 
   private Entity<Form> createFormPerson() {
@@ -68,7 +68,7 @@ public class IntegrationTestRestfulPersonService {
   public void updateEntity() {
     Response response = getPersonsClient().request().header("X-Requested-By", "ivy").put(createFormPerson());
     JsonNode node = response.readEntity(JsonNode.class);
-    String id = node.get("id").asText();
+    String id = node.get("id").asString();
 
     Person updatePerson = new Person();
     updatePerson.setId(UUID.fromString(id));
@@ -87,7 +87,7 @@ public class IntegrationTestRestfulPersonService {
   public void deleteEntity() {
     Response response = getPersonsClient().request().header("X-Requested-By", "ivy").put(createFormPerson());
     JsonNode node = response.readEntity(JsonNode.class);
-    String id = node.get("id").asText();
+    String id = node.get("id").asString();
 
     response = getPersonsClient().path(id)
         .request()
