@@ -16,9 +16,8 @@ import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.ivy.webtest.engine.EngineUrl;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
-
+import tools.jackson.databind.JsonNode;
+import tools.jackson.jakarta.rs.json.JacksonJsonProvider;
 import ch.ivyteam.ivy.workflow.TaskState;
 
 /**
@@ -35,7 +34,7 @@ public class IntegrationTestRestfulApprovalService {
     assertThat(response.getLocation().toString()).startsWith(EngineUrl.base() + "api/workflow/task/");
 
     JsonNode taskMetaNode = response.readEntity(JsonNode.class);
-    assertThat(taskMetaNode.get("description").textValue()).isEqualTo("I need a break");
+    assertThat(taskMetaNode.get("description").asString()).isEqualTo("I need a break");
 
     Link taskLink = response.getLink("approvalTask");
     assertThat(taskLink).isNotNull();

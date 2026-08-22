@@ -10,7 +10,7 @@ import jakarta.ws.rs.ext.Provider;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 
 import ch.ivyteam.ivy.bpm.error.BpmError;
 import ch.ivyteam.ivy.environment.Ivy;
@@ -47,7 +47,7 @@ public class OAuth2Feature implements Feature {
             .withAttribute(SERVICE_ID, service)
             .build();
       }
-      String accessToken = token.get("access_token").asText();
+      String accessToken = token.get("access_token").asString();
       if (StringUtils.isEmpty(accessToken)) {
         throw new IllegalStateException("Failed to read 'access_token' from " + token);
       }

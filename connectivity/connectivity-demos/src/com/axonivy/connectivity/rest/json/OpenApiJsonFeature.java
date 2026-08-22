@@ -4,10 +4,11 @@ import jakarta.ws.rs.Priorities;
 import jakarta.ws.rs.core.FeatureContext;
 import jakarta.ws.rs.core.MediaType;
 
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.MapperFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.jakarta.rs.json.JacksonJsonProvider;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import ch.ivyteam.ivy.rest.client.mapper.JsonFeature;
 
@@ -26,16 +27,15 @@ public class OpenApiJsonFeature extends JsonFeature {
   }
 
   public static class JaxRsClientJson extends JacksonJsonProvider {
+
     @Override
-    @SuppressWarnings("deprecation")
-    public ObjectMapper locateMapper(Class<?> type, MediaType mediaType) {
-      ObjectMapper mapper = super.locateMapper(type, mediaType);
-      // match our generated jax-rs client beans: that contain JSR310 data types
-      mapper.registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule());
-      // allow fields starting with an upper case character (e.g. in ODATA specs)!
-      mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
-      // not sending this optional value seems to be lass prone to errors for some remote services.
-      mapper.setSerializationInclusion(Include.NON_NULL);
+    public JsonMapper locateMapper(Class<?> type, MediaType mediaType) {
+      var mapper = super.locateMapper(type, mediaType).rebuild()
+        // allow fields starting with an upper case character (e.g. in ODATA specs)!
+        .configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true)
+        // not sending this optional value seems to be lass prone to errors for some remote services.
+        .changeDefaultPropertyInclusion(_ -> JsonInclude.Value.construct(JsonInclude.Include.NON_NULL, JsonInclude.Include.NON_NULL))
+        .build();
       return mapper;
     }
   }

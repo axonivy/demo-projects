@@ -4,10 +4,10 @@ import jakarta.ws.rs.Priorities;
 import jakarta.ws.rs.core.FeatureContext;
 import jakarta.ws.rs.core.MediaType;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.MapperFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.jakarta.rs.json.JacksonJsonProvider;
 
 import ch.ivyteam.ivy.rest.client.mapper.JsonFeature;
 
@@ -61,11 +61,11 @@ public class OdataJsonFeature extends JsonFeature {
 
   public static class ODataMapperProvider extends JsonModifier {
     @Override
-    public ObjectMapper locateMapper(Class<?> type, MediaType mediaType) {
-      ObjectMapper mapper = super.locateMapper(type, mediaType);
-      // odata provides fields starting with an upper case character!
-      mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
-      return mapper;
+    public JsonMapper locateMapper(Class<?> type, MediaType mediaType) {
+      return super.locateMapper(type, mediaType).rebuild()
+          // odata provides fields starting with an upper case character!
+          .configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true)
+          .build();
     }
 
     /**

@@ -11,8 +11,8 @@ import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.ivy.webtest.engine.EngineUrl;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.jakarta.rs.json.JacksonJsonProvider;
 
 /**
  * Tests the REST interface of the
@@ -26,7 +26,7 @@ class IntegrationTestRestfulDateResource {
   void customizedJsonDates() {
     Response response = getPersonsClient().request().get();
     JsonNode json = response.readEntity(JsonNode.class);
-    String localizedDate = json.get("delivery").asText();
+    String localizedDate = json.get("delivery").asString();
     assertThat(localizedDate)
         .as("dates are customized by the @Provider deployed with the project")
         .endsWith("Z");

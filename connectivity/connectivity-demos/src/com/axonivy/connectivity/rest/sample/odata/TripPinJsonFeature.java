@@ -1,22 +1,16 @@
 package com.axonivy.connectivity.rest.sample.odata;
 
-import java.io.IOException;
-
-import jakarta.ws.rs.Priorities;
-import jakarta.ws.rs.core.FeatureContext;
-import jakarta.ws.rs.core.MediaType;
-
 import org.odata.trippin.client.AnyOfMicrosoftODataSampleServiceModelsTripPinPersonConcurrency;
 import org.odata.trippin.client.AnyOfMicrosoftODataSampleServiceModelsTripPinPersonGender;
 
 import com.axonivy.connectivity.rest.json.OpenApiJsonFeature;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
+
+import jakarta.ws.rs.Priorities;
+import jakarta.ws.rs.core.FeatureContext;
+import jakarta.ws.rs.core.MediaType;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.json.JsonMapper;
 
 /**
  * Some values in the converted TripPin ODATA spec are generated as empty interfaces without a matching impl.
@@ -28,7 +22,7 @@ import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
 public class TripPinJsonFeature extends OpenApiJsonFeature {
   @Override
   public boolean configure(FeatureContext context) {
-    JacksonJsonProvider provider = new TripPinJson();
+    var provider = new TripPinJson();
     configure(provider, context.getConfiguration());
     context.register(provider, Priorities.ENTITY_CODER);
     return true;
@@ -36,14 +30,14 @@ public class TripPinJsonFeature extends OpenApiJsonFeature {
 
   private static class TripPinJson extends JaxRsClientJson {
     @Override
-    public ObjectMapper locateMapper(Class<?> type, MediaType mediaType) {
-      var mapper = super.locateMapper(type, mediaType);
-      mapper.registerModule(new TripPinTypeCustomizations());
-      return mapper;
+    public JsonMapper locateMapper(Class<?> type, MediaType mediaType) {
+      return super.locateMapper(type, mediaType).rebuild()
+        .addModule(new TripPinTypeCustomizations())
+        .build();
     }
   }
 
-  private static class TripPinTypeCustomizations extends SimpleModule {
+  private static class TripPinTypeCustomizations extends tools.jackson.databind.module.SimpleModule {
     private static final long serialVersionUID = 4552540562745977391L;
 
     public TripPinTypeCustomizations() {
@@ -58,16 +52,15 @@ public class TripPinJsonFeature extends OpenApiJsonFeature {
   }
 
   private static class GenderDeserializer extends StdDeserializer<AnyOfMicrosoftODataSampleServiceModelsTripPinPersonGender> {
-    private static final long serialVersionUID = 8173333520337377195L;
 
     public GenderDeserializer() {
       super(AnyOfMicrosoftODataSampleServiceModelsTripPinPersonGender.class);
     }
 
     @Override
-    public AnyOfMicrosoftODataSampleServiceModelsTripPinPersonGender deserialize(JsonParser p, DeserializationContext ctxt)
-        throws IOException, JsonProcessingException {
-      return new GenderWrapper(p.getText());
+    public AnyOfMicrosoftODataSampleServiceModelsTripPinPersonGender deserialize(tools.jackson.core.JsonParser p,
+        tools.jackson.databind.DeserializationContext ctxt) throws JacksonException {
+      return new GenderWrapper(p.getString());
     }
   }
 

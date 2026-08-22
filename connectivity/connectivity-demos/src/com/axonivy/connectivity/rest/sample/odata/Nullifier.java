@@ -1,20 +1,16 @@
 package com.axonivy.connectivity.rest.sample.odata;
 
-import java.io.IOException;
-
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.core.JsonTokenId;
-import com.fasterxml.jackson.databind.DeserializationConfig;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.databind.jsontype.TypeDeserializer;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.JsonToken;
+import tools.jackson.core.JsonTokenId;
+import tools.jackson.databind.DeserializationConfig;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.jsontype.TypeDeserializer;
 
 /**
  * Copied from NullifyingDeserializer, but enriched with generic type to comply with SimpleModule api.
  */
-public class Nullifier<T> extends StdDeserializer<T> {
-  private static final long serialVersionUID = 1L;
+public class Nullifier<T> extends tools.jackson.databind.deser.std.StdDeserializer<T> {
 
   public Nullifier(Class<T> type) {
     super(type);
@@ -26,8 +22,8 @@ public class Nullifier<T> extends StdDeserializer<T> {
   }
 
   @Override
-  public T deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
-    if (p.hasToken(JsonToken.FIELD_NAME)) {
+  public T deserialize(JsonParser p, DeserializationContext ctxt) {
+    if (p.hasToken(JsonToken.PROPERTY_NAME)) {
       while (true) {
         JsonToken t = p.nextToken();
         if ((t == null) || (t == JsonToken.END_OBJECT)) {
@@ -44,9 +40,9 @@ public class Nullifier<T> extends StdDeserializer<T> {
   @SuppressWarnings("unchecked")
   @Override
   public T deserializeWithType(JsonParser p, DeserializationContext ctxt,
-      TypeDeserializer typeDeserializer) throws IOException {
+      TypeDeserializer typeDeserializer) {
     return switch (p.currentTokenId()) {
-      case JsonTokenId.ID_START_ARRAY, JsonTokenId.ID_START_OBJECT, JsonTokenId.ID_FIELD_NAME -> (T) typeDeserializer.deserializeTypedFromAny(p, ctxt);
+      case JsonTokenId.ID_START_ARRAY, JsonTokenId.ID_START_OBJECT, JsonTokenId.ID_PROPERTY_NAME -> (T) typeDeserializer.deserializeTypedFromAny(p, ctxt);
       default -> null;
     };
   }
