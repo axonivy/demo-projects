@@ -56,20 +56,17 @@
       </plugin>
 
       <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.8.0</version>
+        <groupId>com.axonivy.ivy.ci</groupId>
+        <artifactId>project-build-plugin</artifactId>
+        <version>${project.version}</version>
         <configuration>
-          <descriptors>
-            <descriptor>assembly.xml</descriptor>
-          </descriptors>
-          <appendAssemblyId>false</appendAssemblyId>
-          <ignoreMissingDescriptor>true</ignoreMissingDescriptor>
+          <skipPackApp>false</skipPackApp>
         </configuration>
         <executions>
           <execution>
             <id>create.app</id>
             <goals>
-              <goal>single</goal>
+              <goal>pack-app</goal>
             </goals>
             <phase>generate-resources</phase>
           </execution>
@@ -77,5 +74,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
