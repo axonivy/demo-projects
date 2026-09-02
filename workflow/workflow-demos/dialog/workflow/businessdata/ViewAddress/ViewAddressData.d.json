@@ -4,8 +4,10 @@
   "namespace" : "workflow.businessdata.ViewAddress",
   "fields" : [ {
     "name" : "address",
-    "type" : "workflow.businessdata.Address"
+    "type" : "workflow.businessdata.Address",
+    "modifiers" : [ ]
   }, {
-    "name" : "addressId"
+    "name" : "addressId",
+    "modifiers" : [ ]
   } ]
 }

@@ -3,6 +3,7 @@
   "simpleName" : "testData",
   "namespace" : "workflow.agileBPM.test",
   "fields" : [ {
-    "name" : "answer"
+    "name" : "answer",
+    "modifiers" : [ ]
   } ]
 }

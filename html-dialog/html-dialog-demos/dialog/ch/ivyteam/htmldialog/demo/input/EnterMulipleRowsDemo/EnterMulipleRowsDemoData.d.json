@@ -4,8 +4,10 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.input.EnterMulipleRowsDemo",
   "fields" : [ {
     "name" : "scores",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Score>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Score>",
+    "modifiers" : [ ]
   }, {
-    "name" : "player"
+    "name" : "player",
+    "modifiers" : [ ]
   } ]
 }

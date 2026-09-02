@@ -4,25 +4,32 @@
   "namespace" : "workflow.businessdata.BusinessDataDossierBrowser",
   "fields" : [ {
     "name" : "dossiers",
-    "type" : "java.util.List<workflow.businessdata.Dossier>"
+    "type" : "java.util.List<workflow.businessdata.Dossier>",
+    "modifiers" : [ ]
   }, {
-    "name" : "searchText"
+    "name" : "searchText",
+    "modifiers" : [ ]
   }, {
     "name" : "searchFromDate",
-    "type" : "Date"
+    "type" : "Date",
+    "modifiers" : [ ]
   }, {
     "name" : "searchToDate",
-    "type" : "Date"
+    "type" : "Date",
+    "modifiers" : [ ]
   }, {
-    "name" : "searchType"
+    "name" : "searchType",
+    "modifiers" : [ ]
   }, {
-    "name" : "lastEditedId"
+    "name" : "lastEditedId",
+    "modifiers" : [ ]
   }, {
     "name" : "searchResult",
     "type" : "ch.ivyteam.ivy.business.data.store.search.Result",
     "modifiers" : [ ]
   }, {
     "name" : "limit",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   } ]
 }

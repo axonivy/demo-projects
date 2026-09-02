@@ -4,15 +4,19 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.DataTableDemo",
   "fields" : [ {
     "name" : "scores",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Score>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Score>",
+    "modifiers" : [ ]
   }, {
     "name" : "selectedScore",
-    "type" : "ch.ivyteam.htmldialog.demo.Score"
+    "type" : "ch.ivyteam.htmldialog.demo.Score",
+    "modifiers" : [ ]
   }, {
     "name" : "names",
-    "type" : "List<String>"
+    "type" : "List<String>",
+    "modifiers" : [ ]
   }, {
     "name" : "showDialog",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   } ]
 }

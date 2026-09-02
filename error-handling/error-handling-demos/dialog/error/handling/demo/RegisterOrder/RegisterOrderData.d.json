@@ -8,6 +8,7 @@
     "modifiers" : [ ]
   }, {
     "name" : "productsInStock",
-    "type" : "List<error.handling.demo.StockItem>"
+    "type" : "List<error.handling.demo.StockItem>",
+    "modifiers" : [ ]
   } ]
 }

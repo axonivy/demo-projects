@@ -4,12 +4,16 @@
   "namespace" : "workflow.businessdata.BusinessDataDossierModifier",
   "fields" : [ {
     "name" : "dossier",
-    "type" : "workflow.businessdata.Dossier"
+    "type" : "workflow.businessdata.Dossier",
+    "modifiers" : [ ]
   }, {
-    "name" : "id"
+    "name" : "id",
+    "modifiers" : [ ]
   }, {
-    "name" : "title"
+    "name" : "title",
+    "modifiers" : [ ]
   }, {
-    "name" : "dossierInfo"
+    "name" : "dossierInfo",
+    "modifiers" : [ ]
   } ]
 }

@@ -4,8 +4,10 @@
   "namespace" : "error.handling.demo.approval.RequestApproval",
   "fields" : [ {
     "name" : "approval",
-    "type" : "error.handling.demo.Approval"
+    "type" : "error.handling.demo.Approval",
+    "modifiers" : [ ]
   }, {
-    "name" : "declineReason"
+    "name" : "declineReason",
+    "modifiers" : [ ]
   } ]
 }

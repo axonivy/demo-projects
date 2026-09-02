@@ -3,8 +3,10 @@
   "simpleName" : "GlobalErrorData",
   "namespace" : "error.handling.demo.GlobalError",
   "fields" : [ {
-    "name" : "errorCode"
+    "name" : "errorCode",
+    "modifiers" : [ ]
   }, {
-    "name" : "errorText"
+    "name" : "errorText",
+    "modifiers" : [ ]
   } ]
 }

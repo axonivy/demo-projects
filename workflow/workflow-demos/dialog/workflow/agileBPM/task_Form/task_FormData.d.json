@@ -18,25 +18,31 @@
     "modifiers" : [ ]
   }, {
     "name" : "done",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "definedTasks",
-    "type" : "List<workflow.agileBPM.TaskDef>"
+    "type" : "List<workflow.agileBPM.TaskDef>",
+    "modifiers" : [ ]
   }, {
     "name" : "taskHistory",
-    "type" : "List<workflow.agileBPM.TaskDef>"
+    "type" : "List<workflow.agileBPM.TaskDef>",
+    "modifiers" : [ ]
   }, {
     "name" : "caseNotes",
     "type" : "List<ch.ivyteam.ivy.workflow.INote>",
     "modifiers" : [ ]
   }, {
     "name" : "addTask",
-    "type" : "workflow.agileBPM.TaskDef"
+    "type" : "workflow.agileBPM.TaskDef",
+    "modifiers" : [ ]
   }, {
     "name" : "wfusers",
-    "type" : "List<String>"
+    "type" : "List<String>",
+    "modifiers" : [ ]
   }, {
-    "name" : "remark"
+    "name" : "remark",
+    "modifiers" : [ ]
   }, {
     "name" : "userSelection",
     "type" : "List<ch.ivyteam.ivy.security.IUser>",
@@ -46,6 +52,7 @@
     "type" : "List<ch.ivyteam.ivy.security.IUser>",
     "modifiers" : [ ]
   }, {
-    "name" : "msg"
+    "name" : "msg",
+    "modifiers" : [ ]
   } ]
 }

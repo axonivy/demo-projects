@@ -3,8 +3,10 @@
   "simpleName" : "AjaxMethodCallDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.other.AjaxMethodCallDemo",
   "fields" : [ {
-    "name" : "welcomeMessage"
+    "name" : "welcomeMessage",
+    "modifiers" : [ ]
   }, {
-    "name" : "name"
+    "name" : "name",
+    "modifiers" : [ ]
   } ]
 }

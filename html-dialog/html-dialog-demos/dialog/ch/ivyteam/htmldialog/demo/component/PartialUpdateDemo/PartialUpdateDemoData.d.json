@@ -4,6 +4,7 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.component.PartialUpdateDemo",
   "fields" : [ {
     "name" : "counter",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   } ]
 }

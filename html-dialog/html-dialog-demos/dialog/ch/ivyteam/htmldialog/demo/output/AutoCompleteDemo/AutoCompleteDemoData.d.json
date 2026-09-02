@@ -3,13 +3,15 @@
   "simpleName" : "AutoCompleteDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.output.AutoCompleteDemo",
   "fields" : [ {
-    "name" : "searchText"
+    "name" : "searchText",
+    "modifiers" : [ ]
   }, {
     "name" : "searchResult",
     "type" : "List<ch.ivyteam.ivy.security.IUser>",
     "modifiers" : [ ]
   }, {
-    "name" : "selectedUserId"
+    "name" : "selectedUserId",
+    "modifiers" : [ ]
   }, {
     "name" : "userViaAjax",
     "type" : "ch.ivyteam.ivy.security.IUser",

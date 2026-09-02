@@ -8,6 +8,7 @@
     "modifiers" : [ ]
   }, {
     "name" : "images",
-    "type" : "List<String>"
+    "type" : "List<String>",
+    "modifiers" : [ ]
   } ]
 }

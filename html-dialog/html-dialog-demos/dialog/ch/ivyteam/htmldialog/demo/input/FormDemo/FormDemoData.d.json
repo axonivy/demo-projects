@@ -3,26 +3,35 @@
   "simpleName" : "FormDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.input.FormDemo",
   "fields" : [ {
-    "name" : "name"
+    "name" : "name",
+    "modifiers" : [ ]
   }, {
-    "name" : "firstname"
+    "name" : "firstname",
+    "modifiers" : [ ]
   }, {
     "name" : "birthday",
-    "type" : "Date"
+    "type" : "Date",
+    "modifiers" : [ ]
   }, {
-    "name" : "address"
+    "name" : "address",
+    "modifiers" : [ ]
   }, {
     "name" : "zipCode",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   }, {
-    "name" : "city"
+    "name" : "city",
+    "modifiers" : [ ]
   }, {
-    "name" : "country"
+    "name" : "country",
+    "modifiers" : [ ]
   }, {
-    "name" : "phone"
+    "name" : "phone",
+    "modifiers" : [ ]
   }, {
     "name" : "matchingCountries",
-    "type" : "List<String>"
+    "type" : "List<String>",
+    "modifiers" : [ ]
   }, {
     "name" : "email",
     "modifiers" : [ ]

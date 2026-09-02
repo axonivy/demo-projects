@@ -3,20 +3,25 @@
   "simpleName" : "FileUploadData",
   "namespace" : "com.axonivy.connectivity.rest.FileUpload",
   "fields" : [ {
-    "name" : "resourceName"
+    "name" : "resourceName",
+    "modifiers" : [ ]
   }, {
     "name" : "file",
-    "type" : "File"
+    "type" : "File",
+    "modifiers" : [ ]
   }, {
     "name" : "fileDownload",
     "type" : "org.primefaces.model.StreamedContent",
     "modifiers" : [ ]
   }, {
     "name" : "listFile",
-    "type" : "java.util.List<String>"
+    "type" : "java.util.List<String>",
+    "modifiers" : [ ]
   }, {
-    "name" : "downloadName"
+    "name" : "downloadName",
+    "modifiers" : [ ]
   }, {
-    "name" : "fileName"
+    "name" : "fileName",
+    "modifiers" : [ ]
   } ]
 }

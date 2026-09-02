@@ -7,9 +7,11 @@
     "type" : "com.axonivy.connectivity.Person",
     "modifiers" : [ ]
   }, {
-    "name" : "firstName"
+    "name" : "firstName",
+    "modifiers" : [ ]
   }, {
-    "name" : "lastName"
+    "name" : "lastName",
+    "modifiers" : [ ]
   }, {
     "name" : "response",
     "type" : "jakarta.ws.rs.core.Response",

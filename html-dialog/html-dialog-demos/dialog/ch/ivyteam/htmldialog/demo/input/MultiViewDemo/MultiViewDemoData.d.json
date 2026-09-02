@@ -3,19 +3,26 @@
   "simpleName" : "MultiViewDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.input.MultiViewDemo",
   "fields" : [ {
-    "name" : "paymentKind"
+    "name" : "paymentKind",
+    "modifiers" : [ ]
   }, {
-    "name" : "creditCardNumber"
+    "name" : "creditCardNumber",
+    "modifiers" : [ ]
   }, {
-    "name" : "name"
+    "name" : "name",
+    "modifiers" : [ ]
   }, {
-    "name" : "firstName"
+    "name" : "firstName",
+    "modifiers" : [ ]
   }, {
-    "name" : "address"
+    "name" : "address",
+    "modifiers" : [ ]
   }, {
-    "name" : "currentView"
+    "name" : "currentView",
+    "modifiers" : [ ]
   }, {
-    "name" : "nextView"
+    "name" : "nextView",
+    "modifiers" : [ ]
   }, {
     "name" : "processing",
     "type" : "Boolean",

@@ -4,6 +4,7 @@
   "namespace" : "workflow.signal.CreateUser",
   "fields" : [ {
     "name" : "user",
-    "type" : "workflow.signal.User"
+    "type" : "workflow.signal.User",
+    "modifiers" : [ ]
   } ]
 }
