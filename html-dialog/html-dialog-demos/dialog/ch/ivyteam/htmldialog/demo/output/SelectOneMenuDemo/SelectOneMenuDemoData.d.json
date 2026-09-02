@@ -4,18 +4,23 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.SelectOneMenuDemo",
   "fields" : [ {
     "name" : "persons",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Person>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Person>",
+    "modifiers" : [ ]
   }, {
     "name" : "morePersons",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Person>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Person>",
+    "modifiers" : [ ]
   }, {
     "name" : "onePerson",
-    "type" : "ch.ivyteam.htmldialog.demo.Person"
+    "type" : "ch.ivyteam.htmldialog.demo.Person",
+    "modifiers" : [ ]
   }, {
     "name" : "selectedPerson",
-    "type" : "ch.ivyteam.htmldialog.demo.Person"
+    "type" : "ch.ivyteam.htmldialog.demo.Person",
+    "modifiers" : [ ]
   }, {
     "name" : "advanceSelectedPerson",
-    "type" : "ch.ivyteam.htmldialog.demo.Person"
+    "type" : "ch.ivyteam.htmldialog.demo.Person",
+    "modifiers" : [ ]
   } ]
 }

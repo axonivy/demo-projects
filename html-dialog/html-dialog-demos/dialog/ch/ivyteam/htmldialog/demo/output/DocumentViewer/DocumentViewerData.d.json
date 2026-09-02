@@ -4,8 +4,10 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.DocumentViewer",
   "fields" : [ {
     "name" : "ivyFile",
-    "type" : "File"
+    "type" : "File",
+    "modifiers" : [ ]
   }, {
-    "name" : "filename"
+    "name" : "filename",
+    "modifiers" : [ ]
   } ]
 }

@@ -3,6 +3,7 @@
   "simpleName" : "CancelStartData",
   "namespace" : "error.handling.demo.misc.CancelStart",
   "fields" : [ {
-    "name" : "email"
+    "name" : "email",
+    "modifiers" : [ ]
   } ]
 }

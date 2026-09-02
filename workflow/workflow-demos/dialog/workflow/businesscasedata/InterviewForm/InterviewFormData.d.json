@@ -4,6 +4,7 @@
   "namespace" : "workflow.businesscasedata.InterviewForm",
   "fields" : [ {
     "name" : "interview",
-    "type" : "workflow.businesscasedata.Interview"
+    "type" : "workflow.businesscasedata.Interview",
+    "modifiers" : [ ]
   } ]
 }

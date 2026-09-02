@@ -10,7 +10,8 @@
     "name" : "textContent",
     "modifiers" : [ ]
   }, {
-    "name" : "filePath"
+    "name" : "filePath",
+    "modifiers" : [ ]
   }, {
     "name" : "fileName",
     "modifiers" : [ ]
@@ -20,6 +21,7 @@
     "modifiers" : [ ]
   }, {
     "name" : "showContent",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   } ]
 }

@@ -4,6 +4,7 @@
   "namespace" : "com.axonivy.connectivity.soap.AcceptOrder",
   "fields" : [ {
     "name" : "order",
-    "type" : "com.axonivy.connectivity.soap.service.Order"
+    "type" : "com.axonivy.connectivity.soap.service.Order",
+    "modifiers" : [ ]
   } ]
 }

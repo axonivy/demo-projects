@@ -4,6 +4,7 @@
   "namespace" : "workflow.credit.ApproveLevel1",
   "fields" : [ {
     "name" : "dossier",
-    "type" : "workflow.credit.CreditDossier"
+    "type" : "workflow.credit.CreditDossier",
+    "modifiers" : [ ]
   } ]
 }

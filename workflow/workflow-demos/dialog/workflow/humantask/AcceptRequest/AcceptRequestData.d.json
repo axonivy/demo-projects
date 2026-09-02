@@ -12,6 +12,7 @@
     "modifiers" : [ ]
   }, {
     "name" : "logEntry",
-    "type" : "workflow.humantask.LogEntry"
+    "type" : "workflow.humantask.LogEntry",
+    "modifiers" : [ ]
   } ]
 }

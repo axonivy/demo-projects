@@ -4,9 +4,11 @@
   "namespace" : "workflow.order.InputOrder",
   "fields" : [ {
     "name" : "customer",
-    "type" : "workflow.order.Person"
+    "type" : "workflow.order.Person",
+    "modifiers" : [ ]
   }, {
     "name" : "order",
-    "type" : "workflow.order.Order"
+    "type" : "workflow.order.Order",
+    "modifiers" : [ ]
   } ]
 }

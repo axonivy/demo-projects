@@ -4,12 +4,15 @@
   "namespace" : "workflow.humantask.VerifyRequest",
   "fields" : [ {
     "name" : "procurementRequest",
-    "type" : "workflow.humantask.ProcurementRequest"
+    "type" : "workflow.humantask.ProcurementRequest",
+    "modifiers" : [ ]
   }, {
     "name" : "ok",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "logEntry",
-    "type" : "workflow.humantask.LogEntry"
+    "type" : "workflow.humantask.LogEntry",
+    "modifiers" : [ ]
   } ]
 }

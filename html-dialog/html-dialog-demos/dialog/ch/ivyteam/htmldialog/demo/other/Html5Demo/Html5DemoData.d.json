@@ -3,7 +3,8 @@
   "simpleName" : "Html5DemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.other.Html5Demo",
   "fields" : [ {
-    "name" : "userName"
+    "name" : "userName",
+    "modifiers" : [ ]
   }, {
     "name" : "subscribe",
     "modifiers" : [ ]

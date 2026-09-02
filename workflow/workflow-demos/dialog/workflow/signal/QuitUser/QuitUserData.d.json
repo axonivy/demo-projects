@@ -4,7 +4,8 @@
   "namespace" : "workflow.signal.QuitUser",
   "fields" : [ {
     "name" : "quitUserEvent",
-    "type" : "workflow.signal.QuitUserEvent"
+    "type" : "workflow.signal.QuitUserEvent",
+    "modifiers" : [ ]
   }, {
     "name" : "cases",
     "type" : "List<ch.ivyteam.ivy.workflow.ICase>",

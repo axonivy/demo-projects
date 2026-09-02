@@ -4,6 +4,7 @@
   "namespace" : "error.handling.demo.approval.RequestForm",
   "fields" : [ {
     "name" : "approval",
-    "type" : "error.handling.demo.Approval"
+    "type" : "error.handling.demo.Approval",
+    "modifiers" : [ ]
   } ]
 }

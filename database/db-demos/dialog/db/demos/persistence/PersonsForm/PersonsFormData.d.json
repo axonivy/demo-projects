@@ -4,9 +4,11 @@
   "namespace" : "db.demos.persistence.PersonsForm",
   "fields" : [ {
     "name" : "person",
-    "type" : "db.demos.persistence.Person"
+    "type" : "db.demos.persistence.Person",
+    "modifiers" : [ ]
   }, {
     "name" : "personsModel",
-    "type" : "db.demos.persistence.PersonDataModel"
+    "type" : "db.demos.persistence.PersonDataModel",
+    "modifiers" : [ ]
   } ]
 }

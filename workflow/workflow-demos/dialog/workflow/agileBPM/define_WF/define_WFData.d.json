@@ -12,24 +12,30 @@
     "modifiers" : [ ]
   }, {
     "name" : "newTask",
-    "type" : "workflow.agileBPM.TaskDef"
+    "type" : "workflow.agileBPM.TaskDef",
+    "modifiers" : [ ]
   }, {
     "name" : "wfusers",
     "type" : "List<String>",
     "modifiers" : [ ]
   }, {
     "name" : "started",
-    "type" : "DateTime"
+    "type" : "DateTime",
+    "modifiers" : [ ]
   }, {
     "name" : "additionalTasks",
-    "type" : "List<workflow.agileBPM.TaskDef>"
+    "type" : "List<workflow.agileBPM.TaskDef>",
+    "modifiers" : [ ]
   }, {
-    "name" : "errormsg"
+    "name" : "errormsg",
+    "modifiers" : [ ]
   }, {
-    "name" : "user"
+    "name" : "user",
+    "modifiers" : [ ]
   }, {
     "name" : "editTask",
-    "type" : "workflow.agileBPM.TaskDef"
+    "type" : "workflow.agileBPM.TaskDef",
+    "modifiers" : [ ]
   }, {
     "name" : "userList",
     "type" : "List<ch.ivyteam.ivy.security.IUser>",
@@ -39,6 +45,7 @@
     "type" : "List<ch.ivyteam.ivy.security.IUser>",
     "modifiers" : [ ]
   }, {
-    "name" : "taskDescription"
+    "name" : "taskDescription",
+    "modifiers" : [ ]
   } ]
 }

@@ -4,6 +4,7 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.component.LazyLoadedModalDialog",
   "fields" : [ {
     "name" : "showAddress",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   } ]
 }

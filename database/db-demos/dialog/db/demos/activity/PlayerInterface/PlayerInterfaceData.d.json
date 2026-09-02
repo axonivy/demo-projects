@@ -4,12 +4,15 @@
   "namespace" : "db.demos.activity.PlayerInterface",
   "fields" : [ {
     "name" : "player",
-    "type" : "db.demos.activity.Player"
+    "type" : "db.demos.activity.Player",
+    "modifiers" : [ ]
   }, {
     "name" : "players",
-    "type" : "java.util.List<db.demos.activity.Player>"
+    "type" : "java.util.List<db.demos.activity.Player>",
+    "modifiers" : [ ]
   }, {
     "name" : "shared",
-    "type" : "db.demos.activity.Shared"
+    "type" : "db.demos.activity.Shared",
+    "modifiers" : [ ]
   } ]
 }

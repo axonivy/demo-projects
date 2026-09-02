@@ -4,6 +4,7 @@
   "namespace" : "workflow.signal.TaskForm",
   "fields" : [ {
     "name" : "user",
-    "type" : "workflow.signal.User"
+    "type" : "workflow.signal.User",
+    "modifiers" : [ ]
   } ]
 }

@@ -3,8 +3,10 @@
   "simpleName" : "BarcodeDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.output.BarcodeDemo",
   "fields" : [ {
-    "name" : "url"
+    "name" : "url",
+    "modifiers" : [ ]
   }, {
-    "name" : "code"
+    "name" : "code",
+    "modifiers" : [ ]
   } ]
 }

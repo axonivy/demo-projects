@@ -3,6 +3,7 @@
   "simpleName" : "TextEditorDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.input.TextEditorDemo",
   "fields" : [ {
-    "name" : "text"
+    "name" : "text",
+    "modifiers" : [ ]
   } ]
 }

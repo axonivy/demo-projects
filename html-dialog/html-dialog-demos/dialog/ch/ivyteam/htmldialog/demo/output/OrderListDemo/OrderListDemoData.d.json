@@ -4,6 +4,7 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.OrderListDemo",
   "fields" : [ {
     "name" : "persons",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Person>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Person>",
+    "modifiers" : [ ]
   } ]
 }

@@ -3,9 +3,11 @@
   "simpleName" : "CreateAddressData",
   "namespace" : "workflow.businessdata.CreateAddress",
   "fields" : [ {
-    "name" : "id"
+    "name" : "id",
+    "modifiers" : [ ]
   }, {
     "name" : "address",
-    "type" : "workflow.businessdata.Address"
+    "type" : "workflow.businessdata.Address",
+    "modifiers" : [ ]
   } ]
 }

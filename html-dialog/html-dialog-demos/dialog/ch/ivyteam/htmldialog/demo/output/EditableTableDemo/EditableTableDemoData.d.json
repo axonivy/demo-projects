@@ -4,12 +4,15 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.EditableTableDemo",
   "fields" : [ {
     "name" : "recordset",
-    "type" : "Recordset"
+    "type" : "Recordset",
+    "modifiers" : [ ]
   }, {
     "name" : "selectedPerson",
-    "type" : "Record"
+    "type" : "Record",
+    "modifiers" : [ ]
   }, {
     "name" : "persons",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Person>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Person>",
+    "modifiers" : [ ]
   } ]
 }

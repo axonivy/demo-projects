@@ -4,6 +4,7 @@
   "namespace" : "workflow.trigger.CreateNewEmployee",
   "fields" : [ {
     "name" : "newEmployeeData",
-    "type" : "workflow.trigger.NewEmployeeData"
+    "type" : "workflow.trigger.NewEmployeeData",
+    "modifiers" : [ ]
   } ]
 }

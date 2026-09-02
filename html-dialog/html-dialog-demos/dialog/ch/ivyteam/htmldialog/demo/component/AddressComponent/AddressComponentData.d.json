@@ -4,6 +4,7 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.component.AddressComponent",
   "fields" : [ {
     "name" : "address",
-    "type" : "ch.ivyteam.htmldialog.demo.Address"
+    "type" : "ch.ivyteam.htmldialog.demo.Address",
+    "modifiers" : [ ]
   } ]
 }

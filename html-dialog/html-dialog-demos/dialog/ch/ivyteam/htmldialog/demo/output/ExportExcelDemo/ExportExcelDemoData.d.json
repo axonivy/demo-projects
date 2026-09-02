@@ -4,9 +4,11 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.ExportExcelDemo",
   "fields" : [ {
     "name" : "recordset",
-    "type" : "Recordset"
+    "type" : "Recordset",
+    "modifiers" : [ ]
   }, {
     "name" : "persons",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Person>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Person>",
+    "modifiers" : [ ]
   } ]
 }

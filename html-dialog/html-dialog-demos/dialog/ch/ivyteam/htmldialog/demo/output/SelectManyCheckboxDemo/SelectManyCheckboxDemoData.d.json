@@ -4,9 +4,11 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.SelectManyCheckboxDemo",
   "fields" : [ {
     "name" : "persons",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Person>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Person>",
+    "modifiers" : [ ]
   }, {
     "name" : "selectedPersons",
-    "type" : "List<ch.ivyteam.htmldialog.demo.Person>"
+    "type" : "List<ch.ivyteam.htmldialog.demo.Person>",
+    "modifiers" : [ ]
   } ]
 }

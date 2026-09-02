@@ -4,11 +4,14 @@
   "namespace" : "error.handling.demo.SelectOptions",
   "fields" : [ {
     "name" : "customer",
-    "type" : "booking.Customer"
+    "type" : "booking.Customer",
+    "modifiers" : [ ]
   }, {
     "name" : "flight",
-    "type" : "booking.Flight"
+    "type" : "booking.Flight",
+    "modifiers" : [ ]
   }, {
-    "name" : "carSize"
+    "name" : "carSize",
+    "modifiers" : [ ]
   } ]
 }

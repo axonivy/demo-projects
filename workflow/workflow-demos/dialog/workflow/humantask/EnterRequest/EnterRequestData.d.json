@@ -4,9 +4,11 @@
   "namespace" : "workflow.humantask.EnterRequest",
   "fields" : [ {
     "name" : "procurementRequestData",
-    "type" : "workflow.humantask.ProcurementRequest"
+    "type" : "workflow.humantask.ProcurementRequest",
+    "modifiers" : [ ]
   }, {
     "name" : "logEntry",
-    "type" : "workflow.humantask.LogEntry"
+    "type" : "workflow.humantask.LogEntry",
+    "modifiers" : [ ]
   } ]
 }

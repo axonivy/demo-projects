@@ -4,15 +4,19 @@
   "namespace" : "ch.ivyteam.htmldialog.demo.output.PrettyTimeDemo",
   "fields" : [ {
     "name" : "yesterday",
-    "type" : "java.util.Date"
+    "type" : "java.util.Date",
+    "modifiers" : [ ]
   }, {
     "name" : "twoHoursBefore",
-    "type" : "java.util.Date"
+    "type" : "java.util.Date",
+    "modifiers" : [ ]
   }, {
     "name" : "threeYearsAgo",
-    "type" : "java.util.Date"
+    "type" : "java.util.Date",
+    "modifiers" : [ ]
   }, {
     "name" : "threeWeeksAgo",
-    "type" : "java.util.Date"
+    "type" : "java.util.Date",
+    "modifiers" : [ ]
   } ]
 }

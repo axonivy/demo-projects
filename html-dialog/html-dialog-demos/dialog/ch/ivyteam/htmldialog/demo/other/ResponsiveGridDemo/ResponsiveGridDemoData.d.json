@@ -3,20 +3,27 @@
   "simpleName" : "ResponsiveGridDemoData",
   "namespace" : "ch.ivyteam.htmldialog.demo.other.ResponsiveGridDemo",
   "fields" : [ {
-    "name" : "lastName"
+    "name" : "lastName",
+    "modifiers" : [ ]
   }, {
-    "name" : "firstName"
+    "name" : "firstName",
+    "modifiers" : [ ]
   }, {
-    "name" : "email"
+    "name" : "email",
+    "modifiers" : [ ]
   }, {
-    "name" : "address"
+    "name" : "address",
+    "modifiers" : [ ]
   }, {
     "name" : "zipCode",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   }, {
-    "name" : "city"
+    "name" : "city",
+    "modifiers" : [ ]
   }, {
     "name" : "birthday",
-    "type" : "Date"
+    "type" : "Date",
+    "modifiers" : [ ]
   } ]
 }
