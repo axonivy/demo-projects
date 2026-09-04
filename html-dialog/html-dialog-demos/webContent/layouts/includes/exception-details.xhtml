@@ -65,6 +65,7 @@
   <ui:fragment rendered="#{!errorPage.causedBy.isEmpty()}">
     <h4 class="list-group-item-heading">Technical cause</h4>
     <ui:repeat value="#{errorPage.causedBy}" var="causedBy">
+      <!-- disable validator next-line: el-validator -->
       <pre><code>#{causedBy.class.simpleName}: #{causedBy.message.trim()}</code></pre>
     </ui:repeat>
     <br />
