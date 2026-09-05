@@ -62,7 +62,7 @@ pipeline {
     stage('check editorconfig') {
       steps {
         script {
-          docker.image('mstruebing/editorconfig-checker').inside {
+          docker.image('mstruebing/editorconfig-checker:v3.11.3').inside {
             sh 'ec -no-color'
           }
         }
