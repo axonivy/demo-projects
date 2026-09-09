@@ -26,8 +26,8 @@
       <artifactId>ivy-rest-jersey-spi</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.axonivy.ivy.spi</groupId>
-      <artifactId>ivy-webservice-cxf-spi</artifactId>
+      <groupId>com.axonivy.ivy.api.extension</groupId>
+      <artifactId>ivy-webservice-cxf-extension-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents.client5</groupId>
