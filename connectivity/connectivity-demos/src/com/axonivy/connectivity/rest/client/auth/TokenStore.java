@@ -1,11 +1,9 @@
 package com.axonivy.connectivity.rest.client.auth;
 
-import org.apache.log4j.Logger;
-
-import tools.jackson.databind.JsonNode;
-
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.security.ISession;
+import ch.ivyteam.log.Logger;
+import tools.jackson.databind.JsonNode;
 
 public class TokenStore {
   private final ISession session;
