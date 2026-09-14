@@ -4,7 +4,7 @@
 <h:body>
 
   <ui:composition template="/layouts/HtmlDemo.xhtml">
-    <ui:param name="centerHeader" value="Component Demo" />
+    <ui:define name="centerHeader">Component Demo</ui:define>
 
     <ui:define name="content">
       <h:form id="demoForm">

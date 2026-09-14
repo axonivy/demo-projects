@@ -10,7 +10,7 @@ in the 'webContent/resources' where the JSF Composite Components are defined.
 <h:body>
 
   <ui:composition template="/layouts/HtmlDemo.xhtml">
-    <ui:param name="centerHeader" value="JSF Composite Component Demo" />
+    <ui:define name="centerHeader">JSF Composite Component Demo</ui:define>
 
     <ui:define name="content">
       <h:panelGroup layout="block" id="panel">
