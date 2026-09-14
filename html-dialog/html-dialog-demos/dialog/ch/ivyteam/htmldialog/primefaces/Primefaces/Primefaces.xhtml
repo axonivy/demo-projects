@@ -5,7 +5,7 @@
 
 <h:body>
   <ui:composition template="/layouts/HtmlDemo.xhtml">
-    <ui:param name="centerHeader" value="Primefaces #{data.primefacesVersion}" />
+    <ui:define name="centerHeader">Primefaces #{data.primefacesVersion}</ui:define>
 
     <ui:define name="content">
       <f:event type="preRenderView" listener="#{logic.getVersion}" />

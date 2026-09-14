@@ -3,7 +3,7 @@
   xmlns:p="primefaces">
 <h:body>
   <ui:composition template="/layouts/HtmlDemo.xhtml">
-    <ui:param name="centerHeader" value="ManagedBean Demo" />
+    <ui:define name="centerHeader">ManagedBean Demo</ui:define>
 
     <ui:define name="content">
       <h:form id="beanForm">
