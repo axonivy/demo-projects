@@ -22,8 +22,8 @@
       <artifactId>ivy-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.axonivy.ivy.spi</groupId>
-      <artifactId>ivy-rest-jersey-spi</artifactId>
+      <groupId>com.axonivy.ivy.api.extension</groupId>
+      <artifactId>ivy-rest-jersey-extension-api</artifactId>
     </dependency>
     <dependency>
       <groupId>com.axonivy.ivy.api.extension</groupId>
