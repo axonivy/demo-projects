@@ -8,9 +8,9 @@
         <a href="#" class="menu-button">
          <i class="pi pi-bars"/>
         </a>
-        <h:link id="logolink" outcome="dashboard.xhtml" styleClass="layout-topbar-logo">
+        <h:outputLink id="logolink" value="#{ivy.html.startref('Demo/start.ivp')}" styleClass="layout-topbar-logo">
           <p:graphicImage name="#{ivyFreyaTheme.logo}" library="ivy-branding" alt="Logo" />
-        </h:link>
+        </h:outputLink>
       </div>
       
       <div class="layout-topbar-right">
