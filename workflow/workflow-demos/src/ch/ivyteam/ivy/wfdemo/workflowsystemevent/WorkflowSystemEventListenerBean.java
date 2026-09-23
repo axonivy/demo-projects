@@ -11,7 +11,7 @@ import ch.ivyteam.ivy.process.extension.ProgramConfig;
 import ch.ivyteam.ivy.process.program.ui.ProgramEditorUi;
 import ch.ivyteam.ivy.process.program.ui.ProgramUiBuilder;
 import ch.ivyteam.ivy.request.RequestException;
-import ch.ivyteam.ivy.service.ServiceException;
+import ch.ivyteam.ivy.application.service.ServiceException;
 import ch.ivyteam.ivy.workflow.WorkflowSystemEvent;
 
 public class WorkflowSystemEventListenerBean extends AbstractProcessStartEventBean implements ProgramEditorUi {
