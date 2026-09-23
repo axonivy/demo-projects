@@ -9,7 +9,7 @@
   </parent>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>html-dialog-demos</artifactId>
-  <version>14.0.0</version>
+  <version>14.0.1-SNAPSHOT</version>
   <packaging>iar</packaging>
   <description>Demo Project for the Html Dialog Features</description>
   <organization>

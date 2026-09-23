@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>db-demos-modules</artifactId>
-  <version>14.0.0</version>
+  <version>14.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -14,7 +14,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/axonivy-market/${project.name}.git</developerConnection>
-    <tag>v14.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>

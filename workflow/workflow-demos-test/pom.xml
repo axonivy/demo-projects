@@ -9,7 +9,7 @@
   </parent>
   <groupId>com.axonivy.demo</groupId>
   <artifactId>workflow-demos-test</artifactId>
-  <version>14.0.0</version>
+  <version>14.0.1-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
   <dependencies>
     <dependency>
