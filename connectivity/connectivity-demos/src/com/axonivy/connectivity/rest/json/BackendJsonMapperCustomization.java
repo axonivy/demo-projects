@@ -1,6 +1,5 @@
 package com.axonivy.connectivity.rest.json;
 
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.ZoneId;
@@ -12,15 +11,16 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.ext.ContextResolver;
 import jakarta.ws.rs.ext.Provider;
-
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.module.SimpleModule;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ValueSerializer;
+import tools.jackson.databind.module.SimpleModule;
 
 /**
- * Overwrites the default serialization of 'Date' for the Rest resources provided in your projects.
+ * Overwrites the default serialization of 'Date' for the Rest resources
+ * provided in your projects.
  */
 @Provider
 @Produces(MediaType.APPLICATION_JSON)
@@ -33,12 +33,12 @@ public class BackendJsonMapperCustomization implements ContextResolver<ObjectMap
     final ObjectMapper om = new ObjectMapper();
     final SimpleModule module = new SimpleModule();
     module.addSerializer(Date.class, DateTimeConverterSerializer.ISO_DATE_TIME_UTC);
-    om.registerModule(module);
+    om.registeredModules().add(module);
     System.out.println("mapping is customized " + om + " using " + this);
     return om;
   }
 
-  public static class DateTimeConverterSerializer extends JsonSerializer<Date> {
+  public static class DateTimeConverterSerializer extends ValueSerializer<Date> {
 
     public static DateTimeConverterSerializer ISO_DATE_TIME_UTC = new DateTimeConverterSerializer(
         new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"), ZoneId.of("Z"));
@@ -52,7 +52,7 @@ public class BackendJsonMapperCustomization implements ContextResolver<ObjectMap
     }
 
     @Override
-    public void serialize(Date value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+    public void serialize(Date value, JsonGenerator gen, SerializationContext ctxt) throws JacksonException {
       System.out.println("customizing time (" + value + ") using " + this + "!");
       gen.writeString(dateTimeFormatter.format(value));
     }
