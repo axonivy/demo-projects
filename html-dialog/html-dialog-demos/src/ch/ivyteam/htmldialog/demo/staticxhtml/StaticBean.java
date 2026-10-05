@@ -9,7 +9,7 @@ import jakarta.inject.Named;
 @RequestScoped
 public class StaticBean {
 
-  String text = "I was sent from the ManagedBean.";
+  private String text = "I was sent from the ManagedBean.";
 
   public String getText() {
     return text;
