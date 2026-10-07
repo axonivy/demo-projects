@@ -62,8 +62,8 @@
               "ivy.log.info(\"new ID = \"+newId);",
               "",
               "out.myPost.id = newId;",
-              "out.myPost.name = result.get(\"name\").asText();",
-              "out.myPost.body = result.get(\"body\").asText();"
+              "out.myPost.name = result.get(\"name\").asString();",
+              "out.myPost.body = result.get(\"body\").asString();"
             ]
           }
         }
@@ -820,9 +820,9 @@
           "entity" : {
             "type" : "tools.jackson.databind.JsonNode",
             "code" : [
-              "out.user.name = result.get(\"name\").asText();",
-              "out.user.phone = result.get(\"phone\").asText();",
-              "out.user.email = result.get(\"email\").asText();",
+              "out.user.name = result.get(\"name\").asString();",
+              "out.user.phone = result.get(\"phone\").asString();",
+              "out.user.email = result.get(\"email\").asString();",
               "",
               "ivy.log.info(\"got user = \"+out.user);"
             ]
