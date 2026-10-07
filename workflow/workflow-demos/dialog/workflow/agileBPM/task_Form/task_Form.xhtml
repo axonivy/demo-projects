@@ -14,19 +14,19 @@
       <ui:include src="case_info.xhtml"></ui:include>
       <ui:include src="add_task.xhtml"></ui:include>
 
-      <c:if test="#{data.nextTask.kind.equals('TASK')}">
+      <c:if test="#{data.nextTask.kind eq 'TASK'}">
         <ui:include src="Adhoc.xhtml" />
       </c:if>
-      <c:if test="#{data.nextTask.kind.equals('TODO')}">
+      <c:if test="#{data.nextTask.kind eq 'TODO'}">
         <ui:include src="ToDo.xhtml" />
       </c:if>
-      <c:if test="#{data.nextTask.kind.equals('QA')}">
+      <c:if test="#{data.nextTask.kind eq 'QA'}">
         <ui:include src="QA.xhtml" />
       </c:if>
-      <c:if test="#{data.nextTask.kind.equals('RESPONSE')}">
+      <c:if test="#{data.nextTask.kind eq 'RESPONSE'}">
         <ui:include src="QAResponse.xhtml" />
       </c:if>
-      <c:if test="#{data.nextTask.kind.equals('APPROVAL')}">
+      <c:if test="#{data.nextTask.kind eq 'APPROVAL'}">
         <ui:include src="Approval.xhtml" />
       </c:if>
     </ui:define>

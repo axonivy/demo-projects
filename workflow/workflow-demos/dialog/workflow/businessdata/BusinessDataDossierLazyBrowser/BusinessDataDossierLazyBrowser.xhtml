@@ -31,11 +31,11 @@
         currentPageReportTemplate="{startRecord} - {endRecord} of {totalRecords}"
         rowsPerPageTemplate="5,10,15,25,50,100" lazy="true">
         <p:column headerText="Dossier Name"
-          sortBy="#{dossier.name.ascii}" sortOrder="asc">
+          sortBy="#{dossier.name}" sortOrder="asc">
           <h:outputText value="#{dossier.name}" />
         </p:column>
         <p:column headerText="Person"
-          sortBy="#{dossier.person.lastName.ascii}">
+          sortBy="#{dossier.person.lastName}">
           <h:outputText value="#{dossier.person.firstName} " />
           <h:outputText value="#{dossier.person.lastName}" />
         </p:column>

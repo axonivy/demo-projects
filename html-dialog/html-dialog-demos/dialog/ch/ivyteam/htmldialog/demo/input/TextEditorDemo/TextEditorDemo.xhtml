@@ -13,6 +13,7 @@
 
         <hr />
         <!-- This `escape="false"` usage is safe as `p:textEditor` sanitizes HTML content -->
+        <!-- disable validator next-line: escape-validator -->
         <h:outputText id="output" value="#{data.text}" escape="false"></h:outputText>
         
         <div class="command-btns">

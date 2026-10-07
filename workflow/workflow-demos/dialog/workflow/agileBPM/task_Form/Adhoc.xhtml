@@ -15,6 +15,7 @@
         </p:inputTextarea>
       </h:panelGrid>
       <!-- This `escape="false"` usage is safe as the content is a static CMS entry -->
+      <!-- disable validator next-line: escape-validator -->
       <p:outputLabel escape="false" value="#{ivy.cms.co('/Texts/Adhoc-Explain')}"></p:outputLabel>
       <br></br>
       <p:commandButton actionListener="#{logic.close}" value="Send" update="form2" icon="ti ti-check" />
