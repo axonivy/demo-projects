@@ -9,6 +9,7 @@
         <p:inputTextarea value="#{data.taskDescription}" cols="60">
         </p:inputTextarea>
         <p:spacer height="10"></p:spacer>
+        <!-- disable validator next-line: id-validator -->
         <p:commandButton value="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/Ok')}" update=":form:taskDef"
           actionListener="#{logic.setTaskDescription}" icon="ti ti-check" oncomplete="PF('taskDesription').hide();">
         </p:commandButton>

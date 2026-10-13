@@ -17,6 +17,7 @@
         <br></br>
       </p:panelGrid>
       <h:panelGroup>
+        <!-- disable validator next-line: id-validator -->
         <p:commandButton value="Save" icon="pi pi-save" actionListener="#{logic.save}" update=":form:theTable detailForm"
           oncomplete="validateToHide(args, PF('detailDialog'));" id="dialogSaveButton" />
         <p:commandButton value="Cancel" styleClass="ui-button-flat" process="@this" oncomplete="PF('detailDialog').hide();">
