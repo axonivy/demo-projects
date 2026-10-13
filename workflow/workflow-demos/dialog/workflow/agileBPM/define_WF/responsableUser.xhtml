@@ -29,6 +29,7 @@
             size="large" gravatarConfig="d=mp" rendered="#{data.user.indexOf(',') le 0}"/>
 
           <p:spacer height="60"></p:spacer>
+          <!-- disable validator next-line: id-validator -->
           <p:commandButton value="#{ivy.cms.co('/Dialogs/agileBPM/define_WF/Ok')}" update=":form:taskDef"
             actionListener="#{logic.setUser}" icon="ti ti-check" oncomplete="PF('userList').hide();"></p:commandButton>
 

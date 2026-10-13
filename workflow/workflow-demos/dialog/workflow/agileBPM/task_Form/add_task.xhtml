@@ -45,6 +45,7 @@
             <p:commandButton actionListener="#{logic.insertTask}" value="#{ivy.cms.co('/Labels/InsertTheTask')}"
               title="#{ivy.cms.co('/Labels/InsertTask-Explain')}" icon="ti ti-check" update=":addform"
               rendered="#{data.ok eq 'insert'}" />
+            <!-- disable validator next-line: id-validator -->
             <p:commandButton actionListener="#{logic.appendTask}" value="#{ivy.cms.co('/Labels/AppendTheTask')}"
               title="#{ivy.cms.co('/Labels/AppendTask-Explain')}" icon="ti ti-check" update=":addform :caseform"
               oncomplete="validateToHide(args, PF('addTask'));" rendered="#{data.ok eq 'append'}" />

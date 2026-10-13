@@ -61,8 +61,7 @@
                       <p:outputLabel value="#{histTask.kind} "></p:outputLabel>
                       <p:outputLabel value="#{histTask.actor}"></p:outputLabel>
                       <p:outputLabel
-                        value="#{histTask.done.format('dd.MM.YYYY HH:mm')}"
-                        size="16" readonly="true" />
+                        value="#{histTask.done.format('dd.MM.YYYY HH:mm')}"/>
                       <c:forEach items="#{histTask.taskNotes}"
                         var="tasknote">
                         <p:outputLabel value="#{tasknote.message}" />
@@ -84,8 +83,7 @@
                       <p:outputLabel value="#{histTask.kind} "></p:outputLabel>
                       <p:outputLabel value="#{histTask.actor}"></p:outputLabel>
                       <p:outputLabel
-                        value="#{histTask.done.format('dd.MM.YYYY HH:mm')}"
-                        size="16" readonly="true" />
+                        value="#{histTask.done.format('dd.MM.YYYY HH:mm')}" />
                       <c:forEach items="#{histTask.taskNotes}"
                         var="tasknote">
                         <p:outputLabel value="#{tasknote.message}" />
@@ -132,8 +130,7 @@
                     <p:outputLabel value="#{data.nextTask.actor}"
                       style="font-weight:bold;" />
                     <p:outputLabel
-                      value=" #{data.nextTask.until.format('dd.MM.YYYY HH:mm')}"
-                      size="16" style="font-weight:bold;" />
+                      value=" #{data.nextTask.until.format('dd.MM.YYYY HH:mm')}" style="font-weight:bold;" />
                   </h:panelGrid>
                 </h:panelGrid>
               </p:tooltip>
@@ -154,8 +151,7 @@
                     <p:outputLabel value="#{data.nextTask.actor}"
                       style="font-weight:bold;" />
                     <p:outputLabel
-                      value=" #{data.nextTask.until.format('dd.MM.YYYY HH:mm')}"
-                      size="16" style="font-weight:bold;" />
+                      value=" #{data.nextTask.until.format('dd.MM.YYYY HH:mm')}" style="font-weight:bold;" />
                   </h:panelGrid>
                 </h:panelGrid>
               </p:tooltip>
