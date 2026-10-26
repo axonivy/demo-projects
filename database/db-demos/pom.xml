@@ -36,15 +36,6 @@
       <url>https://maven.axonivy.com</url>
     </repository>
   </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-      <id>sonatype</id>
-      <url>https://central.sonatype.com/repository/maven-snapshots</url>
-    </pluginRepository>
-  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
