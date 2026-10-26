@@ -10,7 +10,7 @@
     <wss4j.version>2.4.4</wss4j.version>
     <jersey.version>2.48</jersey.version>
     <project-build-plugin>12.0.16-SNAPSHOT</project-build-plugin>
-    <web.tester.version>12.0.3</web.tester.version>
+    <web.tester.version>12.0.4-SNAPSHOT</web.tester.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -29,14 +29,8 @@
   
   <repositories>
     <repository>
-      <id>central.sonatype.snapshots</id>
-      <url>https://central.sonatype.com/repository/maven-snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
+      <id>maven.axonivy.com</id>
+      <url>https://maven.axonivy.com</url>
     </repository>
   </repositories>
 
