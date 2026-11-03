@@ -12,8 +12,8 @@
         "signature" : "approveOrder",
         "input" : {
           "params" : [
-            { "name" : "order", "type" : "com.axonivy.connectivity.soap.service.Order", "desc" : "" },
-            { "name" : "responsibleRole", "type" : "String", "desc" : "" }
+            { "name" : "order", "type" : "com.axonivy.connectivity.soap.service.Order", "desc" : "Order to be approved" },
+            { "name" : "responsibleRole", "type" : "String", "desc" : "Role responsible for approving the order" }
           ],
           "map" : {
             "out.order" : "param.order"

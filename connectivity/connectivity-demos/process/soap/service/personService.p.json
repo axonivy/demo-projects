@@ -43,7 +43,7 @@
         "signature" : "addPerson",
         "input" : {
           "params" : [
-            { "name" : "person", "type" : "com.axonivy.connectivity.Person", "desc" : "" }
+            { "name" : "person", "type" : "com.axonivy.connectivity.Person", "desc" : "Person to add to the directory" }
           ],
           "map" : {
             "out.person" : "param.person"
@@ -73,7 +73,7 @@
         "signature" : "deletePerson",
         "input" : {
           "params" : [
-            { "name" : "person", "type" : "com.axonivy.connectivity.Person", "desc" : "" }
+            { "name" : "person", "type" : "com.axonivy.connectivity.Person", "desc" : "Person to remove from the directory" }
           ],
           "map" : {
             "out.person" : "param.person"

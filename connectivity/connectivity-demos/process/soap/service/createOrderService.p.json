@@ -14,7 +14,7 @@
         "signature" : "call",
         "input" : {
           "params" : [
-            { "name" : "order", "type" : "com.axonivy.connectivity.soap.service.Order", "desc" : "" }
+            { "name" : "order", "type" : "com.axonivy.connectivity.soap.service.Order", "desc" : "Order to be submitted for approval" }
           ],
           "map" : {
             "out.order" : "param.order"
