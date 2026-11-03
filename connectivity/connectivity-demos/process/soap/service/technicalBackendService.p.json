@@ -41,7 +41,7 @@
         "signature" : "longRunningBatchOperation",
         "input" : {
           "params" : [
-            { "name" : "blockSeconds", "type" : "Integer", "desc" : "" }
+            { "name" : "blockSeconds", "type" : "Integer", "desc" : "Number of seconds to simulate the long running operation" }
           ],
           "map" : {
             "out.blockSeconds" : "param.blockSeconds",

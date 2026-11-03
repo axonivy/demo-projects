@@ -14,8 +14,8 @@
         "signature" : "call",
         "input" : {
           "params" : [
-            { "name" : "throwException", "type" : "Boolean", "desc" : "" },
-            { "name" : "exceptionMessage", "type" : "String", "desc" : "" }
+            { "name" : "throwException", "type" : "Boolean", "desc" : "whether to raise an exception for this request" },
+            { "name" : "exceptionMessage", "type" : "String", "desc" : "Message to include in the exception" }
           ],
           "map" : {
             "out.exceptionMessage" : "param.exceptionMessage",
