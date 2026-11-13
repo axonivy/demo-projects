@@ -1,29 +1,27 @@
 {
-  "name": "Axon Ivy",
-  "image": "mcr.microsoft.com/devcontainers/base:trixie",
+  "name": "Axon Ivy Demo",
+  "dockerComposeFile": "compose.yaml",
+  "service": "dev",
+  "workspaceFolder": "/workspaces/project",
+  "shutdownAction": "stopCompose",
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": false,
   "forwardPorts": [8080],
-  "onCreateCommand": "mvn clean package --batch-mode -Dmaven.test.skip=true -Divy.script.validation.skip=true -Divy.engine.directory=/usr/lib/axonivy-engine",
+  "postCreateCommand": "sudo chown vscode:vscode /home/vscode/.m2 /home/vscode/.m2/repository",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "25",
       "installMaven": "true",
       "jdkDistro": "tem"
-    },
-    "ghcr.io/axonivy/devcontainer-features/engine:1": {
-      "downloadUrl": "https://dev.axonivy.com/permalink/dev/axonivy-engine-slim.zip",
-      "engineHome": "/usr/lib/axonivy-engine"
     }
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "axonivy.vscode-designer-14",
-        "vscjava.vscode-java-pack"
-      ],
+      "extensions": ["axonivy.vscode-designer-14", "vscjava.vscode-java-pack"],
       "settings": {
-        "axonivy.engine.releaseTrain": "/usr/lib/axonivy-engine",
-        "java.jdt.ls.java.home": "/usr/local/sdkman/candidates/java/current/",
-        "java.server.launchMode": "Standard"
+        "axonivy.engine.runByExtension": false,
+        "axonivy.engine.url": "http://localhost:8080/",
+        "java.jdt.ls.java.home": "/usr/local/sdkman/candidates/java/current"
       }
     }
   }

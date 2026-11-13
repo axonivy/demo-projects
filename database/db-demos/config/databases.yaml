@@ -4,3 +4,11 @@ Databases:
     Url: jdbc:hsqldb:mem:Football
     Driver: org.hsqldb.jdbc.JDBCDriver
     Password: ${decrypt:}
+    Name: FootballDB
+  posgresSampleDb:
+    Url: jdbc:postgresql://postgres:5432/appdb
+    Driver: org.postgresql.Driver
+    UserName: ivy
+    Password: ${decrypt:x/5LuT6a5FjevmySHZg/BA==}
+    MaxConnections: 5
+    Name: posgresSampleDb

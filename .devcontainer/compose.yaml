@@ -1,0 +1,38 @@
+services:
+  dev:
+    image: mcr.microsoft.com/devcontainers/base:trixie
+    command: sleep infinity
+    init: true
+    network_mode: service:engine
+    volumes:
+      - ..:/workspaces/project:cached
+      - maven-repository:/home/vscode/.m2/repository
+    depends_on:
+      engine:
+        condition: service_healthy
+
+  engine:
+    image: axonivy/axonivy-engine:nightly-14.0
+    environment:
+      JAVA_OPTS_IVY_SYSTEM: >-
+        -Ddev.mode=true
+        -Divy.engine.testheadless=true
+    volumes:
+      - ..:/workspaces/project:cached
+      - maven-repository:/home/vscode/.m2/repository
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "--max-time", "3", "http://localhost:8080/"]
+      interval: 5s
+      timeout: 5s
+      start_period: 120s
+      retries: 30
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: appdb
+      POSTGRES_USER: ivy
+      POSTGRES_PASSWORD: local-dev-only
+
+volumes:
+  maven-repository:
